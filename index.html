@@ -7,145 +7,275 @@
 <meta name="description" content="Exchange guides by a former exchange student: how to apply, how to pack and how to make it the best year of your life.">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Domine:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#181417;--peri:#708BE1;--peri-d:#5B75CC;--beige:#F0E5E1;--maroon:#683131;--yellow:#F2E58F;--muted:#5d5559}
+:root{--ink:#181417;--peri:#708BE1;--peri-d:#5B75CC;--peri-l:#E8ECFB;--beige:#F0E5E1;--cream:#FBF7F4;--maroon:#683131;--yellow:#F2E58F;--muted:#6a6166;--line:rgba(24,20,23,.09)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 html,body{overflow-x:clip}
-body{font-family:'Instrument Sans',sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+body{font-family:'Instrument Sans',sans-serif;color:var(--ink);background:var(--cream);line-height:1.65}
 a{color:inherit}
 body.en [lang-hr],body:not(.en) [lang-en]{display:none!important}
-.in-w{max-width:760px;margin:0 auto;padding:0 22px}
-.bar{position:fixed;top:14px;right:14px;z-index:50;display:flex;gap:8px;align-items:center}
-.lang{display:flex;background:rgba(255,255,255,.9);border-radius:50px;overflow:hidden;box-shadow:0 6px 20px -8px rgba(0,0,0,.35)}
-.lang button{border:0;background:none;font-family:inherit;font-size:12px;font-weight:600;padding:7px 12px;cursor:pointer;color:var(--muted)}
+.w{max-width:1120px;margin:0 auto;padding:0 24px}
+.serif{font-family:'Domine',serif}
+.hl{background:linear-gradient(transparent 58%,rgba(242,229,143,.9) 58%);padding:0 2px}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:60;transition:background .4s,box-shadow .4s}
+nav.solid{background:rgba(251,247,244,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{font-style:italic;font-weight:600;font-size:20px;text-decoration:none;color:#fff;transition:color .4s}
+nav.solid .logo{color:var(--ink)}
+.nr{display:flex;align-items:center;gap:10px}
+.nl{display:flex;gap:22px;margin-right:10px}
+.nl a{color:#fff;text-decoration:none;font-size:13px;font-weight:500;opacity:.9;transition:color .4s}
+nav.solid .nl a{color:var(--ink)}
+.pill{background:var(--maroon);color:#fff;text-decoration:none;font-size:12.5px;font-weight:600;padding:9px 16px;border-radius:50px}
+.lang{display:flex;background:rgba(255,255,255,.92);border-radius:50px;overflow:hidden;box-shadow:0 6px 18px -10px rgba(0,0,0,.4)}
+.lang button{border:0;background:none;font-family:inherit;font-size:12px;font-weight:600;padding:8px 12px;cursor:pointer;color:var(--muted)}
 .lang button.on{background:var(--peri);color:#fff}
-.shop-btn{background:var(--maroon);color:#fff;text-decoration:none;font-size:12px;font-weight:600;padding:8px 16px;border-radius:50px;box-shadow:0 6px 20px -8px rgba(0,0,0,.45)}
-.shop-btn:hover{background:#7d3d3d}
-.dark{position:relative;color:#fff;background-size:cover;background-position:center}
-.dark::before{content:"";position:absolute;inset:0;background:rgba(24,20,23,.5)}
-.dark>*{position:relative}
-.handle{font-size:14px;letter-spacing:.5px;text-transform:uppercase;padding:34px 0 0}
-.head{background-image:url(img/bg1.jpg);padding-bottom:70px}
-.head h1{font-style:italic;font-weight:500;font-size:clamp(42px,8vw,68px);text-align:center;margin:70px 0 4px;letter-spacing:-1px}
-.tag{font-family:'Domine',serif;font-style:italic;text-align:center;font-size:17px;margin-bottom:46px}
-.story-k{font-style:italic;font-weight:600;color:var(--yellow);letter-spacing:.5px;margin-bottom:6px}
-.story p{font-size:16px;line-height:1.9}
-.hl{color:var(--yellow);font-weight:600}
-.story-row{display:flex;gap:30px;align-items:center}
-.story-row img{width:190px;height:250px;object-fit:cover;border-radius:18px;flex:0 0 auto;box-shadow:0 20px 40px -20px rgba(0,0,0,.6)}
-@media(max-width:620px){.story-row{flex-direction:column}.story-row img{width:100%;height:340px}}
-.master{background-image:url(img/bg2.jpg);padding-bottom:70px}
-.master h2{font-size:clamp(40px,7vw,60px);font-weight:500;line-height:1.05;margin:36px 0 10px;letter-spacing:-1px}
-.master .sub{text-transform:uppercase;font-size:15px;line-height:1.5}
-.bundle-img{display:block;width:min(260px,70%);margin:34px auto;border-radius:8px;box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
-.glass{background:rgba(233,233,233,.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.25);border-radius:16px;padding:30px 26px}
-.glass h3{font-size:clamp(22px,3.4vw,28px);font-weight:600;line-height:1.35;margin-bottom:22px}
-.glass .yg{text-transform:uppercase;font-size:14px;margin-bottom:6px}
-.glass li{list-style:none;font-style:italic;font-weight:600;color:var(--yellow);font-size:15px;margin-bottom:6px}
-.btn-m{display:block;text-align:center;background:var(--maroon);color:#fff;text-decoration:none;font-weight:500;font-size:18px;padding:16px;border-radius:6px;margin:26px 0 14px;transition:background .25s}
-.btn-m:hover{background:#7d3d3d}
-.save{font-size:14px;line-height:1.7}
-.all{padding:70px 0 20px}
-.emo{font-size:14px;margin-bottom:4px}
-.all h2{font-style:italic;font-weight:600;color:var(--peri);font-size:clamp(28px,5vw,40px);letter-spacing:-1px;line-height:1.05}
-.all .fp{font-size:15px;margin-bottom:26px}
-.all .it{font-style:italic;margin-bottom:16px}
-.stats{text-align:right;margin:40px 0 50px;font-size:15px;line-height:1.9}
-.card{background:var(--beige);border-radius:4px;padding:38px 30px 34px;margin-bottom:10px}
-.card h3{font-size:20px;font-weight:500;line-height:1.35;margin-bottom:14px}
-.card p{font-size:14.5px;line-height:1.7;margin-bottom:10px}
-.accent{color:var(--maroon)}
-.btn-p{display:block;width:fit-content;margin:22px auto 0;background:var(--peri);color:#fff;text-decoration:none;padding:13px 26px;border-radius:4px;font-size:16px;transition:background .25s}
-.btn-p:hover{background:var(--peri-d)}
-.btn-p.wide{width:100%;text-align:center;font-family:'Domine',serif}
-.flags{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 18px}
-.flag{display:flex;align-items:center;gap:8px;padding:7px 14px 7px 7px;border-radius:50px;border:0;background:#fff;cursor:pointer;font-family:inherit;font-size:14px;color:var(--ink)}
+@media(max-width:820px){.nl{display:none}.logo{font-size:16px}}
+.logo,.pill{white-space:nowrap}
+@media(max-width:420px){.logo{font-size:14.5px}.pill{font-size:11px;padding:8px 11px}.lang button{padding:7px 9px;font-size:11px}.nr{gap:6px}}
+/* hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;color:#fff;overflow:hidden}
+.hero .bg{position:absolute;inset:0;background:url(img/bg1.jpg) center/cover;transform:scale(1.06);animation:slowzoom 18s ease-out forwards}
+@keyframes slowzoom{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 60%,rgba(24,20,23,.25),rgba(24,20,23,.7))}
+.hero .w{position:relative;z-index:1;padding-top:90px;padding-bottom:60px}
+.handle{font-size:12px;letter-spacing:3px;text-transform:uppercase;opacity:.85;margin-bottom:18px}
+.hero h1{font-style:italic;font-weight:500;font-size:clamp(52px,10vw,120px);line-height:.95;letter-spacing:-3px}
+.hero .tag{font-family:'Domine',serif;font-style:italic;font-size:clamp(17px,2.2vw,22px);margin:20px 0 34px;max-width:620px;opacity:.95}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.b{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:14px;padding:15px 26px;border-radius:50px;transition:transform .3s,box-shadow .3s,background .3s;cursor:pointer;border:0;font-family:inherit}
+.b:hover{transform:translateY(-2px)}
+.b.y{background:var(--yellow);color:var(--ink);box-shadow:0 18px 30px -16px rgba(242,229,143,.8)}
+.b.gh{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.45);backdrop-filter:blur(6px)}
+.b.p{background:var(--peri);color:#fff;box-shadow:0 16px 30px -18px rgba(112,139,225,.9)}
+.b.p:hover{background:var(--peri-d)}
+.b.m{background:var(--maroon);color:#fff;box-shadow:0 16px 30px -16px rgba(104,49,49,.8)}
+.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:1;color:#fff;font-size:12px;letter-spacing:2px;opacity:.8;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translate(-50%,6px)}}
+/* story */
+.story{padding:110px 0 90px}
+.story .w{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center}
+.ph{position:relative;justify-self:center;width:min(100%,380px)}
+.ph .arch{border-radius:999px 999px 28px 28px;overflow:hidden;aspect-ratio:3/4;box-shadow:0 50px 90px -45px rgba(24,20,23,.55)}
+.ph .arch img{width:100%;height:100%;object-fit:cover}
+.ph .ring{position:absolute;inset:-14px 14px 14px -14px;border:1.5px solid var(--peri);border-radius:999px 999px 32px 32px;opacity:.5}
+.chip{position:absolute;background:#fff;border-radius:16px;padding:10px 14px;box-shadow:0 20px 40px -22px rgba(24,20,23,.5);font-size:13px;font-weight:600;animation:float 6s ease-in-out infinite}
+.chip small{display:block;font-weight:400;color:var(--muted);font-size:11px}
+.c1{left:-26px;bottom:60px}.c2{right:-22px;top:50px;animation-delay:-3s}
+@keyframes float{50%{transform:translateY(-8px)}}
+.k{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--peri);font-weight:600;margin-bottom:10px}
+.story h2{font-style:italic;font-weight:500;font-size:clamp(36px,5vw,56px);line-height:1.02;letter-spacing:-1.5px;margin-bottom:22px}
+.story p{font-size:17px;color:#3c3438;margin-bottom:14px}
+@media(max-width:860px){.story .w{grid-template-columns:1fr;gap:50px}.ph{width:min(80%,320px)}}
+/* stats */
+.stats{background:var(--ink);color:#fff;padding:46px 0}
+.stats .w{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;text-align:center}
+.st b{display:block;font-family:'Domine',serif;font-size:clamp(26px,3vw,36px);font-weight:500;color:var(--yellow)}
+.st span{font-size:12.5px;opacity:.85;line-height:1.3;display:block}
+@media(max-width:820px){.stats .w{grid-template-columns:repeat(3,1fr);row-gap:26px}}
+/* master */
+.master{position:relative;padding:110px 0;color:#fff;overflow:hidden}
+.master .bg{position:absolute;inset:0;background:url(img/bg2.jpg) center/cover}
+.master::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(24,20,23,.85),rgba(24,20,23,.45))}
+.master .w{position:relative;z-index:1;display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center}
+.cover{position:relative;justify-self:center;width:min(100%,330px)}
+.cover img{width:100%;border-radius:10px;transform:rotate(-4deg);box-shadow:0 60px 80px -40px rgba(0,0,0,.8);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.cover:hover img{transform:rotate(0) scale(1.03)}
+.cover .save{position:absolute;top:-18px;right:-18px;width:92px;height:92px;border-radius:50%;background:var(--yellow);color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700;font-size:22px;line-height:1;transform:rotate(10deg);box-shadow:0 14px 30px -12px rgba(0,0,0,.6)}
+.cover .save small{font-size:10px;letter-spacing:1px;font-weight:600;margin-top:3px}
+.master h2{font-size:clamp(38px,5.4vw,62px);font-weight:500;line-height:1;letter-spacing:-1.5px;margin:6px 0 14px}
+.master .lead{font-size:15px;text-transform:uppercase;letter-spacing:.5px;opacity:.9;margin-bottom:26px}
+.master .lead b{color:var(--yellow)}
+.inc{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px}
+.inc div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:14px;font-size:14px;line-height:1.4;backdrop-filter:blur(6px)}
+.inc div span{display:block;font-size:22px;margin-bottom:6px}
+.pricebar{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.price{font-family:'Domine',serif;font-size:44px;line-height:1}
+.price s{font-size:18px;opacity:.55;margin-left:8px;font-family:'Instrument Sans',sans-serif}
+@media(max-width:860px){.master .w{grid-template-columns:1fr}.inc{grid-template-columns:1fr}}
+/* guides */
+.guides{padding:110px 0 70px}
+.sh{text-align:center;max-width:660px;margin:0 auto 34px}
+.sh h2{font-style:italic;font-weight:600;color:var(--peri);font-size:clamp(34px,5vw,54px);letter-spacing:-1.5px;line-height:1}
+.sh p{color:var(--muted);margin-top:14px}
+.tabs{display:flex;justify-content:center;gap:8px;margin-bottom:34px}
+.tabs button{border:1px solid var(--line);background:#fff;font-family:inherit;font-size:13.5px;font-weight:500;padding:9px 18px;border-radius:50px;cursor:pointer;color:var(--ink)}
+.tabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.g{background:#fff;border-radius:24px;padding:26px 24px 22px;display:flex;flex-direction:column;border:1px solid var(--line);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.g:hover{transform:translateY(-6px);box-shadow:0 34px 60px -38px rgba(24,20,23,.45)}
+.g.hide{display:none}
+.g .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.g .emo{width:52px;height:52px;border-radius:16px;background:var(--beige);display:flex;align-items:center;justify-content:center;font-size:24px}
+.badge{font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 12px;border-radius:50px}
+.badge.free{background:#E6F3E4;color:#3D7A3A}
+.badge.paid{background:var(--peri-l);color:var(--peri-d)}
+.g h3{font-size:18.5px;font-weight:600;line-height:1.3;margin-bottom:10px}
+.g p{font-size:14px;color:var(--muted);line-height:1.6;flex:1;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.g.open p{-webkit-line-clamp:unset}
+.more{background:none;border:0;color:var(--peri-d);font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;align-self:flex-start;margin:8px 0 16px;padding:0}
+.g .act{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:16px;border-top:1px solid var(--line)}
+.g .pr{font-family:'Domine',serif;font-size:24px}
+.g .b{padding:11px 18px;font-size:13px}
+@media(max-width:960px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.grid{grid-template-columns:1fr}}
+/* balkan */
+.balkan{padding:40px 0 100px}
+.bk{background:var(--beige);border-radius:36px;padding:54px 50px;display:grid;grid-template-columns:1fr 1.1fr;gap:44px;align-items:center}
+.bk h2{font-size:clamp(30px,4vw,42px);font-weight:600;line-height:1.08;letter-spacing:-1px;margin:6px 0 14px}
+.bk h2 em{color:var(--maroon)}
+.bk>div>p{color:#4a4146;margin-bottom:22px}
+.flags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.flag{display:flex;align-items:center;gap:8px;padding:7px 14px 7px 7px;border-radius:50px;border:0;background:#fff;cursor:pointer;font-family:inherit;font-size:13.5px;color:var(--ink);transition:all .25s}
 .flag img{width:24px;height:24px;border-radius:50%;object-fit:cover}
-.flag.on{background:var(--peri);color:#fff}
-.cp{display:none}.cp.on{display:block}
-.cp ul{list-style:none;font-size:14.5px}
-.cp li{padding:6px 0;border-bottom:1px solid rgba(24,20,23,.08)}
-.cp li b{font-weight:600}
-.small{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
-.sig{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
-.sp{background:#fff;border-radius:4px;padding:22px 10px;text-align:center;font-size:15px}
-.sp div{font-size:30px;margin-bottom:6px}
-@media(max-width:560px){.sig{grid-template-columns:1fr}}
-.quote{text-align:center;padding:60px 22px 40px;font-family:'Domine',serif;font-style:italic;font-size:clamp(18px,2.6vw,22px);max-width:720px;margin:0 auto}
-.quote span{display:block;font-family:'Instrument Sans',sans-serif;font-style:normal;font-size:13px;letter-spacing:2px;margin-top:12px}
-.news{background-image:url(img/bg3.jpg);padding:70px 0}
-.news h2{font-size:clamp(26px,4.5vw,36px);font-weight:600;margin-bottom:24px}
-.form{display:flex;gap:8px;flex-wrap:wrap;background:rgba(255,255,255,.95);padding:8px;border-radius:8px;max-width:520px}
-.form input{flex:1 1 220px;border:0;font-family:inherit;font-size:16px;padding:12px;outline:none;background:transparent;color:var(--ink)}
-.form button{border:0;background:var(--peri);color:#fff;font-family:inherit;font-size:15px;font-weight:500;padding:12px 22px;border-radius:5px;cursor:pointer}
-.form-msg{margin-top:10px;font-size:14px;min-height:20px}
-.privacy{font-size:12.5px;opacity:.85;margin-top:6px}
-.news p{margin-top:18px;line-height:1.8}
-.why{margin-top:18px;line-height:2}
-.foot{text-align:center;padding:40px 22px 60px}
-.foot .k{font-weight:600;letter-spacing:1px;margin-bottom:14px}
-.soc{display:flex;justify-content:center;gap:12px}
-.soc a{width:40px;height:40px;border-radius:50%;background:#44b1ff;display:flex;align-items:center;justify-content:center;text-decoration:none}
+.flag.on{background:var(--ink);color:#fff}
+.cbox{background:#fff;border-radius:22px;padding:22px 24px}
+.cp{display:none}.cp.on{display:block;animation:fade .45s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.row{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.row:last-child{border-bottom:0}
+.row b{flex:0 0 96px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--maroon);padding-top:3px}
+.tiny{font-size:12px;color:var(--muted);font-style:italic;margin-top:12px}
+@media(max-width:860px){.bk{grid-template-columns:1fr;padding:36px 22px;border-radius:26px}}
+/* products */
+.prods{padding:0 0 100px}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pc{position:relative;border-radius:26px;padding:40px 24px 30px;text-align:center;overflow:hidden;background:linear-gradient(160deg,#fff,var(--peri-l))}
+.pc:nth-child(2){background:linear-gradient(160deg,#fff,var(--beige))}
+.pc:nth-child(3){background:linear-gradient(160deg,#fff,#FBF3CC)}
+.pc .ic{font-size:44px;margin-bottom:12px}
+.pc h3{font-size:19px;font-weight:600}
+.pc span.soon{display:inline-block;margin-top:10px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+@media(max-width:700px){.pgrid{grid-template-columns:1fr}}
+/* quote */
+.quote{position:relative;padding:130px 0;color:#fff;text-align:center;overflow:hidden}
+.quote .bg{position:absolute;inset:0;background:url(img/bg3.jpg) center/cover;background-attachment:fixed}
+.quote::after{content:"";position:absolute;inset:0;background:rgba(24,20,23,.6)}
+.quote .w{position:relative;z-index:1;max-width:820px}
+.quote q{font-family:'Domine',serif;font-style:italic;font-size:clamp(24px,3.6vw,38px);line-height:1.35;quotes:"“" "”"}
+.quote span{display:block;margin-top:18px;font-size:12px;letter-spacing:3px}
+@media(max-width:820px){.quote .bg{background-attachment:scroll}}
+/* newsletter */
+.news{padding:100px 0}
+.nb{background:#fff;border-radius:36px;display:grid;grid-template-columns:1.1fr .9fr;overflow:hidden;box-shadow:0 50px 100px -60px rgba(24,20,23,.45)}
+.nb .l{padding:56px 50px}
+.nb h2{font-size:clamp(28px,3.8vw,40px);font-weight:600;line-height:1.1;letter-spacing:-1px;margin-bottom:14px}
+.nb .l>p{color:var(--muted);margin-bottom:24px}
+.form{display:flex;gap:8px;background:var(--cream);border:1px solid var(--line);padding:6px;border-radius:50px}
+.form input{flex:1;min-width:0;border:0;background:transparent;font-family:inherit;font-size:15px;padding:10px 16px;outline:none;color:var(--ink)}
+.form button{border:0;background:var(--peri);color:#fff;font-family:inherit;font-weight:600;font-size:14px;padding:12px 22px;border-radius:50px;cursor:pointer;white-space:nowrap}
+.fmsg{font-size:14px;margin-top:10px;min-height:20px;color:var(--peri-d)}
+.priv{font-size:12px;color:var(--muted)}
+.agent{margin-top:22px;padding:16px 18px;border-radius:16px;background:var(--peri-l);font-size:14px}
+.nb .r{background:var(--beige);padding:56px 40px}
+.nb .r h3{font-size:15px;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
+.why{list-style:none}
+.why li{display:flex;gap:12px;padding:10px 0;font-size:15px;border-bottom:1px solid rgba(24,20,23,.07)}
+.why li:last-child{border:0}
+@media(max-width:860px){.nb{grid-template-columns:1fr}.nb .l,.nb .r{padding:36px 24px}.form{flex-direction:column;border-radius:20px}.form button{padding:14px}}
+/* footer */
+footer{text-align:center;padding:10px 24px 60px}
+footer p{color:var(--muted);max-width:520px;margin:0 auto 20px}
+.soc{display:flex;justify-content:center;gap:12px;margin-bottom:22px}
+.soc a{width:44px;height:44px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;transition:background .25s,transform .25s}
+.soc a:hover{background:var(--peri);transform:translateY(-3px)}
 .soc svg{width:20px;height:20px;fill:#fff}
+.copy{font-size:12px;color:var(--muted)}
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.hero .bg,.chip,.scroll-hint{animation:none}}
 </style>
 </head>
 <body>
 
-<div class="bar">
-  <a href="#proizvodi" class="shop-btn"><span lang-hr>Moji proizvodi</span><span lang-en>My products</span></a>
-  <div class="lang"><button data-l="hr" class="on">HR</button><button data-l="en">EN</button></div>
-</div>
+<nav id="nav"><div class="w">
+  <a href="#" class="logo">Anja &amp; Life Abroad</a>
+  <div class="nr">
+    <div class="nl"><a href="#vodici"><span lang-hr>Vodiči</span><span lang-en>Guides</span></a><a href="#balkan">Balkan → USA</a><a href="#newsletter">Newsletter</a></div>
+    <a href="#proizvodi" class="pill"><span lang-hr>Moji proizvodi</span><span lang-en>My products</span></a>
+    <div class="lang"><button data-l="hr" class="on">HR</button><button data-l="en">EN</button></div>
+  </div>
+</div></nav>
 
-<section class="dark head"><div class="in-w">
-  <div class="handle">abroadlifewithanja</div>
-  <h1>Anja &amp; Life Abroad</h1>
-  <div class="tag"><span lang-en>Apply, live it fully, and grow from it for the rest of your life.</span><span lang-hr>Prijavi se, proživi je punim plućima i rasti iz nje cijeli život.</span></div>
-  <div class="story-row">
-    <img src="img/img1.jpg" alt="Anja">
-    <div class="story">
-      <div class="story-k"><span lang-en>MY STORY</span><span lang-hr>MOJA PRIČA</span></div>
-      <p lang-en>Hi! My name is Anja and I come from Croatia. In 2023, I spent a year on exchange in the U.S., with no idea just how much it would change my life. Now, I share the experiences, advice, and things I wish someone had told me before I left 🇺🇸💌 I teach you everything from <span class="hl">how to apply</span> to how to make it the <span class="hl">best year of your life</span>!</p>
-      <p lang-hr>Bok! Ja sam Anja i dolazim iz Hrvatske. 2023. sam provela godinu dana na exchangeu u SAD-u, bez pojma koliko će mi to promijeniti život. Sada dijelim iskustva, savjete i sve ono što bih voljela da mi je netko rekao prije odlaska 🇺🇸💌 Učim te svemu, od toga <span class="hl">kako se prijaviti</span> do toga kako da ti to bude <span class="hl">najbolja godina života</span>!</p>
+<header class="hero">
+  <div class="bg"></div>
+  <div class="w">
+    <div class="handle">@abroadlifewithanja</div>
+    <h1>Anja &amp;<br>Life Abroad</h1>
+    <p class="tag"><span lang-en>Apply, live it fully, and grow from it for the rest of your life.</span><span lang-hr>Prijavi se, proživi je punim plućima i rasti iz nje cijeli život.</span></p>
+    <div class="ctas">
+      <a href="#bundle" class="b y">⭐ <span lang-en>The Master Guide</span><span lang-hr>Master vodič</span></a>
+      <a href="#vodici" class="b gh"><span lang-en>Free &amp; paid guides</span><span lang-hr>Besplatni i plaćeni vodiči</span></a>
     </div>
   </div>
-</div></section>
+  <div class="scroll-hint">↓</div>
+</header>
 
-<section class="dark master"><div class="in-w">
-  <div class="handle">abroadlifewithanja</div>
-  <h2>The Exchange Year Master Guide 🇺🇸⭐</h2>
-  <div class="sub"><span lang-en>4 must-have exchange guides in one bundle, made by a former exchange student to <span class="hl">experience more &amp; make memories that last a lifetime!</span></span><span lang-hr>4 obavezna exchange vodiča u jednom paketu, od bivše exchange učenice, da <span class="hl">doživiš više i stvoriš uspomene za cijeli život!</span></span></div>
-  <img class="bundle-img" src="img/bundle.jpg" alt="The Exchange Year Bundle">
-  <div class="glass">
-    <h3><span lang-en>Everything you need to pack, live, remember &amp; use the experience to build your future and design a life you love.</span><span lang-hr>Sve što ti treba da se spakiraš, proživiš, zapamtiš i iskoristiš iskustvo da izgradiš budućnost i život koji voliš.</span></h3>
-    <div class="yg"><span lang-en>You get:</span><span lang-hr>Dobivaš:</span></div>
-    <ul>
-      <li>🧳 The Ultimate Exchange Packing List Nobody Gives You</li>
-      <li>🗽 100 Things To Make Your Exchange Unforgettable</li>
-      <li>✨ Lifetime Lessons &amp; Skills From My Exchange</li>
-      <li>📣 Your Year Abroad: Year In An American High School</li>
-    </ul>
-    <a class="btn-m" href="https://anja-health-exchange.kit.com/products/the-exchange-year-bundle" target="_blank"><span lang-en>Get your bundle for 23.99 €</span><span lang-hr>Uzmi paket za 23.99 €</span></a>
-    <div class="save"><span lang-en>SAVE almost <b>30%</b> by getting <b>THE BUNDLE</b> 🤍<br>↓ purchase <b>individually</b> or check out all my guides below ↓</span><span lang-hr>UŠTEDI gotovo <b>30%</b> uz <b>PAKET</b> 🤍<br>↓ kupi vodiče <b>pojedinačno</b> ili pogledaj sve vodiče ispod ↓</span></div>
+<section class="story"><div class="w">
+  <div class="ph rv">
+    <div class="ring"></div>
+    <div class="arch"><img src="img/img1.jpg" alt="Anja"></div>
+    <div class="chip c1">🇭🇷 → 🇺🇸<small><span lang-en>exchange year</span><span lang-hr>exchange godina</span></small></div>
+    <div class="chip c2">2023 ✈️<small><span lang-en>the year that changed everything</span><span lang-hr>godina koja je sve promijenila</span></small></div>
+  </div>
+  <div class="rv">
+    <div class="k"><span lang-en>My story</span><span lang-hr>Moja priča</span></div>
+    <h2><span lang-en>Hi! I'm Anja, and I come from Croatia.</span><span lang-hr>Bok! Ja sam Anja i dolazim iz Hrvatske.</span></h2>
+    <p><span lang-en>In 2023, I spent a year on exchange in the U.S., with no idea just how much it would change my life. Now, I share the experiences, advice, and things I wish someone had told me before I left 🇺🇸💌</span><span lang-hr>2023. sam provela godinu dana na exchangeu u SAD-u, bez pojma koliko će mi to promijeniti život. Sada dijelim iskustva, savjete i sve ono što bih voljela da mi je netko rekao prije odlaska 🇺🇸💌</span></p>
+    <p><span lang-en>I teach you everything from <span class="hl">how to apply</span> to how to make it the <span class="hl">best year of your life</span>!</span><span lang-hr>Učim te svemu, od toga <span class="hl">kako se prijaviti</span> do toga kako da ti to bude <span class="hl">najbolja godina života</span>!</span></p>
   </div>
 </div></section>
 
-<section class="all"><div class="in-w">
-  <div class="emo">🇺🇸💌⭐️🎀🥤</div>
-  <h2><span lang-en>ALL OF MY BEST EXCHANGE GUIDES</span><span lang-hr>SVI MOJI NAJBOLJI EXCHANGE VODIČI</span></h2>
-  <div class="fp"><span lang-en>free &amp; paid</span><span lang-hr>besplatni i plaćeni</span></div>
-  <p class="it"><span lang-en>These aren't generic exchange guides. They're built from the experiences, mistakes, lessons, and moments I actually lived through :)</span><span lang-hr>Ovo nisu generički exchange vodiči. Nastali su iz iskustava, grešaka, lekcija i trenutaka koje sam stvarno proživjela :)</span></p>
-  <p><span lang-en>I turned everything I learned before, during and after my exchange year into guides to help you feel more prepared, confident, and ready to make the most of yours!</span><span lang-hr>Sve što sam naučila prije, tijekom i nakon exchange godine pretvorila sam u vodiče, da se osjećaš spremnije, samopouzdanije i spremno iskoristiti svoju godinu do kraja!</span></p>
-  <div class="stats"><span lang-en>5+ Free Guides 🇺🇸<br>50+ Exchange Tips ✈️<br>100+ Questions Answered 💌<br>1 Exchange Year, Everything I Learned 🇺🇸<br>∞ Memories to Make 🫶🏻<br>100% Real Exchange Experience 🎓</span><span lang-hr>5+ besplatnih vodiča 🇺🇸<br>50+ exchange savjeta ✈️<br>100+ odgovorenih pitanja 💌<br>1 exchange godina, sve što sam naučila 🇺🇸<br>∞ uspomena za stvoriti 🫶🏻<br>100% stvarno exchange iskustvo 🎓</span></div>
+<div class="stats"><div class="w">
+  <div class="st"><b>5+</b><span lang-en>Free guides 🇺🇸</span><span lang-hr>Besplatnih vodiča 🇺🇸</span></div>
+  <div class="st"><b>50+</b><span lang-en>Exchange tips ✈️</span><span lang-hr>Exchange savjeta ✈️</span></div>
+  <div class="st"><b>100+</b><span lang-en>Questions answered 💌</span><span lang-hr>Odgovorenih pitanja 💌</span></div>
+  <div class="st"><b>1</b><span lang-en>Exchange year, everything I learned</span><span lang-hr>Exchange godina, sve što sam naučila</span></div>
+  <div class="st"><b>∞</b><span lang-en>Memories to make 🫶🏻</span><span lang-hr>Uspomena za stvoriti 🫶🏻</span></div>
+  <div class="st"><b>100%</b><span lang-en>Real exchange experience 🎓</span><span lang-hr>Stvarno exchange iskustvo 🎓</span></div>
+</div></div>
 
-  <div class="card"><h3>Host family: Questions &amp; Convo That Bring You Closer 🏡🤍</h3><p><span lang-en>Essential and meaningful questions as well as the best conversation starters to help you <i>connect</i> with your host family, learn more about each other, and build trust, respect and loyalty.</span><span lang-hr>Važna i smislena pitanja i najbolji načini da započneš razgovor, da se <i>povežeš</i> s host obitelji, bolje upoznate i izgradite povjerenje, poštovanje i odanost.</span></p><a class="btn-p" href="https://anja-health-exchange.kit.com/b3a5ab43fe" target="_blank"><span lang-en>Get your FREE PDF ☆</span><span lang-hr>Preuzmi BESPLATNI PDF ☆</span></a></div>
+<section class="master" id="bundle"><div class="bg"></div><div class="w">
+  <div class="cover rv"><img src="img/bundle.jpg" alt="The Exchange Year Bundle"><div class="save">-30%<small><span lang-en>BUNDLE</span><span lang-hr>PAKET</span></small></div></div>
+  <div class="rv">
+    <div class="k" style="color:var(--yellow)"><span lang-en>Best value</span><span lang-hr>Najbolja vrijednost</span></div>
+    <h2>The Exchange Year Master Guide 🇺🇸⭐</h2>
+    <p class="lead"><span lang-en>4 must-have exchange guides in one bundle, made by a former exchange student to <b>experience more &amp; make memories that last a lifetime!</b></span><span lang-hr>4 obavezna exchange vodiča u jednom paketu, od bivše exchange učenice, da <b>doživiš više i stvoriš uspomene za cijeli život!</b></span></p>
+    <div class="inc">
+      <div><span>🧳</span>The Ultimate Exchange Packing List Nobody Gives You</div>
+      <div><span>🗽</span>100 Things To Make Your Exchange Unforgettable</div>
+      <div><span>✨</span>Lifetime Lessons &amp; Skills From My Exchange</div>
+      <div><span>📣</span>Your Year Abroad: Year In An American High School</div>
+    </div>
+    <div class="pricebar"><div class="price">23.99 €<s>32.96 €</s></div><a href="https://anja-health-exchange.kit.com/products/the-exchange-year-bundle" target="_blank" class="b m"><span lang-en>Get your bundle</span><span lang-hr>Uzmi paket</span> →</a></div>
+  </div>
+</div></section>
 
-  <div class="card"><h3>Host family: 15 Thoughtful &amp; Unique Gift Ideas 🎁🏡💌✨</h3><p><span lang-en>Getting a gift for someone you barely know can be pretty difficult. This guide includes 15 gift ideas they will actually enjoy, use, and remember and it will help you choose something meaningful without overthinking it. From little pieces of home to more personal ideas, these are gifts that will help you show your appreciation and bring a little bit of your culture with you.</span><span lang-hr>Odabrati poklon za nekoga koga jedva poznaješ zna biti teško. U ovom vodiču je 15 ideja za poklone koje će stvarno voljeti, koristiti i pamtiti, da odabereš nešto smisleno bez previše razmišljanja. Od malih komadića doma do osobnijih ideja, to su pokloni kojima pokazuješ zahvalnost i doneseš im djelić svoje kulture.</span></p><a class="btn-p" href="https://anja-health-exchange.kit.com/e698d9a78d" target="_blank"><span lang-en>Get your FREE PDF ☆</span><span lang-hr>Preuzmi BESPLATNI PDF ☆</span></a></div>
+<section class="guides" id="vodici"><div class="w">
+  <div class="sh rv"><div class="k">🇺🇸💌⭐️🎀🥤</div><h2><span lang-en>All of my best exchange guides</span><span lang-hr>Svi moji najbolji exchange vodiči</span></h2><p><span lang-en>These aren't generic exchange guides. They're built from the experiences, mistakes, lessons, and moments I actually lived through :)</span><span lang-hr>Ovo nisu generički exchange vodiči. Nastali su iz iskustava, grešaka, lekcija i trenutaka koje sam stvarno proživjela :)</span></p></div>
+  <div class="tabs rv"><button class="on" data-f="all"><span lang-en>All</span><span lang-hr>Svi</span></button><button data-f="free"><span lang-en>Free</span><span lang-hr>Besplatni</span></button><button data-f="paid"><span lang-en>Paid</span><span lang-hr>Plaćeni</span></button></div>
+  <div class="grid rv">
+    <div class="g" data-t="free"><div class="top"><div class="emo">🏡</div><span class="badge free">FREE</span></div><h3>Host family: Questions &amp; Convo That Bring You Closer 🤍</h3><p><span lang-en>Essential and meaningful questions as well as the best conversation starters to help you connect with your host family, learn more about each other, and build trust, respect and loyalty.</span><span lang-hr>Važna i smislena pitanja i najbolji načini da započneš razgovor, da se povežeš s host obitelji, bolje upoznate i izgradite povjerenje, poštovanje i odanost.</span></p><button class="more"><span lang-en>Read more</span><span lang-hr>Pročitaj više</span></button><div class="act"><span class="pr">0 €</span><a class="b p" href="https://anja-health-exchange.kit.com/b3a5ab43fe" target="_blank"><span lang-en>Get the PDF ☆</span><span lang-hr>Preuzmi PDF ☆</span></a></div></div>
+    <div class="g" data-t="free"><div class="top"><div class="emo">🎁</div><span class="badge free">FREE</span></div><h3>Host family: 15 Thoughtful &amp; Unique Gift Ideas 💌✨</h3><p><span lang-en>Getting a gift for someone you barely know can be pretty difficult. This guide includes 15 gift ideas they will actually enjoy, use, and remember and it will help you choose something meaningful without overthinking it. From little pieces of home to more personal ideas, these are gifts that will help you show your appreciation and bring a little bit of your culture with you.</span><span lang-hr>Odabrati poklon za nekoga koga jedva poznaješ zna biti teško. U ovom vodiču je 15 ideja za poklone koje će stvarno voljeti, koristiti i pamtiti, da odabereš nešto smisleno bez previše razmišljanja. Od malih komadića doma do osobnijih ideja, to su pokloni kojima pokazuješ zahvalnost i doneseš im djelić svoje kulture.</span></p><button class="more"><span lang-en>Read more</span><span lang-hr>Pročitaj više</span></button><div class="act"><span class="pr">0 €</span><a class="b p" href="https://anja-health-exchange.kit.com/e698d9a78d" target="_blank"><span lang-en>Get the PDF ☆</span><span lang-hr>Preuzmi PDF ☆</span></a></div></div>
+    <div class="g" data-t="free"><div class="top"><div class="emo">🚌</div><span class="badge free">FREE · HR/EN</span></div><h3><span lang-en>Exchange Starter Guide 🏈🇺🇸</span><span lang-hr>Početni vodič za razmjenu 🏈🇺🇸</span></h3><p><span lang-en>Thinking about an exchange? This free guide gives you all the first steps and all the basics you need to turn the idea into a plan. In English and Croatian.</span><span lang-hr>Razmišljaš o exchangeu? Ovaj besplatni vodič daje ti sve prve korake i osnove da ideju pretvoriš u plan. Na engleskom i hrvatskom.</span></p><button class="more"><span lang-en>Read more</span><span lang-hr>Pročitaj više</span></button><div class="act"><span class="pr">0 €</span><a class="b p" href="https://anja-health-exchange.kit.com/starterguide" target="_blank"><span lang-en>Get the guide ☆</span><span lang-hr>Preuzmi vodič ☆</span></a></div></div>
+    <div class="g" data-t="paid"><div class="top"><div class="emo">🧳</div><span class="badge paid">PDF</span></div><h3>The Ultimate Exchange Packing List <u>Nobody</u> Gives You ✈️🧴</h3><p><span lang-en>Everything I'd pack if I were going on exchange all over again, based on what I actually used, what I wish I'd brought, and what definitely isn't worth sacrificing your suitcase space for. You get my best and most helpful tips on what to actually bring, what to leave at home, and how to pack smart for your year abroad.</span><span lang-hr>Sve što bih spakirala da idem na exchange ponovno, prema onome što sam stvarno koristila, što bih voljela da sam ponijela i što definitivno ne vrijedi mjesta u koferu. Dobivaš moje najbolje savjete što stvarno ponijeti, što ostaviti doma i kako se pametno spakirati za godinu u inozemstvu.</span></p><button class="more"><span lang-en>Read more</span><span lang-hr>Pročitaj više</span></button><div class="act"><span class="pr">7.99 €</span><a class="b p" href="https://anja-health-exchange.kit.com/products/exchange-packing-guide" target="_blank"><span lang-en>Buy ☆</span><span lang-hr>Kupi ☆</span></a></div></div>
+    <div class="g" data-t="paid"><div class="top"><div class="emo">🌱</div><span class="badge paid">PDF</span></div><h3>Lessons From My Exchange Everyone Should Know: <i>10 Months, A Lifetime of Lessons</i> ✨🤍</h3><p><span lang-en>The lessons, perspectives, realizations and little things I learned from living abroad that reshaped my way of thinking and changed the way I think about identity, myself, life, and the world around me. In this guide you will get knowledge and skills you'll never learn in a classroom. I could have priced this guide much higher because it truly has so much value, but I genuinely want everyone to be able to afford and gain from it.</span><span lang-hr>Lekcije, perspektive, spoznaje i sitnice koje sam naučila živeći u inozemstvu i koje su promijenile moj način razmišljanja o identitetu, sebi, životu i svijetu oko mene. U ovom vodiču dobivaš znanje i vještine koje nikad nećeš naučiti u učionici. Mogla sam ga naplatiti puno više jer stvarno ima veliku vrijednost, ali iskreno želim da si ga svatko može priuštiti.</span></p><button class="more"><span lang-en>Read more</span><span lang-hr>Pročitaj više</span></button><div class="act"><span class="pr">8.99 €</span><a class="b p" href="https://anja-health-exchange.kit.com/products/lifetime-lessons-skills" target="_blank"><span lang-en>Buy ☆</span><span lang-hr>Kupi ☆</span></a></div></div>
+    <div class="g" data-t="paid"><div class="top"><div class="emo">🗽</div><span class="badge paid">PDF</span></div><h3>100 Things To Make Your Exchange <i>Unforgettable</i>: A USA Bucket List Beyond the Clichés 🌴🍔</h3><p><span lang-en>This is not the bucket list you've seen a hundred times, the basic, predictable and cliche bucket list, it's a collection of experiences that will make you laugh, surprise you, challenge you, and help you truly live your American adventure. From iconic American traditions and spontaneous adventures to everyday moments that make living abroad so special, this list will inspire you to step outside your comfort zone, try something new, and create memories you'll remember forever!</span><span lang-hr>Ovo nije bucket lista koju si vidjela sto puta, predvidljiva i otrcana, nego zbirka iskustava koja će te nasmijati, iznenaditi, izazvati i pomoći ti da stvarno proživiš svoju američku avanturu. Od kultnih američkih tradicija i spontanih avantura do svakodnevnih trenutaka, ova lista će te potaknuti da izađeš iz zone komfora i stvoriš uspomene koje ćeš pamtiti zauvijek!</span></p><button class="more"><span lang-en>Read more</span><span lang-hr>Pročitaj više</span></button><div class="act"><span class="pr">5.99 €</span><a class="b p" href="https://anja-health-exchange.kit.com/products/100-things-to-do-on-your-exchange" target="_blank"><span lang-en>Buy ☆</span><span lang-hr>Kupi ☆</span></a></div></div>
+    <div class="g" data-t="paid"><div class="top"><div class="emo">🎒</div><span class="badge paid">PDF</span></div><h3>Your Year Abroad: Year In An American High School 📣⚾</h3><p><span lang-en>Everything about American high schools: your schedule and the school day · classes, credits and choosing · grades and GPA · sports, clubs and afternoons · the social calendar · first week survival tips · making friends and how to fit in · how to use your exchange for a successful future and designing your dream life.</span><span lang-hr>Sve o američkim srednjim školama: raspored i školski dan · predmeti, bodovi i odabir · ocjene i GPA · sport, klubovi i popodneva · društveni kalendar · savjeti za prvi tjedan · kako steći prijatelje i uklopiti se · kako iskoristiti exchange za uspješnu budućnost i život iz snova.</span></p><button class="more"><span lang-en>Read more</span><span lang-hr>Pročitaj više</span></button><div class="act"><span class="pr">9.99 €</span><a class="b p" href="https://anja-health-exchange.kit.com/products/your-year-abroad-year-in-an-america" target="_blank"><span lang-en>Buy ☆</span><span lang-hr>Kupi ☆</span></a></div></div>
+    <div class="g" data-t="free"><div class="top"><div class="emo">🏔️</div><span class="badge free">FREE · HR</span></div><h3>Razmjena s Balkana u SAD: Jednostavan Vodič 🍺🌊</h3><p>Agencije, stipendije, budžet i savjeti za uštedu. Sve na jednom mjestu za učenike s Balkana. Tvoja exchange priča počinje ovdje ✈️🇺🇸</p><button class="more"><span lang-en>Read more</span><span lang-hr>Pročitaj više</span></button><div class="act"><span class="pr">0 €</span><a class="b p" href="https://anja-health-exchange.kit.com/balkanusa" target="_blank">Preuzmi vodič ☆</a></div></div>
+  </div>
+</div></section>
 
-  <div class="card"><h3><span lang-en>Exchange Starter Guide 🚌🏈🇺🇸</span><span lang-hr>Početni vodič za razmjenu 🚌🏈🇺🇸</span></h3><p><span lang-en>Thinking about an exchange? This free guide gives you all the first steps and all the basics you need to turn the idea into a plan. In English and Croatian.</span><span lang-hr>Razmišljaš o exchangeu? Ovaj besplatni vodič daje ti sve prve korake i osnove da ideju pretvoriš u plan. Na engleskom i hrvatskom.</span></p><a class="btn-p" href="https://anja-health-exchange.kit.com/starterguide" target="_blank"><span lang-en>Get your FREE guide ☆</span><span lang-hr>Preuzmi BESPLATNI vodič ☆</span></a></div>
-
-  <div class="card"><h3>The Ultimate Exchange Packing List <u>Nobody</u> Gives You 🧳✈️🧴</h3><p><span lang-en>Everything I'd pack if I were going on exchange all over again, based on what I actually used, what I wish I'd brought, and what definitely isn't worth sacrificing your suitcase space for. You get my best and most helpful tips on what to <u>actually</u> bring, what to leave at home, and how to pack smart for your year abroad.</span><span lang-hr>Sve što bih spakirala da idem na exchange ponovno, prema onome što sam stvarno koristila, što bih voljela da sam ponijela i što definitivno ne vrijedi mjesta u koferu. Dobivaš moje najbolje savjete što <u>stvarno</u> ponijeti, što ostaviti doma i kako se pametno spakirati za godinu u inozemstvu.</span></p><a class="btn-p wide" href="https://anja-health-exchange.kit.com/products/exchange-packing-guide" target="_blank">7.99 € ☆</a></div>
-
-  <div class="card" id="drzave"><h3>Razmjena s <u>Balkana u SAD</u>: Jednostavan Vodič 🏔️🍺🌊</h3><p>Agencije, stipendije, budžet i savjeti za uštedu. Sve na jednom mjestu za učenike s Balkana. <b class="accent"><i>Tvoja exchange priča počinje ovdje</i></b> ✈️🇺🇸</p>
+<section class="balkan" id="balkan"><div class="w"><div class="bk rv">
+  <div>
+    <div class="k" style="color:var(--maroon)">🏔️🍺🌊 Balkan → USA</div>
+    <h2>Razmjena s <em>Balkana u SAD</em></h2>
+    <p>Agencije, stipendije, budžet i savjeti za uštedu. Sve na jednom mjestu za učenike s Balkana. <b><i>Tvoja exchange priča počinje ovdje</i></b> ✈️🇺🇸</p>
+    <a class="b m" href="https://anja-health-exchange.kit.com/balkanusa" target="_blank">Preuzmi besplatni vodič ☆</a>
+  </div>
+  <div>
     <div class="flags">
       <button class="flag on" data-c="hr"><img src="img/hr.png" alt="">Hrvatska</button>
       <button class="flag" data-c="ba"><img src="img/ba.png" alt="">BiH</button>
@@ -153,49 +283,60 @@ body.en [lang-hr],body:not(.en) [lang-en]{display:none!important}
       <button class="flag" data-c="me"><img src="img/me.png" alt="">Crna Gora</button>
       <button class="flag" data-c="mk"><img src="img/mk.png" alt="">S. Makedonija</button>
     </div>
-    <div class="cp on" data-c="hr"><ul><li><b>Besplatno:</b> nema (članica EU-a), samo ljetni Ben Franklin program</li><li><b>Stipendija:</b> ASSIST, UWC</li><li><b>Agencije:</b> BHV, CAS, IntegralEdu, A La Carte, ISEM, Rotary, AFS</li></ul></div>
-    <div class="cp" data-c="ba"><ul><li><b>Besplatno:</b> YES (pauziran 2026./27., vraća se 2027./28.)</li><li><b>Stipendija:</b> ASSIST, UWC</li><li><b>Agencije:</b> AFS, IntegralEdu, ISEM, Rotary</li></ul></div>
-    <div class="cp" data-c="rs"><ul><li><b>Besplatno:</b> FLEX</li><li><b>Stipendija:</b> ASSIST, UWC</li><li><b>Agencije:</b> ISE, Ino, Egida, Via Academica, Integral, Prestige, AFS, Rotary</li></ul></div>
-    <div class="cp" data-c="me"><ul><li><b>Besplatno:</b> FLEX (preko American Councils u Podgorici)</li><li><b>Stipendija:</b> ASSIST, UWC</li><li><b>Agencije:</b> ISEM, Rotary, regionalne agencije</li></ul></div>
-    <div class="cp" data-c="mk"><ul><li><b>Besplatno:</b> YES (pauziran 2026./27., vraća se 2027./28.)</li><li><b>Stipendija:</b> ASSIST, UWC</li><li><b>Agencije:</b> izravno kod američkog sponzora, Rotary</li></ul></div>
-    <div class="small">Programi se mijenjaju svake godine, zato uvijek provjeri na službenim stranicama. Kontakti i detalji su u vodiču.</div>
-    <a class="btn-p" href="https://anja-health-exchange.kit.com/balkanusa" target="_blank">Preuzmi besplatni vodič ☆</a></div>
+    <div class="cbox">
+      <div class="cp on" data-c="hr"><div class="row"><b>Besplatno</b><span>Nema (članica EU-a), samo ljetni Ben Franklin program</span></div><div class="row"><b>Stipendija</b><span>ASSIST, UWC</span></div><div class="row"><b>Agencije</b><span>BHV, CAS, IntegralEdu, A La Carte, ISEM, Rotary, AFS</span></div></div>
+      <div class="cp" data-c="ba"><div class="row"><b>Besplatno</b><span>YES (pauziran 2026./27., vraća se 2027./28.)</span></div><div class="row"><b>Stipendija</b><span>ASSIST, UWC</span></div><div class="row"><b>Agencije</b><span>AFS, IntegralEdu, ISEM, Rotary</span></div></div>
+      <div class="cp" data-c="rs"><div class="row"><b>Besplatno</b><span>FLEX</span></div><div class="row"><b>Stipendija</b><span>ASSIST, UWC</span></div><div class="row"><b>Agencije</b><span>ISE, Ino, Egida, Via Academica, Integral, Prestige, AFS, Rotary</span></div></div>
+      <div class="cp" data-c="me"><div class="row"><b>Besplatno</b><span>FLEX (preko American Councils u Podgorici)</span></div><div class="row"><b>Stipendija</b><span>ASSIST, UWC</span></div><div class="row"><b>Agencije</b><span>ISEM, Rotary, regionalne agencije</span></div></div>
+      <div class="cp" data-c="mk"><div class="row"><b>Besplatno</b><span>YES (pauziran 2026./27., vraća se 2027./28.)</span></div><div class="row"><b>Stipendija</b><span>ASSIST, UWC</span></div><div class="row"><b>Agencije</b><span>Izravno kod američkog sponzora, Rotary</span></div></div>
+      <div class="tiny">Programi se mijenjaju svake godine, zato uvijek provjeri na službenim stranicama. Kontakti i detalji su u vodiču.</div>
+    </div>
+  </div>
+</div></div></section>
 
-  <div class="card"><h3>Lessons From My Exchange Everyone Should Know: <i>10 Months, A Lifetime of Lessons</i> 🌱✨🤍</h3><p class="accent"><span lang-en>The lessons, perspectives, realizations and little things I learned from living abroad that <i>reshaped</i> my way of thinking and changed the way I think about identity, myself, life, and the world around me. In this guide you will get knowledge and skills <b><i>you'll never learn in a classroom.</i></b></span><span lang-hr>Lekcije, perspektive, spoznaje i sitnice koje sam naučila živeći u inozemstvu i koje su <i>promijenile</i> moj način razmišljanja o identitetu, sebi, životu i svijetu oko mene. U ovom vodiču dobivaš znanje i vještine <b><i>koje nikad nećeš naučiti u učionici.</i></b></span></p><p><span lang-en>I could have priced this guide <u>much higher</u> because it truly has so much value, but I genuinely want everyone to be able to afford and gain from it.</span><span lang-hr>Mogla sam ovaj vodič naplatiti <u>puno više</u> jer stvarno ima veliku vrijednost, ali iskreno želim da si ga svatko može priuštiti i imati koristi od njega.</span></p><a class="btn-p wide" href="https://anja-health-exchange.kit.com/products/lifetime-lessons-skills" target="_blank">8.99 € ☆</a></div>
-
-  <div class="card"><h3>100 Things To Make Your Exchange <i>Unforgettable</i>: A USA Bucket List Beyond the Clichés 🇺🇸🗽⭐🌴🍔</h3><p><span lang-en>This is not the bucket list you've seen a hundred times, the basic, predictable and cliche bucket list, it's a collection of experiences that will make you laugh, surprise you, challenge you, and help you truly live your American adventure. Make the most of every moment of your exchange. From iconic American traditions and spontaneous adventures to everyday moments that make living abroad so special, this list will inspire you to step outside your comfort zone, try something new, and create memories you'll remember forever!</span><span lang-hr>Ovo nije bucket lista koju si vidjela sto puta, predvidljiva i otrcana, nego zbirka iskustava koja će te nasmijati, iznenaditi, izazvati i pomoći ti da stvarno proživiš svoju američku avanturu. Od kultnih američkih tradicija i spontanih avantura do svakodnevnih trenutaka koji život u inozemstvu čine posebnim, ova lista će te potaknuti da izađeš iz zone komfora, probaš nešto novo i stvoriš uspomene koje ćeš pamtiti zauvijek!</span></p><a class="btn-p wide" href="https://anja-health-exchange.kit.com/products/100-things-to-do-on-your-exchange" target="_blank">5.99 € ☆</a></div>
-
-  <div class="card"><h3>Your Year Abroad: Year In An American High School 🎒📣⚾</h3><p><b><span lang-en>THIS GUIDE INCLUDES:</span><span lang-hr>OVAJ VODIČ UKLJUČUJE:</span></b></p><p><span lang-en>Everything about American high schools: · Your schedule and the school day · Classes, credits and choosing · Grades and GPA · Sports, clubs and afternoons · The social calendar · First week survival tips · Making friends and how to fit in · How to use your exchange for a successful future and designing your dream life.</span><span lang-hr>Sve o američkim srednjim školama: · Raspored i školski dan · Predmeti, bodovi i odabir · Ocjene i GPA · Sport, klubovi i popodneva · Društveni kalendar · Savjeti za preživljavanje prvog tjedna · Kako steći prijatelje i uklopiti se · Kako iskoristiti exchange za uspješnu budućnost i život iz snova.</span></p><a class="btn-p wide" href="https://anja-health-exchange.kit.com/products/your-year-abroad-year-in-an-america" target="_blank">9.99 € ☆</a></div>
-
-  <div class="card" id="proizvodi"><h3><span lang-en>My signature products ✨ coming soon</span><span lang-hr>Moji signature proizvodi ✨ uskoro</span></h3><p><span lang-en>A few special things I'm creating for exchange students and host families.</span><span lang-hr>Nekoliko posebnih stvari koje stvaram za exchange učenike i host obitelji.</span></p>
-    <div class="sig"><div class="sp"><div>🎁</div><span lang-en>Host family gift</span><span lang-hr>Poklon za host obitelj</span></div><div class="sp"><div>📔</div>Exchange journal</div><div class="sp"><div>🧥</div>Abroad hoodie</div></div>
-    <a class="btn-p" href="#newsletter"><span lang-en>Tell me when it launches ☆</span><span lang-hr>Javi mi kad izađe ☆</span></a></div>
+<section class="prods" id="proizvodi"><div class="w">
+  <div class="sh rv"><div class="k"><span lang-en>Coming soon</span><span lang-hr>Uskoro</span></div><h2><span lang-en>My signature products</span><span lang-hr>Moji signature proizvodi</span></h2><p><span lang-en>A few special things I'm creating for exchange students and host families.</span><span lang-hr>Nekoliko posebnih stvari koje stvaram za exchange učenike i host obitelji.</span></p></div>
+  <div class="pgrid rv">
+    <div class="pc"><div class="ic">🎁</div><h3><span lang-en>Host family gift</span><span lang-hr>Poklon za host obitelj</span></h3><span class="soon"><span lang-en>Coming soon</span><span lang-hr>Uskoro</span></span></div>
+    <div class="pc"><div class="ic">📔</div><h3>Exchange journal</h3><span class="soon"><span lang-en>Coming soon</span><span lang-hr>Uskoro</span></span></div>
+    <div class="pc"><div class="ic">🧥</div><h3>Abroad hoodie</h3><span class="soon"><span lang-en>Coming soon</span><span lang-hr>Uskoro</span></span></div>
+  </div>
+  <div style="text-align:center;margin-top:28px" class="rv"><a href="#newsletter" class="b p"><span lang-en>Tell me when it launches ☆</span><span lang-hr>Javi mi kad izađe ☆</span></a></div>
 </div></section>
 
-<div class="quote">"The real voyage of discovery consists not in seeking new landscapes, but in having new eyes."<span>MARCEL PROUST</span></div>
+<section class="quote"><div class="bg"></div><div class="w rv"><q>The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.</q><span>MARCEL PROUST</span></div></section>
 
-<section class="dark news" id="newsletter"><div class="in-w">
-  <h2><span lang-en>💌 Join the Exchange Life with Anja Newsletter!</span><span lang-hr>💌 Pridruži se Exchange Life with Anja newsletteru!</span></h2>
-  <form class="form" action="https://app.kit.com/forms/9801358/subscriptions" method="post" id="kitform">
-    <input type="email" name="email_address" required aria-label="Email" placeholder="Email">
-    <button type="submit"><span lang-en>Subscribe</span><span lang-hr>Prijavi se</span></button>
-  </form>
-  <div class="form-msg" id="formmsg"></div>
-  <div class="privacy"><span lang-en>We respect your privacy. Unsubscribe at any time.</span><span lang-hr>Poštujemo tvoju privatnost. Odjavi se kad god želiš.</span></div>
-  <p><span lang-en>Dreaming about a high school exchange in the USA or already getting ready for yours? 🇺🇸✨ Subscribe for exchange tips, honest advice, helpful resources, personal stories, and little things I wish I had known before going 💗</span><span lang-hr>Sanjaš o srednjoškolskom exchangeu u SAD-u ili se već spremaš? 🇺🇸✨ Prijavi se za exchange savjete, iskrene preporuke, korisne resurse, osobne priče i sitnice koje bih voljela da sam znala prije odlaska 💗</span></p>
-  <p><span lang-en>And maybe one day, go on exchange with me! I'm exploring the possibility of becoming an exchange agent or starting my own agency in the future so stay tuned. Newsletter subscribers will be among the first to know!</span><span lang-hr>A možda jednog dana i na exchange sa mnom! Istražujem mogućnost da postanem exchange agentica ili pokrenem vlastitu agenciju, zato ostani uz mene. Pretplatnici newslettera saznat će prvi!</span></p>
-  <div class="why"><b><span lang-en>Why subscribe?</span><span lang-hr>Zašto se prijaviti?</span></b><br><span lang-en>✈️ Tips for before &amp; during your exchange<br>🇺🇸 Real talk about high school life in the USA<br>💬 Advice for parents, host families, friends, school &amp; homesickness<br>📩 Personal messages and updates from me<br>✨ Inspiration to make the most of your exchange year</span><span lang-hr>✈️ Savjeti za prije i tijekom exchangea<br>🇺🇸 Iskreno o srednjoškolskom životu u SAD-u<br>💬 Savjeti za roditelje, host obitelji, prijatelje, školu i nostalgiju<br>📩 Osobne poruke i novosti od mene<br>✨ Inspiracija da iskoristiš exchange godinu do kraja</span></div>
-</div></section>
+<section class="news" id="newsletter"><div class="w"><div class="nb rv">
+  <div class="l">
+    <div class="k">💌 Newsletter</div>
+    <h2><span lang-en>Join the Exchange Life with Anja Newsletter!</span><span lang-hr>Pridruži se Exchange Life with Anja newsletteru!</span></h2>
+    <p><span lang-en>Dreaming about a high school exchange in the USA or already getting ready for yours? 🇺🇸✨ Subscribe for exchange tips, honest advice, helpful resources, personal stories, and little things I wish I had known before going 💗</span><span lang-hr>Sanjaš o srednjoškolskom exchangeu u SAD-u ili se već spremaš? 🇺🇸✨ Prijavi se za exchange savjete, iskrene preporuke, korisne resurse, osobne priče i sitnice koje bih voljela da sam znala prije odlaska 💗</span></p>
+    <form class="form" action="https://app.kit.com/forms/9801358/subscriptions" method="post" id="kitform"><input type="email" name="email_address" required aria-label="Email" placeholder="tvoj@email.com"><button type="submit"><span lang-en>Subscribe</span><span lang-hr>Prijavi se</span></button></form>
+    <div class="fmsg" id="fmsg"></div>
+    <div class="priv"><span lang-en>We respect your privacy. Unsubscribe at any time.</span><span lang-hr>Poštujemo tvoju privatnost. Odjavi se kad god želiš.</span></div>
+    <div class="agent"><span lang-en>✨ And maybe one day, go on exchange with me! I'm exploring the possibility of becoming an exchange agent or starting my own agency, so stay tuned. Newsletter subscribers will be among the first to know!</span><span lang-hr>✨ A možda jednog dana i na exchange sa mnom! Istražujem mogućnost da postanem exchange agentica ili pokrenem vlastitu agenciju, zato ostani uz mene. Pretplatnici newslettera saznat će prvi!</span></div>
+  </div>
+  <div class="r">
+    <h3><span lang-en>Why subscribe?</span><span lang-hr>Zašto se prijaviti?</span></h3>
+    <ul class="why">
+      <li>✈️ <span><span lang-en>Tips for before &amp; during your exchange</span><span lang-hr>Savjeti za prije i tijekom exchangea</span></span></li>
+      <li>🇺🇸 <span><span lang-en>Real talk about high school life in the USA</span><span lang-hr>Iskreno o srednjoškolskom životu u SAD-u</span></span></li>
+      <li>💬 <span><span lang-en>Advice for parents, host families, friends, school &amp; homesickness</span><span lang-hr>Savjeti za roditelje, host obitelji, prijatelje, školu i nostalgiju</span></span></li>
+      <li>📩 <span><span lang-en>Personal messages and updates from me</span><span lang-hr>Osobne poruke i novosti od mene</span></span></li>
+      <li>✨ <span><span lang-en>Inspiration to make the most of your exchange year</span><span lang-hr>Inspiracija da iskoristiš exchange godinu do kraja</span></span></li>
+    </ul>
+  </div>
+</div></div></section>
 
-<div class="foot">
-  <p style="margin-bottom:22px"><span lang-en>I hope my guides will truly help and if you have any more questions you can contact me through my socials or email :)</span><span lang-hr>Nadam se da će ti moji vodiči stvarno pomoći, a ako imaš još pitanja, javi mi se na društvenim mrežama ili emailom :)</span></p>
-  <div class="k"><span lang-en>MY SOCIALS</span><span lang-hr>MOJE MREŽE</span></div>
+<footer>
+  <p><span lang-en>I hope my guides will truly help and if you have any more questions you can contact me through my socials or email :)</span><span lang-hr>Nadam se da će ti moji vodiči stvarno pomoći, a ako imaš još pitanja, javi mi se na društvenim mrežama ili emailom :)</span></p>
   <div class="soc">
     <a href="https://www.instagram.com/anjagregoran/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7.3A4.7 4.7 0 1 0 16.7 12 4.7 4.7 0 0 0 12 7.3zm0 7.8a3.1 3.1 0 1 1 3.1-3.1 3.1 3.1 0 0 1-3.1 3.1zM17 5.9a1.1 1.1 0 1 0 1.1 1.1A1.1 1.1 0 0 0 17 5.9zM12 3.6c2.7 0 3 0 4.1.1a5.6 5.6 0 0 1 1.9.3 3.3 3.3 0 0 1 1.9 1.9 5.6 5.6 0 0 1 .3 1.9c.1 1.1.1 1.4.1 4.1s0 3-.1 4.1a5.6 5.6 0 0 1-.3 1.9 3.3 3.3 0 0 1-1.9 1.9 5.6 5.6 0 0 1-1.9.3c-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1a5.6 5.6 0 0 1-1.9-.3 3.3 3.3 0 0 1-1.9-1.9 5.6 5.6 0 0 1-.3-1.9C3.6 15 3.6 14.7 3.6 12s0-3 .1-4.1A5.6 5.6 0 0 1 4 6a3.3 3.3 0 0 1 1.9-1.9 5.6 5.6 0 0 1 1.9-.3C9 3.6 9.3 3.6 12 3.6M12 2C9.3 2 8.9 2 7.9 2.1a7.3 7.3 0 0 0-2.4.5 4.9 4.9 0 0 0-2.9 2.9 7.3 7.3 0 0 0-.5 2.4C2 8.9 2 9.3 2 12s0 3.1.1 4.1a7.3 7.3 0 0 0 .5 2.4 4.9 4.9 0 0 0 2.9 2.9 7.3 7.3 0 0 0 2.4.5c1 .1 1.4.1 4.1.1s3.1 0 4.1-.1a7.3 7.3 0 0 0 2.4-.5 4.9 4.9 0 0 0 2.9-2.9 7.3 7.3 0 0 0 .5-2.4c.1-1 .1-1.4.1-4.1s0-3.1-.1-4.1a7.3 7.3 0 0 0-.5-2.4 4.9 4.9 0 0 0-2.9-2.9 7.3 7.3 0 0 0-2.4-.5C15.1 2 14.7 2 12 2z"/></svg></a>
     <a href="https://www.tiktok.com/@abroadlifewithanja" target="_blank" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6 2.5 2.5 0 0 1 .8.1V9.7a5.8 5.8 0 0 0-.8-.1 5.7 5.7 0 1 0 5.7 5.7V9a7.4 7.4 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg></a>
     <a href="mailto:anja.gregoran1@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.3 6.8v.1L12 13l7.7-6.1v-.1z"/></svg></a>
   </div>
-</div>
+  <div class="copy">© Anja &amp; Life Abroad · @abroadlifewithanja</div>
+</footer>
 
 <script>
 (function(){
@@ -203,14 +344,15 @@ body.en [lang-hr],body:not(.en) [lang-en]{display:none!important}
  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.l)})});
  var saved=null;try{saved=localStorage.getItem('awa-lang')}catch(e){}
  setLang(saved||'hr');
+ var nav=document.getElementById('nav');function ns(){nav.classList.toggle('solid',scrollY>40)}addEventListener('scroll',ns,{passive:true});ns();
+ document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){var f=b.dataset.f;document.querySelectorAll('.tabs button').forEach(function(x){x.classList.toggle('on',x===b)});document.querySelectorAll('.g').forEach(function(g){g.classList.toggle('hide',f!=='all'&&g.dataset.t!==f)})})});
+ document.querySelectorAll('.more').forEach(function(m){var g=m.closest('.g'),p=g.querySelector('p');if(p.scrollHeight<=p.clientHeight+2){m.style.visibility='hidden'}m.addEventListener('click',function(){g.classList.toggle('open')})});
  document.querySelectorAll('.flag').forEach(function(f){f.addEventListener('click',function(){var c=f.dataset.c;document.querySelectorAll('.flag').forEach(function(x){x.classList.toggle('on',x===f)});document.querySelectorAll('.cp').forEach(function(p){p.classList.toggle('on',p.dataset.c===c)})})});
- var form=document.getElementById('kitform'),msg=document.getElementById('formmsg');
- form.addEventListener('submit',function(e){
-  e.preventDefault();var en=document.body.classList.contains('en');
-  fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}}).then(function(r){
-   msg.textContent=r.ok?(en?'Success! Now check your email to confirm your subscription (and your spam folder).':'Uspjeh! Provjeri email i potvrdi prijavu (pogledaj i spam).'):(en?'Something went wrong, please try again.':'Nešto nije u redu, pokušaj ponovno.');
-   if(r.ok)form.reset();
-  }).catch(function(){form.submit()});
+ var els=document.querySelectorAll('.rv');
+ if('IntersectionObserver' in window){var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});els.forEach(function(e){io.observe(e)})}else els.forEach(function(e){e.classList.add('in')});
+ var form=document.getElementById('kitform'),msg=document.getElementById('fmsg');
+ form.addEventListener('submit',function(e){e.preventDefault();var en=document.body.classList.contains('en');
+  fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}}).then(function(r){msg.textContent=r.ok?(en?'Success! Now check your email to confirm your subscription (and your spam folder).':'Uspjeh! Provjeri email i potvrdi prijavu (pogledaj i spam).'):(en?'Something went wrong, please try again.':'Nešto nije u redu, pokušaj ponovno.');if(r.ok)form.reset()}).catch(function(){form.submit()});
  });
 })();
 </script>
