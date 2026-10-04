@@ -341,6 +341,36 @@ nav{background:rgba(250,246,239,.85)}
 .pc:hover .md.lux svg{transform:translateY(-3px) rotate(-3deg)}
 .pc{padding-top:44px}
 
+/* route */
+.route{padding:60px 0 50px}
+.map{position:relative;height:250px;max-width:1000px;margin:0 auto 10px}
+.rpath{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.rpath path{fill:none;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.bgp{stroke:rgba(112,139,225,.18);stroke-width:8}
+.fgp{stroke:#708BE1;stroke-width:1.8;stroke-dasharray:2 9;animation:march 1.6s linear infinite}
+@keyframes march{to{stroke-dashoffset:-22}}
+.xm{position:absolute;right:0;top:50%;color:#683131;font-size:14px}
+.rs{position:absolute;transform:translate(-50%,-30px);width:120px;background:none;border:0;cursor:pointer;font-family:inherit;text-align:center;padding:0}
+.rn{position:relative;display:flex;align-items:center;justify-content:center;width:60px;height:60px;margin:0 auto 10px;border-radius:50%;background:#FFFDF8;border:1.5px dashed rgba(112,139,225,.6);box-shadow:0 12px 26px -16px rgba(27,35,54,.5);transition:all .45s cubic-bezier(.2,.8,.2,1)}
+.rn svg{width:24px;height:24px;stroke:#1B2336;stroke-width:1.4;transition:stroke .3s}
+.rn i{position:absolute;top:-6px;right:-6px;width:22px;height:22px;border-radius:50%;background:#fff;border:1px solid rgba(112,139,225,.5);font-style:normal;font-family:'Playfair Display',serif;font-size:12px;color:#1B2336;display:flex;align-items:center;justify-content:center}
+.rl{display:block;font-family:'Playfair Display',serif;font-style:italic;font-size:16px;color:#2C3550;line-height:1.2}
+.rs:hover .rn{transform:translateY(-4px) rotate(-4deg)}
+.rs.on .rn{background:linear-gradient(150deg,#708BE1,#1B2336);border:0;transform:scale(1.12);box-shadow:0 0 0 7px rgba(112,139,225,.18),0 18px 34px -14px rgba(27,35,54,.7)}
+.rs.on .rn svg{stroke:#fff}
+.rpanel{max-width:760px;margin:0 auto}
+.rp{display:none;background:rgba(255,255,255,.85);border:1px solid rgba(27,35,54,.07);border-radius:28px;padding:34px 36px;box-shadow:0 40px 80px -56px rgba(27,35,54,.5)}
+.rp.on{display:block;animation:fade .5s ease}
+.rpk{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#708BE1;margin-bottom:6px}
+.rp h3{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:clamp(26px,3vw,34px);color:#1B2336;margin-bottom:10px}
+.rp p{color:#5A6078;font-size:15px;margin-bottom:18px}
+.rlinks{display:flex;flex-wrap:wrap;gap:10px}
+.rlink{display:flex;align-items:center;gap:12px;text-decoration:none;background:#F0E5E1;border-radius:50px;padding:10px 12px 10px 18px;font-size:13.5px;color:#1B2336;transition:transform .25s,background .25s}
+.rlink:hover{transform:translateY(-2px);background:#E8ECFB}
+.rlink em{font-style:normal;font-family:'Playfair Display',serif;font-size:13px;background:#1B2336;color:#FAF6EF;padding:4px 10px;border-radius:50px}
+@media(max-width:700px){.map{height:230px}.rs{width:70px}.rl{font-size:12px}.rn{width:46px;height:46px}.rn svg{width:19px;height:19px}.rs{transform:translate(-50%,-23px)}.rp{padding:26px 20px}}
+@media(prefers-reduced-motion:reduce){.fgp{animation:none}}
+
 </style>
 </head>
 <body>
@@ -349,7 +379,7 @@ nav{background:rgba(250,246,239,.85)}
 <nav><div class="w">
   <a href="#" class="logo">Anja &amp; Life <em>Abroad</em></a>
   <div class="nr">
-    <div class="nl"><a href="#bundle">Bundle</a><a href="#vodici"><span lang-en>Guides</span><span lang-hr>Vodiči</span></a><a href="#balkan">Balkan → USA</a><a href="#newsletter">Newsletter</a></div>
+    <div class="nl"><a href="#put"><span lang-hr>Put</span><span lang-en>Path</span></a><a href="#bundle">Bundle</a><a href="#vodici"><span lang-en>Guides</span><span lang-hr>Vodiči</span></a><a href="#balkan">Balkan → USA</a><a href="#newsletter">Newsletter</a></div>
     <a href="#proizvodi" class="pill"><span lang-hr>Moji proizvodi</span><span lang-en>My products</span></a>
     <div class="lang"><button data-l="hr" class="on">HR</button><button data-l="en">EN</button></div>
   </div>
@@ -370,7 +400,7 @@ nav{background:rgba(250,246,239,.85)}
   </div>
   <div class="ph">
     <div class="frame"></div>
-    <div class="arch"><img src="img/anja-hero.jpg" alt="Anja"></div>
+    <div class="arch"><img src="img/anja-hero-usa.jpg" alt="Anja"></div>
     <div class="fb f1"><b>Exchange year</b><span lang-en>in the USA</span><span lang-hr>u SAD-u</span></div>
     <div class="fb f2"><b>100%</b><span lang-en>real experience</span><span lang-hr>stvarno iskustvo</span></div>
   </div>
@@ -395,6 +425,17 @@ nav{background:rgba(250,246,239,.85)}
     <p class="desk"><span lang-en>For the best experience, I recommend viewing this on a desktop or laptop!</span><span lang-hr>Za najbolji doživljaj preporučujem da ovo pogledaš na računalu ili laptopu!</span></p>
     <div class="sig">Anja</div>
   </div>
+</div></section>
+
+
+<section class="route" id="put"><div class="w">
+  <div class="sh rv"><div class="kicker kc"><i></i><span lang-hr>Korak po korak</span><span lang-en>Step by step</span><i></i></div><h2><span lang-hr>Tvoj put do <em>exchangea</em></span><span lang-en>Your path to <em>exchange</em></span></h2><p><span lang-hr>Klikni na svaki korak i pogledaj što te čeka.</span><span lang-en>Click each step to see what's ahead.</span></p></div>
+  <div class="map rv">
+    <svg class="rpath" viewBox="0 0 1000 220" preserveAspectRatio="none" aria-hidden="true"><path class="bgp" d="M80 136 C 180 40, 220 60, 290 84 S 420 150, 500 132 S 640 40, 710 79 S 860 160, 920 128"/><path class="fgp" d="M80 136 C 180 40, 220 60, 290 84 S 420 150, 500 132 S 640 40, 710 79 S 860 160, 920 128"/></svg>
+    <span class="xm">✦</span>
+    <button class="rs on" data-i="0" style="left:8%;top:62%"><span class="rn"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg><i>1</i></span><span class="rl"><span lang-hr>Saznaj opcije</span><span lang-en>Explore your options</span></span></button><button class="rs" data-i="1" style="left:29%;top:38%"><span class="rn"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3.5h7l4 4V20a.5.5 0 0 1-.5.5h-10A.5.5 0 0 1 7 20z"/><path d="M14 3.5V8h4M10 12h5M10 15h5M10 18h3"/></svg><i>2</i></span><span class="rl"><span lang-hr>Prijavi se</span><span lang-en>Apply</span></span></button><button class="rs" data-i="2" style="left:50%;top:60%"><span class="rn"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="8" width="15" height="12" rx="2"/><path d="M9 8V5.5h6V8M9 12v4M15 12v4"/></svg><i>3</i></span><span class="rl"><span lang-hr>Pripremi se</span><span lang-en>Get ready</span></span></button><button class="rs" data-i="3" style="left:71%;top:36%"><span class="rn"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.6 4.9.3-3.8 3.1 1.3 4.8L12 13.1l-4.2 2.7 1.3-4.8-3.8-3.1 4.9-.3z"/></svg><i>4</i></span><span class="rl"><span lang-hr>Proživi godinu</span><span lang-en>Live your year</span></span></button><button class="rs" data-i="4" style="left:92%;top:58%"><span class="rn"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-8M12 13c0-4 3-6.5 7-6.5 0 4-3 6.5-7 6.5zM12 15c0-3-2.5-5.5-6-5.5 0 3 2.5 5.5 6 5.5z"/></svg><i>5</i></span><span class="rl"><span lang-hr>Rasti iz iskustva</span><span lang-en>Grow from it</span></span></button>
+  </div>
+  <div class="rpanel rv"><div class="rp on" data-i="0"><div class="rpk"><span lang-hr>Korak 1</span><span lang-en>Step 1</span></div><h3><span lang-hr>Saznaj opcije</span><span lang-en>Explore your options</span></h3><p><span lang-hr>Prvi korak je shvatiti koje opcije uopće postoje: besplatni programi, stipendije ili agencije. Kreni od osnova i pretvori ideju u plan.</span><span lang-en>The first step is understanding which options exist at all: free programs, scholarships or agencies. Start with the basics and turn the idea into a plan.</span></p><div class="rlinks"><a class="rlink" href="https://anja-health-exchange.kit.com/starterguide" target="_blank"><span><span lang-hr>Početni vodič za razmjenu</span><span lang-en>Starter guide for exchange</span></span><em>0 €</em></a></div></div><div class="rp" data-i="1"><div class="rpk"><span lang-hr>Korak 2</span><span lang-en>Step 2</span></div><h3><span lang-hr>Prijavi se</span><span lang-en>Apply</span></h3><p><span lang-hr>Odaberi put koji ti odgovara i prijavi se na vrijeme. Agencije, stipendije, rokovi i budžet za učenike s Balkana su na jednom mjestu.</span><span lang-en>Choose the route that fits you and apply on time. Agencies, scholarships, deadlines and budget for Balkan students are all in one place.</span></p><div class="rlinks"><a class="rlink" href="https://anja-health-exchange.kit.com/balkanusa" target="_blank"><span><span lang-hr>Razmjena s Balkana u SAD</span><span lang-en>Balkans to USA guide</span></span><em>0 €</em></a></div></div><div class="rp" data-i="2"><div class="rpk"><span lang-hr>Korak 3</span><span lang-en>Step 3</span></div><h3><span lang-hr>Pripremi se</span><span lang-en>Get ready</span></h3><p><span lang-hr>Spakiraj pametno i upoznaj svoju host obitelj prije nego što stigneš. Pitanja za razgovor i ideje za poklon olakšat će prve dane.</span><span lang-en>Pack smart and get to know your host family before you arrive. Conversation questions and gift ideas make the first days easier.</span></p><div class="rlinks"><a class="rlink" href="https://anja-health-exchange.kit.com/products/exchange-packing-guide" target="_blank"><span><span lang-hr>Packing List</span><span lang-en>Packing List</span></span><em>7.99 €</em></a><a class="rlink" href="https://anja-health-exchange.kit.com/b3a5ab43fe" target="_blank"><span><span lang-hr>Host family: pitanja</span><span lang-en>Host family: questions</span></span><em>0 €</em></a><a class="rlink" href="https://anja-health-exchange.kit.com/e698d9a78d" target="_blank"><span><span lang-hr>Host family: pokloni</span><span lang-en>Host family: gifts</span></span><em>0 €</em></a></div></div><div class="rp" data-i="3"><div class="rpk"><span lang-hr>Korak 4</span><span lang-en>Step 4</span></div><h3><span lang-hr>Proživi godinu</span><span lang-en>Live your year</span></h3><p><span lang-hr>Američka srednja škola, prijateljstva, sport i sve ono što exchange čini nezaboravnim. Iskoristi svaki trenutak.</span><span lang-en>American high school, friendships, sports and everything that makes an exchange unforgettable. Make the most of every moment.</span></p><div class="rlinks"><a class="rlink" href="https://anja-health-exchange.kit.com/products/your-year-abroad-year-in-an-america" target="_blank"><span><span lang-hr>Your Year Abroad</span><span lang-en>Your Year Abroad</span></span><em>9.99 €</em></a><a class="rlink" href="https://anja-health-exchange.kit.com/products/100-things-to-do-on-your-exchange" target="_blank"><span><span lang-hr>100 Things</span><span lang-en>100 Things</span></span><em>5.99 €</em></a></div></div><div class="rp" data-i="4"><div class="rpk"><span lang-hr>Korak 5</span><span lang-en>Step 5</span></div><h3><span lang-hr>Rasti iz iskustva</span><span lang-en>Grow from it</span></h3><p><span lang-hr>Exchange ne završava kad se vratiš kući. Lekcije i vještine koje poneseš oblikuju tvoju budućnost i život koji želiš.</span><span lang-en>An exchange doesn't end when you come home. The lessons and skills you bring back shape your future and the life you want.</span></p><div class="rlinks"><a class="rlink" href="https://anja-health-exchange.kit.com/products/lifetime-lessons-skills" target="_blank"><span><span lang-hr>Lessons From My Exchange</span><span lang-en>Lessons From My Exchange</span></span><em>8.99 €</em></a></div></div></div>
 </div></section>
 
 <section class="bundle" id="bundle"><div class="w"><div class="bx rv">
@@ -513,6 +554,8 @@ nav{background:rgba(250,246,239,.85)}
  document.querySelectorAll('.more').forEach(function(m){var g=m.closest('.g');var ps=g.querySelectorAll('p:not(.ih)');var p=ps[ps.length-1];if(p.scrollHeight<=p.clientHeight+2)m.style.visibility='hidden';m.addEventListener('click',function(){g.classList.toggle('open')})});
  document.querySelectorAll('.flag').forEach(function(f){f.addEventListener('click',function(){var c=f.dataset.c;document.querySelectorAll('.flag').forEach(function(x){x.classList.toggle('on',x===f)});document.querySelectorAll('.cp').forEach(function(p){p.classList.toggle('on',p.dataset.c===c)})})});
  if(matchMedia('(hover:hover)').matches){var cv=document.querySelector('.cover');if(cv){var im=cv.querySelector('img');cv.addEventListener('mousemove',function(e){var r=cv.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;im.style.transform='perspective(800px) rotateY('+(x*12)+'deg) rotateX('+(-y*8)+'deg)'});cv.addEventListener('mouseleave',function(){im.style.transform=''})}}
+
+ document.querySelectorAll('.rs').forEach(function(b){b.addEventListener('click',function(){var i=b.dataset.i;document.querySelectorAll('.rs').forEach(function(x){x.classList.toggle('on',x===b)});document.querySelectorAll('.rp').forEach(function(p){p.classList.toggle('on',p.dataset.i===i)})})});
  var els=document.querySelectorAll('.rv');
  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});els.forEach(function(e){io.observe(e)})}else els.forEach(function(e){e.classList.add('in')});
  var form=document.getElementById('kitform'),msg=document.getElementById('fmsg');
