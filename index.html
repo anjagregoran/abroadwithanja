@@ -497,6 +497,12 @@ nav{background:rgba(250,246,239,.85)}
 .sp .ed-ribbon{margin-top:44px!important}
 @media(max-width:900px){.ed-hero.sp{text-align:center;padding-top:76px}.sp-grid{grid-template-columns:1fr;gap:36px}.sp .ed-top{justify-content:center}.sp .ed-top .ed-rule{display:none}.sp .ed-tag{margin:0 auto 26px!important}.sp .ed-cta{justify-content:center}.sp-photo{max-width:420px;margin:0 auto;width:100%}.sp h1{font-size:clamp(46px,13vw,76px)!important}}
 
+/* hero main button: same outline style, purple accent */
+.btn.dark.main{background:rgba(117,138,219,.08)!important;color:#758ADB!important;border:1.5px solid #758ADB!important;box-shadow:none!important;font-weight:600!important}
+.btn.dark.main .arr{font-style:normal;font-size:14px;letter-spacing:0;margin-left:2px;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.btn.dark.main:hover{background:#758ADB!important;color:#fff!important;border-color:#758ADB!important;box-shadow:0 16px 30px -18px rgba(117,138,219,.9)!important}
+.btn.dark.main:hover .arr{transform:translateX(5px)}
+
 </style>
 </head>
 <body>
@@ -511,7 +517,7 @@ nav{background:rgba(250,246,239,.85)}
       <div class="ed-top"><span>@abroadlifewithanja</span><span class="ed-rule"></span></div>
       <h1>Abroad Life <em>with Anja</em></h1>
       <p class="ed-tag"><span lang-en>Apply, live it fully, and grow from it for the rest of your life.</span><span lang-hr>Prijavi se, proživi svaki trenutak i izrasti iz tog iskustva cijeli život.</span></p>
-      <div class="ed-cta"><a href="#put" class="btn dark"><span lang-hr>Kako ići na razmjenu</span><span lang-en>How to go on exchange</span></a><a href="#prica" class="btn light"><span lang-hr>Moja priča</span><span lang-en>My story</span></a><a href="#proizvodi" class="btn light">Store</a><a href="#newsletter" class="btn light">Newsletter</a></div>
+      <div class="ed-cta"><a href="#put" class="btn dark main"><span lang-hr>Kako ići na razmjenu</span><span lang-en>How to go on exchange</span><i class="arr">→</i></a><a href="#prica" class="btn light"><span lang-hr>Moja priča</span><span lang-en>My story</span></a><a href="#proizvodi" class="btn light">Store</a><a href="#newsletter" class="btn light">Newsletter</a></div>
     </div>
     <figure class="sp-photo"><img src="img/anja-hero.jpg" alt="Anja"></figure>
   </div>
