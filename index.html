@@ -471,6 +471,19 @@ nav{background:rgba(250,246,239,.85)}
 @media(max-width:560px){.ed-cta .btn{padding:13px 20px}}
 .logo-float{position:absolute;top:16px;left:24px;z-index:60;font-size:21px!important}
 @media(max-width:420px){.logo-float{font-size:17px!important;left:16px;top:18px}}
+/* premium buttons, no shine */
+.btn.dark::after{display:none!important;animation:none!important}
+.btn{padding:16px 32px!important;font-size:10.5px!important;letter-spacing:3px!important;font-weight:500!important;border-radius:50px;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,background .35s,color .35s,border-color .35s!important}
+.btn.sm{padding:11px 18px!important;font-size:10px!important;letter-spacing:1.8px!important}
+.btn.dark{background:#758ADB!important;color:#fff!important;border:1px solid #758ADB!important;box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 14px 30px -16px rgba(117,138,219,.9)!important}
+.btn.dark:hover{background:#1B2336!important;border-color:#1B2336!important;box-shadow:0 18px 34px -18px rgba(27,35,54,.8)!important;transform:translateY(-2px)}
+.btn.light{background:transparent!important;color:#1B2336!important;border:1px solid rgba(27,35,54,.28)!important;box-shadow:none!important}
+.btn.light:hover{background:#1B2336!important;color:#FAF6EF!important;border-color:#1B2336!important;transform:translateY(-2px)}
+.ed-cta{gap:10px}
+.ed-cta .btn.dark::before{content:"";display:none}
+.ed-tag{max-width:none!important}
+@media(min-width:900px){.ed-tag{white-space:nowrap}}
+
 </style>
 </head>
 <body>
@@ -484,7 +497,7 @@ nav{background:rgba(250,246,239,.85)}
     <div class="ed-top"><span class="ed-rule"></span><span>@abroadlifewithanja</span><span class="ed-rule"></span></div>
     <h1>Anja <span class="amp">&amp;</span> Life <em>Abroad</em></h1>
     <p class="ed-tag"><span lang-en>Apply, live it fully, and grow from it for the rest of your life.</span><span lang-hr>Prijavi se, proživi svaki trenutak i rasti iz tog iskustva cijeli život.</span></p>
-    <div class="ed-cta"><a href="#put" class="btn dark"><span lang-hr>Kako ići na razmjenu</span><span lang-en>How to go on exchange</span></a><a href="#prica" class="btn light"><span lang-hr>Moja priča</span><span lang-en>My story</span></a><a href="#proizvodi" class="btn light"><span lang-hr>Proizvodi</span><span lang-en>Products</span></a><a href="#newsletter" class="btn light">Newsletter</a></div>
+    <div class="ed-cta"><a href="#put" class="btn dark"><span lang-hr>Kako ići na razmjenu</span><span lang-en>How to go on exchange</span></a><a href="#prica" class="btn light"><span lang-hr>Moja priča</span><span lang-en>My story</span></a><a href="#proizvodi" class="btn light">Store</a><a href="#newsletter" class="btn light">Newsletter</a></div>
   </div>
   <div class="w">
     <figure class="ed-photo">
