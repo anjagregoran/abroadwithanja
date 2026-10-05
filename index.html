@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Abroad Life with Anja</title>
 <meta name="description" content="Exchange guides by a former exchange student: how to apply, how to pack and how to make it the best year of your life.">
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Domine:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Domine:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&display=swap" rel="stylesheet">
 <link rel="icon" href="favicon.svg?v=3" type="image/svg+xml">
 <link rel="icon" href="favicon-64.png?v=3" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3">
@@ -502,6 +502,18 @@ nav{background:rgba(250,246,239,.85)}
 .btn.dark.main .arr{font-style:normal;font-size:14px;letter-spacing:0;margin-left:2px;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
 .btn.dark.main:hover{background:#758ADB!important;color:#fff!important;border-color:#758ADB!important;box-shadow:0 16px 30px -18px rgba(117,138,219,.9)!important}
 .btn.dark.main:hover .arr{transform:translateX(5px)}
+
+/* hero: one-line premium title, buttons in one row */
+.sp-grid{grid-template-columns:1.3fr .7fr!important;gap:48px!important}
+.sp h1,.logo-float{font-family:'Bodoni Moda',serif!important;font-style:normal!important;font-weight:400!important;color:#1B2336!important}
+.sp h1{white-space:nowrap!important;font-size:clamp(34px,4.9vw,74px)!important;letter-spacing:-1.2px!important;line-height:1.02!important}
+.sp h1 em,.logo-float em{display:inline!important;font-style:italic!important;color:#1B2336!important;font-family:'Bodoni Moda',serif!important}
+.logo-float{font-size:19px!important;letter-spacing:-.2px!important}
+.sp .ed-cta{flex-wrap:nowrap!important;gap:8px!important}
+.sp .ed-cta .btn{padding:13px 18px!important;font-size:9.5px!important;letter-spacing:2.2px!important;white-space:nowrap}
+.sp .ed-tag{max-width:none!important}
+@media(max-width:1100px){.sp .ed-cta .btn{padding:12px 13px!important;letter-spacing:1.6px!important;font-size:9px!important}}
+@media(max-width:900px){.sp-grid{grid-template-columns:1fr!important}.sp h1{font-size:clamp(28px,8.4vw,60px)!important}.sp .ed-cta{flex-wrap:wrap!important;justify-content:center}.sp .ed-cta .btn{padding:13px 18px!important;font-size:9.5px!important}}
 
 </style>
 </head>
