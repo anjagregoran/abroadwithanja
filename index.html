@@ -458,6 +458,14 @@ nav{background:rgba(250,246,239,.85)}
 .lang button.on,.flag.on{background:#1B2336!important;border-color:#1B2336!important}
 .btn.light{color:#1B2336!important}
 
+/* show the whole photo, stats strip below it */
+.ed-photo{aspect-ratio:3/2!important;overflow:visible!important;box-shadow:none!important;border-radius:0!important;margin-bottom:0}
+.ed-photo img{border-radius:28px;box-shadow:0 60px 110px -60px rgba(27,35,54,.65);object-position:50% 50%!important;transform:none!important;height:100%}
+.ed-ribbon{position:static!important;margin:18px 0 0;background:rgba(255,255,255,.7)!important;border:1px solid rgba(27,35,54,.08)!important}
+.ed-photo{display:block;aspect-ratio:auto!important}
+.ed-photo img{aspect-ratio:3/2;height:auto;width:100%}
+@media(max-width:760px){.ed-photo img{aspect-ratio:4/5;object-position:44% 50%!important;border-radius:22px}}
+
 </style>
 </head>
 <body>
