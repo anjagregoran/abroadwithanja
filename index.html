@@ -701,6 +701,13 @@ nav{background:rgba(250,246,239,.85)}
 </div>
 
 <script>
+if('scrollRestoration' in history){history.scrollRestoration='manual'}
+if(location.hash){history.replaceState(null,'',location.pathname+location.search)}
+window.scrollTo(0,0);
+window.addEventListener('load',function(){window.scrollTo(0,0)});
+window.addEventListener('pageshow',function(e){if(e.persisted)window.scrollTo(0,0)});
+</script>
+<script>
 (function(){
  function setLang(l){document.body.classList.toggle('en',l==='en');document.documentElement.lang=l;document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l)});try{localStorage.setItem('awa-lang',l)}catch(e){}}
  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.l)})});
