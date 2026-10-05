@@ -378,6 +378,41 @@ nav{background:rgba(250,246,239,.85)}
 .hero .f2{right:-40px;top:18px}
 .hero .f1{left:-44px;bottom:26px}
 @media(max-width:860px){.hero .f2{right:-14px;top:10px}.hero .f1{left:-14px;bottom:14px}}
+/* ===== editorial hero + story ===== */
+.ed-hero{position:relative;z-index:1;padding:54px 0 0;text-align:center}
+.ed-top{display:flex;align-items:center;justify-content:center;gap:16px;font-size:10.5px;letter-spacing:3.5px;text-transform:uppercase;color:#5A6078}
+.ed-rule{width:64px;height:1px;background:#1B2336;opacity:.35}
+.ed-hero h1{font-family:'Playfair Display',serif;font-weight:400;font-style:italic;font-size:clamp(54px,10.5vw,150px);line-height:.95;letter-spacing:-3px;color:#1B2336;margin:22px 0 18px;white-space:nowrap}
+.ed-hero h1 .amp{font-size:.7em;color:#708BE1;font-style:italic;padding:0 .04em}
+.ed-hero h1 em{color:#708BE1;font-style:italic}
+.ed-tag{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(18px,2vw,23px);color:#2C3550;max-width:640px;margin:0 auto 28px}
+.ed-cta{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:46px}
+.ed-photo{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:16/8;box-shadow:0 60px 110px -60px rgba(27,35,54,.65)}
+.ed-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 58%;display:block;transform:scale(1.03);transition:transform 6s ease-out}
+.ed-photo:hover img{transform:scale(1.08)}
+.ed-ribbon{position:absolute;left:24px;right:24px;bottom:22px;display:grid;grid-template-columns:repeat(4,1fr);background:rgba(250,246,239,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.6);border-radius:18px;padding:16px 8px}
+.ed-ribbon div{border-left:1px solid rgba(27,35,54,.12);padding:0 10px}
+.ed-ribbon div:first-child{border-left:0}
+.ed-ribbon b{display:block;font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:clamp(24px,3vw,36px);color:#1B2336;line-height:1.05}
+.ed-ribbon span{font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:#5A6078}
+@media(max-width:760px){.ed-hero h1{white-space:normal;letter-spacing:-1.5px;font-size:clamp(50px,15vw,84px)}.ed-photo{aspect-ratio:4/5;border-radius:22px}.ed-photo img{object-position:46% 60%}.ed-ribbon{left:12px;right:12px;bottom:12px;grid-template-columns:repeat(2,1fr);row-gap:12px;padding:14px 6px}.ed-ribbon div:nth-child(3){border-left:0}.ed-ribbon span{font-size:8.5px;letter-spacing:1.4px}.ed-top{flex-direction:column;gap:8px}.ed-rule{display:none}}
+.ed-story{position:relative;z-index:1;padding:110px 0 80px}
+.ed-story .w{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:center}
+.ed-s-left{position:relative}
+.ed-num{position:absolute;left:-18px;top:-62px;font-family:'Playfair Display',serif;font-style:italic;font-size:130px;line-height:1;color:rgba(112,139,225,.22);z-index:0}
+.ed-s-photo{position:relative;z-index:1;aspect-ratio:4/5;overflow:hidden;border-radius:6px;box-shadow:0 50px 90px -50px rgba(27,35,54,.6)}
+.ed-s-photo img{width:100%;height:100%;object-fit:cover;object-position:42% 40%}
+.ed-cap{margin-top:12px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#5A6078;display:flex;align-items:center;gap:12px}
+.ed-cap::before{content:"";width:36px;height:1px;background:#1B2336;opacity:.4}
+.ed-k{font-size:10.5px;letter-spacing:4px;text-transform:uppercase;color:#708BE1;margin-bottom:14px}
+.ed-story h2{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:clamp(34px,4.4vw,54px);line-height:1.06;letter-spacing:-.8px;color:#1B2336;margin-bottom:22px}
+.ed-story p{font-size:16.5px;color:#3B425C;margin-bottom:14px}
+.ed-list{list-style:none;counter-reset:e;margin:28px 0 24px;border-top:1px solid rgba(27,35,54,.15)}
+.ed-list li{counter-increment:e;display:flex;align-items:baseline;gap:18px;padding:15px 4px;border-bottom:1px solid rgba(27,35,54,.15);font-family:'Playfair Display',serif;font-style:italic;font-size:21px;color:#1B2336;transition:padding .35s,background .35s}
+.ed-list li::before{content:"0" counter(e);font-family:'Instrument Sans',sans-serif;font-style:normal;font-size:10.5px;letter-spacing:2px;color:#708BE1}
+.ed-list li:hover{padding-left:16px;background:rgba(232,236,251,.5)}
+@media(max-width:860px){.ed-story{padding:80px 0 60px}.ed-story .w{grid-template-columns:1fr;gap:44px}.ed-s-left{max-width:340px;margin:0 auto;width:100%}.ed-num{font-size:96px;top:-46px;left:-6px}}
+
 </style>
 </head>
 <body>
@@ -392,43 +427,42 @@ nav{background:rgba(250,246,239,.85)}
   </div>
 </div></nav>
 
-<header class="hero"><div class="w">
-  <div>
-    <div class="kicker"><i></i>@abroadlifewithanja<i></i></div>
-    <h1>Anja &amp; Life <em>Abroad</em></h1>
-    <p class="tag"><span lang-en>Apply, live it fully, and grow from it for the rest of your life.</span><span lang-hr>Prijavi se, proživi svaki trenutak i rasti iz tog iskustva cijeli život.</span></p>
-    <div class="stats">
-      <div class="stat"><b>5+</b><span lang-en>Free guides</span><span lang-hr>Besplatnih vodiča</span></div>
-      <div class="stat"><b>50+</b><span lang-en>Exchange tips</span><span lang-hr>Exchange savjeta</span></div>
-      <div class="stat"><b>100+</b><span lang-en>Questions answered</span><span lang-hr>Odgovora</span></div>
-      <div class="stat"><b>&#8734;</b><span lang-en>Memories to make</span><span lang-hr>Uspomena</span></div>
-    </div>
-    <div class="ctas"><a href="#bundle" class="btn dark">Exchange bundle</a><a href="#vodici" class="btn light"><span lang-en>My guides</span><span lang-hr>Moji vodiči</span></a></div>
+<header class="ed-hero">
+  <div class="w">
+    <div class="ed-top"><span>@abroadlifewithanja</span><span class="ed-rule"></span><span><span lang-hr>Exchange godina · SAD</span><span lang-en>Exchange year · USA</span></span></div>
+    <h1>Anja <span class="amp">&amp;</span> Life <em>Abroad</em></h1>
+    <p class="ed-tag"><span lang-en>Apply, live it fully, and grow from it for the rest of your life.</span><span lang-hr>Prijavi se, proživi svaki trenutak i rasti iz tog iskustva cijeli život.</span></p>
+    <div class="ed-cta"><a href="#bundle" class="btn dark">Exchange bundle</a><a href="#vodici" class="btn light"><span lang-en>My guides</span><span lang-hr>Moji vodiči</span></a></div>
   </div>
-  <div class="ph">
-    <div class="frame"></div>
-    <div class="arch"><img src="img/anja-hero.jpg" alt="Anja"></div>
-    <div class="fb f1"><b>2023</b><span lang-en>exchange year</span><span lang-hr>exchange godina</span></div>
-    <div class="fb f2"><b><span lang-hr>Razmjena</span><span lang-en>Exchange</span></b><span lang-en>in the USA</span><span lang-hr>u SAD-u</span></div>
+  <div class="w">
+    <figure class="ed-photo">
+      <img src="img/anja-hero.jpg" alt="Anja">
+      <figcaption class="ed-ribbon">
+        <div><b>5+</b><span lang-en>Free guides</span><span lang-hr>Besplatnih vodiča</span></div>
+        <div><b>50+</b><span lang-en>Exchange tips</span><span lang-hr>Exchange savjeta</span></div>
+        <div><b>100+</b><span lang-en>Questions answered</span><span lang-hr>Odgovora</span></div>
+        <div><b>&#8734;</b><span lang-en>Memories to make</span><span lang-hr>Uspomena</span></div>
+      </figcaption>
+    </figure>
   </div>
-</div></header>
+</header>
 
-<section class="story"><div class="w">
-  <div class="sph-wrap rv">
-    <div class="sph-ring"></div>
-    <div class="sph"><img src="img/flag2.jpg" alt="Anja"></div>
-    <div class="fb s1"><b>2023</b><span lang-en>exchange year</span><span lang-hr>exchange godina</span></div>
+<section class="ed-story"><div class="w">
+  <div class="ed-s-left rv">
+    <div class="ed-num">01</div>
+    <div class="ed-s-photo"><img src="img/flag2.jpg" alt="Anja"></div>
+    <div class="ed-cap"><span lang-hr>SAD, 2023.</span><span lang-en>USA, 2023</span></div>
   </div>
-  <div class="rv">
-    <div class="kicker"><i></i><span lang-en>My story</span><span lang-hr>Moja priča</span><i></i></div>
+  <div class="ed-s-right rv">
+    <div class="ed-k"><span lang-en>My story</span><span lang-hr>Moja priča</span></div>
     <h2><span lang-en>Hi! My name is Anja and I come from Croatia.</span><span lang-hr>Bok! Ja sam Anja i dolazim iz Hrvatske.</span></h2>
     <p><span lang-en>In 2023, I spent a year on exchange in the U.S., with no idea just how much it would change my life. Now, I share the experiences, advice, and things I wish someone had told me before I left <svg class="inl" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" rx="2" fill="#E8ECFB"/><path d="M0 3h24M0 7h24M0 11h24M0 15h24" stroke="#C9B7B2" stroke-width="1.2"/><rect width="10" height="8" rx="1.5" fill="#1B2336"/></svg><svg class="inl" viewBox="0 0 24 16" aria-hidden="true"><rect x="1" y="1" width="22" height="14" rx="2" fill="#F0E5E1" stroke="#683131" stroke-width="1"/><path d="M2 2l10 7 10-7" fill="none" stroke="#683131" stroke-width="1"/></svg></span><span lang-hr>Godine 2023. provela sam godinu dana na exchangeu u SAD-u, a nisam ni slutila koliko će mi to promijeniti život. Sada dijelim iskustva, savjete i sve ono što bih voljela da mi je netko rekao prije odlaska <svg class="inl" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" rx="2" fill="#E8ECFB"/><path d="M0 3h24M0 7h24M0 11h24M0 15h24" stroke="#C9B7B2" stroke-width="1.2"/><rect width="10" height="8" rx="1.5" fill="#1B2336"/></svg><svg class="inl" viewBox="0 0 24 16" aria-hidden="true"><rect x="1" y="1" width="22" height="14" rx="2" fill="#F0E5E1" stroke="#683131" stroke-width="1"/><path d="M2 2l10 7 10-7" fill="none" stroke="#683131" stroke-width="1"/></svg></span></p>
     <p><span lang-en>I teach you everything from <span class="hl">how to apply</span> to how to make it the <span class="hl">best year of your life</span>!</span><span lang-hr>Učim te svemu, od toga <span class="hl">kako se prijaviti</span> do toga kako da ti to bude <span class="hl">najbolja godina života</span>!</span></p>
-    <div class="pillars">
-      <div class="pl"><div class="md"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg></div><span lang-en>How to apply</span><span lang-hr>Kako se prijaviti</span></div>
-      <div class="pl"><div class="md"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="8" width="15" height="12" rx="2"/><path d="M9 8V5.5h6V8M9 12v4M15 12v4"/></svg></div><span lang-en>How to prepare</span><span lang-hr>Kako se pripremiti</span></div>
-      <div class="pl"><div class="md"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.6 4.9.3-3.8 3.1 1.3 4.8L12 13.1l-4.2 2.7 1.3-4.8-3.8-3.1 4.9-.3z"/></svg></div><span lang-en>The best year of your life</span><span lang-hr>Najbolja godina života</span></div>
-    </div>
+    <ol class="ed-list">
+      <li><span lang-en>How to apply</span><span lang-hr>Kako se prijaviti</span></li>
+      <li><span lang-en>How to prepare</span><span lang-hr>Kako se pripremiti</span></li>
+      <li><span lang-en>The best year of your life</span><span lang-hr>Najbolja godina života</span></li>
+    </ol>
     <p class="desk"><span lang-en>For the best experience, I recommend viewing this on a desktop or laptop!</span><span lang-hr>Za najbolji doživljaj preporučujem da ovo pogledaš na računalu ili laptopu!</span></p>
     <div class="sig">Anja</div>
   </div>
