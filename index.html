@@ -571,6 +571,19 @@ a.host-btn{cursor:pointer!important;opacity:1}
 .v3b .why li::before,.v3b .why li::after{display:none!important;content:none!important}
 .v3b .nb .r{background:#2C3A60!important}
 
+/* merged story: two-photo collage */
+.ed-s-left{padding-bottom:70px}
+.ed-s-photo2{position:absolute;z-index:2;right:-34px;bottom:22px;width:52%;aspect-ratio:4/5;overflow:hidden;border-radius:6px;border:6px solid #FAF6EF;box-shadow:0 40px 70px -40px rgba(27,35,54,.65)}
+.ed-s-photo2 img{width:100%;height:100%;object-fit:cover;object-position:55% 40%}
+.ed-s-left .ed-cap{margin-top:14px}
+@media(max-width:860px){.ed-s-photo2{right:-10px;width:48%}}
+/* 3 topics in the route heading */
+.route-3{display:grid!important;grid-template-columns:repeat(3,1fr);gap:0 26px;margin:26px 0 8px!important;border-top:0!important;text-align:left}
+.route-3 li{border-top:1px solid rgba(27,35,54,.15);font-size:18px!important;padding:14px 4px!important}
+@media(max-width:700px){.route-3{grid-template-columns:1fr}.route-3 li{border-top:0}.route-3{border-top:1px solid rgba(27,35,54,.15)!important}}
+/* EN: five hero buttons on one row */
+@media(min-width:901px){body.en .sp .ed-cta{flex-wrap:nowrap!important;gap:6px!important}body.en .sp .ed-cta .btn{padding:12px 12px!important;font-size:8.8px!important;letter-spacing:1.3px!important}body.en .sp .ed-cta .btn .arr{font-size:12px}}
+
 </style>
 </head>
 <body>
@@ -596,51 +609,31 @@ a.host-btn{cursor:pointer!important;opacity:1}
       </div></div>
 </header>
 
-<section class="ed-story"><div class="w">
+<section class="ed-story" id="prica"><div class="w">
   <div class="ed-s-left rv">
     <div class="ed-num">01</div>
     <div class="ed-s-photo"><img src="img/flag2.jpg" alt="Anja"></div>
-    <div class="ed-cap"><span lang-hr>SAD, 2023.</span><span lang-en>USA, 2023</span></div>
+    <div class="ed-s-photo2"><img src="img/flag1.jpg" alt="Anja"></div>
+    <div class="ed-cap"><span lang-hr>Hrvatska ⇄ SAD</span><span lang-en>Croatia ⇄ USA</span></div>
   </div>
   <div class="ed-s-right rv">
     <div class="ed-k"><span lang-en>My story</span><span lang-hr>Moja priča</span></div>
     <h2><span lang-en>Hi! My name is Anja and I come from Croatia.</span><span lang-hr>Bok! Ja sam Anja i dolazim iz Hrvatske.</span></h2>
-    <p><span lang-en>In 2023, I spent a year on exchange in the U.S., with no idea just how much it would change my life. Now, I share the experiences, advice, and things I wish someone had told me before I left <svg class="inl" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" rx="2" fill="#E8ECFB"/><path d="M0 3h24M0 7h24M0 11h24M0 15h24" stroke="#C9B7B2" stroke-width="1.2"/><rect width="10" height="8" rx="1.5" fill="#1B2336"/></svg><svg class="inl" viewBox="0 0 24 16" aria-hidden="true"><rect x="1" y="1" width="22" height="14" rx="2" fill="#F0E5E1" stroke="#683131" stroke-width="1"/><path d="M2 2l10 7 10-7" fill="none" stroke="#683131" stroke-width="1"/></svg></span><span lang-hr>Godine 2023. provela sam godinu dana na exchangeu u SAD-u, a nisam ni slutila koliko će mi to promijeniti život. Sada dijelim iskustva, savjete i sve ono što bih voljela da mi je netko rekao prije odlaska <svg class="inl" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" rx="2" fill="#E8ECFB"/><path d="M0 3h24M0 7h24M0 11h24M0 15h24" stroke="#C9B7B2" stroke-width="1.2"/><rect width="10" height="8" rx="1.5" fill="#1B2336"/></svg><svg class="inl" viewBox="0 0 24 16" aria-hidden="true"><rect x="1" y="1" width="22" height="14" rx="2" fill="#F0E5E1" stroke="#683131" stroke-width="1"/><path d="M2 2l10 7 10-7" fill="none" stroke="#683131" stroke-width="1"/></svg></span></p>
-    <p><span lang-en>I teach you everything from <span class="hl">how to apply</span> to how to make it the <span class="hl">best year of your life</span>!</span><span lang-hr>Učim te svemu, od toga <span class="hl">kako se prijaviti</span> do toga kako da ti to bude <span class="hl">najbolja godina života</span>!</span></p>
-    <ol class="ed-list">
-      <li><span lang-en>How to apply</span><span lang-hr>Kako se prijaviti</span></li>
-      <li><span lang-en>How to prepare</span><span lang-hr>Kako se pripremiti</span></li>
-      <li><span lang-en>The best year of your life</span><span lang-hr>Najbolja godina života</span></li>
-    </ol>
+    <p><span lang-en>In 2023, I spent a year on exchange in the U.S., with no idea just how much it would change my life. I went thinking I was leaving for just one school year, and that one year changed everything.</span><span lang-hr>Godine 2023. provela sam godinu dana na exchangeu u SAD-u, a nisam ni slutila koliko će mi to promijeniti život. Otišla sam misleći da idem samo na jednu školsku godinu, a ta je jedna godina promijenila sve.</span></p>
+    <p><span lang-en>That's also where I met my boyfriend. Now I spend a few months of the year with him in the USA, and in the summer he comes to visit me in Croatia, so today my life is somewhere between Croatia and the USA.</span><span lang-hr>Tamo sam upoznala i svog dečka. Danas nekoliko mjeseci godišnje provodim kod njega u SAD-u, a on ljeti dolazi k meni u Hrvatsku, pa je moj život danas negdje između Hrvatske i SAD-a.</span></p>
+    <p><span lang-en>Now, I share the experiences, advice, and things I wish someone had told me before I left <svg class="inl" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" rx="2" fill="#E8ECFB"/><path d="M0 3h24M0 7h24M0 11h24M0 15h24" stroke="#C9B7B2" stroke-width="1.2"/><rect width="10" height="8" rx="1.5" fill="#1B2336"/></svg><svg class="inl" viewBox="0 0 24 16" aria-hidden="true"><rect x="1" y="1" width="22" height="14" rx="2" fill="#F0E5E1" stroke="#683131" stroke-width="1"/><path d="M2 2l10 7 10-7" fill="none" stroke="#683131" stroke-width="1"/></svg> Here you'll find exchange tips, stories and inspiration, and I teach you everything from <span class="hl">how to apply</span> to how to make it the <span class="hl">best year of your life</span>!</span><span lang-hr>Sada dijelim iskustva, savjete i sve ono što bih voljela da mi je netko rekao prije odlaska <svg class="inl" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" rx="2" fill="#E8ECFB"/><path d="M0 3h24M0 7h24M0 11h24M0 15h24" stroke="#C9B7B2" stroke-width="1.2"/><rect width="10" height="8" rx="1.5" fill="#1B2336"/></svg><svg class="inl" viewBox="0 0 24 16" aria-hidden="true"><rect x="1" y="1" width="22" height="14" rx="2" fill="#F0E5E1" stroke="#683131" stroke-width="1"/><path d="M2 2l10 7 10-7" fill="none" stroke="#683131" stroke-width="1"/></svg> Ovdje ćeš naći savjete, priče i inspiraciju za razmjenu, a učim te svemu, od toga <span class="hl">kako se prijaviti</span> do toga kako da ti to bude <span class="hl">najbolja godina života</span>!</span></p>
     <p class="desk"><span lang-en>For the best experience, I recommend viewing this on a desktop or laptop!</span><span lang-hr>Za najbolji doživljaj preporučujem da ovo pogledaš na računalu ili laptopu!</span></p>
     <div class="sig">Anja</div>
   </div>
 </div></section>
 
-<section class="ed-life" id="prica"><div class="w">
-  <div class="ed-l-text rv">
-    <div class="ed-k"><span lang-en>How exchange changed my life</span><span lang-hr>Kako mi je exchange promijenio život</span></div>
-    <h2><span lang-en>One year that changed everything</span><span lang-hr>Jedna godina koja je promijenila sve</span></h2>
-    <p><span lang-en>I went on exchange thinking I was leaving for just one school year, and that year changed my life.</span><span lang-hr>Na exchange sam otišla misleći da idem samo na jednu školsku godinu, a ta mi je godina promijenila život.</span></p>
-    <p><span lang-en>That's also where I met my boyfriend. Now I spend a few months of the year with him in the USA, and in the summer he comes to visit me in Croatia.</span><span lang-hr>Tamo sam upoznala i svog dečka. Danas nekoliko mjeseci godišnje provodim kod njega u SAD-u, a on ljeti dolazi k meni u Hrvatsku.</span></p>
-    <p><span lang-en>So today I live between Croatia and the USA, and here I share exchange tips, stories and inspiration.</span><span lang-hr>Zato danas živim između Hrvatske i SAD-a, a ovdje dijelim exchange savjete, priče i inspiraciju.</span></p>
-    <ol class="ed-list ed-beats">
-      <li><span lang-en>An exchange year in the USA</span><span lang-hr>Exchange godina u SAD-u</span></li>
-      <li><span lang-en>Where I met my boyfriend</span><span lang-hr>Tamo sam upoznala svog dečka</span></li>
-      <li><span lang-en>A life between Croatia and the USA</span><span lang-hr>Život između Hrvatske i SAD-a</span></li>
-    </ol>
-    <div class="ed-bio"><span>my exchange year changed my life 🇭🇷→🇺🇸</span><span>life between Croatia &amp; the US ✈️</span><span>exchange tips, stories &amp; inspiration 🤍</span></div>
-  </div>
-  <div class="ed-l-photo rv">
-    <div class="ed-num">02</div>
-    <div class="ed-s-photo"><img src="img/flag1.jpg" alt="Anja"></div>
-    <div class="ed-cap"><span lang-hr>Hrvatska ⇄ SAD</span><span lang-en>Croatia ⇄ USA</span></div>
-  </div>
-</div></section>
-
 
 <section class="route" id="put"><div class="w">
-  <div class="sh rv"><div class="route-emo">🇺🇸💌⭐️🎀🥤</div><div class="kicker kc"><i></i><span lang-hr>Korak po korak</span><span lang-en>Step by step</span><i></i></div><h2><span lang-hr>Tvoj put do <em>razmjene</em></span><span lang-en>Your path to <em>exchange</em></span></h2><div class="fpd"><span lang-hr>Svi moji najbolji exchange vodiči · besplatni i plaćeni</span><span lang-en>All of my best exchange guides · free &amp; paid</span></div><p><span lang-en>These aren't generic exchange guides. They're built from the experiences, mistakes, lessons, and moments I actually lived through :)</span><span lang-hr>Ovo nisu generički exchange vodiči. Nastali su iz iskustava, grešaka, lekcija i trenutaka koje sam stvarno proživjela :)</span></p><p><span lang-en>I turned everything I learned before, during and after my exchange year into guides to help you feel more prepared, confident, and ready to make the most of yours!</span><span lang-hr>Sve što sam naučila prije, tijekom i nakon exchange godine pretvorila sam u vodiče, da se osjećaš spremnije i sigurnije u sebe i da svoju godinu iskoristiš do kraja!</span></p><p class="hint"><span lang-hr>Klikni na svaki korak i pogledaj što te čeka.</span><span lang-en>Click each step to see what's ahead.</span></p></div>
+  <div class="sh rv"><div class="route-emo">🇺🇸💌⭐️🎀🥤</div><div class="kicker kc"><i></i><span lang-hr>Korak po korak</span><span lang-en>Step by step</span><i></i></div><h2><span lang-hr>Tvoj put do <em>razmjene</em></span><span lang-en>Your path to <em>exchange</em></span></h2><div class="fpd"><span lang-hr>Svi moji najbolji exchange vodiči · besplatni i plaćeni</span><span lang-en>All of my best exchange guides · free &amp; paid</span></div><p><span lang-en>These aren't generic exchange guides. They're built from the experiences, mistakes, lessons, and moments I actually lived through :)</span><span lang-hr>Ovo nisu generički exchange vodiči. Nastali su iz iskustava, grešaka, lekcija i trenutaka koje sam stvarno proživjela :)</span></p><p><span lang-en>I turned everything I learned before, during and after my exchange year into guides to help you feel more prepared, confident, and ready to make the most of yours!</span><span lang-hr>Sve što sam naučila prije, tijekom i nakon exchange godine pretvorila sam u vodiče, da se osjećaš spremnije i sigurnije u sebe i da svoju godinu iskoristiš do kraja!</span></p><ol class="ed-list route-3">
+      <li><span lang-en>How to apply</span><span lang-hr>Kako se prijaviti</span></li>
+      <li><span lang-en>How to prepare</span><span lang-hr>Kako se pripremiti</span></li>
+      <li><span lang-en>The best year of your life</span><span lang-hr>Najbolja godina života</span></li>
+    </ol><p class="hint"><span lang-hr>Klikni na svaki korak i pogledaj što te čeka.</span><span lang-en>Click each step to see what's ahead.</span></p></div>
   <div class="map rv">
     <svg class="rpath" viewBox="0 0 1000 220" preserveAspectRatio="none" aria-hidden="true"><path class="bgp" d="M80 136 C 170 136, 260 84, 360 84 S 550 132, 640 132 S 830 90, 920 90"/><path class="fgp" d="M80 136 C 170 136, 260 84, 360 84 S 550 132, 640 132 S 830 90, 920 90"/></svg>
     <span class="xm">✦</span>
