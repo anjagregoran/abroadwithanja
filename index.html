@@ -543,6 +543,29 @@ nav{background:rgba(250,246,239,.85)}
 .rp.empty .rempty{display:block}
 @media(max-width:700px){.rp{padding:24px 16px!important}}
 
+/* host family (EN only) */
+body.en .sp .ed-cta{flex-wrap:wrap!important}
+.host{position:relative;z-index:1;padding:20px 0 90px}
+.hostbox{display:grid;grid-template-columns:1.1fr .9fr;gap:0;border-radius:32px;overflow:hidden;background:rgba(255,255,255,.85);border:1px solid rgba(27,35,54,.08);box-shadow:0 50px 100px -60px rgba(27,35,54,.5)}
+.host-l{padding:52px 48px}
+.host-l h2{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:clamp(32px,4vw,46px);line-height:1.08;color:#1B2336;margin:12px 0 14px}
+.host-l h2 em{color:#758ADB}
+.host-l p{color:#3B425C;font-size:16px}
+.host-steps{margin:22px 0 26px!important}
+.host-steps li{font-size:18px!important;padding:12px 4px!important}
+.host-btn{cursor:default!important;opacity:.75}
+.host-btn:hover{transform:none!important;background:#758ADB!important;border-color:#758ADB!important}
+a.host-btn{cursor:pointer!important;opacity:1}
+.host-r{padding:52px 44px;background:linear-gradient(160deg,#F0E5E1,#E8ECFB)}
+.host-r h3{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#758ADB;font-weight:500;margin-bottom:10px}
+.host-r p{font-size:14.5px;color:#3B425C;margin-bottom:26px}
+.host-priv{list-style:none}
+.host-priv li{position:relative;padding:9px 0 9px 26px;font-size:14px;color:#3B425C;border-bottom:1px solid rgba(27,35,54,.08)}
+.host-priv li:last-child{border:0}
+.host-priv li::before{content:"";position:absolute;left:2px;top:15px;width:9px;height:5px;border-left:1.5px solid #758ADB;border-bottom:1.5px solid #758ADB;transform:rotate(-45deg)}
+.host-priv a{color:#758ADB}
+@media(max-width:860px){.hostbox{grid-template-columns:1fr}.host-l,.host-r{padding:34px 22px}}
+
 </style>
 </head>
 <body>
@@ -556,7 +579,7 @@ nav{background:rgba(250,246,239,.85)}
       <div class="ed-top"><span>@abroadlifewithanja</span><span class="ed-rule"></span></div>
       <h1><span class="pu">Abroad</span> Life with Anja</h1>
       <p class="ed-tag"><span lang-en>Apply, live it fully, and grow from it for the rest of your life.</span><span lang-hr>Prijavi se, proživi svaki trenutak i izrasti iz tog iskustva cijeli život.</span></p>
-      <div class="ed-cta"><a href="#put" class="btn dark main"><span lang-hr>Kako ići na razmjenu</span><span lang-en>How to go on exchange</span><i class="arr">→</i></a><a href="#prica" class="btn light"><span lang-hr>Moja priča</span><span lang-en>My story</span></a><a href="#proizvodi" class="btn light">Store</a><a href="#newsletter" class="btn light">Newsletter</a></div>
+      <div class="ed-cta"><a href="#put" class="btn dark main"><span lang-hr>Kako ići na razmjenu</span><span lang-en>How to go on exchange</span><i class="arr">→</i></a><a href="#prica" class="btn light"><span lang-hr>Moja priča</span><span lang-en>My story</span></a><a href="#proizvodi" class="btn light">Store</a><a href="#newsletter" class="btn light">Newsletter</a><a href="#host" class="btn light" lang-en>Become a host family</a></div>
     </div>
     <figure class="sp-photo"><img src="img/anja-hero.jpg" alt="Anja"></figure>
   </div>
@@ -676,6 +699,32 @@ nav{background:rgba(250,246,239,.85)}
   </div>
   <div style="text-align:center;margin-top:28px" class="rv"><a href="#newsletter" class="btn light"><span lang-en>Tell me when it launches ☆</span><span lang-hr>Javi mi kad izađe ☆</span></a></div>
 </div></section>
+
+<section class="host" id="host" lang-en><div class="w"><div class="hostbox rv">
+  <div class="host-l">
+    <div class="kicker"><i></i>For American families<i></i></div>
+    <h2>Become a <em>host family</em></h2>
+    <p>Open your home to an exchange student and share everyday American life with them. If you're curious about hosting, leave your details and I'll get in touch.</p>
+    <ol class="ed-list host-steps">
+      <li>Fill in the short form</li>
+      <li>I contact you about the next steps</li>
+      <li>I connect you with an official exchange organization</li>
+    </ol>
+    <span class="btn dark host-btn" id="hostBtn" aria-disabled="true">Application form opening soon</span>
+  </div>
+  <div class="host-r">
+    <h3>Good to know</h3>
+    <p>I'm not an exchange agency. Students are placed only through officially designated exchange organizations, which screen and approve every host family. For now I'm collecting interest so I can connect you with the right one.</p>
+    <h3>Your privacy</h3>
+    <ul class="host-priv">
+      <li>Your details are used only to contact you about hosting an exchange student.</li>
+      <li>I ask only for what's needed: your name, email, phone, where you live and a few questions about your household.</li>
+      <li>I'll pass your details to an exchange organization only with your permission.</li>
+      <li>You're added to my newsletter only if you tick that box yourself.</li>
+      <li>You can ask me to delete your details at any time: <a href="mailto:anja.gregoran1@gmail.com">anja.gregoran1@gmail.com</a></li>
+    </ul>
+  </div>
+</div></div></section>
 
 <div class="v3b">
 <section class="quote"><div class="bg"></div><div class="w rv"><q>The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.</q><span>MARCEL PROUST</span></div></section>
