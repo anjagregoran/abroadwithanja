@@ -661,6 +661,13 @@ a.comm-o:hover{transform:translateY(-3px);box-shadow:0 26px 50px -34px rgba(27,3
 
 .sp-photo img{object-position:51% 50%!important}
 .ed-s-left.one .ed-s-photo img{object-position:46% 50%!important}
+.v3b .nb .l.comm-l{display:grid;grid-template-columns:minmax(150px,210px) 1fr;gap:34px;align-items:center;padding:44px 44px}
+.comm-ph{margin:0}
+.comm-ph img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:22px;box-shadow:0 30px 60px -36px rgba(27,35,54,.6)}
+.comm-l .comm{grid-template-columns:1fr}
+@media(max-width:1100px){.v3b .nb .l.comm-l{grid-template-columns:1fr;gap:24px}.comm-ph{max-width:230px}}
+@media(max-width:860px){.v3b .nb .l.comm-l{padding:36px 24px}.comm-ph{margin:0 auto}}
+
 </style>
 </head>
 <body>
@@ -760,7 +767,9 @@ a.comm-o:hover{transform:translateY(-3px);box-shadow:0 26px 50px -34px rgba(27,3
 <section class="quote"><div class="bg"></div><div class="w rv"><q>The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.</q><span>MARCEL PROUST</span></div></section>
 
 <section class="news" id="zajednica"><div class="w"><div class="nb rv">
-  <div class="l">
+  <div class="l comm-l">
+    <figure class="comm-ph"><img src="img/anja-community.jpg" alt="Anja"></figure>
+    <div class="comm-b">
     <div class="k">💬</div>
     <h2><span lang-en>Join my community!</span><span lang-hr>Pridruži se mojoj zajednici!</span></h2>
     <div class="comm">
@@ -768,6 +777,7 @@ a.comm-o:hover{transform:translateY(-3px);box-shadow:0 26px 50px -34px rgba(27,3
       <span class="comm-o cwait" aria-disabled="true"><span class="comm-t">English community</span><span class="comm-s"><span lang-en>Coming soon</span><span lang-hr>Uskoro</span></span></span>
     </div>
     <div class="priv"><span lang-en>Your phone number stays hidden from other members.</span><span lang-hr>Tvoj broj mobitela ostaje skriven od ostalih članova.</span></div>
+    </div>
   </div>
   <div class="r">
     <h3><span lang-en>Why join?</span><span lang-hr>Zašto se pridružiti?</span></h3>
