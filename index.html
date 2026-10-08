@@ -898,6 +898,23 @@ body.en .rp[data-i="0"] .rgrid{grid-template-columns:minmax(0,460px)!important;j
 .rl-t video{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.88)}
 .rl-t::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(172,109,111,.10),rgba(172,109,111,.18));pointer-events:none}
 @media(max-width:700px){.reel{padding:6px 0 16px}.reel-g{gap:9px}.rl-t.mid{margin-top:22px}}
+
+.rtop{display:flex;flex-direction:column-reverse;gap:18px}
+.rtop .reel-g{width:100%}
+@media(min-width:1001px){
+.route{padding-top:46px!important}
+.rtop{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;max-width:1180px;margin:0 auto}
+.rtop .sh{text-align:left!important;max-width:none!important;margin:0!important}
+.rtop .sh .kicker{justify-content:flex-start!important}
+.rtop .sh .kicker i:first-child{display:none}
+.rtop .sh h2{font-size:clamp(34px,3.4vw,50px)!important}
+.rtop .sh p{font-size:15.5px;margin-top:10px}
+.rtop .route-3{grid-template-columns:1fr!important;margin:14px 0 0!important;border-top:1px solid rgba(35,27,28,.15)!important}
+.rtop .route-3 li{border-top:0!important;padding:10px 4px!important;font-size:17px!important}
+.rtop .reel-g{max-width:none;gap:14px}
+.rtop .rl-t.mid{margin-top:34px}
+.route .map{margin-top:14px!important;height:215px!important}
+}
 </style>
 </head>
 <body>
@@ -942,18 +959,19 @@ body.en .rp[data-i="0"] .rgrid{grid-template-columns:minmax(0,460px)!important;j
 </div>
 
 
-<section class="reel" aria-hidden="true"><div class="w"><div class="reel-g rv">
-  <div class="rl-t"><video muted loop playsinline preload="none" poster="vid/flag.jpg"><source src="vid/flag.mp4" type="video/mp4"></video></div>
-  <div class="rl-t mid"><video muted loop playsinline preload="none" poster="vid/nyc.jpg"><source src="vid/nyc.mp4" type="video/mp4"></video></div>
-  <div class="rl-t"><video muted loop playsinline preload="none" poster="vid/palms2.jpg"><source src="vid/palms2.mp4" type="video/mp4"></video></div>
-</div></div></section>
-
 <section class="route" id="put"><div class="w">
+  <div class="rtop">
   <div class="sh rv"><div class="kicker kc"><i></i><span lang-hr>Korak po korak</span><span lang-en>Step by step</span><i></i></div><h2><span lang-hr>Tvoj put do <em>razmjene</em></span><span lang-en>Your path to <em>exchange</em></span></h2><p><span lang-en>I wrote these guides from my own exchange year, from the experiences, mistakes, lessons and moments I actually lived through :) Everything I learned before, during and after that year went into them, so that you can feel more prepared, more confident and ready to make the most of yours!</span><span lang-hr>Ove sam vodiče napisala iz vlastite godine na razmjeni, iz iskustava, grešaka, lekcija i trenutaka koje sam stvarno proživjela :) U njih je stalo sve što sam naučila prije, tijekom i nakon te godine, da se osjećaš spremnije i sigurnije u sebe i da svoju godinu iskoristiš do kraja!</span></p><ol class="ed-list route-3">
       <li><span lang-en>How to apply</span><span lang-hr>Kako se prijaviti</span></li>
       <li><span lang-en>How to prepare</span><span lang-hr>Kako se pripremiti</span></li>
       <li><span lang-en>The best year of your life</span><span lang-hr>Najbolja godina života</span></li>
     </ol></div>
+  <div class="reel-g" aria-hidden="true">
+  <div class="rl-t"><video muted loop playsinline preload="none" poster="vid/flag.jpg"><source src="vid/flag.mp4" type="video/mp4"></video></div>
+  <div class="rl-t mid"><video muted loop playsinline preload="none" poster="vid/nyc.jpg"><source src="vid/nyc.mp4" type="video/mp4"></video></div>
+  <div class="rl-t"><video muted loop playsinline preload="none" poster="vid/palms2.jpg"><source src="vid/palms2.mp4" type="video/mp4"></video></div>
+</div>
+  </div>
   <div class="map rv">
     <svg class="rpath" viewBox="0 0 1000 220" preserveAspectRatio="none" aria-hidden="true"><path class="bgp" d="M80 136 C 170 136, 260 84, 360 84 S 550 132, 640 132 S 830 90, 920 90"/><path class="fgp" d="M80 136 C 170 136, 260 84, 360 84 S 550 132, 640 132 S 830 90, 920 90"/></svg>
     <span class="xm">✦</span>
@@ -1027,7 +1045,7 @@ window.addEventListener('pageshow',function(e){if(e.persisted)window.scrollTo(0,
  function setLang(l){document.body.classList.toggle('en',l==='en');document.documentElement.lang=l;document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l)});try{localStorage.setItem('awa-lang',l)}catch(e){}}
  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.l)})});
  var saved=null;try{saved=localStorage.getItem('awa-lang')}catch(e){}
- setLang(saved||'hr');
+ setLang(saved||'en');
 
  var rall=document.querySelector('.rall'),rallGrid=document.querySelector('.rall-grid'),rallH=document.querySelector('.rall-h');
  document.querySelectorAll('.rp:not(.rall) .g').forEach(function(g){rallGrid.appendChild(g.cloneNode(true))});

@@ -689,7 +689,7 @@ a.host-btn{cursor:pointer!important;opacity:1}
  function setLang(l){document.body.classList.toggle('en',l==='en');document.documentElement.lang=l;document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l)});try{localStorage.setItem('awa-lang',l)}catch(e){}}
  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.l)})});
  var saved=null;try{saved=localStorage.getItem('awa-lang')}catch(e){}
- setLang(saved||'hr');
+ setLang(saved||'en');
 })();
 </script>
 <script>
