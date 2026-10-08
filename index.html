@@ -1071,7 +1071,7 @@ window.addEventListener('pageshow',function(e){if(e.persisted)window.scrollTo(0,
   rallGrid.querySelectorAll('.g').forEach(function(g){g.classList.toggle('hide',f!=='all'&&g.dataset.t!==f)});
   rallH.innerHTML='<span lang-hr>'+T[f][0]+'</span><span lang-en>'+T[f][1]+'</span>';
   setTimeout(chkMore,30)})});
- document.addEventListener('click',function(e){var m=e.target.closest('.more');if(m)m.closest('.g').classList.toggle('open')});
+ document.addEventListener('click',function(e){var m=e.target.closest('.more');if(!m)return;var o=m.closest('.g').classList.toggle('open');m.innerHTML=o?'<span lang-en>See less</span><span lang-hr>Prikaži manje</span>':'<span lang-en>Read more</span><span lang-hr>Pročitaj više</span>'});
  document.querySelectorAll('.rs').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.tabs button').forEach(function(x){x.classList.remove('on')});setTimeout(chkMore,30)})});
  window.addEventListener('load',chkMore);setTimeout(chkMore,300);
  document.querySelectorAll('.flag').forEach(function(f){f.addEventListener('click',function(){var c=f.dataset.c;document.querySelectorAll('.flag').forEach(function(x){x.classList.toggle('on',x===f)});document.querySelectorAll('.cp').forEach(function(p){p.classList.toggle('on',p.dataset.c===c)})})});
