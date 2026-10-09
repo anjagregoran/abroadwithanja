@@ -928,6 +928,11 @@ body.en .rp[data-i="0"] .rgrid{grid-template-columns:minmax(0,460px)!important;j
 @media(min-width:1001px){.rtop{grid-template-columns:.86fr 1.14fr!important;gap:44px!important;max-width:1240px!important}.rtop .reel-g{gap:8px!important}.rtop .rl-t.mid{margin-top:26px!important}}
 @media(max-width:1000px){.reel-g{gap:6px!important}.rl-t.mid{margin-top:16px!important}}
 .rl-t{border-radius:12px!important}
+
+@media(max-width:1000px){.rtop{flex-direction:column!important;gap:16px!important}.route{scroll-margin-top:8px}.rtop .reel-g{margin-bottom:6px}}
+
+.rl-t,.rl-t video{pointer-events:none!important;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.rl-t video::-webkit-media-controls,.rl-t video::-webkit-media-controls-start-playback-button,.rl-t video::-webkit-media-controls-panel{display:none!important;-webkit-appearance:none}
 </style>
 </head>
 <body>
@@ -980,9 +985,9 @@ body.en .rp[data-i="0"] .rgrid{grid-template-columns:minmax(0,460px)!important;j
       <li><span lang-en>The best year of your life</span><span lang-hr>Najbolja godina života</span></li>
     </ol></div>
   <div class="reel-g" aria-hidden="true">
-  <div class="rl-t"><video muted loop playsinline autoplay preload="metadata" poster="vid/flag2.jpg"><source src="vid/flag2.mp4" type="video/mp4"></video></div>
-  <div class="rl-t mid"><video muted loop playsinline autoplay preload="metadata" poster="vid/nyc.jpg"><source src="vid/nyc.mp4" type="video/mp4"></video></div>
-  <div class="rl-t"><video muted loop playsinline autoplay preload="metadata" poster="vid/palms3.jpg"><source src="vid/palms3.mp4" type="video/mp4"></video></div>
+  <div class="rl-t"><video muted loop playsinline autoplay preload="metadata" disablepictureinpicture disableremoteplayback tabindex="-1" poster="vid/flag2.jpg"><source src="vid/flag2.mp4" type="video/mp4"></video></div>
+  <div class="rl-t mid"><video muted loop playsinline autoplay preload="metadata" disablepictureinpicture disableremoteplayback tabindex="-1" poster="vid/nyc.jpg"><source src="vid/nyc.mp4" type="video/mp4"></video></div>
+  <div class="rl-t"><video muted loop playsinline autoplay preload="metadata" disablepictureinpicture disableremoteplayback tabindex="-1" poster="vid/palms3.jpg"><source src="vid/palms3.mp4" type="video/mp4"></video></div>
 </div>
   </div>
   <div class="map rv">
