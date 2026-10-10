@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Become a Host Family · Abroad Life with Anja</title>
 <meta name="description" content="Exchange guides by a former exchange student: how to apply, how to pack and how to make it the best year of your life.">
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Domine:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Italiana&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Domine:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Italiana&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&display=swap" rel="stylesheet">
 <link rel="icon" href="favicon.ico?v=8" sizes="any">
 <link rel="icon" href="favicon.svg?v=8" type="image/svg+xml">
 <link rel="icon" href="favicon-64.png?v=8" type="image/png">
@@ -672,12 +672,47 @@ a.host-btn{cursor:pointer!important;opacity:1}
 .comm-s{color:#254551!important}
 .ed-ribbon{border:1px solid rgba(37,69,81,.25)!important}
 .cx-tag,.pl-tag{color:#254551!important;border-color:rgba(37,69,81,.45)!important}
+
+/* shared top: announcement strip + teal bar */
+.ann{background:#FFD5B8;color:#254551;text-align:center;font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:2.6px;text-transform:uppercase;padding:9px 16px;position:relative;z-index:5}
+.nv{position:relative;z-index:5;background:#254551;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:64px;padding:20px 42px}
+.nv a{color:#FFE6D6;text-decoration:none;font-family:'Instrument Sans',sans-serif;font-size:11.5px;letter-spacing:2.6px;text-transform:uppercase;font-weight:600;transition:opacity .3s}
+.nv a:hover{opacity:.7}
+.nv-l,.nv-r{display:flex;align-items:center;gap:38px;flex-wrap:wrap}
+.nv-l{justify-content:flex-end}.nv-r{justify-content:flex-start}
+.nv .nv-logo{font-family:'Gloock',serif;font-size:30px;line-height:.92;letter-spacing:.01em;font-weight:400;text-align:center;color:#FFD5B8}
+.nv-lang{display:flex;border:1px solid rgba(255,230,214,.5);border-radius:2px;overflow:hidden;margin-left:auto;background:transparent!important;box-shadow:none!important}
+.nv-lang button{min-width:44px;padding:9px 12px!important;background:transparent!important;border:0!important;border-radius:0!important;color:#FFE6D6!important;font-family:inherit;font-size:11px!important;letter-spacing:1.5px!important;font-weight:600;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.nv-lang button.on{background:#FFE6D6!important;color:#254551!important}
+@media(max-width:980px){
+.ann{font-size:9px;letter-spacing:1.6px;padding:8px 12px}
+.nv{grid-template-columns:1fr;gap:12px;padding:16px 14px 14px;text-align:center}
+.nv .nv-logo{order:-1;font-size:27px}
+.nv-l,.nv-r{justify-content:center;gap:10px 20px}
+.nv a{font-size:9.5px;letter-spacing:1.8px}
+.nv-lang{margin-left:0}
+}
+.subpage .prods,.subpage .bundle,.subpage .host{padding-top:54px!important}
 </style>
 </head>
 <body class="subpage en">
 <div class="bgx"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 
-<div class="subtop"><a class="back" href="index.html">← Back to home</a></div>
+<div class="ann"><span lang-en>For the best experience, I recommend viewing this on a desktop or laptop!</span><span lang-hr>Za najbolji doživljaj preporučujem da ovo otvoriš na računalu ili laptopu!</span></div>
+<nav class="nv">
+  <div class="nv-l">
+    <a href="https://bhvedu.com/svi-programi/" target="_blank" rel="noopener" lang-hr>Programi za inozemstvo</a>
+    <a href="index.html" data-go="zajednica"><span lang-hr>Moj community</span><span lang-en>My community</span></a>
+    <a href="index.html" data-go="prica" lang-en>My story</a>
+  </div>
+  <a class="nv-logo" href="index.html" aria-label="Abroad Life with Anja">Abroad Life<br>with Anja</a>
+  <div class="nv-r">
+    <a href="index.html" data-go="prica" lang-hr>Moja priča</a>
+    <a href="store.html">Store</a>
+    <a href="host.html" lang-en>Become a host family</a>
+    
+  </div>
+</nav>
 <section class="host" id="host"><div class="w"><div class="hostbox rv">
   <div class="host-l">
     <div class="kicker"><i></i>For American families<i></i></div>
