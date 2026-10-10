@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Abroad Life with Anja</title>
 <meta name="description" content="Exchange guides by a former exchange student: how to apply, how to pack and how to make it the best year of your life.">
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Domine:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Italiana&family=Spicy+Rice&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Domine:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Italiana&family=Gloock&family=Spicy+Rice&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&display=swap" rel="stylesheet">
 <link rel="icon" href="favicon.ico?v=8" sizes="any">
 <link rel="icon" href="favicon.svg?v=8" type="image/svg+xml">
 <link rel="icon" href="favicon-64.png?v=8" type="image/png">
@@ -202,7 +202,7 @@ footer p{color:var(--mid);max-width:520px;margin:0 auto 18px;font-weight:300}
 .v3b .w{max-width:1120px;margin:0 auto;padding:0 24px}
 .v3b .k{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--peri);font-weight:600;margin-bottom:10px}
 .v3b .quote{position:relative;padding:130px 0;color:#fff;text-align:center;overflow:hidden}
-.v3b .quote .bg{position:absolute;inset:0;background:url(img/bg3.jpg) center/cover;background-attachment:fixed}
+.v3b .quote .bg{position:absolute;inset:0;background:url(img/bg1.jpg) center/cover;background-attachment:fixed}
 .v3b .quote::after{content:"";position:absolute;inset:0;background:rgba(24,20,23,.6)}
 .v3b .quote .w{position:relative;z-index:1;max-width:820px}
 .v3b .quote q{font-family:'Domine',serif;font-style:italic;font-size:clamp(24px,3.6vw,38px);line-height:1.35;quotes:"“" "”"}
@@ -960,35 +960,77 @@ body.en .rp[data-i="0"] .rgrid{grid-template-columns:minmax(0,460px)!important;j
 .comm-s{color:#254551!important}
 .ed-ribbon{border:1px solid rgba(37,69,81,.25)!important}
 .cx-tag,.pl-tag{color:#254551!important;border-color:rgba(37,69,81,.45)!important}
+
+/* front page: announcement strip, teal bar, full photo hero, moving strip */
+.ann{background:#FFD5B8;color:#254551;text-align:center;font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:2.6px;text-transform:uppercase;padding:9px 16px;position:relative;z-index:5}
+.nv{position:relative;z-index:5;background:#254551;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;padding:20px 42px}
+.nv a{color:#FFE6D6;text-decoration:none;font-family:'Instrument Sans',sans-serif;font-size:11.5px;letter-spacing:2.6px;text-transform:uppercase;font-weight:600;transition:opacity .3s}
+.nv a:hover{opacity:.7}
+.nv-l,.nv-r{display:flex;align-items:center;gap:38px;flex-wrap:wrap}
+.nv-r{justify-content:flex-end}
+.nv .nv-logo{font-family:'Gloock',serif;font-size:30px;line-height:.92;letter-spacing:.01em;font-weight:400;text-align:center;color:#FFD5B8}
+.nv-lang{display:flex;border:1px solid rgba(255,230,214,.5);border-radius:2px;overflow:hidden}
+.nv-lang button{background:transparent;border:0;color:#FFE6D6;font-family:inherit;font-size:11px;letter-spacing:1.5px;font-weight:600;padding:7px 11px;cursor:pointer}
+.nv-lang button.on{background:#FFE6D6!important;color:#254551!important;border-color:transparent!important}
+.hx{position:relative;z-index:1;min-height:min(78vh,760px);display:flex;align-items:flex-end;justify-content:center;text-align:center;background:#5B2A2A url(img/bg3.jpg) center 38%/cover;padding:0 24px 86px}
+.hx::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(60,24,26,.18) 0%,rgba(60,24,26,.32) 45%,rgba(52,20,24,.78) 100%)}
+.hx-in{position:relative;max-width:860px}
+.hx-k{color:#FFE6D6;font-family:'Instrument Sans',sans-serif;font-size:12.5px;letter-spacing:4px;text-transform:uppercase;margin-bottom:18px}
+.hx h1{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(34px,5vw,70px);line-height:1.06;color:#FFD9C6;letter-spacing:-.01em;margin:0 0 30px}
+.hx h1 em{font-style:italic}
+.hx-btn{display:inline-block;background:#FFD5B8;color:#254551;text-decoration:none;font-family:'Instrument Sans',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;font-weight:600;padding:19px 34px;border-radius:2px;transition:background .3s,color .3s}
+.hx-btn:hover{background:#254551;color:#FFE6D6}
+.mq{position:relative;z-index:1;overflow:hidden;background:linear-gradient(90deg,#FBE3D3,#E9C3C0);border-bottom:1px solid rgba(37,69,81,.12)}
+.mq-t{display:inline-flex;align-items:center;gap:34px;white-space:nowrap;padding:16px 0;animation:mq 46s linear infinite;font-family:'Instrument Sans',sans-serif;font-size:12.5px;letter-spacing:3.4px;text-transform:uppercase;color:#254551}
+.mq-t i{font-style:normal;opacity:.6}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.mq-t{animation:none}}
+.top2{background:none!important;padding:0!important;max-width:none!important}
+.top2 .ed-story{border-radius:0!important;padding-top:80px!important}
+@media(max-width:980px){
+.ann{font-size:9px;letter-spacing:1.6px;padding:8px 12px}
+.nv{grid-template-columns:1fr;gap:12px;padding:16px 14px 14px;text-align:center}
+.nv .nv-logo{order:-1;font-size:27px}
+.nv-l,.nv-r{justify-content:center;gap:10px 20px}
+.nv a{font-size:9.5px;letter-spacing:1.8px}
+.hx{min-height:68vh;padding-bottom:54px}
+.hx h1{font-size:clamp(30px,8.4vw,44px)}
+.hx-k{font-size:10.5px;letter-spacing:3px}
+.hx-btn{padding:16px 24px;font-size:10.5px;letter-spacing:2.4px}
+.mq-t{font-size:10.5px;gap:22px;padding:13px 0}
+.top2 .ed-story{padding-top:44px!important}
+}
 </style>
 </head>
 <body>
 <div class="bgx"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 
-<div class="lang lang-float"><button data-l="hr" class="on">HR</button><button data-l="en">EN</button></div>
 
-<div class="top2 sp">
-  <div class="w sp-top">
-      <p class="top-note"><span lang-en>For the best experience, I recommend viewing this on a desktop or laptop!</span><span lang-hr>Za najbolji doživljaj preporučujem da ovo otvoriš na računalu ili laptopu!</span></p>
-      <div class="ed-cta"><a href="#put" class="btn dark main"><span lang-hr>Kako ići na razmjenu</span><span lang-en>How to go on exchange</span><i class="arr">→</i></a><a href="https://bhvedu.com/svi-programi/" target="_blank" rel="noopener" class="btn light tipb" lang-hr><span lang-hr>Programi za inozemstvo</span><span lang-en>Programs abroad</span><span class="tip"><span lang-hr>Razmjena, ljetne škole, škole jezika, studij i život u inozemstvu · BHV Education</span><span lang-en>Exchange, summer schools, studies and life abroad · BHV Education</span></span></a><a href="#zajednica" class="btn light"><span lang-hr>Moj community</span><span lang-en>My community</span></a><a href="#prica" class="btn light"><span lang-hr>Moja priča</span><span lang-en>My story</span></a><a href="store.html" class="btn light">Store</a><a href="host.html" class="btn light" lang-en>Become a host family</a></div>
+
+<div class="ann"><span lang-en>For the best experience, I recommend viewing this on a desktop or laptop!</span><span lang-hr>Za najbolji doživljaj preporučujem da ovo otvoriš na računalu ili laptopu!</span></div>
+<nav class="nv">
+  <div class="nv-l">
+    <a href="#put"><span lang-hr>Kako ići na razmjenu</span><span lang-en>How to go on exchange</span></a>
+    <a href="https://bhvedu.com/svi-programi/" target="_blank" rel="noopener" lang-hr title="Razmjena, ljetne škole, škole jezika, studij i život u inozemstvu · BHV Education">Programi za inozemstvo</a>
+    <a href="#zajednica"><span lang-hr>Moj community</span><span lang-en>My community</span></a>
   </div>
-<header class="ed-hero sp">
-  <div class="w sp-grid">
-    <div class="sp-text">
-      <div class="ed-top"><span>@abroadlifewithanja</span><span class="ed-rule"></span><img class="red-flag" src="img/usa-flag.png" alt="USA"></div>
-      <h1><span class="pu">Abroad</span> Life with Anja</h1>
-      <p class="ed-tag"><span lang-en>Apply, live it fully, and grow from it for the rest of your life.</span><span lang-hr>Prijavi se, proživi svaki trenutak i izrasti iz tog iskustva cijeli život.</span></p>
-    </div>
-    <figure class="sp-photo"><img src="img/anja-usa.jpg" alt="Anja"></figure>
+  <a class="nv-logo" href="index.html" aria-label="Abroad Life with Anja">Abroad Life<br>with Anja</a>
+  <div class="nv-r">
+    <a href="#prica"><span lang-hr>Moja priča</span><span lang-en>My story</span></a>
+    <a href="store.html">Store</a>
+    <a href="host.html" lang-en>Host family</a>
+    <div class="lang nv-lang"><button data-l="hr" class="on">HR</button><button data-l="en">EN</button></div>
   </div>
-  <div class="w"><div class="ed-ribbon">
-        <div><b>5+</b><span lang-en>Free guides</span><span lang-hr>Besplatnih vodiča</span></div>
-        <div><b>50+</b><span lang-en>Exchange tips</span><span lang-hr>Savjeta za razmjenu</span></div>
-        <div><b>100+</b><span lang-en>Questions answered</span><span lang-hr>Odgovora</span></div>
-        <div><b>&#8734;</b><span lang-en>Memories to make</span><span lang-hr>Uspomena</span></div>
-      </div></div>
+</nav>
+<header class="hx">
+  <div class="hx-in">
+    <div class="hx-k">@abroadlifewithanja</div>
+    <h1><span lang-en>Apply, <em>live it fully</em>, and grow from it for the rest of your life.</span><span lang-hr>Prijavi se, <em>proživi svaki trenutak</em> i izrasti iz tog iskustva cijeli život.</span></h1>
+    <a class="hx-btn" href="#put"><span lang-hr>Kako ići na razmjenu</span><span lang-en>How to go on exchange</span></a>
+  </div>
 </header>
-
+<div class="mq" aria-hidden="true"><div class="mq-t"><span><span lang-en>5+ free guides</span><span lang-hr>5+ besplatnih vodiča</span></span><i>·</i><span><span lang-en>50+ exchange tips</span><span lang-hr>50+ savjeta za razmjenu</span></span><i>·</i><span><span lang-en>100+ questions answered</span><span lang-hr>100+ odgovora</span></span><i>·</i><span><span lang-en>Memories to make</span><span lang-hr>Uspomene za cijeli život</span></span><i>·</i><span><span lang-en>5+ free guides</span><span lang-hr>5+ besplatnih vodiča</span></span><i>·</i><span><span lang-en>50+ exchange tips</span><span lang-hr>50+ savjeta za razmjenu</span></span><i>·</i><span><span lang-en>100+ questions answered</span><span lang-hr>100+ odgovora</span></span><i>·</i><span><span lang-en>Memories to make</span><span lang-hr>Uspomene za cijeli život</span></span><i>·</i><span><span lang-en>5+ free guides</span><span lang-hr>5+ besplatnih vodiča</span></span><i>·</i><span><span lang-en>50+ exchange tips</span><span lang-hr>50+ savjeta za razmjenu</span></span><i>·</i><span><span lang-en>100+ questions answered</span><span lang-hr>100+ odgovora</span></span><i>·</i><span><span lang-en>Memories to make</span><span lang-hr>Uspomene za cijeli život</span></span><i>·</i><span><span lang-en>5+ free guides</span><span lang-hr>5+ besplatnih vodiča</span></span><i>·</i><span><span lang-en>50+ exchange tips</span><span lang-hr>50+ savjeta za razmjenu</span></span><i>·</i><span><span lang-en>100+ questions answered</span><span lang-hr>100+ odgovora</span></span><i>·</i><span><span lang-en>Memories to make</span><span lang-hr>Uspomene za cijeli život</span></span><i>·</i></div></div>
+<div class="top2">
 <section class="ed-story" id="prica"><div class="w">
   <div class="ed-s-left rv one">
     <div class="ed-s-photo"><img src="img/anja-hero.jpg" alt="Anja"></div>
