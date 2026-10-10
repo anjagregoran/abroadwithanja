@@ -695,6 +695,28 @@ a.host-btn{cursor:pointer!important;opacity:1}
 .nv-lang{margin-left:0}
 }
 .subpage .prods,.subpage .bundle,.subpage .host{padding-top:54px!important}
+
+.subpage .bd{padding:64px 0 90px!important}
+.bd-g{display:grid;grid-template-columns:.82fr 1.18fr;gap:70px;align-items:center;max-width:1120px!important}
+.bd-cover{margin:0}
+.bd-cover img{display:block;width:100%;border-radius:6px;box-shadow:0 44px 80px -50px rgba(35,27,28,.55)}
+.bd-k{font-size:10.5px;letter-spacing:3.4px;text-transform:uppercase;font-weight:600;color:#9E1B1E;margin-bottom:16px}
+.bd-h{font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(34px,4.2vw,58px);line-height:1.06;color:#231B1C;letter-spacing:.005em;margin:0 0 22px}
+.bd-lead{font-size:18px;line-height:1.65;color:#3A3031;margin:0 0 12px}
+.bd-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:18px;line-height:1.55;color:#6E6466;margin:0 0 34px}
+.bd-buy{display:flex;align-items:center;gap:30px;flex-wrap:wrap;padding-top:26px;border-top:1px solid rgba(35,27,28,.14)}
+.bd-price b{display:block;font-family:'Bodoni Moda',serif;font-weight:400;font-size:38px;line-height:1;color:#231B1C}
+.bd-price span{display:block;font-size:13px;color:#7A7072;margin-top:7px}
+.bd-inc{max-width:860px;margin:96px auto 0}
+.bd-inc h2{font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:3.6px;text-transform:uppercase;font-weight:600;color:#9E1B1E;text-align:center;margin:0 0 20px}
+.bd-inc ol{list-style:none;margin:0;padding:0;border-top:1px solid rgba(35,27,28,.14)}
+.bd-inc li{display:grid;grid-template-columns:44px 1fr auto;gap:18px;align-items:baseline;padding:26px 4px;border-bottom:1px solid rgba(35,27,28,.14)}
+.bd-n{font-family:'Bodoni Moda',serif;font-size:24px;color:#9E1B1E}
+.bd-inc h3{font-family:'Bodoni Moda',serif;font-weight:400;font-size:23px;line-height:1.25;color:#231B1C;margin:0}
+.bd-inc li p{font-family:'Playfair Display',serif;font-style:italic;font-size:16px;line-height:1.5;color:#6E6466;margin:7px 0 0}
+.bd-p{font-size:13px;letter-spacing:1px;color:#7A7072;white-space:nowrap}
+.bd-note{text-align:center;font-size:14px;color:#7A7072;margin-top:26px}
+@media(max-width:860px){.subpage .bd{padding:34px 0 60px!important}.bd-g{grid-template-columns:1fr;gap:30px}.bd-cover{max-width:300px;margin:0 auto}.bd-lead,.bd-sub{font-size:16.5px}.bd-buy{gap:18px}.bd-buy .btn{flex:1;justify-content:center;text-align:center}.bd-inc{margin-top:60px}.bd-inc li{grid-template-columns:30px 1fr;gap:12px;padding:20px 2px}.bd-p{grid-column:2}.bd-inc h3{font-size:20px}}
 </style>
 </head>
 <body class="subpage">
@@ -714,24 +736,26 @@ a.host-btn{cursor:pointer!important;opacity:1}
     <div class="lang nv-lang"><button data-l="hr" class="on">HR</button><button data-l="en">EN</button></div>
   </div>
 </nav>
-<section class="bundle" id="bundle"><div class="w"><div class="bx rv">
-  <div class="cover"><span class="badge"><span lang-en>Save almost 30%</span><span lang-hr>Uštedi gotovo 30%</span></span><img src="img/bundle.jpg" alt="The Exchange Year Bundle"></div>
-  <div>
-    <div class="kicker"><i></i>Exchange bundle<i></i></div>
-    <h2>The Exchange Year Master Guide 🇺🇸⭐</h2>
-    <p class="lead"><span lang-en>4 must-have exchange guides in one bundle, made by a former exchange student to <b>experience more &amp; make memories that last a lifetime!</b></span><span lang-hr>4 neizostavna vodiča za razmjenu u jednom paketu, od bivše učenice na razmjeni, da <b>doživiš više i stvoriš uspomene za cijeli život!</b></span></p>
-    <p class="every"><span lang-en>Everything you need to pack, live, remember &amp; use the experience to build your future and design a life you love.</span><span lang-hr>Sve što ti treba da se spakiraš, proživiš, zapamtiš i iskoristiš iskustvo da izgradiš budućnost i život koji voliš.</span></p>
-    <div class="yg"><span lang-en>YOU GET:</span><span lang-hr>DOBIVAŠ:</span></div>
-    <ul class="inc">
-      <li>The Ultimate Exchange Packing List Nobody Gives You</li>
-      <li>100 things to make your exchange unforgettable; The Ultimate USA Bucket List</li>
-      <li>Lifetime Lessons &amp; Skills From My Exchange That Will Get You Ahead of Everyone; What You'll Never Learn in School</li>
-      <li>Your Year Abroad; How American High School Works, How To Make Friends &amp; How to Use Your Exchange For a Successful Future and Designing The Life You Actually Want</li>
-    </ul>
-    <div class="pricebar"><div class="price">23.99 €<s>32.96 €</s></div><a href="https://anja-health-exchange.kit.com/products/the-exchange-year-bundle" target="_blank" class="btn dark"><span lang-en>Get your bundle for 23.99 €</span><span lang-hr>Uzmi paket za 23.99 €</span></a></div>
-    <p class="savel"><span lang-en>SAVE almost <b>30%</b> by getting <b>THE BUNDLE</b>🤍</span><span lang-hr>UŠTEDI gotovo <b>30%</b> uz <b>PAKET</b>🤍</span></p>
+<section class="bundle bd" id="bundle">
+  <div class="w bd-g">
+    <figure class="bd-cover"><img src="img/bundle.jpg" alt="The Exchange Year Bundle"></figure>
+    <div class="bd-t">
+      <div class="bd-k">Exchange bundle</div>
+      <h1 class="bd-h">The Exchange Year Master Guide</h1>
+      <p class="bd-lead"><span lang-en>4 must-have exchange guides in one bundle, made by a former exchange student to experience more &amp; make memories that last a lifetime.</span><span lang-hr>4 neizostavna vodiča za razmjenu u jednom paketu, od bivše učenice na razmjeni, da doživiš više i stvoriš uspomene za cijeli život.</span></p>
+      <p class="bd-sub"><span lang-en>Everything you need to pack, live, remember &amp; use the experience to build your future and design a life you love.</span><span lang-hr>Sve što ti treba da se spakiraš, proživiš, zapamtiš i iskoristiš iskustvo da izgradiš budućnost i život koji voliš.</span></p>
+      <div class="bd-buy">
+        <div class="bd-price"><b>23.99 €</b><span><span lang-en>instead of 32.96 € · you save almost 30%</span><span lang-hr>umjesto 32.96 € · štediš gotovo 30%</span></span></div>
+        <a href="https://anja-health-exchange.kit.com/products/the-exchange-year-bundle" target="_blank" class="btn dark"><span lang-en>Get the bundle</span><span lang-hr>Uzmi paket</span></a>
+      </div>
+    </div>
   </div>
-</div></div></section>
+  <div class="w"><div class="bd-inc">
+    <h2><span lang-en>What's inside</span><span lang-hr>Što dobivaš</span></h2>
+    <ol><li><span class="bd-n">1</span><div><h3>The Ultimate Exchange Packing List Nobody Gives You</h3></div><span class="bd-p">7.99 €</span></li><li><span class="bd-n">2</span><div><h3>100 Things to Make Your Exchange Unforgettable</h3><p>The Ultimate USA Bucket List</p></div><span class="bd-p">5.99 €</span></li><li><span class="bd-n">3</span><div><h3>Lifetime Lessons &amp; Skills From My Exchange That Will Get You Ahead of Everyone</h3><p>What You'll Never Learn in School</p></div><span class="bd-p">8.99 €</span></li><li><span class="bd-n">4</span><div><h3>Your Year Abroad</h3><p>How American High School Works, How To Make Friends &amp; How to Use Your Exchange For a Successful Future and Designing The Life You Actually Want</p></div><span class="bd-p">9.99 €</span></li></ol>
+    <p class="bd-note"><span lang-en>All four guides are PDFs in English, sent to your email right after purchase.</span><span lang-hr>Sva četiri vodiča su PDF-ovi na engleskom, a stižu ti na e-mail odmah nakon kupnje.</span></p>
+  </div></div>
+</section>
 <div class="v3b">
 <footer>
   <p><span lang-en>I hope my guides will truly help and if you have any more questions you can contact me through my socials or email :)</span><span lang-hr>Nadam se da će ti moji vodiči stvarno pomoći, a ako imaš još pitanja, javi mi se na društvenim mrežama ili emailom :)</span></p>
