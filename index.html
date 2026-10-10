@@ -1001,6 +1001,9 @@ body.en .rp[data-i="0"] .rgrid{grid-template-columns:minmax(0,460px)!important;j
 .top2 .ed-story{padding-top:44px!important}
 }
 @media(hover:hover) and (min-width:981px){.hx{background-attachment:fixed;background-position:center 30%}}
+@media(min-width:981px){.nv{gap:64px!important}.nv-l{justify-content:flex-end!important}.nv-r{justify-content:flex-start!important}.nv-lang{margin-left:auto}}
+.nv-lang button{min-width:44px;padding:9px 12px!important;background:transparent!important;color:#FFE6D6!important;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.nv-lang button.on{background:#FFE6D6!important;color:#254551!important}
 </style>
 </head>
 <body>
@@ -1131,7 +1134,7 @@ window.addEventListener('pageshow',function(e){if(e.persisted)window.scrollTo(0,
 <script>
 (function(){
  function setLang(l){document.body.classList.toggle('en',l==='en');document.documentElement.lang=l;document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l)});try{localStorage.setItem('awa-lang',l)}catch(e){}}
- document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.l)})});
+ document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.lang button');if(b){e.preventDefault();setLang(b.dataset.l)}});
  var saved=null;try{saved=localStorage.getItem('awa-lang')}catch(e){}
  setLang(saved||'en');
 
