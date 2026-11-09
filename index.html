@@ -1048,6 +1048,35 @@ nav.nv{position:relative!important;top:auto!important;backdrop-filter:none!impor
 .hx-sub i{font-style:normal;font-size:1.2em;line-height:0;letter-spacing:0;transition:transform .3s}
 .hx-sub:hover i{transform:translateY(3px)}
 @media(max-width:560px){.hx-sub{font-size:9.5px;letter-spacing:1.6px}}
+
+/* hero sub-link sits lower; footer link row */
+.hx-cta{gap:28px!important}
+.ftl{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 26px;margin:22px 0 18px}
+.ftl a{font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;
+  font-weight:500;text-decoration:none;color:inherit;opacity:.72;border-bottom:1px solid currentColor;
+  padding-bottom:2px;transition:opacity .3s}
+.ftl a:hover{opacity:1}
+@media(max-width:560px){.ftl{gap:8px 16px}.ftl a{font-size:9.5px;letter-spacing:1.4px}}
+
+.ftl .tip{position:relative}
+.ftl .tipb{position:absolute;bottom:calc(100% + 12px);left:50%;transform:translate(-50%,6px);
+  width:max-content;max-width:290px;background:#231B1C;color:#FAF6EF;border:0;border-radius:12px;
+  padding:12px 15px;font-size:11.5px;line-height:1.5;letter-spacing:.01em;text-transform:none;
+  font-weight:400;font-style:normal;opacity:0;visibility:hidden;transition:.25s;z-index:5;
+  box-shadow:0 18px 36px -20px rgba(0,0,0,.7);pointer-events:none;text-align:center}
+.ftl .tipb::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  border:6px solid transparent;border-top-color:#231B1C}
+.ftl .tip:hover .tipb,.ftl .tip:focus-visible .tipb{opacity:1;visibility:visible;transform:translate(-50%,0)}
+@media(max-width:620px){.ftl .tipb{max-width:min(78vw,260px);font-size:11px}}
+
+@media(hover:none){
+  .ftl{flex-direction:column;align-items:center;gap:14px}
+  .ftl .tipb{position:static;transform:none;opacity:1;visibility:visible;background:none;color:inherit;
+    box-shadow:none;padding:6px 0 0;max-width:34ch;font-size:11px;opacity:.6;display:block;border-radius:0}
+  .ftl .tipb::after{display:none}
+  .ftl .tip{border-bottom:0;display:flex;flex-direction:column;align-items:center}
+  .ftl .tip>span{border-bottom:1px solid currentColor;padding-bottom:2px}
+}
 </style>
 </head>
 <body>
@@ -1058,8 +1087,6 @@ nav.nv{position:relative!important;top:auto!important;backdrop-filter:none!impor
 <div class="ann"><span lang-en>For the best experience, I recommend viewing this on a desktop or laptop!</span><span lang-hr>Za najbolji doživljaj preporučujem da ovo otvoriš na računalu ili laptopu!</span></div>
 <nav class="nv">
   <div class="nv-l">
-    <a href="https://bhvedu.com/svi-programi/" target="_blank" rel="noopener" lang-hr title="Razmjena, ljetne škole, škole jezika, studij i život u inozemstvu · BHV Education">Programi za inozemstvo</a>
-    <a href="programi.html"><span lang-hr>Nađi svoj program</span><span lang-en>Find your program</span></a>
     <a href="#zajednica"><span lang-hr>Moj community</span><span lang-en>My community</span></a>
     <a href="#prica" lang-en>My story</a>
   </div>
@@ -1075,7 +1102,7 @@ nav.nv{position:relative!important;top:auto!important;backdrop-filter:none!impor
   <div class="hx-in">
     <div class="hx-k">@abroadlifewithanja</div>
     <h1><span lang-en>Apply, <em>live it fully</em>, and grow from it for the rest of your life.</span><span lang-hr>Prijavi se, <em>proživi svaki trenutak</em> i izrasti iz tog iskustva cijeli život.</span></h1>
-    <div class="hx-cta"><a class="hx-btn" href="programi.html"><span lang-hr>Nađi svoj program</span><span lang-en>Find your program</span><i class="hx-ar hx-r" aria-hidden="true">→</i></a><a class="hx-sub" href="#put"><span lang-hr>Ili pogledaj kako ići na razmjenu</span><span lang-en>Or see how to go on exchange</span><i aria-hidden="true">↓</i></a></div>
+    <div class="hx-cta"><a class="hx-btn" href="programi.html"><span lang-hr>Nađi svoj program za Ameriku</span><span lang-en>Find your US program</span><i class="hx-ar hx-r" aria-hidden="true">→</i></a><a class="hx-sub" href="#put"><span lang-hr>Srednjoškolska razmjena u SAD-u i svi moji vodiči</span><span lang-en>US high school exchange and all my guides</span><i aria-hidden="true">↓</i></a></div>
   </div>
 </header>
 <div class="mq" aria-hidden="true"><div class="mq-t"><span><span lang-en>5+ free guides</span><span lang-hr>5+ besplatnih vodiča</span></span><i>·</i><span><span lang-en>50+ exchange tips</span><span lang-hr>50+ savjeta za razmjenu</span></span><i>·</i><span><span lang-en>100+ questions answered</span><span lang-hr>100+ odgovora</span></span><i>·</i><span><span lang-en>Memories to make</span><span lang-hr>Uspomene za cijeli život</span></span><i>·</i><span><span lang-en>5+ free guides</span><span lang-hr>5+ besplatnih vodiča</span></span><i>·</i><span><span lang-en>50+ exchange tips</span><span lang-hr>50+ savjeta za razmjenu</span></span><i>·</i><span><span lang-en>100+ questions answered</span><span lang-hr>100+ odgovora</span></span><i>·</i><span><span lang-en>Memories to make</span><span lang-hr>Uspomene za cijeli život</span></span><i>·</i><span><span lang-en>5+ free guides</span><span lang-hr>5+ besplatnih vodiča</span></span><i>·</i><span><span lang-en>50+ exchange tips</span><span lang-hr>50+ savjeta za razmjenu</span></span><i>·</i><span><span lang-en>100+ questions answered</span><span lang-hr>100+ odgovora</span></span><i>·</i><span><span lang-en>Memories to make</span><span lang-hr>Uspomene za cijeli život</span></span><i>·</i><span><span lang-en>5+ free guides</span><span lang-hr>5+ besplatnih vodiča</span></span><i>·</i><span><span lang-en>50+ exchange tips</span><span lang-hr>50+ savjeta za razmjenu</span></span><i>·</i><span><span lang-en>100+ questions answered</span><span lang-hr>100+ odgovora</span></span><i>·</i><span><span lang-en>Memories to make</span><span lang-hr>Uspomene za cijeli život</span></span><i>·</i></div></div>
@@ -1165,6 +1192,10 @@ nav.nv{position:relative!important;top:auto!important;backdrop-filter:none!impor
     <a href="https://www.instagram.com/anjagregoran/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7.3A4.7 4.7 0 1 0 16.7 12 4.7 4.7 0 0 0 12 7.3zm0 7.8a3.1 3.1 0 1 1 3.1-3.1 3.1 3.1 0 0 1-3.1 3.1zM17 5.9a1.1 1.1 0 1 0 1.1 1.1A1.1 1.1 0 0 0 17 5.9zM12 3.6c2.7 0 3 0 4.1.1a5.6 5.6 0 0 1 1.9.3 3.3 3.3 0 0 1 1.9 1.9 5.6 5.6 0 0 1 .3 1.9c.1 1.1.1 1.4.1 4.1s0 3-.1 4.1a5.6 5.6 0 0 1-.3 1.9 3.3 3.3 0 0 1-1.9 1.9 5.6 5.6 0 0 1-1.9.3c-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1a5.6 5.6 0 0 1-1.9-.3 3.3 3.3 0 0 1-1.9-1.9 5.6 5.6 0 0 1-.3-1.9C3.6 15 3.6 14.7 3.6 12s0-3 .1-4.1A5.6 5.6 0 0 1 4 6a3.3 3.3 0 0 1 1.9-1.9 5.6 5.6 0 0 1 1.9-.3C9 3.6 9.3 3.6 12 3.6M12 2C9.3 2 8.9 2 7.9 2.1a7.3 7.3 0 0 0-2.4.5 4.9 4.9 0 0 0-2.9 2.9 7.3 7.3 0 0 0-.5 2.4C2 8.9 2 9.3 2 12s0 3.1.1 4.1a7.3 7.3 0 0 0 .5 2.4 4.9 4.9 0 0 0 2.9 2.9 7.3 7.3 0 0 0 2.4.5c1 .1 1.4.1 4.1.1s3.1 0 4.1-.1a7.3 7.3 0 0 0 2.4-.5 4.9 4.9 0 0 0 2.9-2.9 7.3 7.3 0 0 0 .5-2.4c.1-1 .1-1.4.1-4.1s0-3.1-.1-4.1a7.3 7.3 0 0 0-.5-2.4 4.9 4.9 0 0 0-2.9-2.9 7.3 7.3 0 0 0-2.4-.5C15.1 2 14.7 2 12 2z"/></svg></a>
     <a href="https://www.tiktok.com/@abroadlifewithanja" target="_blank" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6 2.5 2.5 0 0 1 .8.1V9.7a5.8 5.8 0 0 0-.8-.1 5.7 5.7 0 1 0 5.7 5.7V9a7.4 7.4 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg></a>
     <a href="mailto:anja.gregoran1@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.3 6.8v.1L12 13l7.7-6.1v-.1z"/></svg></a>
+  </div>
+  <div class="ftl">
+    <a class="tip" href="https://bhvedu.com/svi-programi/" target="_blank" rel="noopener"><span lang-hr>Ostali programi u inozemstvu</span><span lang-en>Other programs abroad</span><em class="tipb"><span lang-hr>Ne želiš baš u Ameriku? Europa i ostatak svijeta: škole jezika, ljetne škole, studij, volontiranje.</span><span lang-en>Not set on America? Europe and the rest of the world: language schools, summer schools, university, volunteering.</span></em></a>
+    <a href="mailto:anja.gregoran1@gmail.com">anja.gregoran1@gmail.com</a>
   </div>
   <div class="copy">© Abroad Life with Anja · @abroadlifewithanja</div>
 </footer>
