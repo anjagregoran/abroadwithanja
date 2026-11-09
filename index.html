@@ -1220,6 +1220,34 @@ if(location.hash){history.replaceState(null,'',location.pathname+location.search
 window.scrollTo(0,0);
 window.addEventListener('load',function(){var g=null;try{g=sessionStorage.getItem('awa-go');sessionStorage.removeItem('awa-go')}catch(e){}var t=g&&document.getElementById(g);if(t){t.scrollIntoView()}else{window.scrollTo(0,0)}});
 window.addEventListener('pageshow',function(e){if(e.persisted)window.scrollTo(0,0)});
+/* slow, eased scroll from the hero link down to the guides */
+(function(){
+ var link=document.querySelector('.hx-sub');
+ if(!link)return;
+ var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ link.addEventListener('click',function(e){
+  var target=document.getElementById('put');
+  if(!target||reduce)return;              /* let the browser handle it */
+  e.preventDefault();
+  var html=document.documentElement;
+  var prev=html.style.scrollBehavior;
+  html.style.scrollBehavior='auto';       /* CSS smooth would fight the animation */
+  var start=window.pageYOffset;
+  var end=target.getBoundingClientRect().top+start;
+  var dist=end-start;
+  var dur=Math.min(2600,Math.max(1400,Math.abs(dist)*0.9));
+  var t0=null;
+  function ease(t){return t<0.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;}
+  function step(ts){
+   if(t0===null)t0=ts;
+   var t=Math.min(1,(ts-t0)/dur);
+   window.scrollTo(0,start+dist*ease(t));
+   if(t<1){requestAnimationFrame(step);}
+   else{html.style.scrollBehavior=prev;}
+  }
+  requestAnimationFrame(step);
+ });
+})();
 </script>
 <script>
 (function(){
