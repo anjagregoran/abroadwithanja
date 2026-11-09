@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nađi svoj program · Abroad Life with Anja</title>
+<meta name="description" content="Odgovori na tri pitanja i vidi koji programi razmjene, stipendije i tečajevi u SAD-u vrijede za tebe. Za učenike i studente s Balkana.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-64.png" sizes="64x64">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#9E1B1E; --teal-dk:#231B1C;
+  --peach:#DCE1F7; --peach-dk:#ACB9E9;
+  --blush:#F2EDE2; --cream:#FAF6EF;
+  --ink:#231B1C; --muted:#7A7072; --line:#E6DFD2;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+h1,h2{font-family:var(--serif);font-weight:400;font-style:italic}
+
+/* ---------- steps ---------- */
+.step{display:none;padding:72px 0 88px;text-align:center}
+.step.on{display:block}
+@media(prefers-reduced-motion:no-preference){.step.on{animation:in .4s ease both}}
+@keyframes in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+.prog{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:30px}
+.dot{width:26px;height:3px;border-radius:2px;background:var(--line);transition:.25s}
+.dot.on{background:var(--teal);width:40px}
+.dot.done{background:var(--peach-dk)}
+
+.qn{font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.step h2{font-size:clamp(1.9rem,4.4vw,2.9rem);line-height:1.12;margin-bottom:12px}
+.step h2 em{font-style:italic}
+.qs{color:var(--muted);max-width:46ch;margin:0 auto 40px;font-size:.98rem}
+
+.opts{display:grid;gap:12px;max-width:620px;margin:0 auto}
+.opts.two{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.opt{
+  display:flex;align-items:center;gap:16px;text-align:left;cursor:pointer;
+  background:#fff;border:1px solid var(--line);border-radius:7px;
+  padding:18px 20px;font-family:inherit;transition:.16s;width:100%;
+}
+.opt:hover{border-color:var(--teal);transform:translateY(-2px);box-shadow:0 6px 20px rgba(35,27,28,.08)}
+.ico{flex-shrink:0;line-height:0}
+.ic{width:44px;height:44px;display:block}
+.cb{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:22px;
+  padding:0 7px;border-radius:5px;background:#E7EAF9;color:#9E1B1E;font-size:.7rem;border:1px solid #C6CEEE;
+  font-weight:700;letter-spacing:.06em;font-style:normal}
+.opt .cb{min-width:42px;height:42px;border-radius:11px;font-size:.88rem;background:#E7EAF9;border:none}
+.otxt{flex:1;display:block}
+.ot{display:block;font-size:1rem;color:var(--ink);font-weight:600;line-height:1.35}
+.od{display:block;font-size:.82rem;color:var(--muted);margin-top:3px;line-height:1.5}
+.arw{color:var(--line);font-size:1.1rem;transition:.16s}
+.opt:hover .arw{color:var(--teal);transform:translateX(3px)}
+
+.other{display:none;max-width:620px;margin:16px auto 0;text-align:left}
+.other.on{display:block}
+.other label{display:block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.other-row{display:flex;gap:8px}
+.other-row input{flex:1;padding:13px 16px;font-size:.95rem;font-family:inherit;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink)}
+.other-row input:focus{outline:none;border-color:var(--teal)}
+.other-row button{background:var(--teal);color:#fff;border:none;border-radius:6px;cursor:pointer;
+  font-family:inherit;font-size:.76rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:0 22px}
+.other-row button:hover{background:var(--teal-dk)}
+.back{
+  background:none;border:none;cursor:pointer;font-family:inherit;font-size:.8rem;
+  color:var(--muted);margin-top:30px;padding:6px;text-decoration:underline;
+}
+.back:hover{color:var(--teal)}
+
+/* ---------- results ---------- */
+#res{display:none;padding:52px 0 0}
+#res.on{display:block}
+.rhead{text-align:center;margin-bottom:28px}
+.rhead h1{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.14;margin-bottom:10px}
+.rhead h1 em{font-style:italic}
+.rsub{color:var(--muted);font-size:.93rem}
+
+.answers{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;margin:22px 0 10px}
+.ans{
+  display:inline-flex;align-items:center;gap:7px;cursor:pointer;font-family:inherit;
+  background:var(--blush);border:1px solid transparent;border-radius:30px;
+  padding:6px 14px;font-size:.82rem;color:var(--ink);transition:.15s;
+}
+.ans:hover{border-color:var(--peach-dk);background:var(--peach)}
+.ans i{font-style:normal;color:var(--muted);font-size:.72rem}
+.restart{
+  display:block;margin:0 auto;background:none;border:none;cursor:pointer;font-family:inherit;
+  font-size:.78rem;color:var(--teal);text-decoration:underline;padding:8px;
+}
+
+.search{position:relative;max-width:460px;margin:26px auto 0}
+.search input{width:100%;padding:12px 16px 12px 42px;font-size:.92rem;font-family:inherit;
+  border:1px solid var(--line);border-radius:4px;background:#fff;color:var(--ink)}
+.search input:focus{outline:none;border-color:var(--teal)}
+.search svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.count{text-align:center;font-size:.84rem;color:var(--muted);padding:26px 0 18px}
+.count b{color:var(--ink);font-weight:600}
+
+/* ---------- cards ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:16px;padding-bottom:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:22px;display:flex;flex-direction:column;transition:.18s}
+.card:hover{border-color:var(--peach-dk);box-shadow:0 6px 24px rgba(35,27,28,.07);transform:translateY(-2px)}
+.ctop{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:4px}
+.cname{font-family:var(--serif);font-size:1.15rem;line-height:1.25}
+.tag{font-size:.6rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:4px 8px;border-radius:3px;white-space:nowrap;flex-shrink:0}
+.t-free{background:#DFF0E4;color:#206042}
+.t-schol{background:var(--peach);color:#3A4780}
+.t-pay{background:#EFEAE4;color:var(--muted)}
+.t-earn{background:#F0EADC;color:#8A6A22}
+.cfull{font-size:.76rem;color:var(--muted);margin-bottom:12px}
+.cdesc{font-size:.87rem;color:var(--muted);line-height:1.6;margin-bottom:14px;flex:1}
+.meta{display:flex;flex-direction:column;gap:7px;font-size:.78rem;margin-bottom:14px}
+.mrow{display:flex;gap:9px}
+.mkey{color:var(--muted);flex:0 0 62px}
+.mval{color:var(--ink)}
+.flags{display:flex;gap:4px;flex-wrap:wrap}
+.flag{font-size:.72rem;font-weight:600;letter-spacing:.03em;background:var(--blush);padding:3px 8px;border-radius:4px;color:var(--ink)}
+.flag.off{background:#F4EFEA;color:var(--muted);text-decoration:line-through}
+.clink{display:inline-flex;align-items:center;gap:6px;font-size:.74rem;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--teal);text-decoration:none;
+  padding-top:14px;border-top:1px solid var(--line)}
+.clink:hover{color:var(--peach-dk)}
+.warn{background:#FBEDEB;color:#9E1B1E;font-size:.76rem;padding:9px 11px;border-radius:4px;
+  margin-bottom:13px;line-height:1.45;display:flex;gap:8px;align-items:flex-start}
+.wi{width:15px;height:15px;flex-shrink:0;margin-top:1px}
+.es{grid-column:1/-1;background:#fff;border:1px solid var(--line);border-radius:7px;padding:34px 32px;max-width:720px;margin:0 auto}
+.es-h{font-family:var(--serif);font-size:1.45rem;margin-bottom:14px}
+.es p{font-size:.92rem;color:var(--muted);line-height:1.7;margin-bottom:11px}
+.es p b{color:var(--ink)}
+.es-list{display:flex;flex-direction:column;gap:2px;margin-top:22px}
+.es-i{border-top:1px solid var(--line);padding:15px 0}
+.es-i b{display:block;font-size:.93rem;color:var(--ink);margin-bottom:3px}
+.es-i span{display:block;font-size:.84rem;color:var(--muted);line-height:1.6}
+.es-cta{border-top:1px solid var(--line);margin-top:26px;padding-top:24px}
+.es-ct{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.es-btns{display:flex;gap:10px;flex-wrap:wrap}
+.es-b{background:var(--teal);color:#fff;border:none;border-radius:5px;cursor:pointer;
+  font-family:inherit;font-size:.78rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  padding:12px 20px;transition:.15s}
+.es-b:hover{background:var(--teal-dk);transform:translateY(-1px)}
+.empty{grid-column:1/-1;text-align:center;padding:52px 20px;color:var(--muted)}
+.empty b{display:block;font-family:var(--serif);font-size:1.3rem;color:var(--ink);margin-bottom:8px;font-weight:400}
+
+/* ---------- secondary ---------- */
+.more{border-top:1px solid var(--line);padding:36px 0 72px;margin-top:30px}
+.more-h{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.more-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.more-c{display:block;background:var(--blush);border-radius:6px;padding:18px 20px;text-decoration:none;transition:.15s}
+.more-c:hover{background:var(--peach)}
+.more-c b{display:block;font-family:var(--serif);font-weight:400;font-size:1.02rem;color:var(--ink);margin-bottom:6px}
+.more-c span{display:block;font-size:.82rem;color:var(--muted);line-height:1.55;margin-bottom:9px}
+.more-c em{font-style:normal;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:var(--teal);font-weight:700}
+</style>
+</head>
+<body>
+<style>
+.pnv{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:14px 24px;background:rgba(250,246,239,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line)}
+.pnv a.lg{font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.05;color:#9E1B1E;text-decoration:none}
+.pnv a.bk{font-family:var(--sans);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;
+  font-weight:600;color:#231B1C;text-decoration:none;border:1px solid rgba(35,27,28,.25);
+  border-radius:50px;padding:10px 18px;transition:.25s;white-space:nowrap}
+.pnv a.bk:hover{background:#231B1C;color:#FAF6EF;border-color:#231B1C}
+@media(max-width:560px){.pnv{padding:12px 16px}.pnv a.bk{padding:9px 13px;letter-spacing:.14em;font-size:9.5px}}
+
+.pft{border-top:1px solid var(--line);padding:38px 24px 56px;text-align:center}
+.pft p{font-size:.86rem;color:var(--muted);max-width:52ch;margin:0 auto 18px;line-height:1.65}
+.pft a{color:#9E1B1E}
+.pft .fb{display:inline-flex;align-items:center;gap:8px;background:#9E1B1E;color:#fff;text-decoration:none;
+  font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;padding:15px 26px;border-radius:50px;transition:.25s}
+.pft .fb:hover{background:#231B1C}
+</style>
+<nav class="pnv">
+  <a class="lg" href="index.html">Abroad Life<br>with Anja</a>
+  <a class="bk" href="index.html">&#8592; Natrag na stranicu</a>
+</nav>
+
+
+<div class="wrap">
+
+  <!-- STEP 1 -->
+  <div class="step on" id="s1">
+    <div class="prog"><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div>
+    <div class="qn">Pitanje 1 od 3</div>
+    <h2>Gdje si <em>sada</em>?</h2>
+    <p class="qs">Različiti programi traže različitu dob i razinu školovanja.</p>
+    <div class="opts" id="o1">
+      <button class="opt" data-v="es"><span class="ico"><svg class="ic" viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="13" fill="#F7F0E6"/><path d="M22 15.4c-2.9-1.7-6-1.8-9.1-.6v13.9c3.1-1.2 6.2-1.1 9.1.6z" fill="#fff" stroke="#9E1B1E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 15.4c2.9-1.7 6-1.8 9.1-.6v13.9c-3.1-1.2-6.2-1.1-9.1.6z" fill="#ACB9E9" fill-opacity=".45" stroke="#9E1B1E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 15.4v13.9" stroke="#9E1B1E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="otxt"><span class="ot">U osnovnoj sam školi</span><span class="od">Imam manje od 15 godina</span></span><span class="arw">&#8594;</span></button>
+      <button class="opt" data-v="hs"><span class="ico"><svg class="ic" viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="13" fill="#F7F0E6"/><path d="M15 13v18.5" stroke="#9E1B1E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 14.8h13.6l-3.6 4.3 3.6 4.3H15z" fill="#ACB9E9" fill-opacity=".55" stroke="#9E1B1E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="otxt"><span class="ot">U srednjoj sam školi</span><span class="od">Imam 15 do 18 godina</span></span><span class="arw">&#8594;</span></button>
+      <button class="opt" data-v="uni"><span class="ico"><svg class="ic" viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="13" fill="#F7F0E6"/><path d="M10.5 19.6 22 14.4l11.5 5.2L22 24.8z" fill="#ACB9E9" fill-opacity=".45" stroke="#9E1B1E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.2 21.8v4c0 1.7 3 3 6.8 3s6.8-1.3 6.8-3v-4" stroke="#9E1B1E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M32.4 20.4v5.4" stroke="#9E1B1E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32.4" cy="27.4" r="1.5" fill="#ACB9E9"/></svg></span><span class="otxt"><span class="ot">Na fakultetu sam ili ga upisujem</span><span class="od">Imam 18 ili više</span></span><span class="arw">&#8594;</span></button>
+      <button class="opt" data-v="lang"><span class="ico"><svg class="ic" viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="13" fill="#F7F0E6"/><path d="M13.4 14.6h17.2a1.8 1.8 0 0 1 1.8 1.8v7.8a1.8 1.8 0 0 1-1.8 1.8h-7.9L17 31v-5h-3.6a1.8 1.8 0 0 1-1.8-1.8v-7.8a1.8 1.8 0 0 1 1.8-1.8z" fill="#fff" stroke="#9E1B1E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="17.6" cy="20.3" r="1.35" fill="#ACB9E9"/><circle cx="22" cy="20.3" r="1.35" fill="#ACB9E9"/><circle cx="26.4" cy="20.3" r="1.35" fill="#ACB9E9"/></svg></span><span class="otxt"><span class="ot">Želim samo učiti engleski</span><span class="od">Kratki tečaj, bez cijele godine</span></span><span class="arw">&#8594;</span></button>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step" id="s2">
+    <div class="prog"><span class="dot done"></span><span class="dot on"></span><span class="dot"></span></div>
+    <div class="qn">Pitanje 2 od 3</div>
+    <h2>Odakle <em>dolaziš</em>?</h2>
+    <p class="qs">Neki programi vrijede samo za određene zemlje, a neki su trenutno pauzirani.</p>
+    <div class="opts two" id="o2">
+      <button class="opt" data-v="hr"><span class="ico"><i class="fl">&#127469;&#127479;</i></span><span class="otxt"><span class="ot">Hrvatska</span></span><span class="arw">&#8594;</span></button>
+      <button class="opt" data-v="rs"><span class="ico"><i class="fl">&#127479;&#127480;</i></span><span class="otxt"><span class="ot">Srbija</span></span><span class="arw">&#8594;</span></button>
+      <button class="opt" data-v="ba"><span class="ico"><i class="fl">&#127463;&#127462;</i></span><span class="otxt"><span class="ot">Bosna i Hercegovina</span></span><span class="arw">&#8594;</span></button>
+      <button class="opt" data-v="me"><span class="ico"><i class="fl">&#127474;&#127466;</i></span><span class="otxt"><span class="ot">Crna Gora</span></span><span class="arw">&#8594;</span></button>
+      <button class="opt" data-v="mk"><span class="ico"><i class="fl">&#127474;&#127472;</i></span><span class="otxt"><span class="ot">Sjeverna Makedonija</span></span><span class="arw">&#8594;</span></button>
+      <button class="opt" data-v="other"><span class="ico"><i class="fl plus">+</i></span><span class="otxt"><span class="ot">Neka druga zemlja</span></span><span class="arw">&#8594;</span></button>
+    </div>
+    <div class="other" id="otherBox">
+      <label for="otherIn">Upiši svoju zemlju</label>
+      <div class="other-row">
+        <input id="otherIn" type="text" placeholder="npr. Slovenija" autocomplete="off">
+        <button id="otherGo">Dalje</button>
+      </div>
+    </div>
+    <button class="back" data-to="1">&#8592; Natrag</button>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step" id="s3">
+    <div class="prog"><span class="dot done"></span><span class="dot done"></span><span class="dot on"></span></div>
+    <div class="qn">Pitanje 3 od 3</div>
+    <h2>Kakav program <em>tražiš</em>?</h2>
+    <p class="qs">Neki su potpuno besplatni, na nekima zarađuješ.</p>
+    <div class="opts" id="o3">
+      <button class="opt" data-v="free"><span class="ico"><svg class="ic" viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="13" fill="#F7F0E6"/><path d="m22 13.4 2.5 5.3 5.7.8-4.1 4.1 1 5.8-5.1-2.8-5.1 2.8 1-5.8-4.1-4.1 5.7-.8z" fill="#ACB9E9" fill-opacity=".55" stroke="#9E1B1E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="otxt"><span class="ot">Stipendijski program</span></span><span class="arw">&#8594;</span></button>
+      <button class="opt" data-v="schol"><span class="ico"><svg class="ic" viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="13" fill="#F7F0E6"/><circle cx="22" cy="22" r="9" fill="#fff" stroke="#9E1B1E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 13a9 9 0 0 1 0 18z" fill="#ACB9E9" fill-opacity=".6"/><path d="M22 13v18" stroke="#9E1B1E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="otxt"><span class="ot">Djelomična stipendija</span></span><span class="arw">&#8594;</span></button>
+      <button class="opt" data-v="pay"><span class="ico"><svg class="ic" viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="13" fill="#F7F0E6"/><path d="M11.8 22.4 22 13.6l10.2 8.8z" fill="#ACB9E9" fill-opacity=".5" stroke="#9E1B1E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.8 22.4v8.4h14.4v-8.4" fill="#fff" stroke="#9E1B1E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.6 30.8v-4.6h4.8v4.6" stroke="#9E1B1E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="otxt"><span class="ot">Mogu platiti</span></span><span class="arw">&#8594;</span></button>
+      <button class="opt" data-v="earn"><span class="ico"><svg class="ic" viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="13" fill="#F7F0E6"/><ellipse cx="22" cy="25.6" rx="7.6" ry="2.9" fill="#ACB9E9" fill-opacity=".5" stroke="#9E1B1E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.4 25.6v3c0 1.6 3.4 2.9 7.6 2.9s7.6-1.3 7.6-2.9v-3" stroke="#9E1B1E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="22" cy="19.4" rx="7.6" ry="2.9" fill="#fff" stroke="#9E1B1E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 12.6v3.4M19.9 14.2 22 12.2l2.1 2" stroke="#9E1B1E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="otxt"><span class="ot">Želim zarađivati</span></span><span class="arw">&#8594;</span></button>
+      <button class="opt" data-v="all"><span class="ico"><svg class="ic" viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="13" fill="#F7F0E6"/><circle cx="22" cy="22" r="9.2" fill="#fff" stroke="#9E1B1E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="m27.4 16.6-2.9 6.6-6.6 2.9 2.9-6.6z" fill="#ACB9E9" fill-opacity=".6" stroke="#9E1B1E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="22" r="1.2" fill="#9E1B1E"/></svg></span><span class="otxt"><span class="ot">Svejedno</span></span><span class="arw">&#8594;</span></button>
+    </div>
+    <button class="back" data-to="2">&#8592; Natrag</button>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="res">
+    <div class="rhead">
+      <h1>Evo tvojih <em>programa</em></h1>
+      <p class="rsub">Svaki vodi na službenu stranicu. Klikni odgovor da ga promijeniš.</p>
+      <div class="answers" id="answers"></div>
+      <button class="restart" id="restart">Počni ispočetka</button>
+    </div>
+    <div class="count" id="count"></div>
+    <div class="grid" id="grid"></div>
+
+    <div class="more">
+      <div class="more-h">I još, izvan Amerike</div>
+      <div class="more-grid">
+        <a class="more-c" href="https://www.croatianscholarship.org/na-hrvatskom/pitanja-i-odgovori/" target="_blank" rel="noopener">
+          <b>Croatian Scholarship Fund</b>
+          <span>2.500 USD godišnje za studij u Hrvatskoj ili BiH, do pet godina. Financiraju američki Hrvati. Prijave 1. travnja do 15. svibnja.</span>
+          <em>croatianscholarship.org &#8599;</em>
+        </a>
+        <a class="more-c" href="https://bhvedu.com/svi-programi/" target="_blank" rel="noopener">
+          <b>Ostali programi za inozemstvo</b>
+          <span>Škole jezika u Europi, privatne srednje škole, volontiranje u Gani i Kostariki, diplomski studij i MBA. Preko partnera BHV Education.</span>
+          <em>bhvedu.com &#8599;</em>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const CTY={hr:'🇭🇷 Hrvatska',rs:'🇷🇸 Srbija',ba:'🇧🇦 Bosna i Hercegovina',me:'🇲🇪 Crna Gora',mk:'🇲🇰 Sjeverna Makedonija'};
+const CODE={hr:'🇭🇷 HR',rs:'🇷🇸 RS',ba:'🇧🇦 BA',me:'🇲🇪 ME',mk:'🇲🇰 MK'};
+const TAG={free:['Besplatno','t-free'],schol:['Stipendija','t-schol'],earn:['Zarađuješ','t-earn'],pay:['Plaćaš','t-pay']};
+
+const P=[
+ {n:'Razmjena u SAD-u',f:'Jedna školska godina u američkoj srednjoj školi (J-1 viza)',dest:'us',lvl:'hs',pay:'pay',
+  cty:['hr','rs','ba','me','mk'],off:[],cost:'oko 8.000 do 10.000 €',when:'Prijave u jesen, polazak u kolovozu',
+  d:'Živiš s host obitelji i ideš u javnu američku srednju školu. Prijavljuješ se preko agencije koja surađuje s američkim sponzorom.',
+  url:'https://bhvedu.com/destinacije/srednjoskolska-razmjena-sad/',ul:'bhvedu.com'},
+
+ {n:'FLEX',f:'Future Leaders Exchange',dest:'us',lvl:'hs',pay:'free',
+  cty:['rs','me'],off:['me'],cost:'potpuno besplatno',when:'Prijave rujan do prosinac',
+  d:'Program američke vlade. Pokriva let, smještaj, školu, osiguranje i džeparac. Vrlo kompetitivno.',
+  w:'Crna Gora: pauzirano za 2026/27. Provjeri status.',
+  url:'https://www.discoverflex.org/',ul:'discoverflex.org'},
+
+ {n:'YES',f:'Kennedy-Lugar Youth Exchange and Study',dest:'us',lvl:'hs',pay:'free',
+  cty:['ba','mk'],off:['ba','mk'],cost:'potpuno besplatno',when:'Prati otvaranje novog ciklusa',
+  d:'Isto kao FLEX, ali za BiH i Sjevernu Makedoniju. Potpuno financiran od američke vlade.',
+  w:'Pauzirano za 2026/27. Prati službenu stranicu.',
+  url:'https://www.yesprograms.org/',ul:'yesprograms.org'},
+
+ {n:'ASSIST Scholars',f:'Privatne boarding škole u SAD-u',dest:'us',lvl:'hs',pay:'schol',
+  cty:['hr','rs'],off:[],cost:'škola pokriva većinu, plaćaš naknadu',when:'Rok 1. prosinca',
+  d:'Elitne privatne boarding škole. Za akademski izvanredne učenike. Živiš u domu, ne kod obitelji.',
+  url:'https://www.assistscholars.org/',ul:'assistscholars.org'},
+
+ {n:'Benjamin Franklin',f:'Ljetni program Ambasade SAD-a',dest:'us',lvl:'hs',pay:'free',
+  cty:['hr'],off:[],cost:'potpuno besplatno',when:'Prijave siječanj i veljača',
+  d:'Četiri tjedna u SAD-u, fokus na vanjsku politiku i demokraciju. Nije cijela godina, ali je besplatno.',
+  url:'https://hr.usembassy.gov/scholarships-and-exchanges/',ul:'hr.usembassy.gov'},
+
+ {n:'Global UGRAD',f:'Global Undergraduate Exchange Program',dest:'us',lvl:'uni',pay:'free',
+  cty:['rs','ba'],off:[],cost:'potpuno financirano',when:'Provjeri kod veleposlanstva',
+  d:'Jedan semestar na američkom sveučilištu. Treba ti 18+, barem godina studija preostala kod kuće i TOEFL oko 48 iBT.',
+  url:'https://exchanges.state.gov/non-us/program/global-undergraduate-exchange-program-global-ugrad',ul:'exchanges.state.gov'},
+
+ {n:'SUSI',f:'Study of the U.S. Institutes',dest:'us',lvl:'uni',pay:'free',
+  cty:['hr','rs','ba','me','mk'],off:[],cost:'potpuno financirano',when:'Preko veleposlanstva, zima i proljeće',
+  d:'Pet do šest tjedana ljeti na američkom sveučilištu. Akademski institut na zadanu temu.',
+  url:'https://exchanges.state.gov/non-us/program/study-us-institutes-susi-student-leaders',ul:'exchanges.state.gov'},
+
+ {n:'Jericho Foundation',f:'Stipendija plus iskustvo u SAD-u',dest:'us',lvl:'uni',pay:'schol',
+  cty:['ba'],off:[],cost:'stipendija, plus 6 tjedana u SAD-u',when:'Prijave sredinom godine',
+  d:'Za studente iz BiH ispod 21 na 1. ili 2. godini javnog fakulteta, uz značajnu financijsku potrebu. Prijava, motivacijsko pismo i video, sve na engleskom. Odabrani idu na šestotjedni program u Michiganu.',
+  w:'Prijave trenutno zatvorene. Sljedeće vjerojatno sredinom 2027.',
+  url:'https://www.jerichofoundation.org/apply',ul:'jerichofoundation.org'},
+
+ {n:'Work and Travel',f:'Ljetni rad u SAD-u (J-1)',dest:'us',lvl:'uni',pay:'earn',
+  cty:['hr','rs','ba','me','mk'],off:[],cost:'plaćaš program, zarađuješ na poslu',when:'Prijave zima, polazak ljeto',
+  d:'Tri do četiri mjeseca rada i putovanja po Americi tijekom ljetnih praznika. Najpopularniji studentski program u regiji.',
+  url:'https://j1visa.state.gov/programs/summer-work-travel/',ul:'j1visa.state.gov'},
+
+ {n:'Au Pair',f:'Godina kod američke obitelji (J-1)',dest:'us',lvl:'uni',pay:'earn',
+  cty:['hr','rs','ba','me','mk'],off:[],cost:'dobivaš smještaj, hranu i džeparac',when:'Tijekom cijele godine',
+  d:'Za dob 18 do 26. Čuvaš djecu, živiš s obitelji, dobivaš tjedni džeparac i novac za školarinu. Traje godinu dana.',
+  url:'https://j1visa.state.gov/programs/au-pair/',ul:'j1visa.state.gov'},
+
+ {n:'Camp Counselor',f:'Ljetni kampovi u SAD-u (J-1)',dest:'us',lvl:'uni',pay:'earn',
+  cty:['hr','rs','ba','me','mk'],off:[],cost:'plaćen posao, smještaj uključen',when:'Prijave zima i proljeće',
+  d:'Radiš s djecom u američkom ljetnom kampu. Smještaj i hrana uključeni, plus plaća.',
+  url:'https://j1visa.state.gov/programs/camp-counselor/',ul:'j1visa.state.gov'},
+
+ {n:'Fulbright',f:'Diplomski studij i istraživanje',dest:'us',lvl:'uni',pay:'free',
+  cty:['hr','rs','ba','me','mk'],off:[],cost:'potpuno financirano',when:'Rokovi se razlikuju po zemlji',
+  d:'Najprestižniji američki program. Za diplomsku razinu, istraživanje ili predavanje. Prijavljuješ se preko komisije u svojoj zemlji.',
+  url:'https://foreign.fulbrightonline.org/',ul:'fulbrightonline.org'},
+
+ {n:'Škole jezika u SAD-u',f:'Tečajevi engleskog, partner BHV Education',lvl:'lang',pay:'pay',
+  cty:['hr','rs','ba','me','mk'],off:[],cost:'cijena nije javno objavljena',when:'Grupni polasci ljeti i u siječnju',
+  d:'Miami i New York kao grupni polasci, plus EF Miami individualno. Najkraće dva tjedna. Opći tečajevi od 16 godina, ljetni juniorski do 18.',
+  url:'https://bhvedu.com/program/skole-jezika/',ul:'bhvedu.com'},
+
+ {n:'Sportske stipendije',f:'Studij u SAD-u uz sport, partner BHV Education',dest:'us',lvl:'uni',pay:'schol',
+  cty:['hr','rs','ba','me','mk'],off:[],cost:'stipendija pokriva dio ili cijeli studij',when:'Priprema traje godinu dana',
+  d:'Američka sveučilišta daju stipendije sportašima. Vrlo popularno u regiji za tenis, košarku, nogomet i vaterpolo. Treba ti sportski rezultat i dobar prosjek.',
+  url:'https://bhvedu.com/svi-programi/sportske-stipendije/',ul:'bhvedu.com'},
+
+ {n:'Preddiplomski studij u SAD-u',f:'Cijeli fakultet u Americi, partner BHV Education',lvl:'uni',pay:'pay',
+  cty:['hr','rs','ba','me','mk'],off:[],cost:'školarina ovisi o sveučilištu',when:'Prijave godinu dana unaprijed',
+  d:'Upis na američko sveučilište na puni studij, ne samo semestar. Agencija pomaže oko prijave, eseja i dokumentacije.',
+  url:'https://bhvedu.com/program/preddiplomski-studij-2/',ul:'bhvedu.com'}
+];
+
+
+const LVL={es:'Osnovna škola',hs:'Srednja škola',uni:'Faks',lang:'Škola jezika'};
+const PAY={free:'Stipendijski program',schol:'Djelomična stipendija',earn:'Zarađujem',pay:'Mogu platiti',all:'Svejedno'};
+let A={lvl:null,cty:null,pay:null,ctyName:'',q:''};
+
+function show(id){
+  document.querySelectorAll('.step').forEach(s=>s.classList.remove('on'));
+  document.getElementById('res').classList.remove('on');
+  if(id==='res'){document.getElementById('res').classList.add('on');}
+  else{document.getElementById('s'+id).classList.add('on');}
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function card(p){
+  const [tl,tc]=TAG[p.pay];
+  const flags=p.cty.map(c=>`<span class="flag${p.off.includes(c)?' off':''}">${CTY[c]}</span>`).join('');
+  return `<div class="card">
+    <div class="ctop"><div class="cname">${p.n}</div><span class="tag ${tc}">${tl}</span></div>
+    <div class="cfull">${p.f}</div>
+    ${p.w?`<div class="warn"><svg class="ic wi" viewBox="0 0 24 24" fill="none"><path d="M12 4.4 2.9 20h18.2z" fill="#F0C878" stroke="#B8893A" stroke-width="1.4" stroke-linejoin="round"/><path d="M12 10.4v4.2" stroke="#8A5A1A" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="17.4" r="1" fill="#8A5A1A"/></svg> <span>${p.w}</span></div>`:''}
+    <p class="cdesc">${p.d}</p>
+    <div class="meta">
+      <div class="mrow"><span class="mkey">Cijena</span><span class="mval">${p.cost}</span></div>
+      <div class="mrow"><span class="mkey">Rokovi</span><span class="mval">${p.when}</span></div>
+      <div class="mrow"><span class="mkey">Za koga</span><span class="flags">${flags}</span></div>
+    </div>
+    <a class="clink" href="${p.url}" target="_blank" rel="noopener">${p.ul} &#8599;</a>
+  </div>`;
+}
+
+const ES_BLOCK = `<div class="es">
+  <div class="es-h">Još je rano, i to je dobra vijest</div>
+  <p>Gotovo svi programi za Ameriku kreću s <b>15 godina</b>. FLEX i YES traže da si u prvom ili drugom razredu srednje, a razmjena i škole jezika isto počinju oko te dobi.</p>
+  <p>To znači da imaš <b>nekoliko godina prednosti</b> pred svima koji se toga sjete tek u srednjoj.</p>
+  <div class="es-list">
+    <div class="es-i"><b>Uči engleski ozbiljno</b><span>Jedini preduvjet koji dijele baš svi programi. Svi te testiraju, nitko ne pita za papir.</span></div>
+    <div class="es-i"><b>Drži ocjene</b><span>Stipendijski programi gledaju ocjene iz posljednje tri godine školovanja. One počinju brojati prije nego misliš.</span></div>
+    <div class="es-i"><b>Zapamti rokove</b><span>Prijave se otvaraju u rujnu, godinu dana prije polaska. Čim uđeš u prvi razred srednje, možeš se prijaviti.</span></div>
+  </div>
+  <div class="es-cta">
+    <div class="es-ct">Istraži već sad što te čeka</div>
+    <div class="es-btns">
+      <button class="es-b" data-peek="hs">Programi za srednju školu &#8594;</button>
+      <button class="es-b" data-peek="uni">Programi za faks &#8594;</button>
+    </div>
+  </div>
+</div>`;
+
+const LANG_BLOCK = `<div class="es" style="margin-bottom:16px">
+  <div class="es-h">Iskreno o učenju jezika u Americi</div>
+  <p>Tečajevi jezika u SAD-u <b>uvijek se plaćaju</b>. Nema stipendije ni besplatnog programa za dva tjedna engleskog, ni za jednu zemlju s Balkana. Ispod je ono što stvarno postoji.</p>
+  <p>Ali evo onoga što ti nitko neće reći: ako ti je cilj <b>engleski</b>, a ne putovanje, dva tjedna tečaja neće napraviti ono što misliš. Jezik se nauči kad nemaš izbora.</p>
+  <div class="es-list">
+    <div class="es-i"><b>Razmjena, deset mjeseci</b><span>Najbrži način do tečnog engleskog. Ideš u američku školu, živiš s obitelji i nemaš s kim pričati hrvatski.</span></div>
+    <div class="es-i"><b>Work and Travel, jedno ljeto</b><span>Od 18 godina. Radiš, pričaš engleski po cijele dane i još zaradiš.</span></div>
+    <div class="es-i"><b>Tečaj, dva tjedna</b><span>Dobar za prvi dodir s Amerikom i samopouzdanje. Nije dovoljan da proradiš jezik.</span></div>
+  </div>
+  <div class="es-cta">
+    <div class="es-ct">Ako ti je cilj zapravo engleski</div>
+    <div class="es-btns">
+      <button class="es-b" data-peek="hs">Pogledaj razmjenu &#8594;</button>
+      <button class="es-b" data-peek="uni">Pogledaj programe za faks &#8594;</button>
+    </div>
+  </div>
+</div>`;
+
+function render(){
+  document.getElementById('answers').innerHTML=
+    `<button class="ans" data-s="1">${LVL[A.lvl]} <i>promijeni</i></button>
+     <button class="ans" data-s="2">${A.ctyName} <i>promijeni</i></button>
+     <button class="ans" data-s="3">${PAY[A.pay]} <i>promijeni</i></button>`;
+  if(A.lvl==='es'){
+    document.getElementById('grid').innerHTML=ES_BLOCK;
+    document.getElementById('count').innerHTML='Vrati se za koju godinu';
+    return;
+  }
+  const ignorePay = A.lvl==='lang';
+  const out=P.filter(p=>
+    p.lvl===A.lvl &&
+    (A.cty==='other' ? p.cty.length===5 : p.cty.includes(A.cty)) &&
+    (ignorePay||A.pay==='all'||p.pay===A.pay)
+  );
+  const OTHER_NOTE = `<div class="es" style="margin-bottom:16px">
+  <div class="es-h">Programi otvoreni za većinu zemalja</div>
+  <p>Ispod su programi koji ne ovise o tome iz koje si zemlje. Za <b>${A.ctyName}</b> bi trebali vrijediti isti uvjeti.</p>
+  <p>Ono što <b>ovisi o zemlji</b> su vladine stipendije poput FLEX-a i YES-a. Svaka zemlja ima svoj popis, pa to provjeri na stranici američkog veleposlanstva u svojoj zemlji.</p>
+</div>`;
+  const lead = A.lvl==='lang' ? LANG_BLOCK : (A.cty==='other' ? OTHER_NOTE : '');
+  document.getElementById('grid').innerHTML = out.length
+    ? lead + out.map(card).join('')
+    : `<div class="empty"><b>Nema programa za ovaj izbor.</b>Probaj promijeniti odgovor o novcu, ili pogledaj sve opcije.</div>`;
+  document.getElementById('count').innerHTML = A.lvl==='lang'
+    ? 'Tečajevi se uvijek plaćaju'
+    : (out.length===1 ? '<b>1</b> program odgovara' : `<b>${out.length}</b> programa odgovara`);
+}
+
+function pick(step,val){
+  if(step===2&&val==='other'){document.getElementById('otherBox').classList.add('on');
+    document.getElementById('otherIn').focus(); return;}
+  if(step===1)A.lvl=val; if(step===2){A.cty=val;A.ctyName=CTY[val];} if(step===3)A.pay=val;
+  if(step<3){show(step+1);} else {render();show('res');}
+}
+[1,2,3].forEach(n=>{
+  document.getElementById('o'+n).addEventListener('click',e=>{
+    const b=e.target.closest('.opt'); if(b)pick(n,b.dataset.v);
+  });
+});
+document.getElementById('grid').addEventListener('click',e=>{
+  const b=e.target.closest('.es-b'); if(!b)return;
+  A.lvl=b.dataset.peek; A.pay='all'; render();
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+function goOther(){
+  const v=document.getElementById('otherIn').value.trim();
+  if(!v)return;
+  A.cty='other'; A.ctyName=v;
+  document.getElementById('otherBox').classList.remove('on');
+  show(3);
+}
+document.getElementById('otherGo').addEventListener('click',goOther);
+document.getElementById('otherIn').addEventListener('keydown',e=>{if(e.key==='Enter')goOther();});
+document.querySelectorAll('.back').forEach(b=>b.addEventListener('click',()=>show(b.dataset.to)));
+document.getElementById('answers').addEventListener('click',e=>{
+  const b=e.target.closest('.ans'); if(b)show(b.dataset.s);
+});
+document.getElementById('restart').addEventListener('click',()=>{
+  A={lvl:null,cty:null,pay:null,ctyName:'',q:''};
+  document.getElementById('otherIn').value='';
+  document.getElementById('otherBox').classList.remove('on');
+  show(1);
+});
+</script>
+
+<footer class="pft">
+  <p>Nisam agencija i ne naplaćujem ništa. Ovo je popis koji bih željela da je netko meni dao prije moje razmjene. Svaki link vodi na službenu stranicu programa, pa uvijek provjeri rokove tamo.</p>
+  <a class="fb" href="index.html#put">Kako ići na razmjenu &#8594;</a>
+</footer>
+</body>
+</html>
