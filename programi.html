@@ -453,6 +453,22 @@ const ES_BLOCK = `<div class="es">
   </div>
 </div>`;
 
+const UNI_PAY_BLOCK = (cty) => { const C={hr:'Zagrebu',rs:'Beogradu',ba:'Sarajevu, Mostaru, Tuzli i Banjoj Luci',me:'Podgorici',mk:'Skoplju, Tetovu i Bitoli'}[cty];
+ return `<div class="es" style="margin-bottom:16px">
+  <div class="es-h">Za fakultet u Americi ne treba ti agencija</div>
+  <p>Na američko sveučilište <b>prijavljuješ se sam, izravno školi</b>. Svaka ima svoj rok, svoj obrazac i svoju cijenu. Agencija ti može pomoći oko papira, ali nije uvjet i nitko te ne može "upisati".</p>
+  <p>Ono što jest uvjet: za <b>F-1 vizu</b> moraš dokazati da možeš platiti cijelu prvu godinu, školarinu i život. Zato prvo gledaj koliko škola stvarno košta, pa tek onda biraš.</p>
+  <div class="es-list">
+    <div class="es-i"><b>EducationUSA</b><span>Službena savjetodavna mreža američkog State Departmenta.${C?' Najbliže savjetovalište ti je u '+C+'.':''} Pomažu oko izbora škole, prijave i rokova.</span></div>
+    <div class="es-i"><b>Cijena se jako razlikuje</b><span>Javna i privatna sveučilišta nisu ni blizu ista. Traži "cost of attendance" na stranici svake škole, tamo piše puni godišnji iznos.</span></div>
+    <div class="es-i"><b>Pitaj za financijsku pomoć</b><span>Dio američkih sveučilišta daje pomoć i stranim studentima, po potrebi ili po zasluzi. Ne piše uvijek na vidnom mjestu, pa pitaj prijemni ured izravno.</span></div>
+  </div>
+  <div class="es-cta">
+    <div class="es-ct">Gdje dalje</div>
+    <div class="es-btns"><a class="es-b" href="https://educationusa.state.gov/find-advising-center" target="_blank" rel="noopener" style="text-decoration:none;display:inline-block">Nađi savjetovalište &#8599;</a></div>
+  </div>
+</div>`; };
+
 const LANG_BLOCK = `<div class="es" style="margin-bottom:16px">
   <div class="es-h">Iskreno o učenju jezika u Americi</div>
   <p>Tečajevi jezika u SAD-u <b>uvijek se plaćaju</b>. Nema stipendije ni besplatnog programa za dva tjedna engleskog, ni za jednu zemlju s Balkana. Ispod je ono što stvarno postoji.</p>
@@ -495,7 +511,9 @@ function render(){
   <p>Ispod su programi koji ne ovise o tome iz koje si zemlje. Za <b>${A.ctyName}</b> bi trebali vrijediti isti uvjeti.</p>
   <p>Ono što <b>ovisi o zemlji</b> su vladine stipendije poput FLEX-a i YES-a. Svaka zemlja ima svoj popis, pa to provjeri na stranici američkog veleposlanstva u svojoj zemlji.</p>
 </div>`;
-  const lead = A.lvl==='lang' ? LANG_BLOCK : (A.cty==='other' ? OTHER_NOTE : '');
+  const lead = A.lvl==='lang' ? LANG_BLOCK
+    : (A.lvl==='uni' && A.pay==='pay') ? UNI_PAY_BLOCK(A.cty)
+    : (A.cty==='other' ? OTHER_NOTE : '');
   let empty = `<div class="empty"><b>Nema programa za ovaj izbor.</b>Probaj promijeniti odgovor o novcu, ili pogledaj sve opcije.</div>`;
   if(A.lvl==='lang'){
     empty = `<div class="empty"><b>Za tvoju zemlju nemam tečaj na popisu.</b>Jedini koji imam ide preko hrvatske agencije. Potraži agenciju u svojoj zemlji, ili rezerviraj izravno kod škole u SAD-u.</div>`;
@@ -507,6 +525,7 @@ function render(){
     : lead + empty;
   document.getElementById('count').innerHTML = A.lvl==='lang'
     ? 'Tečajevi se uvijek plaćaju'
+    : (A.lvl==='uni' && A.pay==='pay' && !out.length) ? 'Ovo se radi sam, bez agencije'
     : (out.length===1 ? '<b>1</b> program odgovara' : `<b>${out.length}</b> programa odgovara`);
 }
 
