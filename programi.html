@@ -268,6 +268,7 @@ const P=[
  {n:'Razmjena u SAD-u',f:'Jedna školska godina u američkoj srednjoj školi (J-1 viza)',dest:'us',lvl:'hs',pay:'pay',
   cty:['hr','rs','ba','me','mk'],off:[],cost:'oko 8.000 do 10.000 €',when:'Prijave u jesen, polazak u kolovozu',
   d:'Živiš s host obitelji i ideš u javnu američku srednju školu. Prijavljuješ se preko agencije koja surađuje s američkim sponzorom.',
+  w:'Link vodi na BHV Education, hrvatsku agenciju. Program postoji i u ostalim zemljama, ali se prijavljuješ preko agencije u svojoj zemlji.',
   url:'https://bhvedu.com/destinacije/srednjoskolska-razmjena-sad/',ul:'bhvedu.com'},
 
  {n:'FLEX',f:'Future Leaders Exchange',dest:'us',lvl:'hs',pay:'free',
@@ -329,17 +330,17 @@ const P=[
   url:'https://foreign.fulbrightonline.org/',ul:'fulbrightonline.org'},
 
  {n:'Škole jezika u SAD-u',f:'Tečajevi engleskog, partner BHV Education',lvl:'lang',pay:'pay',
-  cty:['hr','rs','ba','me','mk'],off:[],cost:'cijena nije javno objavljena',when:'Grupni polasci ljeti i u siječnju',
+  cty:['hr'],off:[],cost:'cijena nije javno objavljena',when:'Grupni polasci ljeti i u siječnju',
   d:'Miami i New York kao grupni polasci, plus EF Miami individualno. Najkraće dva tjedna. Opći tečajevi od 16 godina, ljetni juniorski do 18.',
   url:'https://bhvedu.com/program/skole-jezika/',ul:'bhvedu.com'},
 
  {n:'Sportske stipendije',f:'Studij u SAD-u uz sport, partner BHV Education',dest:'us',lvl:'uni',pay:'schol',
-  cty:['hr','rs','ba','me','mk'],off:[],cost:'stipendija pokriva dio ili cijeli studij',when:'Priprema traje godinu dana',
+  cty:['hr'],off:[],cost:'stipendija pokriva dio ili cijeli studij',when:'Priprema traje godinu dana',
   d:'Američka sveučilišta daju stipendije sportašima. Vrlo popularno u regiji za tenis, košarku, nogomet i vaterpolo. Treba ti sportski rezultat i dobar prosjek.',
   url:'https://bhvedu.com/svi-programi/sportske-stipendije/',ul:'bhvedu.com'},
 
  {n:'Preddiplomski studij u SAD-u',f:'Cijeli fakultet u Americi, partner BHV Education',lvl:'uni',pay:'pay',
-  cty:['hr','rs','ba','me','mk'],off:[],cost:'školarina ovisi o sveučilištu',when:'Prijave godinu dana unaprijed',
+  cty:['hr'],off:[],cost:'školarina ovisi o sveučilištu',when:'Prijave godinu dana unaprijed',
   d:'Upis na američko sveučilište na puni studij, ne samo semestar. Agencija pomaže oko prijave, eseja i dokumentacije.',
   url:'https://bhvedu.com/program/preddiplomski-studij-2/',ul:'bhvedu.com'}
 ];
@@ -432,9 +433,15 @@ function render(){
   <p>Ono što <b>ovisi o zemlji</b> su vladine stipendije poput FLEX-a i YES-a. Svaka zemlja ima svoj popis, pa to provjeri na stranici američkog veleposlanstva u svojoj zemlji.</p>
 </div>`;
   const lead = A.lvl==='lang' ? LANG_BLOCK : (A.cty==='other' ? OTHER_NOTE : '');
+  let empty = `<div class="empty"><b>Nema programa za ovaj izbor.</b>Probaj promijeniti odgovor o novcu, ili pogledaj sve opcije.</div>`;
+  if(A.lvl==='lang'){
+    empty = `<div class="empty"><b>Za tvoju zemlju nemam tečaj na popisu.</b>Jedini koji imam ide preko hrvatske agencije. Potraži agenciju u svojoj zemlji, ili rezerviraj izravno kod škole u SAD-u.</div>`;
+  } else if(A.lvl==='hs' && A.pay==='earn'){
+    empty = `<div class="empty"><b>Na srednjoškolskoj razmjeni se ne smije raditi.</b>J-1 viza za srednju školu to ne dopušta, pa takvih programa nema. Programi na kojima zarađuješ počinju tek na fakultetu. Promijeni odgovor o novcu da vidiš što ti ostaje.</div>`;
+  }
   document.getElementById('grid').innerHTML = out.length
     ? lead + out.map(card).join('')
-    : `<div class="empty"><b>Nema programa za ovaj izbor.</b>Probaj promijeniti odgovor o novcu, ili pogledaj sve opcije.</div>`;
+    : lead + empty;
   document.getElementById('count').innerHTML = A.lvl==='lang'
     ? 'Tečajevi se uvijek plaćaju'
     : (out.length===1 ? '<b>1</b> program odgovara' : `<b>${out.length}</b> programa odgovara`);
