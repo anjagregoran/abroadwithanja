@@ -1039,11 +1039,8 @@ nav.nv{position:relative!important;top:auto!important;backdrop-filter:none!impor
 
 /* hero: program finder as the main action */
 .hx-cta{display:flex;flex-direction:column;align-items:center;gap:16px}
-.hx-only-en{display:none!important}
 body.en .only-hr{display:none!important}
 body.en .hx-only-hr{display:none!important}
-body.en .hx-only-en{display:inline-block!important}
-body.en .hx-sub{display:none!important}
 .hx-r{line-height:1!important;transition:transform .3s}
 .hx-btn:hover .hx-r{transform:translateX(5px)!important}
 .hx-sub{display:inline-flex;align-items:center;gap:8px;color:#FFE6D6;text-decoration:none;
@@ -1119,7 +1116,7 @@ body.en .hx-sub{display:none!important}
   <div class="hx-in">
     <div class="hx-k">@abroadlifewithanja</div>
     <h1><span lang-en>Apply, <em>live it fully</em>, and grow from it for the rest of your life.</span><span lang-hr>Prijavi se, <em>proživi svaki trenutak</em> i izrasti iz tog iskustva cijeli život.</span></h1>
-    <div class="hx-cta"><a class="hx-btn hx-only-hr" href="programi.html"><span>Pronađi program za sebe</span><i class="hx-ar hx-r" aria-hidden="true">→</i></a><a class="hx-btn hx-only-en" href="#put"><span>My free guides</span><i class="hx-ar hx-r" aria-hidden="true">→</i></a></div>
+    <div class="hx-cta"><a class="hx-btn hx-only-hr" href="programi.html"><span>Pronađi program za sebe</span><i class="hx-ar hx-r" aria-hidden="true">→</i></a></div>
   </div>
   <a class="hx-sub" href="#put"><span lang-hr>Srednjoškolska razmjena u SAD-u i moji vodiči</span><span lang-en>US high school exchange and my guides</span><i aria-hidden="true">↓</i></a>
 </header>
@@ -1227,7 +1224,7 @@ window.addEventListener('load',function(){var g=null;try{g=sessionStorage.getIte
 window.addEventListener('pageshow',function(e){if(e.persisted)window.scrollTo(0,0)});
 /* slow, eased scroll from the hero link down to the guides */
 (function(){
- var links=document.querySelectorAll('.hx-sub, .hx-only-en');
+ var links=document.querySelectorAll('.hx-sub');
  if(!links.length)return;
  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
  links.forEach(function(link){ link.addEventListener('click',function(e){
