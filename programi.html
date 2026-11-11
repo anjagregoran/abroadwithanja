@@ -51,6 +51,7 @@ h1,h2{font-family:var(--serif);font-weight:400;font-style:italic}
 }
 .opt:hover{border-color:var(--teal);transform:translateY(-2px);box-shadow:0 6px 20px rgba(35,27,28,.08)}
 .ico{flex-shrink:0;line-height:0}
+.mapi{width:1.35em;height:1.35em;display:block;color:var(--ink);opacity:.75}
 .ic{width:46px;height:46px;display:block;object-fit:contain}
 .cb{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:22px;
   padding:0 7px;border-radius:5px;background:#E7EAF9;color:#9E1B1E;font-size:.7rem;border:1px solid #C6CEEE;
@@ -216,7 +217,7 @@ h1,h2{font-family:var(--serif);font-weight:400;font-style:italic}
       <button class="opt" data-v="ba"><span class="ico"><i class="fl">&#127463;&#127462;</i></span><span class="otxt"><span class="ot">Bosna i Hercegovina</span></span><span class="arw">&#8594;</span></button>
       <button class="opt" data-v="me"><span class="ico"><i class="fl">&#127474;&#127466;</i></span><span class="otxt"><span class="ot">Crna Gora</span></span><span class="arw">&#8594;</span></button>
       <button class="opt" data-v="mk"><span class="ico"><i class="fl">&#127474;&#127472;</i></span><span class="otxt"><span class="ot">Sjeverna Makedonija</span></span><span class="arw">&#8594;</span></button>
-      <button class="opt" data-v="other"><span class="ico"><img class="ic" src="img/ic-other.webp" width="180" height="180" alt="Globus" loading="lazy"></span><span class="otxt"><span class="ot">Moja zemlja nije na popisu</span></span><span class="arw">&#8594;</span></button>
+      <button class="opt" data-v="other"><span class="ico"><svg class="mapi" viewBox="0 0 24 24" role="img" aria-label="Karta" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14"/><path d="M15 6v14"/></svg></span><span class="otxt"><span class="ot">Moja zemlja nije na popisu</span></span><span class="arw">&#8594;</span></button>
     </div>
     <div class="other" id="otherBox">
       <label for="otherIn">Iz koje si zemlje?</label>
