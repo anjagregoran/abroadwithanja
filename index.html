@@ -988,8 +988,9 @@ body.en .rp[data-i="0"] .rgrid{grid-template-columns:minmax(0,460px)!important;j
 .hx-btn{display:inline-block;background:#FFD5B8;color:#254551;text-decoration:none;font-family:'Instrument Sans',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;font-weight:600;padding:19px 34px;border-radius:2px;transition:background .3s,color .3s}
 .hx-btn:hover{background:#254551;color:#FFE6D6}
 .mq{position:relative;z-index:1;overflow:hidden;background:#FAF6EF;border-top:1px solid rgba(37,69,81,.14);border-bottom:1px solid rgba(37,69,81,.14)}
-.mq-t{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px 14px;padding:19px 10px;font-family:'Instrument Sans',sans-serif;font-size:10px;font-weight:500;letter-spacing:2.6px;text-transform:uppercase;color:#254551;opacity:.82;text-align:center}
-.mq-t i{font-style:normal;opacity:.45;font-size:8px;letter-spacing:0;transform:translateY(-1px)}
+.mq-t{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px 20px;padding:21px 44px;font-family:'Instrument Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:#254551;opacity:.82;text-align:center}
+.mq-t i{font-style:normal;opacity:.45;font-size:9px;letter-spacing:0;transform:translateY(-1px)}
+@media(max-width:1060px){.mq-t{justify-content:center;padding:21px 24px}}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.mq-t{animation:none}}
 .top2{background:none!important;padding:0!important;max-width:none!important}
@@ -1005,7 +1006,7 @@ body.en .rp[data-i="0"] .rgrid{grid-template-columns:minmax(0,460px)!important;j
 .hx h1{font-size:clamp(30px,8.4vw,44px)}
 .hx-k{font-size:10.5px;letter-spacing:3px}
 .hx-btn{padding:16px 24px;font-size:10.5px;letter-spacing:2.4px}
-.mq-t{font-size:9px;gap:8px 16px;padding:16px 14px;letter-spacing:2.4px}
+.mq-t{font-size:10.5px;gap:9px 16px;padding:17px 14px;letter-spacing:2.5px}
 .top2 .ed-story{padding-top:44px!important}
 }
 @media(hover:hover) and (min-width:981px){.hx{background-attachment:fixed;background-position:center 30%}}
