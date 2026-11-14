@@ -990,6 +990,25 @@ body.en .rp[data-i="0"] .rgrid{grid-template-columns:minmax(0,460px)!important;j
 .mq{position:relative;z-index:1;overflow:hidden;background:#FAF6EF;border-top:1px solid rgba(37,69,81,.14);border-bottom:1px solid rgba(37,69,81,.14)}
 .mq-t{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px 20px;padding:21px 44px;font-family:'Instrument Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:#254551;opacity:.82;text-align:center}
 .mq-t i{font-style:normal;opacity:.45;font-size:9px;letter-spacing:0;transform:translateY(-1px)}
+/* --- zajednica: usklađeno sa STIL.md --- */
+.v3b .news{background:#FAF6EF!important}
+.v3b .nb{background:#F6F1E7!important;box-shadow:none!important;border:1px solid rgba(37,69,81,.16)!important;border-radius:26px!important}
+.v3b .nb .comm-l h2{font-family:'Gloock',serif!important;font-style:normal!important;font-weight:400!important;letter-spacing:.005em!important;font-size:34px!important;line-height:1.12!important;color:#254551!important}
+.v3b .nb .comm-l h2 em{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;letter-spacing:.01em}
+.comm-ph img{border-radius:120px 120px 16px 16px!important;box-shadow:none!important;border:1px solid rgba(37,69,81,.18)}
+.comm-o{background:transparent!important;border-radius:0!important;border:0!important;border-top:1px solid rgba(37,69,81,.22)!important;padding:16px 2px 4px!important}
+a.comm-o:hover{transform:none!important;box-shadow:none!important;background:transparent!important}
+a.comm-o:hover .comm-t{color:#254551}
+.comm-t{font-family:'Italiana',serif!important;font-size:24px!important;color:#231B1C;transition:color .3s}
+.comm-s{font-size:10px!important;letter-spacing:2.6px!important;opacity:.75}
+.comm-o.cwait{border-style:solid!important;opacity:.45!important}
+.comm{gap:26px!important}
+.priv{font-size:11.5px!important;letter-spacing:.2px;opacity:.65}
+.v3b .nb .r h3{color:#FFD5B8!important;font-size:10px!important;letter-spacing:3.2px!important;opacity:.9}
+.v3b .why li{padding:12px 0 12px 26px!important;position:relative;font-size:14px!important;line-height:1.55;border-color:rgba(255,230,214,.14)!important}
+.v3b .why li::before{content:"\2726";display:block!important;position:absolute;left:0;top:13px;width:auto;height:auto;background:none;border-radius:0;box-shadow:none;font-size:8px;color:#FFD5B8;opacity:.6}
+.v3b .why li::after{display:none!important;content:none!important}
+
 @media(max-width:1060px){.mq-t{justify-content:center;padding:21px 24px}}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.mq-t{animation:none}}
@@ -1188,8 +1207,7 @@ body.en .hx-sub{display:none!important}
   <div class="l comm-l">
     <figure class="comm-ph"><img src="img/anja-community.jpg" alt="Anja"></figure>
     <div class="comm-b">
-    <div class="k">💬</div>
-    <h2><span lang-en>Join my community!</span><span lang-hr>Pridruži se mom communityju!</span></h2>
+    <h2><span lang-en>Join my <em>community</em></span><span lang-hr>Pridruži se mom <em>communityju</em></span></h2>
     <div class="comm">
       <a class="comm-o" href="https://invite.viber.com/?g2=AQBtLuMce%2B41sldE47PXmBb3L4xMvrYu1gtPT2LRKj%2F8D4m8upZg9Rt%2F%2Fkg5GCZR" target="_blank" rel="noopener"><span class="comm-t">Hrvatska zajednica</span><span class="comm-s">Viber · <span lang-en>Join</span><span lang-hr>Pridruži se</span> →</span></a>
       <span class="comm-o cwait" aria-disabled="true"><span class="comm-t">English community</span><span class="comm-s"><span lang-en>Coming soon</span><span lang-hr>Uskoro</span></span></span>
@@ -1200,15 +1218,15 @@ body.en .hx-sub{display:none!important}
   <div class="r">
     <h3><span lang-en>Why join?</span><span lang-hr>Zašto se pridružiti?</span></h3>
     <ul class="why">
-      <li>✈️ <span><span lang-en>Best tips for exchange and life abroad</span><span lang-hr>Najbolji savjeti za razmjenu i život u inozemstvu</span></span></li>
-      <li>⭐ <span><span lang-en>Experiences and ideas to make the most of every moment of your exchange</span><span lang-hr>Iskustva i ideje da iskoristiš svaki trenutak svoje razmjene</span></span></li>
-      <li>🌞 <span><span lang-en>My days, thoughts and stories</span><span lang-hr>My days, thoughts and stories</span></span></li>
-      <li>🇺🇸 <span><span lang-en>Real talk and the honest bits nobody posts</span><span lang-hr>Iskreno o svemu, bez uljepšavanja</span></span></li>
-      <li>💬 <span><span lang-en>Ask anything you want to know</span><span lang-hr>Pitaj što god te zanima</span></span></li>
-      <li>🤍 <span><span lang-en>Meet people who study abroad or want to</span><span lang-hr>Upoznaj druge koji se školuju u inozemstvu ili to žele</span></span></li>
-      <li>✨ <span><span lang-en>Create the life you want and dream of</span><span lang-hr>Stvori život kakav želiš i o kakvom sanjaš</span></span></li>
-      <li>🌱 <span><span lang-en>Knowledge and skills you'll never learn in a classroom</span><span lang-hr>Znanje i vještine koje nikad nećeš naučiti u učionici</span></span></li>
-      <li>🦋 <span><span lang-en>How life abroad changes you and what it teaches you about yourself</span><span lang-hr>Kako te život u inozemstvu mijenja i što iz toga naučiš o sebi</span></span></li>
+      <li><span><span lang-en>Best tips for exchange and life abroad</span><span lang-hr>Najbolji savjeti za razmjenu i život u inozemstvu</span></span></li>
+      <li><span><span lang-en>Experiences and ideas to make the most of every moment of your exchange</span><span lang-hr>Iskustva i ideje da iskoristiš svaki trenutak svoje razmjene</span></span></li>
+      <li><span><span lang-en>My days, thoughts and stories</span><span lang-hr>My days, thoughts and stories</span></span></li>
+      <li><span><span lang-en>Real talk and the honest bits nobody posts</span><span lang-hr>Iskreno o svemu, bez uljepšavanja</span></span></li>
+      <li><span><span lang-en>Ask anything you want to know</span><span lang-hr>Pitaj što god te zanima</span></span></li>
+      <li><span><span lang-en>Meet people who study abroad or want to</span><span lang-hr>Upoznaj druge koji se školuju u inozemstvu ili to žele</span></span></li>
+      <li><span><span lang-en>Create the life you want and dream of</span><span lang-hr>Stvori život kakav želiš i o kakvom sanjaš</span></span></li>
+      <li><span><span lang-en>Knowledge and skills you'll never learn in a classroom</span><span lang-hr>Znanje i vještine koje nikad nećeš naučiti u učionici</span></span></li>
+      <li><span><span lang-en>How life abroad changes you and what it teaches you about yourself</span><span lang-hr>Kako te život u inozemstvu mijenja i što iz toga naučiš o sebi</span></span></li>
     </ul>
   </div>
 </div></div></section>
