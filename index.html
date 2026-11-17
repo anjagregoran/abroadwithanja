@@ -1126,22 +1126,25 @@ body.en .hx-sub{display:none!important}
 
 .hx-trio{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
 body.en .hx-trio{display:none!important}
-.hx-trio .hx-b2{background:transparent;border:1px solid currentColor}
+.hx-trio .hx-b2{background:transparent;color:#FFD9C6;border:1px solid rgba(255,217,198,.55)}
+.hx-trio .hx-b2:hover{background:#FFD5B8;color:#254551;border-color:#FFD5B8}
 @media(max-width:560px){.hx-trio{flex-direction:column;align-items:stretch;width:100%;max-width:320px}.hx-trio .hx-btn{justify-content:center}}
 
 .hx-dd{position:relative}
 .hx-dd summary{list-style:none;cursor:pointer}
 .hx-dd summary::-webkit-details-marker{display:none}
 .hx-dd[open] .hx-d{transform:rotate(180deg)}
-.hx-ddm{position:absolute;left:50%;transform:translateX(-50%);top:calc(100% + 8px);z-index:30;
-  background:var(--cream,#FBF8F2);border-radius:8px;box-shadow:0 24px 50px -20px rgba(35,27,28,.55);
-  padding:6px;min-width:230px;display:flex;flex-direction:column}
-.hx-ddm a{display:block;padding:12px 16px;border-radius:6px;text-decoration:none;color:#3A2E28;
-  font-size:12px;letter-spacing:2.2px;text-transform:uppercase;font-weight:600;white-space:nowrap}
-.hx-ddm a:hover{background:rgba(58,46,40,.07)}
+.hx-ddm{position:absolute;left:50%;transform:translateX(-50%);top:calc(100% + 10px);z-index:30;
+  background:#FBF8F2;border:1px solid rgba(37,69,81,.14);border-radius:3px;
+  box-shadow:0 30px 60px -24px rgba(35,27,28,.6);padding:0;min-width:262px;display:flex;flex-direction:column;overflow:hidden}
+.hx-ddm a{display:block;padding:16px 22px;text-decoration:none;color:#254551;
+  font-family:'Instrument Sans',sans-serif;font-size:11.5px;letter-spacing:2.6px;text-transform:uppercase;
+  font-weight:600;white-space:nowrap;transition:background .25s,color .25s}
+.hx-ddm a+a{border-top:1px solid rgba(37,69,81,.12)}
+.hx-ddm a:hover{background:#254551;color:#FFE6D6}
 @media(max-width:560px){.hx-ddm{position:static;transform:none;min-width:0;margin-top:8px}}
 
-.hx-ddm .hx-ddm-mail{text-transform:none;letter-spacing:.2px;font-size:13px;font-weight:500}
+
 </style>
 </head>
 <body>
@@ -1158,7 +1161,7 @@ body.en .hx-trio{display:none!important}
   <a class="nv-logo" href="./" aria-label="Abroad Club USA by Anja">Abroad Club USA<em>by Anja</em></a>
   <div class="nv-r">
     <a href="#prica" lang-hr>Moja priča</a>
-    <a href="#onama"><span lang-hr>O nama</span><span lang-en>About us</span></a>
+    <a href="o-nama.html"><span lang-hr>O nama</span><span lang-en>About us</span></a>
     <a href="store.html">Store</a>
     <a href="host.html" lang-en>Become a host family</a>
     <div class="lang nv-lang"><button data-l="hr" class="on">HR</button><button data-l="en">EN</button></div>
@@ -1168,7 +1171,7 @@ body.en .hx-trio{display:none!important}
   <div class="hx-in">
     <div class="hx-k">@abroadlifewithanja</div>
     <h1>Apply, <em>live it fully</em>, and grow from it for the rest of your life.</h1>
-    <div class="hx-cta"><div class="hx-trio hx-only-hr"><details class="hx-dd"><summary class="hx-btn"><span>Besplatne konzultacije</span><i class="hx-ar hx-d" aria-hidden="true">↓</i></summary><div class="hx-ddm"><a href="konzultacije.html#poziv">Dogovori poziv</a><a class="hx-ddm-mail" href="mailto:anja.gregoran1@gmail.com?subject=Upit%20o%20razmjeni">anja.gregoran1@gmail.com</a></div></details><a class="hx-btn hx-b2" href="#put"><span>Moji vodiči za razmjenu u SAD-u</span></a><a class="hx-btn hx-b2" href="store.html"><span>Moj store</span></a></div><a class="hx-btn hx-only-en" href="#put"><span>US high school exchange and my guides</span><i class="hx-ar hx-d" aria-hidden="true">↓</i></a><a class="hx-tt" href="https://www.tiktok.com/@abroadlifewithanja" target="_blank" rel="noopener" aria-label="TikTok @abroadlifewithanja"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6 2.5 2.5 0 0 1 .8.1V9.7a5.8 5.8 0 0 0-.8-.1 5.7 5.7 0 1 0 5.7 5.7V9a7.4 7.4 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg><span><span lang-hr>Moja zajednica od 16K+</span><span lang-en>My 16K+ community</span></span></a></div>
+    <div class="hx-cta"><div class="hx-trio hx-only-hr"><details class="hx-dd"><summary class="hx-btn"><span>Besplatne konzultacije</span><i class="hx-ar hx-d" aria-hidden="true">↓</i></summary><div class="hx-ddm"><a href="konzultacije.html#poziv">Dogovori poziv</a><a href="mailto:anja.gregoran1@gmail.com?subject=Upit%20o%20razmjeni">Pošalji nam upit</a></div></details><a class="hx-btn hx-b2" href="#put"><span>Moji vodiči za razmjenu u SAD-u</span></a><a class="hx-btn hx-b2" href="store.html"><span>Moj store</span></a></div><a class="hx-btn hx-only-en" href="#put"><span>US high school exchange and my guides</span><i class="hx-ar hx-d" aria-hidden="true">↓</i></a><a class="hx-tt" href="https://www.tiktok.com/@abroadlifewithanja" target="_blank" rel="noopener" aria-label="TikTok @abroadlifewithanja"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6 2.5 2.5 0 0 1 .8.1V9.7a5.8 5.8 0 0 0-.8-.1 5.7 5.7 0 1 0 5.7 5.7V9a7.4 7.4 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg><span><span lang-hr>Moja zajednica od 16K+</span><span lang-en>My 16K+ community</span></span></a></div>
   </div>
   <a class="hx-sub" href="#put"><span lang-hr>Srednjoškolska razmjena u SAD-u i moji vodiči</span><span lang-en>US high school exchange and my guides</span><i aria-hidden="true">↓</i></a>
 </header>
@@ -1190,55 +1193,7 @@ body.en .hx-trio{display:none!important}
 
 
 
-<section class="onama" id="onama"><div class="w">
-  <div class="ona-head">
-    <div class="kicker kc"><i></i><span lang-hr>Tko stoji iza ovoga</span><span lang-en>Who is behind this</span><i></i></div>
-    <h2><span lang-hr>Nisam samo profil na TikToku.</span><span lang-en>I am not just a TikTok account.</span></h2>
-    <p class="ona-lead"><span lang-hr>Abroad Club USA je brend iza kojeg stoji obiteljska tvrtka s uredima u Zagrebu i Rijeci. Kad se javiš, ne pišeš nikome u prazno.</span><span lang-en>Abroad Club USA is a brand run by a family company with offices in Zagreb and Rijeka. When you write to us, you are not writing into the void.</span></p>
-  </div>
 
-  <div class="ona-grid">
-    <div class="ona-c">
-      <h3><span lang-hr>Prošla sam to sama</span><span lang-en>I have been through it myself</span></h3>
-      <p><span lang-hr>Godinu dana u američkoj srednjoj školi, od prijave do povratka. Znam kako se piše pismo obitelji domaćinu i kako se snima video za prijavu, jer sam to prošla i jer sam poslije radila sadržaj za agencije u ovom poslu. I danas provodim tri do pet mjeseci godišnje u SAD-u, ostala sam bliska sa svojom obitelji domaćinom, a moja host mama i sama radi u razmjeni.</span><span lang-en>A full year in an American high school, from application to coming home. I know how the host family letter is written and how the application video is filmed, because I did it myself and later worked as a content creator for agencies in this field. I still spend three to five months a year in the US, I stayed close with my host family, and my host mom works in exchange herself.</span></p>
-    </div>
-    <div class="ona-c">
-      <h3><span lang-hr>Engleski vodi magistra engleskog jezika</span><span lang-en>English is handled by a qualified teacher</span></h3>
-      <p><span lang-hr>Svaki program traži procjenu engleskog, a kod nas je ne radi netko usput. Vodi je kolegica s magisterijem engleskog jezika, koja drži i pripreme prije testa. Nitko ne izlazi na test nespreman i nitko ne ide na program s razinom engleskog koja mu neće biti dovoljna u školi.</span><span lang-en>Every program requires an English evaluation, and ours is not done casually. It is run by a colleague with a master's degree in English, who also runs preparation before the test. Nobody takes the test unprepared, and nobody goes on a program with a level of English that will not carry them through school.</span></p>
-    </div>
-    <div class="ona-c">
-      <h3><span lang-hr>Prijevodi se rade u kući</span><span lang-en>Translations are done in house</span></h3>
-      <p><span lang-hr>Prijepis ocjena, liječnička dokumentacija, preporuke. Sve to mora biti prevedeno na engleski, a kod nas to rade naši sudski tumači, jer je prevoditeljstvo osnovna djelatnost tvrtke. Ne šaljemo te nikamo i ne plaćaš to posebno.</span><span lang-en>Transcripts, medical records, recommendation letters. All of it has to be translated into English, and ours is done by our own sworn court interpreters, because translation is the company's core business. We do not send you anywhere else and you do not pay for it separately.</span></p>
-    </div>
-    <div class="ona-c">
-      <h3><span lang-hr>Put i aerodrom nisu problem</span><span lang-en>The travel part is not scary</span></h3>
-      <p><span lang-hr>Ako nikad nisi letio sam, ovo je najstrašniji dio, a zapravo je najlakši. Ja sam taj let do Amerike prošla više puta nego što mogu izbrojati. Proći ćemo s tobom i s roditeljima cijeli put: što na aerodromu, gdje presjedaš, što kad te pitaju na granici.</span><span lang-en>If you have never flown alone, this feels like the scariest part, and it is actually the easiest. I have taken that flight to the US more times than I can count. We walk you and your parents through the whole journey: what happens at the airport, where you change planes, what they ask you at the border.</span></p>
-    </div>
-    <div class="ona-c">
-      <h3><span lang-hr>Prijava koja se primijeti</span><span lang-en>An application that gets noticed</span></h3>
-      <p><span lang-hr>Obitelji domaćini biraju učenika po pismu, fotografijama i videu. To je dio koji odlučuje, a najčešće se napravi na brzinu. Kod nas se radi polako i s nekim tko zna što te obitelji zapravo traže.</span><span lang-en>Host families choose a student by the letter, the photos and the video. That is the part that decides everything, and it is usually rushed. With us it is done slowly, with someone who knows what those families are actually looking for.</span></p>
-    </div>
-    <div class="ona-c">
-      <h3><span lang-hr>Iskreno o novcu i rokovima</span><span lang-en>Honest about money and deadlines</span></h3>
-      <p><span lang-hr>Reći ćemo ti ukupan trošak, ne samo naknadu programa. Avionska karta, viza, džeparac, školski troškovi. I reći ćemo ti ako nešto nije realno za tebe, umjesto da te vodimo u nešto u čemu ćeš se loše osjećati.</span><span lang-en>We will tell you the total cost, not just the program fee. Flight, visa, pocket money, school costs. And we will tell you if something is not realistic for you, instead of leading you into something you will not be happy in.</span></p>
-    </div>
-  </div>
-
-  <div class="ona-firm">
-    <div>
-      <h3><span lang-hr>Tvrtka iza brenda</span><span lang-en>The company behind the brand</span></h3>
-      <p><span lang-hr>Abroad Club USA je brend tvrtke <b>OMNIA d.o.o.</b>, registrirane u Hrvatskoj od 2016. pri Trgovačkom sudu u Rijeci. Osnovna djelatnost tvrtke je profesionalno prevoditeljstvo, uključujući ovjerene prijevode sudskih tumača, u više od 25 jezika.</span><span lang-en>Abroad Club USA is a brand of <b>OMNIA d.o.o.</b>, a Croatian company registered since 2016 with the Commercial Court in Rijeka. The company's core business is professional translation, including certified translations by sworn court interpreters, in more than 25 languages.</span></p>
-      <p><span lang-hr>Tvrtku vodi moja mama <b>Diana Jenul</b>. Ja vodim dio za razmjenu i ja sam osoba s kojom razgovaraš. Uz nas su još dvije kolegice, od kojih je jedna magistra engleskog jezika.</span><span lang-en>The company is run by my mother, <b>Diana Jenul</b>. I lead the exchange side and I am the person you will be talking to. There are two more colleagues on the team, one of them a master of English.</span></p>
-      <p><span lang-hr>To znači da iza jednog TikTok profila stoji registrirana tvrtka s uredima, računom i ljudima koji odgovaraju za ono što kažu.</span><span lang-en>Which means that behind one TikTok account there is a registered company, with offices, invoices and people who are accountable for what they say.</span></p>
-    </div>
-    <ul class="ona-facts">
-      <li><b><span lang-hr>Uredi</span><span lang-en>Offices</span></b><br><span lang-hr>Centar Zagreba i Rijeka</span><span lang-en>Central Zagreb and Rijeka</span></li>
-      <li><b><span lang-hr>Tvrtka</span><span lang-en>Company</span></b><br>OMNIA d.o.o., <span lang-hr>od 2016.</span><span lang-en>since 2016</span></li>
-      <li><b><span lang-hr>Jezici</span><span lang-en>Languages</span></b><br><span lang-hr>Ovjereni prijevodi, 25+ jezika</span><span lang-en>Certified translations, 25+ languages</span></li>
-      <li><b><span lang-hr>Gdje radimo</span><span lang-en>Where we work</span></b><br><span lang-hr>Hrvatska, Srbija, BiH, Slovenija, Crna Gora</span><span lang-en>Croatia, Serbia, Bosnia and Herzegovina, Slovenia, Montenegro</span></li>
-    </ul>
-  </div>
-</div></section>
 
 <section class="route" id="put"><div class="w">
   <div class="rtop">
