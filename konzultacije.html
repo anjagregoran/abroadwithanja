@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Besplatne konzultacije | Abroad Club USA</title>
+<link rel="icon" href="favicon.ico?v=9" sizes="any">
+<link rel="icon" href="favicon.svg?v=9" type="image/svg+xml">
+<link rel="icon" href="favicon-64.png?v=9" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=9">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Gloock&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#254551;--peach:#FFE6D6;--apricot:#FFD5B8;--cream:#F2EDE3;--paper:#FAF6EF;--ink:#231B1C;--mid:#6E6466;--line:#E6DFD2;--red:#9E1B1E}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Instrument Sans',sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+[lang-en]{display:none}
+body.en [lang-hr]{display:none}
+body.en [lang-en]{display:revert}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+
+/* nav */
+.nv{position:relative;z-index:5;background:var(--teal);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;padding:20px 42px}
+.nv a{color:var(--peach);text-decoration:none;font-size:11.5px;letter-spacing:2.6px;text-transform:uppercase;font-weight:600;transition:opacity .3s}
+.nv a:hover{opacity:.7}
+.nv-l,.nv-r{display:flex;align-items:center;gap:38px;flex-wrap:wrap}
+.nv-r{justify-content:flex-end}
+.nv .nv-logo{font-family:'Gloock',serif;font-size:30px;line-height:.92;font-weight:400;text-align:center;color:var(--apricot);letter-spacing:.01em}
+.nv-lang{display:flex;border:1px solid rgba(255,230,214,.5);border-radius:2px;overflow:hidden}
+.nv-lang button{background:transparent;border:0;color:var(--peach);font-family:inherit;font-size:11px;letter-spacing:1.5px;font-weight:600;padding:7px 11px;cursor:pointer}
+.nv-lang button.on{background:var(--peach);color:var(--teal)}
+
+/* hero */
+.hero{background:var(--cream);padding:86px 0 78px;border-bottom:1px solid var(--line)}
+.kick{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:22px}
+.hero h1{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(34px,5.4vw,60px);line-height:1.08;margin:0 0 22px;max-width:17ch}
+.hero h1 em{font-style:italic;color:var(--teal)}
+.lede{font-size:18.5px;max-width:58ch;color:#3A3031;margin:0 0 34px}
+.btn{display:inline-flex;align-items:center;gap:12px;background:var(--teal);color:var(--peach);text-decoration:none;font-size:12px;letter-spacing:2.6px;text-transform:uppercase;font-weight:600;padding:19px 34px;border:0;cursor:pointer;font-family:inherit;transition:background .25s}
+.btn:hover{background:#1b343d}
+.meta{margin-top:20px;font-size:13.5px;color:var(--mid)}
+
+/* sections */
+section{padding:72px 0}
+h2{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(26px,3.4vw,38px);line-height:1.18;margin:0 0 14px}
+.sub{color:var(--mid);max-width:60ch;margin:0 0 38px}
+
+/* honest status */
+.status{background:var(--teal);color:var(--peach);padding:46px 0}
+.status h2{color:var(--apricot);margin-bottom:16px}
+.status p{max-width:62ch;margin:0 0 14px;color:#F6E3D6}
+.status b{color:#fff}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:2px;background:var(--line);border:1px solid var(--line)}
+.step{background:var(--paper);padding:30px 26px}
+.step .n{font-family:'Playfair Display',serif;font-size:30px;color:var(--apricot);line-height:1;margin-bottom:12px}
+.step h3{font-size:15px;margin:0 0 8px;letter-spacing:.2px}
+.step p{margin:0;font-size:14.5px;color:var(--mid);line-height:1.6}
+
+/* eligibility */
+.elig{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:26px}
+.card{background:var(--cream);border:1px solid var(--line);padding:30px 28px}
+.card h3{font-family:'Playfair Display',serif;font-weight:400;font-size:21px;margin:0 0 12px}
+.card ul{margin:0;padding-left:19px;color:#3A3031;font-size:15px}
+.card li{margin-bottom:8px}
+
+/* form */
+.formwrap{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+form{max-width:760px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.f{margin-bottom:18px}
+label{display:block;font-size:11.5px;letter-spacing:2.1px;text-transform:uppercase;font-weight:600;color:var(--teal);margin-bottom:7px}
+input,select,textarea{width:100%;font-family:inherit;font-size:15.5px;color:var(--ink);background:var(--paper);border:1px solid var(--line);padding:13px 14px;border-radius:0}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--apricot);outline-offset:-1px;border-color:var(--teal)}
+textarea{min-height:104px;resize:vertical}
+.hint{font-size:13px;color:var(--mid);margin-top:6px}
+.consent{display:flex;gap:11px;align-items:flex-start;font-size:14px;color:#3A3031;margin:26px 0}
+.consent input{width:auto;margin-top:4px}
+.note{background:var(--apricot);padding:16px 18px;font-size:14px;margin-bottom:30px}
+
+/* faq */
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;font-weight:600;font-size:16px;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary:before{content:"+";color:var(--teal);margin-right:12px;font-weight:400}
+details[open] summary:before{content:"\2013"}
+details p{color:var(--mid);margin:12px 0 0;max-width:62ch;font-size:15px}
+
+footer{background:var(--teal);color:var(--peach);padding:46px 0;font-size:13.5px}
+footer a{color:var(--apricot)}
+@media(max-width:860px){
+ .nv{grid-template-columns:1fr;gap:12px;padding:16px 14px 14px;text-align:center}
+ .nv .nv-logo{order:-1;font-size:27px}
+ .nv-l,.nv-r{justify-content:center;gap:10px 20px}
+ .nv a{font-size:9.5px;letter-spacing:1.8px}
+ .row{grid-template-columns:1fr}
+ .hero{padding:56px 0 50px}
+ section{padding:52px 0}
+}
+
+.kontakt{max-width:760px}
+.k-lead{font-size:17px;line-height:1.65;margin-bottom:22px}
+.k-ways{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:18px}
+.btn2{background:transparent;color:var(--teal);border:1px solid var(--teal)}
+.k-mail{font-size:19px;letter-spacing:.3px;margin-bottom:16px}
+.k-small{font-size:14px;opacity:.75;line-height:1.6}
+</style>
+</head>
+<body>
+
+<nav class="nv">
+  <div class="nv-l">
+    <a href="./"><span lang-hr>Naslovnica</span><span lang-en>Home</span></a>
+    <a href="programi.html" lang-en>Find a program</a>
+  </div>
+  <a class="nv-logo" href="./" aria-label="Abroad Club USA by Anja">Abroad Club USA<em>by Anja</em></a>
+  <div class="nv-r">
+    <a href="store.html">Store</a>
+    <a href="host.html" lang-en>Become a host family</a>
+    <div class="nv-lang"><button data-l="hr" class="on">HR</button><button data-l="en">EN</button></div>
+  </div>
+</nav>
+
+<div class="hero">
+ <div class="wrap">
+  <div class="kick"><span lang-hr>Besplatne konzultacije</span><span lang-en>Free consultation</span></div>
+  <h1><span lang-hr>Razgovarajmo o tome <em>kako bi ti</em> mogao u Ameriku.</span><span lang-en>Let's talk about <em>how you</em> could get to America.</span></h1>
+  <p class="lede">
+   <span lang-hr>Trideset minuta, bez naplate i bez obveze. Prođemo tvoju situaciju, koji su programi realni za tebe, koliko to stvarno košta i što te čeka.</span>
+   <span lang-en>Thirty minutes, free, no obligation. We go through your situation, which programs are realistic for you, what it actually costs and what to expect.</span>
+  </p>
+  <a class="btn" href="#prijava"><span lang-hr>Prijavi se za konzultacije</span><span lang-en>Book a consultation</span> →</a>
+  <div class="meta"><span lang-hr>30 minuta · online</span><span lang-en>30 minutes · online</span></div>
+ </div>
+</div>
+
+
+
+
+<div class="formwrap" id="prijava">
+ <div class="wrap" style="padding-top:72px;padding-bottom:72px">
+  <h2><span lang-hr>Prijavi se za konzultacije</span><span lang-en>Book a consultation</span></h2>
+  <p class="sub"><span lang-hr>Javim se u roku od dva dana s terminima. Sve ostaje među nama.</span><span lang-en>I'll reply within two days with available times. Everything stays between us.</span></p>
+
+  <div class="kontakt">
+    <p class="k-lead"><span lang-hr>Dok ne pustim prijavnicu, javi mi se izravno. Odgovaram osobno, obično isti dan.</span><span lang-en>Until the form is live, just write to me directly. I answer personally, usually the same day.</span></p>
+    <p class="k-ways">
+      <a class="btn" href="mailto:anja.gregoran1@gmail.com?subject=Upit%20za%20besplatne%20konzultacije"><span lang-hr>Pi&#353;i mi na mail</span><span lang-en>Email me</span> &#8594;</a>
+      <a class="btn btn2" href="https://www.tiktok.com/@abroadlifewithanja" target="_blank" rel="noopener"><span lang-hr>Ili DM na TikToku</span><span lang-en>Or DM me on TikTok</span></a>
+    </p>
+    <p class="k-mail">anja.gregoran1@gmail.com</p>
+    <p class="k-small"><span lang-hr>Napi&#353;i godinu ro&#273;enja, dr&#382;avu i &#353;to te zanima. Ako ima&#353; manje od 18, neka roditelj zna da pi&#353;e&#353;.</span><span lang-en>Tell me your year of birth, your country and what you are curious about. If you are under 18, let a parent know you are writing.</span></p>
+  </div>
+  <form style="display:none" onsubmit="event.preventDefault();">
+   <div class="row">
+    <div class="f"><label><span lang-hr>Ime i prezime</span><span lang-en>Full name</span></label><input name="ime" required></div>
+    <div class="f"><label><span lang-hr>Godina rođenja</span><span lang-en>Year of birth</span></label><input name="godiste" inputmode="numeric" placeholder="2010" required></div>
+   </div>
+   <div>
+    <div class="f"><label><span lang-hr>Država</span><span lang-en>Country</span></label>
+     <select name="drzava" required>
+      <option value="">...</option>
+      <option>Hrvatska</option><option>Srbija</option><option>Bosna i Hercegovina</option><option>Crna Gora</option><option>Sjeverna Makedonija</option><option>Druga</option>
+     </select>
+     <div class="f" id="drugaWrap" style="display:none;margin-top:14px;margin-bottom:0">
+      <label><span lang-hr>Koja država</span><span lang-en>Which country</span></label>
+      <input name="drzava_druga" id="drugaInput">
+     </div></div>
+   </div>
+
+   <div class="row">
+    <div class="f"><label><span lang-hr>Tvoj email</span><span lang-en>Your email</span></label><input type="email" name="email" required></div>
+    <div class="f"><label><span lang-hr>Tvoj broj</span><span lang-en>Your phone</span></label><input name="tel"></div>
+   </div>
+
+   <div class="row">
+    <div class="f"><label><span lang-hr>Ime roditelja</span><span lang-en>Parent's name</span></label><input name="roditelj" required></div>
+    <div class="f"><label><span lang-hr>Email roditelja</span><span lang-en>Parent's email</span></label><input type="email" name="roditelj_email" required>
+     </div>
+   </div>
+
+   <div class="f"><label><span lang-hr>Želiš li još nešto reći</span><span lang-en>Anything else</span></label><textarea name="poruka"></textarea></div>
+
+   <label class="consent"><input type="checkbox" required><span><span lang-hr>Potvrđujem da je roditelj suglasan da se ovi podaci obrade radi dogovora i provedbe konzultacija. Podatke ne dijelimo ni s kim bez vaše privole.</span><span lang-en>I confirm a parent consents to this data being processed to arrange and hold the consultation. We do not share it with anyone without your permission.</span></span></label>
+
+   <button class="btn" type="submit"><span lang-hr>Pošalji</span><span lang-en>Send</span> →</button>
+  </form>
+ </div>
+</div>
+
+
+<footer>
+ <div class="wrap">
+  <div style="font-family:'Gloock',serif;font-size:22px;color:var(--apricot);margin-bottom:10px">Abroad Club USA</div>
+  <div><a href="mailto:anja.gregoran1@gmail.com">anja.gregoran1@gmail.com</a></div>
+ </div>
+</footer>
+
+<script>
+(function(){
+ var sel=document.querySelector('select[name="drzava"]');
+ var wrap=document.getElementById('drugaWrap');
+ var inp=document.getElementById('drugaInput');
+ if(!sel||!wrap||!inp)return;
+ function sync(){
+  var other = sel.value==='Druga';
+  wrap.style.display = other ? 'block' : 'none';
+  if(other){inp.setAttribute('required','required');}
+  else{inp.removeAttribute('required');inp.value='';}
+ }
+ sel.addEventListener('change',sync);
+ sync();
+})();
+function setLang(l){document.body.classList.toggle('en',l==='en');document.documentElement.lang=l;document.querySelectorAll('.nv-lang button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l)});try{localStorage.setItem('awa-lang',l)}catch(e){}}
+document.querySelectorAll('.nv-lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.l)})});
+var saved=null;try{saved=localStorage.getItem('awa-lang')}catch(e){}
+setLang(saved==='en'?'en':'hr');
+</script>
+</body>
+</html>
