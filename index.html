@@ -1132,9 +1132,7 @@ body.en .hx-trio{display:none!important}
 @media(max-width:560px){.hx-trio{flex-direction:column;align-items:stretch;width:100%;max-width:320px}.hx-trio .hx-btn{justify-content:center}}
 
 .hx-dd{position:relative}
-.hx-dd summary{list-style:none;cursor:pointer}
-.hx-dd summary::-webkit-details-marker{display:none}
-.hx-dd[open] .hx-d{transform:rotate(180deg)}
+.hx-ddm[hidden]{display:none}
 .hx-ddm{position:absolute;left:50%;transform:translateX(-50%);top:calc(100% + 10px);z-index:30;
   background:#FBF8F2;border:1px solid rgba(37,69,81,.14);border-radius:3px;
   box-shadow:0 30px 60px -24px rgba(35,27,28,.6);padding:0;min-width:262px;display:flex;flex-direction:column;overflow:hidden}
@@ -1149,7 +1147,7 @@ body.en .hx-trio{display:none!important}
 
 .hx-ghost{background:transparent!important;color:#FFD9C6!important;border:1px solid rgba(255,217,198,.6);
   transition:background .3s,color .3s,border-color .3s}
-.hx-ghost:hover,.hx-dd[open] .hx-ghost{background:transparent!important;color:#FFD9C6!important;border-color:rgba(255,217,198,1)}
+.hx-ghost:hover,.hx-dd.on .hx-ghost{background:transparent!important;color:#FFD9C6!important;border-color:rgba(255,217,198,1)}
 
 .hx-tt{gap:14px!important;opacity:1!important;margin-top:0!important;margin-bottom:24px!important}
 .hx-tt .tt-a,.hx-tt .tt-b{border-bottom:0!important;padding-bottom:0!important}
@@ -1200,25 +1198,22 @@ body.en .hx-trio{display:none!important}
 .mq:hover .mq-t{animation-play-state:paused}
 @media(prefers-reduced-motion:reduce){.mq-t{animation:none}}
 
-.gl{position:relative;z-index:1;padding:30px 0 10px}
+.gl{position:relative;z-index:1;padding:34px 0 20px}
 .gl-head{text-align:center;margin-bottom:26px}
-.gl-grid{columns:5;column-gap:14px}
-.gl-i{margin:0 0 20px;break-inside:avoid;display:block}
-.gl-i img{width:100%;height:auto;border-radius:4px;display:block;
-  box-shadow:0 20px 38px -26px rgba(35,27,28,.55)}
+.gl-strip{display:flex;gap:8px;width:100%;overflow-x:auto;padding:0 8px 6px;-webkit-overflow-scrolling:touch}
+.gl-strip::-webkit-scrollbar{display:none}
+.gl-i{margin:0;flex:0 0 auto}
+.gl-i img{height:132px;width:auto;border-radius:3px;display:block}
 .gl-i figcaption{margin-top:9px;font-family:'Instrument Sans',sans-serif;font-size:10.5px;
   letter-spacing:2px;text-transform:uppercase;opacity:.6}
-@media(max-width:1000px){.gl-grid{columns:3}}
-@media(max-width:600px){.gl-grid{columns:2;column-gap:10px}.gl-i{margin-bottom:14px}}
+@media(max-width:700px){.gl-i img{height:104px}}
 
 .vs{position:relative;z-index:1;padding:46px 0 10px;overflow:hidden}
 .vs-wrap{width:100%}
 .vs-head{text-align:center;margin-bottom:26px}
-.vs-row{overflow:hidden;width:100%}
-.vs-track{display:flex;gap:16px;width:max-content;animation:vsslide 70s linear infinite}
-.vs:hover .vs-track{animation-play-state:paused}
-@keyframes vsslide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.vs-i{position:relative;flex:0 0 auto;width:220px;aspect-ratio:9/16;border-radius:6px;overflow:hidden;
+.vs-row{width:100%;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch}
+.vs-track{display:flex;gap:16px;padding:0 0 10px 28px;width:max-content}
+.vs-i{position:relative;flex:0 0 auto;width:230px;aspect-ratio:9/16;border-radius:6px;overflow:hidden;
   display:block;text-decoration:none;box-shadow:0 26px 48px -30px rgba(35,27,28,.65);background:#231B1C}
 .vs-i video{width:100%;height:100%;object-fit:cover;display:block}
 .vs-p{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#FFE6D6;
@@ -1231,6 +1226,7 @@ body.en .hx-trio{display:none!important}
 @media(prefers-reduced-motion:reduce){.vs-track{animation:none}}
 
 .vs-i{border:0;padding:0;cursor:pointer;font:inherit}
+.vs-i.playing .vs-p,.vs-i.playing .vs-c{display:none}
 .lb{position:fixed;inset:0;z-index:999;background:rgba(18,13,14,.93);display:flex;align-items:center;justify-content:center;padding:24px}
 .lb[hidden]{display:none}
 .lb video{max-height:86vh;max-width:min(94vw,420px);border-radius:6px;background:#000}
@@ -1261,7 +1257,7 @@ body.en .hx-trio{display:none!important}
   <div class="hx-in">
     <a class="hx-tt" href="https://www.tiktok.com/@abroadlifewithanja" target="_blank" rel="noopener" aria-label="TikTok @abroadlifewithanja"><span class="tt-a"><span lang-hr>Moja zajednica od 17K</span><span lang-en>My 17K community</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6 2.5 2.5 0 0 1 .8.1V9.7a5.8 5.8 0 0 0-.8-.1 5.7 5.7 0 1 0 5.7 5.7V9a7.4 7.4 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg><span class="tt-b">@abroadlifewithanja</span></button>
     <h1>Apply, <em>live it fully</em>, and grow from it for the rest of your life.</h1>
-    <div class="hx-cta"><div class="hx-trio hx-only-hr"><details class="hx-dd"><summary class="hx-btn hx-ghost"><span>Besplatne konzultacije</span></summary><div class="hx-ddm"><a href="konzultacije.html#poziv">Dogovori poziv</a><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=anja.gregoran1@gmail.com&amp;su=Upit%20o%20razmjeni" target="_blank" rel="noopener">Pošalji nam upit</a></div></details></div><a class="hx-btn hx-ghost hx-only-en" href="#put"><span>US high school exchange and my guides</span><i class="hx-ar hx-d" aria-hidden="true">↓</i></a></div>
+    <div class="hx-cta"><div class="hx-trio hx-only-hr"><div class="hx-dd"><button class="hx-btn hx-ghost" type="button" id="ddb" aria-expanded="false"><span>Besplatne konzultacije</span></button><div class="hx-ddm" id="ddm" hidden><a href="konzultacije.html#poziv">Dogovori poziv</a><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=anja.gregoran1@gmail.com&amp;su=Upit%20o%20razmjeni" target="_blank" rel="noopener">Pošalji nam upit</a></div></div></div><a class="hx-btn hx-ghost hx-only-en" href="#put"><span>US high school exchange and my guides</span><i class="hx-ar hx-d" aria-hidden="true">↓</i></a></div>
   </div>
   <a class="hx-sub" href="#put"><span lang-hr>Moji vodiči za razmjenu u SAD-u</span><span lang-en>My guides for US high school exchange</span><i aria-hidden="true">↓</i></a>
 </header>
@@ -1286,7 +1282,7 @@ body.en .hx-trio{display:none!important}
 
 
 
-<section class="vs" id="videi"><div class="vs-wrap"><div class="vs-row"><div class="vs-track"><button class="vs-i" type="button" data-full="video/v1full.mp4"><video src="video/v1.mp4" poster="video/p1.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>Obilazak američke srednje škole</span><span lang-en>A tour of an American high school</span></span></button><button class="vs-i" type="button" data-full="video/v2full.mp4"><video src="video/v2.mp4" poster="video/p2.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>Dan u školi</span><span lang-en>A day at school</span></span></button><button class="vs-i" type="button" data-full="video/v3full.mp4"><video src="video/v3.mp4" poster="video/p3.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>Život kod obitelji domaćina</span><span lang-en>Life with a host family</span></span></button><button class="vs-i" type="button" data-full="video/v4full.mp4"><video src="video/v4.mp4" poster="video/p4.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>Petak navečer</span><span lang-en>Friday night</span></span></button><button class="vs-i" type="button" data-full="video/v1full.mp4"><video src="video/v1.mp4" poster="video/p1.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>Obilazak američke srednje škole</span><span lang-en>A tour of an American high school</span></span></button><button class="vs-i" type="button" data-full="video/v2full.mp4"><video src="video/v2.mp4" poster="video/p2.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>Dan u školi</span><span lang-en>A day at school</span></span></button><button class="vs-i" type="button" data-full="video/v3full.mp4"><video src="video/v3.mp4" poster="video/p3.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>Život kod obitelji domaćina</span><span lang-en>Life with a host family</span></span></button><button class="vs-i" type="button" data-full="video/v4full.mp4"><video src="video/v4.mp4" poster="video/p4.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>Petak navečer</span><span lang-en>Friday night</span></span></button></div></div></div></section>
+<section class="vs" id="videi"><div class="vs-wrap"><div class="vs-row"><div class="vs-track"><button class="vs-i" type="button" data-full="video/v1full.mp4"><video src="video/v1.mp4" poster="video/p1.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>Obilazak američke srednje škole</span><span lang-en>A tour of an American high school</span></span></button><button class="vs-i" type="button" data-full="video/v2full.mp4"><video src="video/v2.mp4" poster="video/p2.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>Dan u školi</span><span lang-en>A day at school</span></span></button><button class="vs-i" type="button" data-full="video/v3full.mp4"><video src="video/v3.mp4" poster="video/p3.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>Život kod obitelji domaćina</span><span lang-en>Life with a host family</span></span></button><button class="vs-i" type="button" data-full="video/v4full.mp4"><video src="video/v4.mp4" poster="video/p4.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>Petak navečer</span><span lang-en>Friday night</span></span></button></div></div></div></section>
 
 <section class="ona" id="onama"><div class="w">
   <div class="ona-head">
@@ -1356,8 +1352,7 @@ body.en .hx-trio{display:none!important}
 
 
 
-<section class="gl" id="galerija"><div class="w"><div class="gl-grid"><figure class="gl-i"><img src="img/gallery/g1.jpg" alt="" loading="lazy"><figcaption><span lang-hr>Školska dvorana, Michigan</span><span lang-en>The school gym, Michigan</span></figcaption></figure><figure class="gl-i"><img src="img/gallery/g2.jpg" alt="" loading="lazy"><figcaption><span lang-hr>Kuća obitelji domaćina</span><span lang-en>My host family’s house</span></figcaption></figure><figure class="gl-i"><img src="img/gallery/g3.jpg" alt="" loading="lazy"><figcaption><span lang-hr>Notre Dame, utakmica</span><span lang-en>Notre Dame, game day</span></figcaption></figure><figure class="gl-i"><img src="img/gallery/g4.jpg" alt="" loading="lazy"><figcaption><span lang-hr>Branje jabuka s ekipom</span><span lang-en>Apple picking with the group</span></figcaption></figure><figure class="gl-i"><img src="img/gallery/g5.jpg" alt="" loading="lazy"><figcaption><span lang-hr>Zalazak na Floridi</span><span lang-en>Sunset in Florida</span></figcaption></figure><figure class="gl-i"><img src="img/gallery/g6.jpg" alt="" loading="lazy"><figcaption><span lang-hr>Naples, Florida</span><span lang-en>Naples, Florida</span></figcaption></figure><figure class="gl-i"><img src="img/gallery/g7.jpg" alt="" loading="lazy"><figcaption><span lang-hr>Žuti školski autobus</span><span lang-en>The yellow school bus</span></figcaption></figure><figure class="gl-i"><img src="img/gallery/g8.jpg" alt="" loading="lazy"><figcaption><span lang-hr>Ormarići i U.S. History</span><span lang-en>Lockers and U.S. History</span></figcaption></figure><figure class="gl-i"><img src="img/gallery/g9.jpg" alt="" loading="lazy"><figcaption><span lang-hr>Petak navečer, football</span><span lang-en>Friday night football</span></figcaption></figure><figure class="gl-i"><img src="img/gallery/g10.jpg" alt="" loading="lazy"><figcaption><span lang-hr>Susjedstvo u sumrak</span><span lang-en>The neighbourhood at dusk</span></figcaption></figure><figure class="gl-i"><img src="img/gallery/g11.jpg" alt="" loading="lazy"><figcaption><span lang-hr>Game day</span><span lang-en>Game day</span></figcaption></figure><figure class="gl-i"><img src="img/gallery/g12.jpg" alt="" loading="lazy"><figcaption><span lang-hr>Kalifornija</span><span lang-en>California</span></figcaption></figure><figure class="gl-i"><img src="img/gallery/g13.jpg" alt="" loading="lazy"><figcaption><span lang-hr>Put do plaže</span><span lang-en>The walk to the beach</span></figcaption></figure><figure class="gl-i"><img src="img/gallery/g14.jpg" alt="" loading="lazy"><figcaption><span lang-hr>Starbucks poslije škole</span><span lang-en>Starbucks after school</span></figcaption></figure><figure class="gl-i"><img src="img/gallery/g15.jpg" alt="" loading="lazy"><figcaption><span lang-hr>Chick-fil-A u autu</span><span lang-en>Chick-fil-A in the car</span></figcaption></figure><figure class="gl-i"><img src="img/gallery/g16.jpg" alt="" loading="lazy"><figcaption><span lang-hr>Odabir bundeve</span><span lang-en>Picking a pumpkin</span></figcaption></figure><figure class="gl-i"><img src="img/gallery/g17.jpg" alt="" loading="lazy"><figcaption><span lang-hr>Navijanje s tribina</span><span lang-en>Cheering from the stands</span></figcaption></figure></div></div></section>
-<div class="lb" id="lb" hidden><button class="lb-x" id="lbx" aria-label="Zatvori">&times;</button><video id="lbv" controls playsinline></video></div>
+<section class="gl" id="galerija"><div class="gl-strip"><figure class="gl-i"><img src="img/gallery/g1.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g2.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g3.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g4.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g5.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g6.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g7.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g8.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g9.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g10.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g11.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g12.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g13.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g14.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g15.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g16.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g17.jpg" alt="" loading="lazy"></figure></div></section>
 <footer>
   <div class="soc">
     <a href="https://www.tiktok.com/@abroadlifewithanja" target="_blank" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6 2.5 2.5 0 0 1 .8.1V9.7a5.8 5.8 0 0 0-.8-.1 5.7 5.7 0 1 0 5.7 5.7V9a7.4 7.4 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg></a>
@@ -1468,18 +1463,27 @@ window.addEventListener('pageshow',function(e){if(e.persisted)window.scrollTo(0,
 })();
 </script>
 
+
+
 <script>
 (function(){
- var lb=document.getElementById('lb'),lbv=document.getElementById('lbv'),lbx=document.getElementById('lbx');
- function close(){lbv.pause();lbv.removeAttribute('src');lbv.load();lb.hidden=true;document.body.style.overflow='';}
- document.querySelectorAll('.vs-i').forEach(function(b){
-   b.addEventListener('click',function(){
-     lbv.src=b.dataset.full;lb.hidden=false;document.body.style.overflow='hidden';lbv.play().catch(function(){});
+ var b=document.getElementById('ddb'),m=document.getElementById('ddm'),w=b&&b.parentNode;
+ if(b){
+  b.addEventListener('click',function(e){e.stopPropagation();
+    var open=m.hasAttribute('hidden');
+    if(open){m.removeAttribute('hidden');w.classList.add('on');b.setAttribute('aria-expanded','true');}
+    else{m.setAttribute('hidden','');w.classList.remove('on');b.setAttribute('aria-expanded','false');}});
+  document.addEventListener('click',function(){m.setAttribute('hidden','');w.classList.remove('on');b.setAttribute('aria-expanded','false');});
+ }
+ document.querySelectorAll('.vs-i').forEach(function(t){
+   var v=t.querySelector('video'), full=t.dataset.full, on=false;
+   t.addEventListener('click',function(){
+     if(on){ if(v.paused){v.play();}else{v.pause();} return; }
+     on=true; t.classList.add('playing');
+     v.src=full; v.loop=false; v.muted=false; v.controls=true; v.currentTime=0;
+     v.load(); v.play().catch(function(){});
    });
  });
- lbx.addEventListener('click',close);
- lb.addEventListener('click',function(e){if(e.target===lb)close();});
- document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)close();});
 })();
 </script>
 </body>
