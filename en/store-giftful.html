@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Store · Abroad Club USA</title>
+<link rel="icon" href="../favicon.ico?v=9" sizes="any">
+<link rel="icon" href="../favicon.svg?v=9" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--deep:#13303A;--peach:#FFC9B0;--cream:#FBF6EE;--ink:#13303A}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--cream);color:var(--ink);font-family:'Instrument Sans',sans-serif;overflow-x:hidden}
+[lang-hr]{display:none}body.hr [lang-hr]{display:inline}body.hr [lang-en]{display:none}
+a{color:inherit}
+.bar{position:fixed;top:0;left:0;right:0;z-index:20;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:16px 22px;transition:background .35s,color .35s}
+.bar.lite{background:rgba(251,246,238,.86);backdrop-filter:blur(10px);color:var(--ink)}
+.bar{color:var(--peach)}
+.back{justify-self:start;font-size:13px;font-weight:600;text-decoration:none;padding:9px 16px;border-radius:40px;border:1.5px solid currentColor}
+.logo{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px;letter-spacing:-.5px;text-decoration:none}
+.lang{justify-self:end;display:flex;gap:4px;background:rgba(255,255,255,.12);padding:4px;border-radius:40px}
+.bar.lite .lang{background:rgba(19,48,58,.08)}
+.lang button{border:0;background:none;color:inherit;font:700 12px 'Instrument Sans';padding:8px 13px;border-radius:30px;cursor:pointer}
+.lang button.on{background:var(--peach);color:var(--deep)}
+.bar.lite .lang button.on{background:var(--deep);color:var(--cream)}
+.hero{height:100vh;min-height:560px;background:var(--deep);color:var(--peach);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.big{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(78px,17vw,250px);line-height:.86;letter-spacing:-.045em;text-align:center;margin:0;will-change:transform}
+.hero .go{position:absolute;bottom:13vh;left:50%;transform:translateX(-50%)}
+.pill{display:inline-block;background:var(--peach);color:var(--deep);font-weight:700;font-size:15px;padding:15px 26px;border-radius:40px;text-decoration:none;transition:transform .25s}
+.pill:hover{transform:translateY(-3px) scale(1.03)}
+.hero .lead{position:absolute;left:22px;bottom:26px;max-width:300px;font-size:17px;line-height:1.35;margin:0}
+.hero .scroll{position:absolute;right:22px;bottom:26px;font-size:13px;font-weight:600;opacity:.8}
+.statement{padding:140px 22px 60px;text-align:center}
+.statement h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(46px,8vw,112px);line-height:.92;letter-spacing:-.04em;margin:0 auto;max-width:1100px}
+.statement h2 em{font-style:normal;color:#C0563F}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1180px;margin:0 auto;padding:40px 22px 120px}
+.card{background:#fff;border-radius:30px;padding:14px 14px 26px;box-shadow:0 1px 0 rgba(19,48,58,.06),0 20px 40px -30px rgba(19,48,58,.35);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.card:hover{transform:translateY(-8px) rotate(-.6deg)}
+.tile{position:relative;background:var(--t);color:var(--i);border-radius:22px;aspect-ratio:1/.9;display:flex;align-items:center;justify-content:center}
+.tile svg{width:30%;stroke-width:1.6;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.card:hover .tile svg{transform:scale(1.12) rotate(-4deg)}
+.soon{position:absolute;top:14px;left:14px;background:#fff;color:var(--i);font-size:11px;font-weight:700;padding:7px 12px;border-radius:30px}
+.meta{margin:18px 10px 4px;font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;opacity:.55}
+.card h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:27px;letter-spacing:-.02em;margin:0 10px 6px}
+.card p{margin:0 10px;font-size:15px;line-height:1.45;opacity:.75}
+.rv{opacity:0;transform:translateY(40px)}.rv.in{opacity:1;transform:none;transition:opacity .7s ease calc(var(--k)*.08s),transform .8s cubic-bezier(.2,.8,.2,1) calc(var(--k)*.08s)}
+.rv.in:hover{transform:translateY(-8px) rotate(-.6deg);transition-delay:0s}
+.band{background:var(--deep);color:var(--peach);overflow:hidden;padding:30px 0;white-space:nowrap}
+.band .track{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(34px,5vw,64px);letter-spacing:-.03em;animation:mq 30s linear infinite}
+.band i{font-style:normal;color:#fff;opacity:.5;margin:0 22px}
+@keyframes mq{to{transform:translateX(-50%)}}
+.end{padding:130px 22px 60px;text-align:center}
+.end h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(54px,11vw,160px);line-height:.88;letter-spacing:-.045em;margin:0 0 26px}
+.end p{max-width:520px;margin:0 auto 30px;font-size:17px;line-height:1.5}
+.socials{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.socials a{text-decoration:none;font-weight:700;font-size:15px;padding:14px 24px;border-radius:40px;border:2px solid var(--ink);transition:background .25s,color .25s}
+.socials a:hover{background:var(--ink);color:var(--cream)}
+.socials a.f{background:var(--ink);color:var(--cream)}
+footer{text-align:center;font-size:13px;opacity:.55;padding:50px 22px 30px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.grid{grid-template-columns:1fr;gap:16px}.hero .scroll{display:none}.hero .go{bottom:24vh}.bar{padding:12px 16px}.logo{display:none}.statement{padding-top:100px}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.band .track{animation:none}}
+</style>
+<style>
+.nv-lang-link{display:inline-flex;align-items:center;justify-content:center;min-width:38px;
+  padding:7px 11px;border:1px solid currentColor;border-radius:3px;font-family:'Instrument Sans',sans-serif;
+  font-size:10.5px;letter-spacing:2px;font-weight:600;text-decoration:none;opacity:.85}
+.nv-lang-link:hover{opacity:1}
+</style></head>
+<body class="en">
+<header class="bar" id="bar"><a class="back" href="./"><span lang-en>← Home</span></a><a class="logo" href="./">abroad life</a><a class="nv-lang-link" href="../store-giftful.html">HR</a></header>
+<section class="hero"><h1 class="big" id="big"><span lang-en>My<br>Store</span></h1>
+<div class="go"><a class="pill" href="#products"><span lang-en>See the products</span></a></div>
+<p class="lead"><span lang-en>A few special things I'm creating for exchange students and everyone living between two homes.</span></p>
+<span class="scroll"><span lang-en>Scroll ↓</span></span></section>
+<section class="statement" id="products"><h2 class="rv" style="--k:0"><span lang-en>Made for life between <em>two homes.</em></span></h2></section>
+<section class="grid"><article class="card rv" style="--t:#FFD9C7;--i:#C0563F;--k:0"><div class="tile"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 24c0-12 18-12 18 0"/><path d="M12 24h40l-3 30H15z"/></svg><span class="soon"><span lang-en>Coming soon</span></span></div><div class="meta"><span lang-en>Organic cotton</span></div><h3>Organic Tote Bag</h3><p><span lang-en>An organic cotton tote for every day.</span></p></article><article class="card rv" style="--t:#D8EBDD;--i:#2F6B4F;--k:1"><div class="tile"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 13c3 3 13 3 16 0l11 4 7 23-6 2-5-12v22H17V30l-5 12-6-2 7-23z"/><path d="M24 13c2 6 14 6 16 0"/></svg><span class="soon"><span lang-en>Coming soon</span></span></div><div class="meta"><span lang-en>Organic cotton</span></div><h3>Abroad Life Sweatshirt</h3><p><span lang-en>A soft organic cotton sweatshirt.</span></p></article><article class="card rv" style="--t:#F6D6DE;--i:#A2475E;--k:2"><div class="tile"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="19" y="6" width="26" height="52" rx="7"/><rect x="23" y="10" width="10" height="10" rx="3"/><circle cx="28" cy="15" r="1.6"/></svg><span class="soon"><span lang-en>Coming soon</span></span></div><div class="meta"><span lang-en>Accessory</span></div><h3>Phone Case</h3><p><span lang-en>A phone case in my colours.</span></p></article><article class="card rv" style="--t:#D6E6F2;--i:#2F5E80;--k:3"><div class="tile"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 10h36a4 4 0 0 1 4 4v24L38 54H14a4 4 0 0 1-4-4V14a4 4 0 0 1 4-4z"/><path d="M54 38H42a4 4 0 0 0-4 4v12"/><path d="M27 22l2.300 5 5.400.600-4 3.700 1.100 5.400L27 34l-4.800 2.700 1.100-5.400-4-3.700 5.400-.600z"/></svg><span class="soon"><span lang-en>Coming soon</span></span></div><div class="meta"><span lang-en>Accessory</span></div><h3>Stickers</h3><p><span lang-en>Stickers for your laptop, water bottle and journal.</span></p></article><article class="card rv" style="--t:#FBEAB8;--i:#94701A;--k:4"><div class="tile"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="28" width="36" height="24" rx="2"/><rect x="11" y="20" width="42" height="8" rx="2"/><path d="M32 20v32"/><path d="M32 20c-3-8-12-9-12-4 0 3.500 6.500 4 12 4zM32 20c3-8 12-9 12-4 0 3.500-6.500 4-12 4z"/></svg><span class="soon"><span lang-en>Coming soon</span></span></div><div class="meta"><span lang-en>For host families</span></div><h3>From Home to Home</h3><p><span lang-en>A gift for your host family.</span></p></article><article class="card rv" style="--t:#E5DDF3;--i:#5C4A8C;--k:5"><div class="tile"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="17" y="9" width="30" height="44" rx="3"/><path d="M23 9v44"/><path d="M29 20h11M29 26h7"/><path d="M38 53v6l2.500-1.800L43 59v-6"/></svg><span class="soon"><span lang-en>Coming soon</span></span></div><div class="meta"><span lang-en>Journal</span></div><h3>The Year Abroad Journal</h3><p><span lang-en>A journal for your exchange year.</span></p></article></section>
+<div class="band"><div class="track">Organic Tote Bag <i>✦</i> Abroad Life Sweatshirt <i>✦</i> Phone Case <i>✦</i> Stickers <i>✦</i> From Home to Home <i>✦</i> The Year Abroad Journal <i>✦</i> Organic Tote Bag <i>✦</i> Abroad Life Sweatshirt <i>✦</i> Phone Case <i>✦</i> Stickers <i>✦</i> From Home to Home <i>✦</i> The Year Abroad Journal <i>✦</i> </div></div>
+<section class="end"><h2 class="rv" style="--k:0"><span lang-en>Stay close.</span></h2>
+<p><span lang-en>I hope my guides will truly help and if you have any more questions you can contact me through my socials or email :)</span></p>
+<div class="socials"><a class="f" href="https://www.instagram.com/anjagregoran/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@abroadlifewithanja" target="_blank" rel="noopener">TikTok</a><a href="mailto:anja.gregoran1@gmail.com">Email</a></div></section>
+<footer>© Abroad Club USA · @abroadlifewithanja</footer>
+<script>
+(function(){
+function setLang(l){document.body.classList.toggle('hr',l==='hr');document.documentElement.lang=l;document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l)});try{localStorage.setItem('awa-lang',l)}catch(e){}}
+document.querySelectorAll('.lang button').forEach(function(b){b.onclick=function(){setLang(b.dataset.l)}});
+var s=null;try{s=localStorage.getItem('awa-lang')}catch(e){}setLang(s||'en');
+var big=document.getElementById('big'),bar=document.getElementById('bar'),hero=document.querySelector('.hero');
+function onS(){var y=scrollY,h=hero.offsetHeight,p=Math.min(y/h,1);big.style.transform='translateY('+(p*-18)+'vh) scale('+(1-p*.35)+')';big.style.opacity=1-p*1.1;bar.classList.toggle('lite',y>h-60)}
+addEventListener('scroll',onS,{passive:true});onS();
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>
