@@ -1622,6 +1622,16 @@ window.addEventListener('pageshow',function(e){if(e.persisted)window.scrollTo(0,
    p.append('fields[program]',get('program'));
    fetch('https://app.kit.com/forms/10210293/subscriptions',{method:'POST',mode:'no-cors',
      headers:{'Content-Type':'application/x-www-form-urlencoded'},body:p.toString()}).catch(function(){});
+   var g=new URLSearchParams();
+   g.append('entry.1813174887',get('ime'));
+   g.append('entry.1387684478',get('email'));
+   g.append('entry.552781885',get('rodjenje'));
+   g.append('entry.1418928529',get('razred'));
+   g.append('entry.1280180290',get('skola'));
+   g.append('entry.1910487689',get('grad'));
+   g.append('entry.1448049894',get('program'));
+   fetch('https://docs.google.com/forms/d/e/1FAIpQLSeWWMV1vpKyHwdaES-P_zikcJPgdWkKGGvuCdkIkgmQUVO69g/formResponse',
+     {method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:g.toString()}).catch(function(){});
    box.classList.add('done');
  });
 })();
