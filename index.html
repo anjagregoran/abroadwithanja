@@ -1575,13 +1575,14 @@ window.addEventListener('pageshow',function(e){if(e.persisted)window.scrollTo(0,
       </div>
       <div><label for="lc-skola">Ime škole</label><input id="lc-skola" name="skola" type="text" required></div>
       <div><label for="lc-grad">Grad i država</label><input id="lc-grad" name="grad" type="text" required></div>
-      <div><label for="lc-god">Školska godina razmjene</label>
-        <select id="lc-god" name="godina" required>
+      <div><label for="lc-prog">Program za koji si zainteresiran/a</label>
+        <select id="lc-prog" name="program" required>
           <option value="">Odaberi</option>
-          <option>2027/2028</option>
-          <option>2028/2029</option>
-          <option>2029/2030</option>
-          <option>Još ne znamo</option>
+          <option>Srednjoškolska razmjena u SAD-u, godina (J-1)</option>
+          <option>Srednjoškolska razmjena u SAD-u, semestar (J-1)</option>
+          <option>Privatna srednja škola u SAD-u (F-1)</option>
+          <option>Kratki ili ljetni program (2 do 6 tjedana)</option>
+          <option>Još ne znam, treba mi savjet</option>
         </select></div>
       <button class="lc-send" type="submit">Prijavi se na listu</button>
       <p class="lc-note">Podatke koristimo samo da ti se javimo o programu. Više u <a href="zastita-privatnosti.html">Zaštiti privatnosti</a>.</p>
@@ -1605,13 +1606,13 @@ window.addEventListener('pageshow',function(e){if(e.persisted)window.scrollTo(0,
  form.addEventListener('submit',function(e){
    e.preventDefault();
    var d=new FormData(form), get=function(k){return (d.get(k)||'').toString().trim();};
-   if(!get('ime')||!get('email')||!get('rodjenje')||!get('razred')||!get('skola')||!get('grad')||!get('godina')){
+   if(!get('ime')||!get('email')||!get('rodjenje')||!get('razred')||!get('skola')||!get('grad')||!get('program')){
      form.querySelectorAll('[required]').forEach(function(i){if(!i.value)i.style.borderColor='#9E1B1E';});
      return;
    }
    var body='Ime i prezime: '+get('ime')+'\nEmail: '+get('email')+'\nGodina rodjenja: '+get('rodjenje')
      +'\nRazred: '+get('razred')+'\nSkola: '+get('skola')+'\nGrad i drzava: '+get('grad')
-     +'\nSkolska godina: '+get('godina');
+     +'\nProgram: '+get('program');
    window.open('https://mail.google.com/mail/?view=cm&fs=1&to=abroadclubusa@gmail.com&su='
      +encodeURIComponent('Lista cekanja - '+get('ime'))+'&body='+encodeURIComponent(body),'_blank','noopener');
    box.classList.add('done');
