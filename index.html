@@ -1231,13 +1231,15 @@ body.en .hx-trio{display:none!important}
 
 .gl{position:relative;z-index:1;padding:34px 0 20px}
 .gl-head{text-align:center;margin-bottom:26px}
-.gl-strip{display:flex;gap:10px;width:100%;overflow-x:auto;padding:0 8px 6px;-webkit-overflow-scrolling:touch}
+.gl-strip{display:flex;gap:10px;width:100%;overflow-x:auto;padding:0 8px 6px;-webkit-overflow-scrolling:touch;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 56px,#000 calc(100% - 56px),transparent 100%);
+  mask-image:linear-gradient(90deg,transparent 0,#000 56px,#000 calc(100% - 56px),transparent 100%)}
 .gl-strip::-webkit-scrollbar{display:none}
-.gl-i{margin:0;flex:0 0 auto}
-.gl-i img{height:168px;width:auto;border-radius:4px;display:block}
+.gl-i{margin:0;flex:0 0 116px;height:168px;border-radius:4px;overflow:hidden}
+.gl-i img{height:100%;width:100%;object-fit:cover;display:block}
 .gl-i figcaption{margin-top:9px;font-family:'Instrument Sans',sans-serif;font-size:10.5px;
   letter-spacing:2px;text-transform:uppercase;opacity:.6}
-@media(max-width:700px){.gl-i img{height:126px}}
+@media(max-width:700px){.gl-i{flex:0 0 88px;height:126px}}
 
 .vs{position:relative;z-index:1;padding:46px 0 10px;overflow:hidden}
 .vs-wrap{width:100%}
