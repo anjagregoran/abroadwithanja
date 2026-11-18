@@ -1182,30 +1182,26 @@ body.en .hx-trio{display:none!important}
 .ona-why-h{text-align:center;margin:66px 0 34px;font-size:30px;position:relative}
 .ona-why-h::after{content:'';display:block;width:40px;height:1px;background:#9E1B1E;opacity:.45;margin:16px auto 0}
 .ona-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.ona-grid{position:relative;z-index:1}
-.ona-glow{position:absolute;inset:-40px -10px -20px;z-index:0;pointer-events:none;filter:blur(70px);opacity:.75}
-.ona-glow i{position:absolute;display:block;border-radius:50%}
-.ona-glow i:nth-child(1){width:38%;height:62%;left:-4%;top:-6%;background:rgba(158,27,30,.22)}
-.ona-glow i:nth-child(2){width:42%;height:70%;left:30%;top:18%;background:rgba(37,69,81,.20)}
-.ona-glow i:nth-child(3){width:34%;height:58%;right:-3%;top:-2%;background:rgba(255,181,138,.45)}
-.ona-glow i:nth-child(4){width:30%;height:50%;left:14%;bottom:-10%;background:rgba(155,137,180,.30)}
-.ona-c{background:rgba(255,255,255,.26);backdrop-filter:blur(22px) saturate(1.3);-webkit-backdrop-filter:blur(22px) saturate(1.3);
-  border:1px solid rgba(255,255,255,.55);border-radius:22px;padding:32px 28px 34px;
-  box-shadow:0 40px 70px -38px rgba(74,61,92,.5),inset 0 1px 0 rgba(255,255,255,.75);
-  animation:float 7s ease-in-out infinite;transition:transform .4s,box-shadow .4s,background .4s}
-.ona-c:hover{background:rgba(255,255,255,.38)}
-.ona-c:nth-child(2){animation-delay:-1.4s}
-.ona-c:nth-child(3){animation-delay:-2.8s}
-.ona-c:nth-child(4){animation-delay:-4.2s}
-.ona-c:nth-child(5){animation-delay:-5.6s}
-.ona-c:nth-child(6){animation-delay:-3.5s}
-.ona-c:hover{transform:translateY(-8px);box-shadow:0 46px 72px -34px rgba(74,61,92,.5)}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-@media(prefers-reduced-motion:reduce){.ona-c{animation:none}}
-.ona-n{font-family:'Playfair Display',serif;font-style:italic;font-size:26px;letter-spacing:0;
-  color:#9E1B1E;opacity:.4;font-weight:400;display:block;margin-bottom:14px;line-height:1}
-.ona-c h4{font-family:'Playfair Display',serif;font-weight:400;font-size:21px;line-height:1.24;margin:0 0 12px}
-.ona-c p{margin:0;font-size:14.5px;line-height:1.72;opacity:.82}
+.ona-why{position:relative;margin:70px 0 0;padding:72px 0 10px;background:#254551;border-radius:26px;overflow:hidden}
+.ona-why::after{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(120% 80% at 50% -10%,rgba(255,213,184,.14),transparent 60%)}
+.ona-why-h{text-align:center;margin:0 0 6px;font-size:clamp(28px,3.2vw,40px);color:#FFD5B8;
+  font-family:'Playfair Display',serif;font-weight:400;position:relative;z-index:1}
+.ona-why-k{text-align:center;font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:4px;
+  text-transform:uppercase;color:rgba(255,230,214,.55);margin-bottom:14px;position:relative;z-index:1}
+.ona-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  margin:44px 42px 56px;border-top:1px solid rgba(255,230,214,.16);border-left:1px solid rgba(255,230,214,.16)}
+.ona-c{position:relative;background:transparent;border:0;border-right:1px solid rgba(255,230,214,.16);
+  border-bottom:1px solid rgba(255,230,214,.16);border-radius:0;padding:40px 34px 44px;
+  transition:background .5s}
+.ona-c:hover{background:rgba(255,230,214,.05)}
+.ona-n{display:block;font-family:'Playfair Display',serif;font-style:italic;font-weight:400;
+  font-size:40px;line-height:1;color:rgba(255,213,184,.3);margin-bottom:18px;transition:color .5s}
+.ona-c:hover .ona-n{color:rgba(255,213,184,.6)}
+.ona-c h4{font-family:'Playfair Display',serif;font-weight:400;font-size:22px;line-height:1.26;
+  margin:0 0 14px;color:#FFE6D6}
+.ona-c p{margin:0;font-size:14.5px;line-height:1.78;color:rgba(255,230,214,.72)}
+@media(max-width:900px){.ona-why{border-radius:18px;padding:52px 0 0}.ona-grid{grid-template-columns:1fr;margin:30px 18px 34px}.ona-c{padding:30px 22px 32px}}
 @media(max-width:900px){.ona-split{grid-template-columns:1fr;gap:26px;padding:26px 20px}.ona-grid{grid-template-columns:1fr}.ona-c{padding:26px 22px 28px}.ona{padding:10px 0 70px}}
 .ftl2{display:flex;justify-content:center;gap:10px;font-size:11px;letter-spacing:1.8px;text-transform:uppercase;margin:14px 0 10px;opacity:.7}
 .ftl2 a{text-decoration:none}
@@ -1251,7 +1247,7 @@ body.en .hx-trio{display:none!important}
 .lb video{max-height:86vh;max-width:min(94vw,420px);border-radius:6px;background:#000}
 .lb-x{position:absolute;top:16px;right:20px;background:transparent;border:0;color:#FFE6D6;font-size:38px;line-height:1;cursor:pointer}
 body.en .vs,body.en .gl,body.en .ona{display:none!important}
-body:not(.en) .route{display:none!important}
+body:not(.en) .route,body:not(.en) .btease{display:none!important}
 
 .rp-lead{font-size:15.5px;line-height:1.7;max-width:62ch;margin:0 auto 22px!important;opacity:.85;text-align:center}
 body.en .rp-lead{display:none!important}
@@ -1328,8 +1324,8 @@ body.en .rp-lead{display:none!important}
     </ul>
   </div>
 
-  <h3 class="ona-h ona-why-h"><span lang-hr>Zašto mi</span><span lang-en>Why us</span></h3>
-  <div class="ona-wrap" style="position:relative"><div class="ona-glow" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="ona-grid">
+  <div class="ona-why"><div class="ona-why-k"><span lang-hr>Zašto baš mi</span><span lang-en>Why us</span></div><h3 class="ona-why-h"><span lang-hr>Šest razloga</span><span lang-en>Six reasons</span></h3>
+  <div class="ona-grid">
     <div class="ona-c"><span class="ona-n">01</span><h4><span lang-hr>Prošli smo to sami</span><span lang-en>We have been through it</span></h4><p><span lang-hr>Godina u američkoj srednjoj školi, od prijave do povratka. Znamo kako se piše pismo obitelji domaćinu i kako se snima video za prijavu. Anja i danas provodi tri do pet mjeseci godišnje u SAD-u, ostala je bliska sa svojom obitelji domaćinom, a njezina host mama i sama radi u razmjeni.</span><span lang-en>A full year in an American high school, from application to coming home. We know how the host family letter is written and how the application video is filmed. Anja still spends three to five months a year in the US, stayed close with her host family, and her host mom works in exchange herself.</span></p></div>
     <div class="ona-c"><span class="ona-n">02</span><h4><span lang-hr>Engleski vodi magistra engleskog</span><span lang-en>English led by a qualified teacher</span></h4><p><span lang-hr>Svaki program traži procjenu engleskog, a kod nas je ne radi netko usput. Vodi je kolegica s magisterijem engleskog jezika, koja drži i pripreme prije testa. Nitko ne izlazi na test nespreman.</span><span lang-en>Every program requires an English evaluation, and ours is not done casually. It is run by a colleague with a master's degree in English, who also runs preparation before the test. Nobody takes the test unprepared.</span></p></div>
     <div class="ona-c"><span class="ona-n">03</span><h4><span lang-hr>Prijevodi se rade u kući</span><span lang-en>Translations done in house</span></h4><p><span lang-hr>Prijepis ocjena, liječnička dokumentacija, preporuke. Sve mora biti prevedeno na engleski, a kod nas to rade naši sudski tumači. Ne šaljemo te nikamo i ne plaćaš to posebno.</span><span lang-en>Transcripts, medical records, recommendation letters. All of it must be translated into English, and ours is done by our own sworn court interpreters. We do not send you anywhere else and you do not pay separately.</span></p></div>
@@ -1337,7 +1333,7 @@ body.en .rp-lead{display:none!important}
     <div class="ona-c"><span class="ona-n">05</span><h4><span lang-hr>Prijava koja se primijeti</span><span lang-en>An application that gets noticed</span></h4><p><span lang-hr>Obitelji domaćini biraju učenika po pismu, fotografijama i videu. To je dio koji odlučuje, a najčešće se napravi na brzinu. Kod nas se radi polako i s nekim tko zna što te obitelji zapravo traže.</span><span lang-en>Host families choose a student by the letter, the photos and the video. That is the part that decides everything, and it is usually rushed. With us it is done slowly, with someone who knows what families look for.</span></p></div>
     <div class="ona-c"><span class="ona-n">06</span><h4><span lang-hr>Iskreno o novcu i rokovima</span><span lang-en>Honest about money and deadlines</span></h4><p><span lang-hr>Reći ćemo ti ukupan trošak, ne samo naknadu programa. Avionska karta, viza, džeparac, školski troškovi. I reći ćemo ti ako nešto nije realno za tebe.</span><span lang-en>We will tell you the total cost, not just the program fee. Flight, visa, pocket money, school costs. And we will tell you if something is not realistic for you.</span></p></div>
   </div>
-</div></div></section>
+</div></div></div></section>
 
 <section class="route" id="put"><div class="w">
   <div class="rtop">
