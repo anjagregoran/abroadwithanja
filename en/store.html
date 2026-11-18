@@ -1033,17 +1033,15 @@ nav.nv{position:relative!important;top:auto!important;backdrop-filter:none!impor
 <style>
 /* ===== vodici, editorial ===== */
 #vodici{position:relative;padding:0 0 10px!important}
-#vodici .vg-hero{position:relative;width:100vw;margin-left:calc(50% - 50vw);
-  padding:86px 0 92px;background:linear-gradient(160deg,#254551 0%,#2E5464 55%,#1F3C47 100%);
-  text-align:center;overflow:hidden}
-#vodici .vg-hero::after{content:'';position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(120% 80% at 50% -10%,rgba(255,213,184,.16),transparent 62%)}
-#vodici .vg-hero .vgk{position:relative;z-index:1;font-family:'Instrument Sans',sans-serif;font-size:10px;
-  letter-spacing:4.5px;text-transform:uppercase;color:rgba(255,213,184,.8)}
-#vodici .vg-hero h2{position:relative;z-index:1;font-family:'Playfair Display',serif;font-style:italic;
-  font-weight:400;font-size:clamp(38px,6vw,76px);line-height:1;color:#FFE2CC;margin:16px 0 18px;letter-spacing:-1px}
-#vodici .vg-hero p{position:relative;z-index:1;max-width:580px;margin:0 auto;font-size:15px;
-  line-height:1.75;color:rgba(255,238,228,.8)}
+#vodici .vg-top{max-width:760px;margin:0 auto;padding:26px 24px 52px;text-align:center;position:relative;z-index:2}
+#vodici .vg-top .vgk{font-family:'Instrument Sans',sans-serif;font-size:10px;letter-spacing:4.5px;
+  text-transform:uppercase;color:#9E1B1E}
+#vodici .vg-top h2{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;
+  font-size:clamp(40px,6.4vw,78px);line-height:.98;color:#231B1C;margin:16px 0 18px;letter-spacing:-1.4px}
+#vodici .vg-top p{max-width:560px;margin:0 auto;font-size:15px;line-height:1.75;color:#4A4042}
+#vodici .vg-top::after{content:'';display:block;width:40px;height:1px;margin:34px auto 0;background:rgba(158,27,30,.4)}
+.vgb-top{text-align:center;font-family:'Instrument Sans',sans-serif;font-size:10px;letter-spacing:4.5px;
+  text-transform:uppercase;color:#9E1B1E;margin:22px 0 22px}
 
 /* bundle */
 .vgb{display:grid;grid-template-columns:.9fr 1.1fr;gap:0;align-items:stretch;
@@ -1101,24 +1099,10 @@ nav.nv{position:relative!important;top:auto!important;backdrop-filter:none!impor
 }
 </style>
 <section class="prods" id="vodici">
-  <div class="vg-hero">
-    <div class="vgk"><span lang-en>Abroad Club USA</span></div>
-    <h2><span lang-en>My guides</span></h2>
-    <p><span lang-en>Everything I learned before, during and after my exchange year in Michigan, written down so you feel ready.</span></p>
-  </div>
+  <div class="vg-top"><div class="vgk"><span lang-en>Abroad Club USA</span></div><h2><span lang-en>My guides</span></h2><p><span lang-en>Everything I learned before, during and after my exchange year in Michigan, written down so you feel ready.</span></p></div>
   <div class="w">
-  <a class="vgb" href="bundle.html">
-    <div class="vgb-i"><img src="../img/bundle.jpg" alt=""></div>
-    <div class="vgb-t">
-      <span class="vgb-k"><span lang-en>Bundle, best value</span></span>
-      <h3>The Exchange Year Master Guide</h3>
-      <p><span lang-en>Four paid guides in one bundle: the packing list, a year in an American high school, 100 things and the lessons.</span></p>
-      <div class="vgb-p"><b>23.99 &euro;</b><s>32.96 &euro;</s></div>
-      <span class="vg-cta"><span lang-en>See the bundle</span> <i aria-hidden="true">&#8594;</i></span>
-    </div>
-  </a>
   <article class="vg">
-  <a class="vg-img" href="https://anja-health-exchange.kit.com/starterguide" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="../img/town.jpg" alt="" loading="lazy"><span class="vg-no">01</span></a>
+  <a class="vg-img" href="https://anja-health-exchange.kit.com/starterguide" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="../img/neighbourhood.jpg" alt="" loading="lazy"><span class="vg-no">01</span></a>
   <div class="vg-txt">
     <span class="vg-tag vg-free"><span lang-en>Free</span></span>
     <h3><span lang-en>Starter guide for exchange</span></h3>
@@ -1180,7 +1164,19 @@ nav.nv{position:relative!important;top:auto!important;backdrop-filter:none!impor
     <a class="vg-cta" href="https://anja-health-exchange.kit.com/products/lifetime-lessons-skills" target="_blank" rel="noopener"><span lang-en>Buy the guide</span> <i aria-hidden="true">&#8594;</i></a>
   </div>
 </article>
-  </div>
+  
+  <div class="vgb-top">Everything in one place</div>
+  <a class="vgb" href="bundle.html">
+    <div class="vgb-i"><img src="../img/bundle.jpg" alt=""></div>
+    <div class="vgb-t">
+      <span class="vgb-k"><span lang-en>Bundle, best value</span></span>
+      <h3>The Exchange Year Master Guide</h3>
+      <p><span lang-en>Four paid guides in one bundle: the packing list, a year in an American high school, 100 things and the lessons.</span></p>
+      <div class="vgb-p"><b>23.99 &euro;</b><s>32.96 &euro;</s></div>
+      <span class="vg-cta"><span lang-en>See the bundle</span> <i aria-hidden="true">&#8594;</i></span>
+    </div>
+  </a>
+</div>
 </section>
 <section class="prods" id="proizvodi"><div class="w">
   <div class="sh"><h2><span lang-en>My <i class="sgn">signature</i> products</span></h2><p><span lang-en>A few special things I'm creating for exchange students and everyone living between two homes.</span></p></div>
