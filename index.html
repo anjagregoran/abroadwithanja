@@ -1274,6 +1274,37 @@ body.en .rp-lead{display:none!important}
   padding:7px 11px;border:1px solid currentColor;border-radius:3px;font-family:'Instrument Sans',sans-serif;
   font-size:10.5px;letter-spacing:2px;font-weight:600;text-decoration:none;opacity:.85}
 .nv-lang-link:hover{opacity:1}
+</style><style>
+/* lista cekanja */
+.lc-ov{position:fixed;inset:0;z-index:999;display:none;align-items:center;justify-content:center;padding:22px;
+  background:rgba(28,17,14,.72);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.lc-ov.on{display:flex}
+.lc{position:relative;width:100%;max-width:560px;max-height:92vh;overflow:auto;background:#FFFCF7;
+  border-radius:20px;padding:40px 42px 34px;box-shadow:0 50px 90px -40px rgba(40,22,18,.7)}
+.lc-x{position:absolute;top:14px;right:16px;border:0;background:none;font-size:22px;line-height:1;
+  color:#8A7C76;cursor:pointer;padding:6px 10px}
+.lc-x:hover{color:#231B1C}
+.lc-k{font-family:'Instrument Sans',sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#9E1B1E}
+.lc h3{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(26px,3.4vw,34px);
+  line-height:1.12;margin:12px 0 14px;color:#231B1C}
+.lc p{font-size:14.5px;line-height:1.75;color:#4A4042;margin:0 0 12px}
+.lc form{margin-top:22px;display:grid;gap:13px}
+.lc label{display:block;font-family:'Instrument Sans',sans-serif;font-size:10px;letter-spacing:2.4px;
+  text-transform:uppercase;color:#8A7C76;margin-bottom:6px}
+.lc input,.lc select{width:100%;padding:12px 14px;border:1px solid rgba(35,27,28,.18);border-radius:10px;
+  background:#fff;font-family:'Instrument Sans',sans-serif;font-size:14.5px;color:#231B1C}
+.lc input:focus,.lc select:focus{outline:none;border-color:#9E1B1E}
+.lc-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.lc-send{margin-top:6px;width:100%;border:0;border-radius:50px;padding:15px 20px;cursor:pointer;
+  background:#254551;color:#FFE6D6;font-family:'Instrument Sans',sans-serif;font-size:10.5px;
+  letter-spacing:3px;text-transform:uppercase;font-weight:600;transition:background .3s}
+.lc-send:hover{background:#9E1B1E}
+.lc-note{margin-top:14px;font-size:12px;color:#8A7C76;line-height:1.6}
+.lc-ok{display:none;text-align:center;padding:10px 0 6px}
+.lc-ok h4{font-family:'Playfair Display',serif;font-weight:400;font-size:26px;margin:0 0 10px;color:#231B1C}
+.lc.done form,.lc.done .lc-intro{display:none}
+.lc.done .lc-ok{display:block}
+@media(max-width:560px){.lc{padding:34px 24px 28px}.lc-row{grid-template-columns:1fr}}
 </style></head>
 <body>
 <div class="bgx"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
@@ -1297,7 +1328,7 @@ body.en .rp-lead{display:none!important}
   <div class="hx-in">
     <a class="hx-tt" href="https://www.tiktok.com/@abroadlifewithanja" target="_blank" rel="noopener" aria-label="TikTok @abroadlifewithanja"><span class="tt-a"><span lang-hr>Moja zajednica od 17K</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6 2.5 2.5 0 0 1 .8.1V9.7a5.8 5.8 0 0 0-.8-.1 5.7 5.7 0 1 0 5.7 5.7V9a7.4 7.4 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg><span class="tt-b">@abroadlifewithanja</span></a>
     <h1>Apply, <em>live it fully</em>, and grow from it for the rest of your life.</h1>
-    <div class="hx-cta"><div class="hx-trio hx-only-hr"><div class="hx-dd"><button class="hx-btn hx-ghost" type="button" id="ddb" aria-expanded="false"><span>Besplatne konzultacije</span></button><div class="hx-ddm" id="ddm" hidden><a href="https://cal.com/abroadclub/konzultacije" target="_blank" rel="noopener">Dogovori poziv</a><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=abroadclubusa@gmail.com&amp;su=Upit%20o%20razmjeni" target="_blank" rel="noopener">Pošalji nam upit</a></div></div></div><a class="hx-btn hx-ghost hx-only-en" href="#put"><span>US high school exchange and my guides</span><i class="hx-ar hx-d" aria-hidden="true">↓</i></a></div>
+    <div class="hx-cta"><div class="hx-trio hx-only-hr"><button class="hx-btn hx-ghost" type="button" data-lc-open><span>Prijavi se na listu čekanja</span></button></div><a class="hx-btn hx-ghost hx-only-en" href="#put"><span>US high school exchange and my guides</span><i class="hx-ar hx-d" aria-hidden="true">↓</i></a></div>
   </div>
   <a class="hx-sub" href="#prica" lang-hr>Moja priča<i aria-hidden="true">↓</i></a>
 </header>
@@ -1522,6 +1553,68 @@ window.addEventListener('pageshow',function(e){if(e.persisted)window.scrollTo(0,
      v.src=full; v.loop=false; v.muted=false; v.controls=true; v.currentTime=0;
      v.load(); v.play().catch(function(){});
    });
+ });
+})();
+</script>
+
+<div class="lc-ov" id="lcov" role="dialog" aria-modal="true" aria-labelledby="lch">
+  <div class="lc" id="lcbox">
+    <button class="lc-x" type="button" data-lc-close aria-label="Zatvori">&times;</button>
+    <div class="lc-intro">
+      <div class="lc-k">Lista čekanja</div>
+      <h3 id="lch">Javi nam se prva/prvi</h3>
+      <p>Trenutno dovršavamo partnerstva s američkim partnerskim organizacijama ovlaštenima za J-1 i druge programe u SAD-u. Dok to ne bude potvrđeno, ne ugovaramo konzultacije.</p>
+      <p>Prijavi se na listu i javit ćemo ti se čim program bude otvoren, s prvim terminima, rokovima i cijenama.</p>
+    </div>
+    <form id="lcform" novalidate>
+      <div><label for="lc-ime">Ime i prezime učenika</label><input id="lc-ime" name="ime" type="text" required></div>
+      <div><label for="lc-mail">Email</label><input id="lc-mail" name="email" type="email" required></div>
+      <div class="lc-row">
+        <div><label for="lc-rod">Godina rođenja</label><input id="lc-rod" name="rodjenje" type="text" inputmode="numeric" placeholder="npr. 2010" required></div>
+        <div><label for="lc-raz">Razred</label><input id="lc-raz" name="razred" type="text" placeholder="npr. 2. razred" required></div>
+      </div>
+      <div><label for="lc-skola">Ime škole</label><input id="lc-skola" name="skola" type="text" required></div>
+      <div><label for="lc-grad">Grad i država</label><input id="lc-grad" name="grad" type="text" required></div>
+      <div><label for="lc-god">Školska godina razmjene</label>
+        <select id="lc-god" name="godina" required>
+          <option value="">Odaberi</option>
+          <option>2027/2028</option>
+          <option>2028/2029</option>
+          <option>2029/2030</option>
+          <option>Još ne znamo</option>
+        </select></div>
+      <button class="lc-send" type="submit">Prijavi se na listu</button>
+      <p class="lc-note">Podatke koristimo samo da ti se javimo o programu. Više u <a href="zastita-privatnosti.html">Zaštiti privatnosti</a>.</p>
+    </form>
+    <div class="lc-ok">
+      <h4>Hvala ti!</h4>
+      <p>Na listi si. Javljamo ti se čim program bude otvoren.</p>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+ var ov=document.getElementById('lcov'), box=document.getElementById('lcbox'), form=document.getElementById('lcform');
+ function open(){ov.classList.add('on');document.body.style.overflow='hidden';setTimeout(function(){var f=document.getElementById('lc-ime');f&&f.focus()},60);}
+ function close(){ov.classList.remove('on');document.body.style.overflow='';}
+ document.addEventListener('click',function(e){
+   if(e.target.closest('[data-lc-open]')){e.preventDefault();open();return;}
+   if(e.target.closest('[data-lc-close]')||e.target===ov){close();}
+ });
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&ov.classList.contains('on'))close();});
+ form.addEventListener('submit',function(e){
+   e.preventDefault();
+   var d=new FormData(form), get=function(k){return (d.get(k)||'').toString().trim();};
+   if(!get('ime')||!get('email')||!get('rodjenje')||!get('razred')||!get('skola')||!get('grad')||!get('godina')){
+     form.querySelectorAll('[required]').forEach(function(i){if(!i.value)i.style.borderColor='#9E1B1E';});
+     return;
+   }
+   var body='Ime i prezime: '+get('ime')+'\nEmail: '+get('email')+'\nGodina rodjenja: '+get('rodjenje')
+     +'\nRazred: '+get('razred')+'\nSkola: '+get('skola')+'\nGrad i drzava: '+get('grad')
+     +'\nSkolska godina: '+get('godina');
+   window.open('https://mail.google.com/mail/?view=cm&fs=1&to=abroadclubusa@gmail.com&su='
+     +encodeURIComponent('Lista cekanja - '+get('ime'))+'&body='+encodeURIComponent(body),'_blank','noopener');
+   box.classList.add('done');
  });
 })();
 </script>
