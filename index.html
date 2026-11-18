@@ -1182,23 +1182,19 @@ body.en .hx-trio{display:none!important}
 .ona-why-h{text-align:center;margin:66px 0 34px;font-size:30px;position:relative}
 .ona-why-h::after{content:'';display:block;width:40px;height:1px;background:#9E1B1E;opacity:.45;margin:16px auto 0}
 .ona-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.ona-why{position:relative;margin:76px 0 0;padding:10px 0 0;background:none;border-radius:0;overflow:visible}
-.ona-why::before{content:'';position:absolute;left:-6%;right:-6%;top:-4%;bottom:-6%;pointer-events:none;z-index:0;
-  background:
-    radial-gradient(42% 48% at 14% 18%,rgba(255,200,166,.40),transparent 68%),
-    radial-gradient(38% 44% at 86% 12%,rgba(240,208,216,.38),transparent 70%),
-    radial-gradient(48% 54% at 76% 86%,rgba(255,210,192,.34),transparent 72%),
-    radial-gradient(40% 46% at 18% 88%,rgba(236,222,202,.36),transparent 70%);
-  filter:blur(34px);animation:onaDrift 28s ease-in-out infinite alternate}
+.ona-why{position:relative;margin:76px 0 0;padding:84px 0 20px;border-radius:28px;overflow:hidden;
+  background:url('img/bg2.jpg') center 38%/cover no-repeat}
+.ona-why::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:linear-gradient(180deg,rgba(34,21,17,.80),rgba(40,25,20,.74) 45%,rgba(28,17,14,.84))}
 @keyframes onaDrift{from{transform:translate3d(-1.5%,-1%,0) scale(1)}to{transform:translate3d(1.5%,1.5%,0) scale(1.07)}}
-.ona-why-h{text-align:center;margin:0 0 4px;font-size:clamp(30px,3.4vw,46px);color:#231B1C;
+.ona-why-h{text-align:center;margin:0 0 4px;font-size:clamp(30px,3.4vw,46px);color:#FFE2CC;
   font-family:'Playfair Display',serif;font-style:italic;font-weight:400;letter-spacing:-.5px;position:relative;z-index:2}
-.ona-why-h::after{content:'';display:block;width:34px;height:1px;margin:20px auto 0;background:rgba(158,27,30,.42)}
+.ona-why-h::after{content:'';display:block;width:34px;height:1px;margin:20px auto 0;background:rgba(255,217,198,.55)}
 .ona-grid{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);
-  gap:24px;margin:46px 0 60px}
+  gap:24px;margin:46px 42px 60px}
 .ona-c{position:relative;border-radius:26px;padding:38px 32px 40px;
   background:transparent;
-  border:1px solid rgba(60,42,38,.26);
+  border:1px solid rgba(255,217,198,.6);
   box-shadow:none;
   animation:onaFloat 9s ease-in-out infinite;
   transition:transform .6s cubic-bezier(.2,.7,.2,1),border-color .5s}
@@ -1208,16 +1204,16 @@ body.en .hx-trio{display:none!important}
 .ona-c:nth-child(5){animation-delay:-6s}
 .ona-c:nth-child(6){animation-delay:-7.5s}
 @keyframes onaFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-.ona-c:hover{background:transparent;border-color:rgba(60,42,38,.55)}
+.ona-c:hover{background:transparent;border-color:rgba(255,217,198,1)}
 .ona-n{display:block;font-family:'Playfair Display',serif;font-style:italic;font-weight:400;
-  font-size:38px;line-height:1;color:rgba(158,27,30,.30);margin-bottom:16px;transition:color .5s}
-.ona-c:hover .ona-n{color:rgba(158,27,30,.55)}
+  font-size:38px;line-height:1;color:rgba(255,213,184,.55);margin-bottom:16px;transition:color .5s}
+.ona-c:hover .ona-n{color:rgba(255,213,184,.9)}
 .ona-c h4{font-family:'Playfair Display',serif;font-weight:400;font-size:22px;line-height:1.26;
-  margin:0 0 13px;color:#231B1C}
-.ona-c p{margin:0;font-size:14.5px;line-height:1.78;color:#4A4042}
+  margin:0 0 13px;color:#FFF2E7}
+.ona-c p{margin:0;font-size:14.5px;line-height:1.78;color:rgba(255,240,230,.84)}
 @media(prefers-reduced-motion:reduce){.ona-c,.ona-why::before{animation:none}}
-@media(max-width:900px){.ona-why{padding:4px 0 0;margin-top:52px}
-  .ona-grid{grid-template-columns:1fr;gap:16px;margin:32px 0 42px}
+@media(max-width:900px){.ona-why{padding:54px 0 10px;margin-top:52px;border-radius:18px}
+  .ona-grid{grid-template-columns:1fr;gap:16px;margin:32px 18px 42px}
   .ona-c{padding:30px 24px 32px;border-radius:20px;animation:none}}
 @media(max-width:900px){.ona-split{grid-template-columns:1fr;gap:26px;padding:26px 20px}.ona-grid{grid-template-columns:1fr}.ona-c{padding:26px 22px 28px}.ona{padding:10px 0 70px}}
 .ftl2{display:flex;justify-content:center;gap:10px;font-size:11px;letter-spacing:1.8px;text-transform:uppercase;margin:14px 0 10px;opacity:.7}
