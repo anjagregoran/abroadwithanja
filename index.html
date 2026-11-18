@@ -1612,11 +1612,16 @@ window.addEventListener('pageshow',function(e){if(e.persisted)window.scrollTo(0,
      form.querySelectorAll('[required]').forEach(function(i){if(!i.value)i.style.borderColor='#9E1B1E';});
      return;
    }
-   var body='Ime i prezime: '+get('ime')+'\nEmail: '+get('email')+'\nGodina rodjenja: '+get('rodjenje')
-     +'\nRazred: '+get('razred')+'\nSkola: '+get('skola')+'\nGrad i drzava: '+get('grad')
-     +'\nProgram: '+get('program');
-   window.open('https://mail.google.com/mail/?view=cm&fs=1&to=abroadclubusa@gmail.com&su='
-     +encodeURIComponent('Lista cekanja - '+get('ime'))+'&body='+encodeURIComponent(body),'_blank','noopener');
+   var p=new URLSearchParams();
+   p.append('email_address',get('email'));
+   p.append('first_name',get('ime'));
+   p.append('fields[godina_rodjenja]',get('rodjenje'));
+   p.append('fields[razred]',get('razred'));
+   p.append('fields[skola]',get('skola'));
+   p.append('fields[grad]',get('grad'));
+   p.append('fields[program]',get('program'));
+   fetch('https://app.kit.com/forms/10210293/subscriptions',{method:'POST',mode:'no-cors',
+     headers:{'Content-Type':'application/x-www-form-urlencoded'},body:p.toString()}).catch(function(){});
    box.classList.add('done');
  });
 })();
