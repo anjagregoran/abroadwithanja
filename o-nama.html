@@ -10,7 +10,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=9">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Gloock&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Gloock&family=Big+Shoulders+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--teal:#254551;--peach:#FFE6D6;--apricot:#FFD5B8;--cream:#F2EDE3;--paper:#FAF6EF;--ink:#231B1C;--mid:#6E6466;--line:#E6DFD2;--red:#9E1B1E}
 *{box-sizing:border-box}
@@ -135,7 +135,26 @@ footer a{color:var(--apricot)}
   padding:7px 11px;border:1px solid currentColor;border-radius:3px;font-family:'Instrument Sans',sans-serif;
   font-size:10.5px;letter-spacing:2px;font-weight:600;text-decoration:none;opacity:.85}
 .nv-lang-link:hover{opacity:1}
-</style></head>
+</style>
+<style>
+.story{background:#231B1C;color:#F7EFE6;width:100vw;margin:0 0 0 calc(50% - 50vw);padding:96px 0 100px}
+.story-k{text-align:center;font-family:'Instrument Sans',sans-serif;font-size:10px;letter-spacing:4px;
+  text-transform:uppercase;color:rgba(247,239,230,.5);margin-bottom:58px}
+.story-r{max-width:1180px;margin:0 auto 78px;padding:0 28px;display:grid;grid-template-columns:1fr 1fr;
+  gap:46px;align-items:center}
+.story-r:last-child{margin-bottom:0}
+.story-r:nth-child(even) .story-ph{order:2}
+.story-ph img{width:100%;height:100%;max-height:460px;object-fit:cover;border-radius:26px;display:block}
+.story-n{font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:2.5px;font-weight:500;
+  color:rgba(247,239,230,.55);margin-bottom:16px}
+.story-h{font-family:'Big Shoulders Display','Instrument Sans',sans-serif;font-weight:600;
+  font-size:clamp(38px,5.2vw,74px);line-height:.94;letter-spacing:.5px;text-transform:uppercase;
+  color:#F7EFE6;margin:0 0 20px}
+.story-t{max-width:440px;font-size:15.5px;line-height:1.75;color:rgba(247,239,230,.8)}
+@media(max-width:860px){.story{padding:64px 0 68px}.story-r{grid-template-columns:1fr;gap:24px;margin-bottom:54px}
+  .story-r:nth-child(even) .story-ph{order:0}.story-ph img{max-height:300px}}
+</style>
+</head>
 <body>
 
 <nav class="nv">
@@ -158,6 +177,37 @@ footer a{color:var(--apricot)}
   <p><span lang-hr>Pomažemo učenicima iz Hrvatske, Srbije i Bosne i Hercegovine da provedu godinu u američkoj srednjoj školi. Iza brenda stoji obiteljska tvrtka s uredima u Zagrebu i Rijeci.</span></p>
  </div>
 </div>
+
+<section class="story">
+  <div class="story-k"><span lang-hr>Naša priča</span></div>
+
+  <div class="story-r">
+    <div class="story-ph"><img src="img/anja-usa-vintage.jpg" alt="Anja u Sjedinjenim Državama"></div>
+    <div>
+      <div class="story-n">01</div>
+      <h2 class="story-h"><span lang-hr>Počelo je u Michiganu</span></h2>
+      <p class="story-t"><span lang-hr>Školsku godinu 2023./24. Anja je provela kao učenica na razmjeni u Michiganu. Otišla je na jednu godinu, a vratila se s engleskim koji se ne uči u učionici, s drugom obitelji i s idejom da to isto omogući nekome iz regije.</span></p>
+    </div>
+  </div>
+
+  <div class="story-r">
+    <div class="story-ph"><img src="img/anja-community.jpg" alt="Zajednica na TikToku"></div>
+    <div>
+      <div class="story-n">02</div>
+      <h2 class="story-h"><span lang-hr>Zajednica od 17 tisuća</span></h2>
+      <p class="story-t"><span lang-hr>Snimanjem o razmjeni nastala je zajednica od oko 17.000 mladih iz Hrvatske, Srbije i Bosne i Hercegovine. Svaki tjedan stižu ista pitanja: koliko košta, kako se prijaviti, mogu li i ja.</span></p>
+    </div>
+  </div>
+
+  <div class="story-r">
+    <div class="story-ph"><img src="img/bg2.jpg" alt="New York"></div>
+    <div>
+      <div class="story-n">03</div>
+      <h2 class="story-h"><span lang-hr>Agencija koju pokrećemo zajedno</span></h2>
+      <p class="story-t"><span lang-hr>Abroad Club USA pokreću Anja i njezina mama Diana, unutar OMNIA d.o.o. Trenutno se dovršavaju partnerstva s američkim organizacijama ovlaštenima za srednjoškolsku razmjenu.</span></p>
+    </div>
+  </div>
+</section>
 
 <section>
  <div class="wrap ona-split">
