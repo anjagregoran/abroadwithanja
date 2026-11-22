@@ -1187,7 +1187,7 @@ body.en .hx-trio{display:none!important}
 .ona-why{position:relative;width:100vw;margin:84px 0 0 calc(50% - 50vw);padding:96px 0 44px;
   border-radius:0;overflow:hidden;background:url('img/house.jpg') center 54%/cover no-repeat}
 .ona-why::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
-  background:linear-gradient(180deg,rgba(30,18,14,.82),rgba(38,23,18,.76) 45%,rgba(24,14,11,.86))}
+  background:linear-gradient(180deg,rgba(30,18,14,.68),rgba(38,23,18,.58) 45%,rgba(24,14,11,.74))}
 @keyframes onaDrift{from{transform:translate3d(-1.5%,-1%,0) scale(1)}to{transform:translate3d(1.5%,1.5%,0) scale(1.07)}}
 .ona-why-h{text-align:center;margin:0 0 4px;font-size:clamp(30px,3.4vw,46px);color:#FFE2CC;
   font-family:'Playfair Display',serif;font-style:italic;font-weight:400;letter-spacing:-.5px;position:relative;z-index:2}
@@ -1206,6 +1206,15 @@ body.en .hx-trio{display:none!important}
 .ona-c:nth-child(5){animation-delay:-6s}
 .ona-c:nth-child(6){animation-delay:-7.5s}
 @keyframes onaFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.ona-why .ona-c{opacity:0;transition:opacity .75s ease,transform .6s cubic-bezier(.2,.7,.2,1),border-color .5s}
+.ona-why .ona-grid.seq .ona-c{opacity:1}
+.ona-why .ona-grid.seq .ona-c:nth-child(1){transition-delay:0s}
+.ona-why .ona-grid.seq .ona-c:nth-child(2){transition-delay:.15s}
+.ona-why .ona-grid.seq .ona-c:nth-child(3){transition-delay:.3s}
+.ona-why .ona-grid.seq .ona-c:nth-child(4){transition-delay:.45s}
+.ona-why .ona-grid.seq .ona-c:nth-child(5){transition-delay:.6s}
+.ona-why .ona-grid.seq .ona-c:nth-child(6){transition-delay:.75s}
+@media(prefers-reduced-motion:reduce){.ona-why .ona-c{opacity:1;transition:none}}
 .ona-c:hover{background:transparent;border-color:rgba(255,217,198,1)}
 .ona-n{display:block;font-family:'Playfair Display',serif;font-style:italic;font-weight:400;
   font-size:38px;line-height:1;color:rgba(255,213,184,.55);margin-bottom:16px;transition:color .5s}
@@ -1505,6 +1514,8 @@ window.addEventListener('pageshow',function(e){if(e.persisted)window.scrollTo(0,
  if(matchMedia('(hover:hover)').matches){var cv=document.querySelector('.cover');if(cv){var im=cv.querySelector('img');cv.addEventListener('mousemove',function(e){var r=cv.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;im.style.transform='perspective(800px) rotateY('+(x*12)+'deg) rotateX('+(-y*8)+'deg)'});cv.addEventListener('mouseleave',function(){im.style.transform=''})}}
 
  document.querySelectorAll('.rs').forEach(function(b){b.addEventListener('click',function(){var i=b.dataset.i;document.querySelectorAll('.rs').forEach(function(x){x.classList.toggle('on',x===b)});document.querySelectorAll('.rp').forEach(function(p){p.classList.toggle('on',p.dataset.i===i)})})});
+ var og=document.querySelector('.ona-why .ona-grid');
+ if(og){if('IntersectionObserver' in window){var ogio=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('seq');ogio.unobserve(e.target)}})},{threshold:.15});ogio.observe(og)}else og.classList.add('seq');}
  var els=document.querySelectorAll('.rv');
  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});els.forEach(function(e){io.observe(e)})}else els.forEach(function(e){e.classList.add('in')});
 })();
@@ -1573,10 +1584,9 @@ window.addEventListener('pageshow',function(e){if(e.persisted)window.scrollTo(0,
     <div class="pg-ph"><img src="img/hero-la.jpg" alt=""></div>
     <div class="lc-k">Uskoro</div>
     <h3 id="pgh">Programi uskoro stižu</h3>
-    <p>S mamom otvaram agenciju Abroad Club USA. Trenutno dovršavamo partnerstva s američkim organizacijama ovlaštenima za srednjoškolsku razmjenu.</p>
-    <p>Nudit ćemo godinu ili semestar u američkoj srednjoj školi, te kraće ljetne i jezične programe u SAD-u.</p>
+    <p>Abroad Club USA uskoro počinje s radom. Trenutno dovršavamo partnerstva s američkim organizacijama ovlaštenima za srednjoškolsku razmjenu u SAD-u.</p>
+    <p>U ponudi će biti godina ili semestar u američkoj srednjoj školi, te kraći ljetni i jezični programi.</p>
     <button class="lc-send" type="button" data-pg-list>Prijavi me na listu čekanja</button>
-    <p class="lc-note">Javljamo se prvo onima na listi, čim programi budu otvoreni, s rokovima i cijenama.</p>
   </div>
 </div>
 
