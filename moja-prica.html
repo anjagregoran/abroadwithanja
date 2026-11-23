@@ -82,6 +82,27 @@ a{color:inherit}
 .co-g span{font-size:14.5px;color:#4A4042;line-height:1.55}
 .co-n{max-width:720px;margin:26px auto 0;text-align:center;font-size:13.5px;line-height:1.7;color:var(--mid)}
 @media(max-width:860px){.ag{padding:58px 0 62px}.ag-r{grid-template-columns:1fr;gap:26px;margin-bottom:38px}.ag-r:nth-of-type(even) .ag-ph{order:0}.co{padding:48px 0 60px}.co-g{grid-template-columns:1fr}.co-g div{border-right:0}}
+
+.tm{padding:84px 0 92px}
+.tm-k{text-align:center;font-size:10.5px;letter-spacing:4px;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+.tm-h{text-align:center;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(26px,3vw,40px);margin:0 0 50px;color:var(--ink)}
+.tm-g{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;max-width:1000px;margin:0 auto}
+.tm-c{margin:0}
+.tm-ph{aspect-ratio:3/4;border-radius:18px;overflow:hidden;background:var(--cream);box-shadow:0 28px 50px -42px rgba(35,27,28,.6)}
+.tm-ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.tm-c:hover .tm-ph img{transform:scale(1.04)}
+.tm-mono{display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#F2EDE3,#E8DCD4)}
+.tm-mono span{font-family:'Bodoni Moda',serif;font-size:40px;color:rgba(158,27,30,.35)}
+.tm-c figcaption{padding-top:16px}
+.tm-c b{display:block;font-family:'Bodoni Moda',serif;font-weight:500;font-size:18px;margin-bottom:4px}
+.tm-c span{font-size:13.5px;color:var(--mid);line-height:1.5}
+.tm-c:nth-child(2) .tm-ph{transition-delay:.08s}
+@media(max-width:860px){.tm{padding:52px 0 58px}.tm-g{grid-template-columns:repeat(2,1fr);gap:20px}.tm-h{margin-bottom:34px}}
+.sl.sl-u{transition-duration:.9s}
+.tm-c:nth-child(1){transition-delay:0s}
+.tm-c:nth-child(2){transition-delay:.12s}
+.tm-c:nth-child(3){transition-delay:.24s}
+.tm-c:nth-child(4){transition-delay:.36s}
 </style>
 </head>
 <body>
@@ -113,24 +134,31 @@ a{color:inherit}
  <div class="wrap">
   <div class="ag-k sl sl-u">Agencija</div>
   <h2 class="ag-h sl sl-u">Kako je nastao Abroad Club USA</h2>
-  <p class="ag-l sl sl-u">Pomažemo mladima da jednu školsku godinu, semestar ili ljeto provedu u Sjedinjenim Američkim Državama.</p>
+  <p class="ag-l sl sl-u">Dijeleći svoje iskustvo razmjene okupila sam zajednicu od oko 17.000 mladih. Svaki tjedan stizala su ista pitanja: koliko košta, kako se prijaviti i je li to uopće izvedivo. Zato Abroad Club USA pokrećem s mamom Dianom, unutar njezine tvrtke OMNIA d.o.o.</p>
+ </div>
+</section>
 
-  <div class="ag-r">
-   <div class="ag-ph sl sl-l"><img src="img/anja-community.jpg" alt="Anja snima sadržaj o razmjeni"></div>
-   <div class="sl sl-r">
-    <div class="ag-n">01</div>
-    <h3>Pitanja koja su se stalno ponavljala</h3>
-    <p>Dijeleći svoje iskustvo razmjene okupila sam zajednicu od oko 17.000 mladih iz regije. Svaki tjedan stizala su ista pitanja: koliko košta, kako se prijaviti i je li to uopće izvedivo.</p>
-   </div>
-  </div>
-
-  <div class="ag-r">
-   <div class="ag-ph sl sl-r"><img src="img/anja-usa-vintage.jpg" alt="Anja u Sjedinjenim Državama"></div>
-   <div class="sl sl-l">
-    <div class="ag-n">02</div>
-    <h3>Agencija koju pokrećemo zajedno</h3>
-    <p>Abroad Club USA pokrećem s mamom Dianom, unutar njezine tvrtke OMNIA d.o.o. Trenutno dovršavamo partnerstva s američkim organizacijama ovlaštenima za srednjoškolsku razmjenu.</p>
-   </div>
+<section class="tm">
+ <div class="wrap">
+  <div class="tm-k sl sl-u">Naš tim</div>
+  <h2 class="tm-h sl sl-u">Ljudi s kojima radiš</h2>
+  <div class="tm-g">
+   <figure class="tm-c sl sl-u">
+    <div class="tm-ph"><img src="img/anja-usa-vintage.jpg" alt="Anja Gregoran Jenul"></div>
+    <figcaption><b>Anja Gregoran Jenul</b><span>Razmjena, sadržaj i komunikacija</span></figcaption>
+   </figure>
+   <figure class="tm-c sl sl-u">
+    <div class="tm-ph tm-mono"><span>DJ</span></div>
+    <figcaption><b>Diana Jenul</b><span>Voditeljica tvrtke OMNIA d.o.o.</span></figcaption>
+   </figure>
+   <figure class="tm-c sl sl-u">
+    <div class="tm-ph tm-mono"><span>M</span></div>
+    <figcaption><b>Mateja</b><span>Magistra engleskog jezika</span></figcaption>
+   </figure>
+   <figure class="tm-c sl sl-u">
+    <div class="tm-ph tm-mono"><span>M</span></div>
+    <figcaption><b>Maja</b><span>Magistra njemačkog jezika</span></figcaption>
+   </figure>
   </div>
  </div>
 </section>
