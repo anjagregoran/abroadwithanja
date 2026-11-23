@@ -1065,8 +1065,11 @@ body.en .hx-sub{display:none!important}
   font-weight:500;opacity:.88;border-bottom:1px solid rgba(255,230,214,.4);padding-bottom:3px;transition:.3s}
 .hx-sub:hover{opacity:1;border-color:#FFE6D6}
 .hx-sub{text-shadow:0 1px 10px rgba(0,0,0,.5);font-size:15px!important;letter-spacing:3.2px!important;color:#fff!important;opacity:1!important}
-.hx-sub i{position:absolute;left:50%;bottom:-50px;display:block;width:1px;height:38px;background:rgba(255,255,255,.38);transition:height .35s ease,background .35s ease}
-.hx-sub:hover i{height:48px;background:rgba(255,255,255,.7)}
+.hx-sub i{position:absolute;left:calc(50% - 1.6px);top:calc(100% + 12px);width:1px;height:38px;margin-left:-.5px;overflow:hidden;background:rgba(255,255,255,.38);box-shadow:0 0 8px rgba(0,0,0,.25);transition:height .35s ease}
+.hx-sub i::after{content:'';position:absolute;left:0;top:-40%;width:100%;height:40%;background:linear-gradient(180deg,rgba(255,255,255,0),#fff);animation:cue-drip 2.6s cubic-bezier(.6,0,.4,1) infinite}
+.hx-sub:hover i{height:48px}
+@keyframes cue-drip{0%{top:-40%}70%,100%{top:100%}}
+@media(prefers-reduced-motion:reduce){.hx-sub i::after{animation:none;display:none}}
 @media(max-width:560px){.hx-sub{font-size:12px!important;letter-spacing:2.4px!important}}
 
 /* hero sub-link sits lower; footer link row */
@@ -1107,7 +1110,7 @@ body.en .hx-sub{display:none!important}
 /* sub-link: no underline, sits a little higher */
 .hx-sub{border-bottom:0!important;padding-bottom:0!important;bottom:92px!important}
 .hx-sub:hover{opacity:1}
-@media(max-width:860px){.hx-sub{bottom:76px!important}.hx-sub i{bottom:-38px;height:30px}.hx-sub:hover i{height:38px}}
+@media(max-width:860px){.hx-sub{bottom:76px!important}.hx-sub i{top:calc(100% + 9px);height:26px}.hx-sub:hover i{height:32px}}
 
 .onama{position:relative;z-index:1;padding:20px 0 90px}
 .onama .ona-head{max-width:760px;margin:0 auto 46px;text-align:center}
