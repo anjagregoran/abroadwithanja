@@ -1359,10 +1359,12 @@ body.en .rp-lead{display:none!important}
 .prg-k{font-size:10.5px;letter-spacing:4px;text-transform:uppercase;color:#9E1B1E;margin-bottom:14px}
 .prg-h h2{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(30px,3.3vw,46px);line-height:1.14;letter-spacing:-.3px;color:#231B1C;margin:0 0 14px}
 .prg-h p{font-size:16px;color:#5A5052;margin:0}
-.prg-r{display:grid;grid-template-columns:1.08fr .92fr;align-items:stretch}
+.prg-r{display:grid;grid-template-columns:1.08fr .92fr;align-items:stretch;min-height:540px}
 .prg-r:nth-child(odd) .prg-ph{order:2}
-.prg-ph{position:relative;min-height:520px;overflow:hidden}
-.prg-ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
+.prg-ph{position:relative;overflow:hidden}
+.prg-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
+.prg-ph img.ph-bus{object-position:center 75%}
+.prg-ph img.ph-low{object-position:center 88%}
 .prg-r:hover .prg-ph img{transform:scale(1.03)}
 .prg-tx{background:#FAF6EF;padding:76px 74px;display:flex;flex-direction:column;justify-content:center}
 .prg-r:nth-child(even) .prg-tx{background:#fff}
@@ -1377,7 +1379,7 @@ body.en .rp-lead{display:none!important}
 .prg-cta:hover span{transform:translateX(4px)}
 .prg-note{text-align:center;max-width:560px;margin:0 auto;padding:54px 0 74px;font-size:13.5px;line-height:1.7;color:#7A7072}
 body.en .prg{display:none}
-@media(max-width:860px){.prg{padding:62px 0 0}.prg-h{margin-bottom:38px}.prg-r{grid-template-columns:1fr}.prg-r:nth-child(odd) .prg-ph{order:0}.prg-ph{min-height:290px}.prg-tx{padding:36px 26px 42px}.prg-tx p{font-size:15.5px}.prg-note{padding:34px 0 52px}}
+@media(max-width:860px){.prg{padding:62px 0 0}.prg-h{margin-bottom:38px}.prg-r{grid-template-columns:1fr;min-height:0}.prg-r:nth-child(odd) .prg-ph{order:0}.prg-ph{height:290px}.prg-tx{padding:36px 26px 42px}.prg-tx p{font-size:15.5px}.prg-note{padding:34px 0 52px}}
 
 .ftco{max-width:640px;margin:16px auto 6px;font-size:12.5px;line-height:1.7;color:rgba(250,246,239,.5);text-align:center;padding:0 24px}
 </style></head>
@@ -1417,7 +1419,7 @@ body.en .prg{display:none}
   </div>
  </div>
  <article class="prg-r rv">
-  <div class="prg-ph"><img src="img/town.jpg" alt="Američki gradić u zalazak sunca" loading="lazy"></div>
+  <div class="prg-ph"><img class="ph-bus" src="img/school-bus.jpg" alt="Žuti školski autobus na seoskoj cesti" loading="lazy"></div>
   <div class="prg-tx">
    <div class="prg-e">Akademska godina &middot; 10 mjeseci</div>
    <h3>Godina u američkoj srednjoj školi</h3>
@@ -1444,7 +1446,7 @@ body.en .prg{display:none}
   </div>
  </article>
  <article class="prg-r rv">
-  <div class="prg-ph"><img src="img/neighbourhood.jpg" alt="Američka ulica uz ocean" loading="lazy"></div>
+  <div class="prg-ph"><img class="ph-low" src="img/neighbourhood.jpg" alt="Američka ulica uz ocean" loading="lazy"></div>
   <div class="prg-tx">
    <div class="prg-e">Kratki program &middot; NWSE</div>
    <h3>Kratki program s partnerom NWSE</h3>
