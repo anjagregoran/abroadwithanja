@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pet ideja za prikaz programa | Abroad Club USA</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="favicon.ico?v=9" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#254551;--peach:#FFE6D6;--apricot:#FFD5B8;--cream:#F2EDE3;--paper:#FAF6EF;--ink:#231B1C;--mid:#6E6466;--line:#E6DFD2;--red:#9E1B1E}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Instrument Sans',sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.w{max-width:1100px;margin:0 auto;padding:0 28px}
+h2,h3{font-family:'Playfair Display',serif;font-weight:400}
+.top{background:var(--teal);color:var(--peach);padding:40px 0 44px}
+.top h1{font-family:'Playfair Display',serif;font-weight:400;font-size:34px;margin:0 0 8px}
+.top p{margin:0;color:rgba(255,230,214,.8);font-size:15px}
+.lbl{background:var(--ink);color:var(--paper);padding:28px 0 30px;margin-top:0}
+.lbl .n{font-size:10.5px;letter-spacing:4px;text-transform:uppercase;color:var(--apricot);margin-bottom:8px}
+.lbl h2{font-size:26px;margin:0 0 6px;color:var(--paper)}
+.lbl p{margin:0;font-size:14.5px;color:rgba(250,246,239,.7);max-width:70ch}
+.sec{padding:70px 0 80px}
+.sec-h{text-align:center;max-width:620px;margin:0 auto 46px}
+.k{font-size:10.5px;letter-spacing:4px;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+.sec-h h2{font-size:clamp(28px,3.2vw,42px);line-height:1.15;margin:0 0 12px}
+.sec-h p{font-size:15.5px;color:#5A5052;margin:0}
+.cta{display:inline-flex;align-items:center;gap:9px;background:transparent;border:1px solid rgba(35,27,28,.22);color:var(--ink);border-radius:40px;padding:12px 20px;font-family:inherit;font-size:10.5px;letter-spacing:2.6px;text-transform:uppercase;font-weight:600;cursor:pointer;text-decoration:none;transition:background .3s,color .3s,border-color .3s}
+.cta:hover{background:var(--red);border-color:var(--red);color:var(--paper)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px;padding:0;list-style:none}
+.chips li{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;font-weight:600;color:var(--mid);background:#F4EFE7;border-radius:40px;padding:7px 13px}
+
+/* 1 bubbles */
+.v1{background:var(--cream)}
+.v1-g{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;max-width:1040px;margin:0 auto}
+.v1-c{display:flex;flex-direction:column;background:#fff;border-radius:34px;padding:12px 12px 30px;box-shadow:0 30px 60px -44px rgba(35,27,28,.55);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.v1-c:hover{transform:translateY(-8px)}
+.v1-g>.v1-c:nth-child(even){margin-top:42px}
+.v1-ph{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:16/11}
+.v1-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.v1-tag{position:absolute;left:16px;top:16px;background:rgba(250,246,239,.94);color:var(--red);font-size:9.5px;letter-spacing:2.6px;text-transform:uppercase;font-weight:600;padding:8px 14px;border-radius:40px}
+.v1-b{padding:24px 20px 0;display:flex;flex-direction:column;flex:1}
+.v1-b h3{font-size:25px;line-height:1.2;margin:0 0 10px}
+.v1-b p{font-size:15.5px;color:#5A5052;margin:0 0 18px}
+.v1-b .cta{margin-top:auto;align-self:flex-start}
+
+/* 2 timeline */
+.v2{background:var(--paper)}
+.v2-r{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;max-width:1040px;margin:0 auto;padding-top:64px}
+.v2-r::before{content:'';position:absolute;left:6%;right:6%;top:18px;height:1px;background:linear-gradient(90deg,rgba(158,27,30,.15),rgba(158,27,30,.6),rgba(158,27,30,.15))}
+.v2-c{position:relative;text-align:center}
+.v2-c::before{content:'';position:absolute;left:50%;top:-46px;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;background:var(--red);box-shadow:0 0 0 5px var(--paper),0 0 0 6px rgba(158,27,30,.25)}
+.v2-d{position:absolute;left:0;right:0;top:-80px;font-size:10.5px;letter-spacing:2.6px;text-transform:uppercase;font-weight:600;color:var(--red)}
+.v2-ph{border-radius:50%;overflow:hidden;width:132px;height:132px;margin:0 auto 18px;box-shadow:0 20px 40px -26px rgba(35,27,28,.6)}
+.v2-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.v2-c h3{font-size:20px;margin:0 0 8px;line-height:1.22}
+.v2-c p{font-size:14px;color:#5A5052;margin:0 0 14px}
+
+/* 3 rows */
+.v3{background:var(--cream)}
+.v3-r{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;margin:0 0 4px}
+.v3-r:nth-child(even) .v3-ph{order:2}
+.v3-ph{min-height:420px;overflow:hidden}
+.v3-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.v3-tx{background:#fff;padding:60px 56px;display:flex;flex-direction:column;justify-content:center}
+.v3-n{font-size:10.5px;letter-spacing:3.4px;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+.v3-tx h3{font-size:32px;margin:0 0 12px;line-height:1.14}
+.v3-tx p{font-size:16px;color:#5A5052;margin:0 0 20px;max-width:46ch}
+.v3-tx .cta{align-self:flex-start}
+
+/* 4 tabs */
+.v4{background:var(--paper)}
+.v4-t{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:0 auto 42px}
+.v4-t button{font-family:inherit;font-size:10.5px;letter-spacing:2.6px;text-transform:uppercase;font-weight:600;padding:13px 22px;border-radius:40px;border:1px solid rgba(35,27,28,.18);background:transparent;color:var(--ink);cursor:pointer;transition:all .3s}
+.v4-t button.on{background:var(--teal);border-color:var(--teal);color:var(--peach)}
+.v4-p{display:none;grid-template-columns:1fr 1fr;gap:44px;align-items:center;max-width:980px;margin:0 auto;animation:fade .5s ease}
+.v4-p.on{display:grid}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.v4-ph{border-radius:20px;overflow:hidden;aspect-ratio:4/3}
+.v4-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.v4-p h3{font-size:30px;margin:0 0 12px;line-height:1.15}
+.v4-p p{font-size:16px;color:#5A5052;margin:0 0 18px}
+
+/* 5 table */
+.v5{background:var(--cream)}
+.v5-t{width:100%;border-collapse:collapse;max-width:1000px;margin:0 auto;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 30px 60px -48px rgba(35,27,28,.6)}
+.v5-t th,.v5-t td{text-align:left;padding:17px 20px;border-bottom:1px solid var(--line);font-size:14.5px;vertical-align:top}
+.v5-t thead th{background:var(--teal);color:var(--peach);font-size:10.5px;letter-spacing:2.2px;text-transform:uppercase;font-weight:600;border:0}
+.v5-t tbody th{font-family:'Playfair Display',serif;font-weight:400;font-size:17px;width:28%}
+.v5-t tr:last-child th,.v5-t tr:last-child td{border-bottom:0}
+.v5-note{text-align:center;max-width:560px;margin:34px auto 0;font-size:13.5px;color:#7A7072}
+@media(max-width:900px){
+ .v1-g,.v4-p.on{grid-template-columns:1fr}
+ .v1-g>.v1-c:nth-child(even){margin-top:0}
+ .v2-r{grid-template-columns:repeat(2,1fr);gap:46px 18px}
+ .v2-r::before{display:none}
+ .v3-r{grid-template-columns:1fr}.v3-r:nth-child(even) .v3-ph{order:0}.v3-ph{min-height:260px}.v3-tx{padding:36px 26px}
+ .v5-t{display:block;overflow-x:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="w">
+ <h1>Pet načina da prikažemo programe</h1>
+ <p>Isti sadržaj, pet različitih prikaza. Prođi ih i reci koji ti sjeda, pa ga dovršim na naslovnici. Ova stranica nije povezana ni s jednim izbornikom.</p>
+</div></div>
+
+<!-- 1 -->
+<div class="lbl"><div class="w"><div class="n">Ideja 1</div><h2>Mjehurići, mreža 2 x 2</h2><p>Ovo je trenutno na naslovnici. Prozračno, stane na jedan ekran i lako se doda peti program.</p></div></div>
+<section class="sec v1"><div class="w">
+ <div class="sec-h"><div class="k">Što nudimo</div><h2>Programi u SAD-u</h2><p>Srednjoškolska razmjena u javnim američkim školama i kraći ljetni programi kod obitelji domaćina.</p></div>
+ <div class="v1-g">
+  <article class="v1-c"><div class="v1-ph"><img src="img/town.jpg" alt=""><span class="v1-tag">Akademska godina</span></div><div class="v1-b"><h3>Godina u američkoj srednjoj školi</h3><p>Cijela školska godina u javnoj američkoj srednjoj školi, uz život u obitelji domaćinu. Upoznaješ drukčiji obrazovni sustav, sam biraš dio predmeta i uključuješ se u školske aktivnosti.</p><ul class="chips"><li>10 mjeseci</li><li>Javna škola</li><li>Obitelj domaćin</li></ul><a class="cta" href="#">Lista čekanja &#8594;</a></div></article>
+  <article class="v1-c"><div class="v1-ph"><img src="img/campus-palms.jpg" alt=""><span class="v1-tag">Semestar</span></div><div class="v1-b"><h3>Semestar u američkoj srednjoj školi</h3><p>Pola školske godine u istoj vrsti škole i uz isti oblik smještaja. Rješenje za one kojima cijela godina izvan matične škole nije izvediva.</p><ul class="chips"><li>5 mjeseci</li><li>Javna škola</li><li>Obitelj domaćin</li></ul><a class="cta" href="#">Lista čekanja &#8594;</a></div></article>
+  <article class="v1-c"><div class="v1-ph"><img src="img/host-family.jpg" alt=""><span class="v1-tag">Ljeto</span></div><div class="v1-b"><h3>Ljeto u Sjevernoj Karolini</h3><p>Nekoliko ljetnih tjedana kod obitelji domaćina u Sjevernoj Karolini. Engleski koristiš svakodnevno, a izbliza upoznaješ i način života američke obitelji.</p><ul class="chips"><li>Ljeto</li><li>Obitelj domaćin</li><li>Sjeverna Karolina</li></ul><a class="cta" href="#">Lista čekanja &#8594;</a></div></article>
+  <article class="v1-c"><div class="v1-ph"><img src="img/neighbourhood.jpg" alt=""><span class="v1-tag">Kratki program</span></div><div class="v1-b"><h3>Kratki program s partnerom NWSE</h3><p>Kraći boravak za one koji žele iskusiti život u SAD-u prije odluke o semestru ili cijeloj godini. Detalje programa dogovaramo s partnerom.</p><ul class="chips"><li>Nekoliko tjedana</li><li>Obitelj domaćin</li><li>SAD</li></ul><a class="cta" href="#">Lista čekanja &#8594;</a></div></article>
+ </div>
+</div></section>
+
+<!-- 2 -->
+<div class="lbl"><div class="w"><div class="n">Ideja 2</div><h2>Traka po trajanju</h2><p>Programi poredani po duljini, od nekoliko tjedana do cijele školske godine. Odmah se vidi da se može početi s kraćim programom.</p></div></div>
+<section class="sec v2"><div class="w">
+ <div class="sec-h"><div class="k">Što nudimo</div><h2>Programi u SAD-u</h2><p>Od nekoliko tjedana do cijele školske godine.</p></div>
+ <div class="v2-r">
+  <div class="v2-c"><div class="v2-d">Nekoliko tjedana</div><div class="v2-ph"><img src="img/neighbourhood.jpg" alt=""></div><h3>Kratki program s partnerom NWSE</h3><p>Za one koji žele iskusiti život u SAD-u prije odluke o duljem programu.</p><a class="cta" href="#">Detalji</a></div>
+  <div class="v2-c"><div class="v2-d">Ljeto</div><div class="v2-ph"><img src="img/host-family.jpg" alt=""></div><h3>Ljeto u Sjevernoj Karolini</h3><p>Nekoliko ljetnih tjedana kod obitelji domaćina, uz svakodnevno korištenje engleskog.</p><a class="cta" href="#">Detalji</a></div>
+  <div class="v2-c"><div class="v2-d">5 mjeseci</div><div class="v2-ph"><img src="img/campus-palms.jpg" alt=""></div><h3>Semestar u srednjoj školi</h3><p>Pola školske godine u javnoj američkoj školi, uz obitelj domaćina.</p><a class="cta" href="#">Detalji</a></div>
+  <div class="v2-c"><div class="v2-d">10 mjeseci</div><div class="v2-ph"><img src="img/town.jpg" alt=""></div><h3>Godina u srednjoj školi</h3><p>Cijela školska godina, drukčiji obrazovni sustav i školske aktivnosti.</p><a class="cta" href="#">Detalji</a></div>
+ </div>
+</div></section>
+
+<!-- 3 -->
+<div class="lbl"><div class="w"><div class="n">Ideja 3</div><h2>Pune trake, jedan program po redu</h2><p>Velika fotografija lijevo pa desno. Najljepše izgleda, ali naslovnicu produljuje za otprilike četiri ekrana.</p></div></div>
+<section class="sec v3" style="padding-bottom:0">
+ <div class="w"><div class="sec-h"><div class="k">Što nudimo</div><h2>Programi u SAD-u</h2></div></div>
+ <div class="v3-r"><div class="v3-ph"><img src="img/town.jpg" alt=""></div><div class="v3-tx"><div class="v3-n">Akademska godina &middot; 10 mjeseci</div><h3>Godina u američkoj srednjoj školi</h3><p>Cijela školska godina u javnoj američkoj srednjoj školi, uz život u obitelji domaćinu. Upoznaješ drukčiji obrazovni sustav, sam biraš dio predmeta i uključuješ se u školske aktivnosti.</p><a class="cta" href="#">Lista čekanja &#8594;</a></div></div>
+ <div class="v3-r"><div class="v3-ph"><img src="img/campus-palms.jpg" alt=""></div><div class="v3-tx"><div class="v3-n">Semestar &middot; 5 mjeseci</div><h3>Semestar u američkoj srednjoj školi</h3><p>Pola školske godine u istoj vrsti škole i uz isti oblik smještaja. Rješenje za one kojima cijela godina izvan matične škole nije izvediva.</p><a class="cta" href="#">Lista čekanja &#8594;</a></div></div>
+ <div class="v3-r"><div class="v3-ph"><img src="img/host-family.jpg" alt=""></div><div class="v3-tx"><div class="v3-n">Ljeto &middot; Sjeverna Karolina</div><h3>Ljeto u Sjevernoj Karolini</h3><p>Nekoliko ljetnih tjedana kod obitelji domaćina. Engleski koristiš svakodnevno, a izbliza upoznaješ i način života američke obitelji.</p><a class="cta" href="#">Lista čekanja &#8594;</a></div></div>
+ <div class="v3-r"><div class="v3-ph"><img src="img/neighbourhood.jpg" alt=""></div><div class="v3-tx"><div class="v3-n">Kratki program &middot; NWSE</div><h3>Kratki program s partnerom NWSE</h3><p>Kraći boravak za one koji žele iskusiti život u SAD-u prije odluke o semestru ili cijeloj godini. Detalje programa dogovaramo s partnerom.</p><a class="cta" href="#">Lista čekanja &#8594;</a></div></div>
+</section>
+
+<!-- 4 -->
+<div class="lbl"><div class="w"><div class="n">Ideja 4</div><h2>Kartice s prekidačem</h2><p>Klikneš na vrstu programa i mijenja se sadržaj ispod. Naslovnica ostaje kratka koliko god programa dodali.</p></div></div>
+<section class="sec v4"><div class="w">
+ <div class="sec-h"><div class="k">Što nudimo</div><h2>Programi u SAD-u</h2></div>
+ <div class="v4-t">
+  <button class="on" data-t="a">Godina</button><button data-t="b">Semestar</button><button data-t="c">Ljeto</button><button data-t="d">Kratki program</button>
+ </div>
+ <div class="v4-p on" data-p="a"><div class="v4-ph"><img src="img/town.jpg" alt=""></div><div><h3>Godina u američkoj srednjoj školi</h3><p>Cijela školska godina u javnoj američkoj srednjoj školi, uz život u obitelji domaćinu. Upoznaješ drukčiji obrazovni sustav, sam biraš dio predmeta i uključuješ se u školske aktivnosti.</p><ul class="chips"><li>10 mjeseci</li><li>Javna škola</li><li>Obitelj domaćin</li></ul><a class="cta" href="#">Lista čekanja &#8594;</a></div></div>
+ <div class="v4-p" data-p="b"><div class="v4-ph"><img src="img/campus-palms.jpg" alt=""></div><div><h3>Semestar u američkoj srednjoj školi</h3><p>Pola školske godine u istoj vrsti škole i uz isti oblik smještaja. Rješenje za one kojima cijela godina izvan matične škole nije izvediva.</p><ul class="chips"><li>5 mjeseci</li><li>Javna škola</li><li>Obitelj domaćin</li></ul><a class="cta" href="#">Lista čekanja &#8594;</a></div></div>
+ <div class="v4-p" data-p="c"><div class="v4-ph"><img src="img/host-family.jpg" alt=""></div><div><h3>Ljeto u Sjevernoj Karolini</h3><p>Nekoliko ljetnih tjedana kod obitelji domaćina u Sjevernoj Karolini. Engleski koristiš svakodnevno, a izbliza upoznaješ i način života američke obitelji.</p><ul class="chips"><li>Ljeto</li><li>Obitelj domaćin</li><li>Sjeverna Karolina</li></ul><a class="cta" href="#">Lista čekanja &#8594;</a></div></div>
+ <div class="v4-p" data-p="d"><div class="v4-ph"><img src="img/neighbourhood.jpg" alt=""></div><div><h3>Kratki program s partnerom NWSE</h3><p>Kraći boravak za one koji žele iskusiti život u SAD-u prije odluke o semestru ili cijeloj godini. Detalje programa dogovaramo s partnerom.</p><ul class="chips"><li>Nekoliko tjedana</li><li>Obitelj domaćin</li><li>SAD</li></ul><a class="cta" href="#">Lista čekanja &#8594;</a></div></div>
+</div></section>
+
+<!-- 5 -->
+<div class="lbl"><div class="w"><div class="n">Ideja 5</div><h2>Mjehurići plus usporedna tablica</h2><p>Kartice kao u prvoj ideji, a ispod njih tablica za one koji žele usporediti. Roditelji u nekoliko sekundi vide razliku.</p></div></div>
+<section class="sec v5"><div class="w">
+ <div class="sec-h"><div class="k">Usporedi</div><h2>Koji program odgovara tebi</h2></div>
+ <table class="v5-t">
+  <thead><tr><th>Program</th><th>Trajanje</th><th>Škola</th><th>Smještaj</th><th>Za koga je</th></tr></thead>
+  <tbody>
+   <tr><th>Godina u srednjoj školi</th><td>10 mjeseci</td><td>Javna američka srednja škola</td><td>Obitelj domaćin</td><td>Za one koji žele cjelovito iskustvo školske godine u SAD-u</td></tr>
+   <tr><th>Semestar</th><td>5 mjeseci</td><td>Javna američka srednja škola</td><td>Obitelj domaćin</td><td>Za one kojima cijela godina izvan matične škole nije izvediva</td></tr>
+   <tr><th>Ljeto u Sjevernoj Karolini</th><td>Nekoliko ljetnih tjedana</td><td>Bez redovite nastave</td><td>Obitelj domaćin</td><td>Za one koji žele ljetni boravak bez izostanka iz škole</td></tr>
+   <tr><th>Kratki program, NWSE</th><td>Nekoliko tjedana</td><td>U dogovoru s partnerom</td><td>Obitelj domaćin</td><td>Za one koji žele iskusiti SAD prije odluke o duljem programu</td></tr>
+  </tbody>
+ </table>
+ <p class="v5-note">Cijene i datumi za sljedeću sezonu objavljuju se po potpisivanju partnerstava. Javljamo se prvo onima na listi čekanja.</p>
+</div></section>
+
+<script>
+document.querySelectorAll('.v4-t button').forEach(function(b){
+ b.addEventListener('click',function(){
+  document.querySelectorAll('.v4-t button').forEach(function(x){x.classList.remove('on')});
+  b.classList.add('on');
+  document.querySelectorAll('.v4-p').forEach(function(p){p.classList.toggle('on',p.dataset.p===b.dataset.t)});
+ });
+});
+</script>
+</body>
+</html>
