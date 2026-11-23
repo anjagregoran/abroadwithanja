@@ -1349,6 +1349,38 @@ body.en .rp-lead{display:none!important}
 .pg .lc-x:hover{background:rgba(28,17,14,.72);color:#fff}
 .pg .lc-send{margin-top:20px}
 @media(max-width:560px){.pg{padding:0 24px 28px}.pg-ph{margin:0 -24px 20px;height:160px}}
+
+/* ---- Programi ---- */
+.prg{position:relative;z-index:1;padding:96px 0 104px;background:var(--cream,#F2EDE3)}
+.prg::before{content:'';position:absolute;left:50%;top:-120px;width:760px;height:420px;transform:translateX(-50%);background:radial-gradient(ellipse at center,rgba(158,27,30,.07),transparent 68%);pointer-events:none}
+.prg-h{text-align:center;max-width:620px;margin:0 auto 56px}
+.prg-k{font-size:10.5px;letter-spacing:4px;text-transform:uppercase;color:#9E1B1E;margin-bottom:14px}
+.prg-h h2{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(30px,3.3vw,46px);line-height:1.14;letter-spacing:-.3px;color:#231B1C;margin:0 0 14px}
+.prg-h p{font-size:16px;color:#5A5052;margin:0}
+.prg-g{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;max-width:1040px;margin:0 auto}
+.prg-c{position:relative;display:flex;flex-direction:column;background:#fff;border-radius:34px;padding:12px 12px 30px;box-shadow:0 30px 60px -44px rgba(35,27,28,.55);transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s ease}
+.prg-c:hover{transform:translateY(-8px);box-shadow:0 44px 80px -46px rgba(35,27,28,.6)}
+.prg-g>.prg-c:nth-child(even){margin-top:42px}
+.prg-ph{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:16/11}
+.prg-ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.prg-c:hover .prg-ph img{transform:scale(1.045)}
+.prg-tag{position:absolute;left:16px;top:16px;background:rgba(250,246,239,.94);color:#9E1B1E;font-size:9.5px;letter-spacing:2.6px;text-transform:uppercase;font-weight:600;padding:8px 14px;border-radius:40px}
+.prg-b{padding:24px 20px 0}
+.prg-b h3{font-family:'Playfair Display',serif;font-weight:400;font-size:25px;line-height:1.2;margin:0 0 10px;color:#231B1C}
+.prg-b p{font-size:15.5px;line-height:1.62;color:#5A5052;margin:0 0 18px}
+.prg-m{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px;padding:0;list-style:none}
+.prg-m li{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;font-weight:600;color:#6E6466;background:#F4EFE7;border-radius:40px;padding:7px 13px}
+.prg-cta{margin-top:auto;display:inline-flex;align-items:center;gap:9px;align-self:flex-start;background:transparent;border:1px solid rgba(35,27,28,.22);color:#231B1C;border-radius:40px;padding:13px 22px;font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:2.6px;text-transform:uppercase;font-weight:600;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.prg-cta span{transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.prg-cta:hover{background:#9E1B1E;border-color:#9E1B1E;color:#FAF6EF}
+.prg-cta:hover span{transform:translateX(4px)}
+.prg-note{text-align:center;max-width:560px;margin:52px auto 0;font-size:13.5px;line-height:1.7;color:#7A7072}
+.prg .rv:nth-child(2){transition-delay:.08s}
+.prg .rv:nth-child(3){transition-delay:.16s}
+.prg .rv:nth-child(4){transition-delay:.24s}
+body.en .prg{display:none}
+@media(max-width:860px){.prg{padding:64px 0 72px}.prg-g{grid-template-columns:1fr;gap:22px;max-width:460px}.prg-g>.prg-c:nth-child(even){margin-top:0}.prg-h{margin-bottom:38px}.prg-b h3{font-size:22px}}
+
 </style></head>
 <body>
 <div class="bgx"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
@@ -1359,7 +1391,7 @@ body.en .rp-lead{display:none!important}
 <nav class="nv">
   <div class="nv-l">
     
-    <a href="#prica" lang-hr>Moja priča</a>
+    <a href="moja-prica.html" lang-hr>Moja priča</a>
     
     <a href="#onama" lang-hr>O nama</a>
   </div>
@@ -1373,25 +1405,64 @@ body.en .rp-lead{display:none!important}
   <div class="hx-in">
     <a class="hx-tt" href="https://www.tiktok.com/@abroadlifewithanja" target="_blank" rel="noopener" aria-label="TikTok @abroadlifewithanja"><span class="tt-a"><span lang-hr>Moja zajednica od 17K</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6 2.5 2.5 0 0 1 .8.1V9.7a5.8 5.8 0 0 0-.8-.1 5.7 5.7 0 1 0 5.7 5.7V9a7.4 7.4 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg><span class="tt-b">@abroadlifewithanja</span></a>
     <h1>Apply, <em>live it fully</em>, and grow from it for the rest of your life.</h1>
-    <div class="hx-cta"><div class="hx-trio hx-only-hr"><div class="hx-dd"><button class="hx-btn hx-ghost" type="button" id="ddb" aria-expanded="false"><span>Besplatne konzultacije</span></button><div class="hx-ddm" id="ddm" hidden><a href="#" data-lc-open>Dogovori poziv</a><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=abroadclubusa@gmail.com&amp;su=Upit%20o%20razmjeni" target="_blank" rel="noopener">Pošalji nam upit</a></div></div><button class="hx-btn hx-ghost" type="button" data-pg-open><span>Programi</span></button></div><a class="hx-btn hx-ghost hx-only-en" href="#put"><span>US high school exchange and my guides</span><i class="hx-ar hx-d" aria-hidden="true">↓</i></a></div>
+    <div class="hx-cta"><div class="hx-trio hx-only-hr"><div class="hx-dd"><button class="hx-btn hx-ghost" type="button" id="ddb" aria-expanded="false"><span>Besplatne konzultacije</span></button><div class="hx-ddm" id="ddm" hidden><a href="#" data-lc-open>Dogovori poziv</a><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=abroadclubusa@gmail.com&amp;su=Upit%20o%20razmjeni" target="_blank" rel="noopener">Pošalji nam upit</a></div></div></div><a class="hx-btn hx-ghost hx-only-en" href="#put"><span>US high school exchange and my guides</span><i class="hx-ar hx-d" aria-hidden="true">↓</i></a></div>
   </div>
-  <a class="hx-sub" href="#prica" lang-hr>Moja priča<i aria-hidden="true"></i></a>
+  <a class="hx-sub" href="#programi" lang-hr>Programi<i aria-hidden="true"></i></a>
 </header>
-<div class="mq"><div class="mq-t" lang-hr><span>50+ savjeta</span><i>◆</i><span>100+ odgovora</span><i>◆</i><span>Samopouzdanje</span><i>◆</i><span>Rast</span><i>◆</i><span>Uspomene</span><i>◆</i><span>Vlastito iskustvo razmjene</span><i>◆</i><span>Uredi u Zagrebu i Rijeci</span><i>◆</i><span>Prijevodi u kući</span><i>◆</i><span>Hrvatska, Srbija, BiH i ostatak Balkana</span><i>◆</i><span>Pripreme za test engleskog</span><i>◆</i><span>Od prijave do povratka kući</span><i>◆</i><span>50+ savjeta</span><i>◆</i><span>100+ odgovora</span><i>◆</i><span>Samopouzdanje</span><i>◆</i><span>Rast</span><i>◆</i><span>Uspomene</span><i>◆</i><span>Vlastito iskustvo razmjene</span><i>◆</i><span>Uredi u Zagrebu i Rijeci</span><i>◆</i><span>Prijevodi u kući</span><i>◆</i><span>Hrvatska, Srbija, BiH i ostatak Balkana</span><i>◆</i><span>Pripreme za test engleskog</span><i>◆</i><span>Od prijave do povratka kući</span></div></div>
-<div class="top2">
-<section class="ed-story" id="prica"><div class="w">
-  <div class="ed-s-left rv one">
-    <div class="ed-s-photo"><img src="img/anja-hero.jpg" alt="Anja"></div>
+<div class="mq"><div class="mq-t" lang-hr><span>50+ savjeta</span><i>◆</i><span>100+ odgovora</span><i>◆</i><span>Samopouzdanje</span><i>◆</i><span>Rast</span><i>◆</i><span>Uspomene</span><i>◆</i><span>Vlastito iskustvo razmjene</span><i>◆</i><span>Uredi u Zagrebu i Rijeci</span><i>◆</i><span>Hrvatska, Srbija, BiH i ostatak Balkana</span><i>◆</i><span>Pripreme za test engleskog</span><i>◆</i><span>Od prijave do povratka kući</span><i>◆</i><span>50+ savjeta</span><i>◆</i><span>100+ odgovora</span><i>◆</i><span>Samopouzdanje</span><i>◆</i><span>Rast</span><i>◆</i><span>Uspomene</span><i>◆</i><span>Vlastito iskustvo razmjene</span><i>◆</i><span>Uredi u Zagrebu i Rijeci</span><i>◆</i><span>Hrvatska, Srbija, BiH i ostatak Balkana</span><i>◆</i><span>Pripreme za test engleskog</span><i>◆</i><span>Od prijave do povratka kući</span></div></div>
+<section class="prg" id="programi">
+ <div class="w">
+  <div class="prg-h rv">
+   <div class="prg-k">Što nudimo</div>
+   <h2>Programi u SAD-u</h2>
+   <p>Srednjoškolska razmjena u javnim američkim školama i kraći ljetni programi kod obitelji domaćina. Partnerstva s američkim organizacijama trenutno dovršavamo, a prvi na redu su oni s liste čekanja.</p>
   </div>
-  <div class="ed-s-right rv">
-    <div class="ed-k"><span lang-hr>Moja priča</span></div>
-    <h2><span lang-hr>Bok! Ja sam Anja i dolazim iz Hrvatske.</span></h2>
-    <p><span lang-hr>Godine 2023. provela sam godinu dana na razmjeni u SAD-u, na koju sam otišla s plaćenom agencijom BHV Education, a nisam ni slutila koliko će mi to promijeniti život. Otišla sam misleći da idem samo na jednu školsku godinu, a ta mi je jedna godina promijenila sve.</span></p>
-    <p><span lang-hr>Tamo sam upoznala i svog dečka. Danas nekoliko mjeseci godišnje provodim kod njega u SAD-u, a on ljeti dolazi k meni u Hrvatsku, pa je moj život danas negdje između Hrvatske i SAD-a.</span></p>
-    <p><span lang-hr>Sada dijelim iskustva, savjete i sve ono što bih voljela da mi je netko rekao prije odlaska. Ovdje ćeš naći savjete, priče i inspiraciju za razmjenu, a učim te svemu, od toga <span class="hl">kako se prijaviti na godinu razmjene</span> do toga kako da ti to bude <span class="hl">najbolja godina života</span>! Dijelim i kako život u inozemstvu stvarno izgleda, uz savjete o tome kako izaći iz zone komfora, steći samopouzdanje, stvoriti život kakav želiš i postati bolja verzija sebe. A ono što me najviše veseli: pomoći nekome s Balkana da i sam ode u Ameriku. Na godinu razmjene u srednjoj, studij ili program od par tjedana.</span></p>
+  <div class="prg-g">
+
+   <article class="prg-c rv">
+    <div class="prg-ph"><img src="img/town.jpg" alt="Američki gradić u zalazak sunca" loading="lazy"><span class="prg-tag">Akademska godina</span></div>
+    <div class="prg-b">
+     <h3>Godina u američkoj srednjoj školi</h3>
+     <p>Cijela školska godina u javnoj američkoj srednjoj školi, uz obitelj domaćina. Ono zbog čega se ljudi godinama poslije sjećaju jedne godine više nego cijele srednje.</p>
+     <ul class="prg-m"><li>10 mjeseci</li><li>Javna škola</li><li>Obitelj domaćin</li></ul>
+     <button class="prg-cta" type="button" data-lc-open>Lista čekanja <span aria-hidden="true">&#8594;</span></button>
+    </div>
+   </article>
+
+   <article class="prg-c rv">
+    <div class="prg-ph"><img src="img/campus-palms.jpg" alt="Kampus s palmama" loading="lazy"><span class="prg-tag">Semestar</span></div>
+    <div class="prg-b">
+     <h3>Semestar u američkoj srednjoj školi</h3>
+     <p>Pola školske godine, isto iskustvo i ista škola, samo kraće. Za one koji ne mogu ili ne žele izostati cijelu godinu kod kuće.</p>
+     <ul class="prg-m"><li>5 mjeseci</li><li>Javna škola</li><li>Obitelj domaćin</li></ul>
+     <button class="prg-cta" type="button" data-lc-open>Lista čekanja <span aria-hidden="true">&#8594;</span></button>
+    </div>
+   </article>
+
+   <article class="prg-c rv">
+    <div class="prg-ph"><img src="img/host-family.jpg" alt="Kuća s američkom zastavom" loading="lazy"><span class="prg-tag">Ljeto</span></div>
+    <div class="prg-b">
+     <h3>Ljeto u Sjevernoj Karolini</h3>
+     <p>Nekoliko tjedana ljeta kod obitelji domaćina u Sjevernoj Karolini. Živiš s njima, pričaš engleski po cijele dane i vidiš kako američki tinejdžeri zapravo provode ljeto.</p>
+     <ul class="prg-m"><li>Ljeto</li><li>Obitelj domaćin</li><li>Sjeverna Karolina</li></ul>
+     <button class="prg-cta" type="button" data-lc-open>Lista čekanja <span aria-hidden="true">&#8594;</span></button>
+    </div>
+   </article>
+
+   <article class="prg-c rv">
+    <div class="prg-ph"><img src="img/neighbourhood.jpg" alt="Američka ulica uz ocean" loading="lazy"><span class="prg-tag">Kratki program</span></div>
+    <div class="prg-b">
+     <h3>Kratki program s partnerom NWSE</h3>
+     <p>Kraći boravak za one koji prvo žele probati kako je to, prije nego se odluče na semestar ili cijelu godinu. Detalje dogovaramo s partnerom i javljamo ih prvima na listi.</p>
+     <ul class="prg-m"><li>Nekoliko tjedana</li><li>Obitelj domaćin</li><li>SAD</li></ul>
+     <button class="prg-cta" type="button" data-lc-open>Lista čekanja <span aria-hidden="true">&#8594;</span></button>
+    </div>
+   </article>
+
   </div>
-</div></section>
-</div>
+  <p class="prg-note">Cijene i datumi za sljedeću sezonu objavljuju se čim potpišemo partnerstva. Javljamo se prvo onima na listi čekanja.</p>
+ </div>
+</section>
 
 
 
@@ -1401,7 +1472,7 @@ body.en .rp-lead{display:none!important}
 <section class="vs" id="videi"><div class="vs-wrap"><div class="vs-row"><div class="vs-track"><button class="vs-i" type="button" data-full="video/v1full.mp4"><video src="video/v1.mp4" poster="video/p1.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>POV: rekla si da</span></span></button><button class="vs-i" type="button" data-full="video/v2full.mp4"><video src="video/v2.mp4" poster="video/p2.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>Prvi dani kod host obitelji</span></span></button><button class="vs-i" type="button" data-full="video/v3full.mp4"><video src="video/v3.mp4" poster="video/p3.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>Predmeti i školski dan</span></span></button><button class="vs-i" type="button" data-full="video/v4full.mp4"><video src="video/v4.mp4" poster="video/p4.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>Obilazak škole i terena</span></span></button><button class="vs-i" type="button" data-full="video/v5full.mp4"><video src="video/v5.mp4" poster="video/p5.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>Kako sam se prijavila</span></span></button><button class="vs-i" type="button" data-full="video/v6full.mp4"><video src="video/v6.mp4" poster="video/p6.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>Mali trenuci</span></span></button><button class="vs-i" type="button" data-full="video/v8full.mp4"><video src="video/v8.mp4" poster="video/p8.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>Troškovi razmjene</span></span></button><button class="vs-i" type="button" data-full="video/v9full.mp4"><video src="video/v9.mp4" poster="video/p9.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>Godina u Americi</span></span></button><button class="vs-i" type="button" data-full="video/v1full.mp4"><video src="video/v1.mp4" poster="video/p1.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>POV: rekla si da</span></span></button><button class="vs-i" type="button" data-full="video/v2full.mp4"><video src="video/v2.mp4" poster="video/p2.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>Prvi dani kod host obitelji</span></span></button><button class="vs-i" type="button" data-full="video/v3full.mp4"><video src="video/v3.mp4" poster="video/p3.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>Predmeti i školski dan</span></span></button><button class="vs-i" type="button" data-full="video/v4full.mp4"><video src="video/v4.mp4" poster="video/p4.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>Obilazak škole i terena</span></span></button><button class="vs-i" type="button" data-full="video/v5full.mp4"><video src="video/v5.mp4" poster="video/p5.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>Kako sam se prijavila</span></span></button><button class="vs-i" type="button" data-full="video/v6full.mp4"><video src="video/v6.mp4" poster="video/p6.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>Mali trenuci</span></span></button><button class="vs-i" type="button" data-full="video/v8full.mp4"><video src="video/v8.mp4" poster="video/p8.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>Troškovi razmjene</span></span></button><button class="vs-i" type="button" data-full="video/v9full.mp4"><video src="video/v9.mp4" poster="video/p9.jpg" muted loop playsinline preload="none"></video><span class="vs-p" aria-hidden="true">&#9654;</span><span class="vs-c"><span lang-hr>Godina u Americi</span></span></button></div></div></div></section>
 
 <section class="why2" id="zastoamerika">
-  <div class="why2-ph"><img src="img/campus-palms.jpg" alt="Učenici na kampusu okruženom palmama"></div>
+  <div class="why2-ph"><img src="img/bg2.jpg" alt="Učenici na kampusu okruženom palmama"></div>
   <div class="why2-tx">
     <p class="why2-h"><span lang-hr>Više od putovanja</span></p>
     <div class="why2-b"><b><span lang-hr>Engleski koji ostaje</span></b><p><span lang-hr>Engleski se ne nauči u učionici nego na hodniku, u autobusu i za stolom. U jednom trenutku prestaneš prevoditi u glavi.</span></p></div>

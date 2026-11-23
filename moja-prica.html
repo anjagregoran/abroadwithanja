@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Moja priča | Abroad Club USA</title>
+<meta name="description" content="Anja je školsku godinu 2023./24. provela na razmjeni u SAD-u. Ovdje je njezina priča i razlog zašto danas pomaže mladima s Balkana da odu u Ameriku.">
+<link rel="icon" href="favicon.ico?v=9" sizes="any">
+<link rel="icon" href="favicon.svg?v=9" type="image/svg+xml">
+<link rel="icon" href="favicon-64.png?v=9" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=9">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Bodoni+Moda:ital,wght@0,400;0,500;1,400&family=Gloock&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#254551;--peach:#FFE6D6;--apricot:#FFD5B8;--cream:#F2EDE3;--paper:#FAF6EF;--ink:#231B1C;--mid:#6E6466;--line:#E6DFD2;--red:#9E1B1E}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Instrument Sans',sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+
+/* nav */
+.nv{position:relative;z-index:5;background:var(--teal);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;padding:20px 42px}
+.nv a{color:var(--peach);text-decoration:none;font-size:11.5px;letter-spacing:2.6px;text-transform:uppercase;font-weight:600;transition:opacity .3s}
+.nv a:hover{opacity:.7}
+.nv-l,.nv-r{display:flex;align-items:center;gap:38px;flex-wrap:wrap}
+.nv-r{justify-content:flex-end}
+.nv .nv-logo{font-family:'Gloock',serif;font-size:30px;line-height:.92;font-weight:400;text-align:center;color:var(--apricot);letter-spacing:.01em}
+@media(max-width:860px){.nv{grid-template-columns:1fr;justify-items:center;gap:12px;padding:16px 20px}.nv-l,.nv-r{gap:22px;justify-content:center}}
+
+/* story */
+.st{padding:120px 0 110px}
+.st .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:84px;align-items:center}
+.st-ph{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:6px;box-shadow:0 50px 90px -50px rgba(35,27,28,.6)}
+.st-ph img{width:100%;height:100%;object-fit:cover;object-position:46% 50%;display:block}
+.st-k{font-size:10.5px;letter-spacing:4px;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+.st h1{font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(34px,4.3vw,56px);line-height:1.12;letter-spacing:.01em;margin:0 0 24px;color:var(--ink)}
+.st p{font-size:17px;color:#4A4042;margin:0 0 16px;max-width:62ch}
+.hl{color:var(--ink);font-weight:500;background:linear-gradient(transparent 60%,rgba(242,229,143,.8) 60%)}
+@media(max-width:860px){.st{padding:64px 0 70px}.st .wrap{grid-template-columns:1fr;gap:38px}.st-ph{max-width:320px;margin:0 auto;width:100%}.st h1{font-size:30px}.st p{font-size:15.5px}}
+
+/* slide in */
+.sl{opacity:0;transition:opacity 1s cubic-bezier(.22,.61,.36,1),transform 1s cubic-bezier(.22,.61,.36,1)}
+.sl-l{transform:translateX(-56px)}
+.sl-r{transform:translateX(56px)}
+.sl-u{transform:translateY(26px)}
+.sl.in{opacity:1;transform:none}
+.st-ph{transition-delay:.05s}
+.st-k{transition-delay:.15s}
+.st h1{transition-delay:.25s}
+.st p:nth-of-type(1){transition-delay:.4s}
+.st p:nth-of-type(2){transition-delay:.5s}
+.st p:nth-of-type(3){transition-delay:.6s}
+@media(prefers-reduced-motion:reduce){.sl{opacity:1;transform:none;transition:none}}
+
+/* end */
+.end{background:var(--teal);color:var(--peach);text-align:center;padding:84px 0 90px}
+.end h2{font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(26px,3vw,40px);margin:0 0 12px}
+.end p{max-width:48ch;margin:0 auto 26px;color:rgba(255,230,214,.85)}
+.end .btn{display:inline-block;background:var(--apricot);color:var(--teal);text-decoration:none;font-size:12px;letter-spacing:3px;text-transform:uppercase;font-weight:600;padding:18px 34px;border-radius:2px;transition:background .3s,color .3s}
+.end .btn:hover{background:var(--peach)}
+</style>
+</head>
+<body>
+
+<nav class="nv">
+  <div class="nv-l">
+    <a href="./">Naslovnica</a>
+    <a href="o-nama.html">O nama</a>
+  </div>
+  <a class="nv-logo" href="./" aria-label="Abroad Club USA">Abroad Club USA</a>
+  <div class="nv-r">
+    <a href="store.html">Trgovina &amp; vodiči</a>
+  </div>
+</nav>
+
+<section class="st">
+ <div class="wrap">
+  <div class="st-ph sl sl-l"><img src="img/anja-hero.jpg" alt="Anja"></div>
+  <div>
+   <div class="st-k sl sl-r">Moja priča</div>
+   <h1 class="sl sl-r">Bok! Ja sam Anja i dolazim iz Hrvatske.</h1>
+   <p class="sl sl-u">Godine 2023. provela sam godinu dana na razmjeni u SAD-u, na koju sam otišla s plaćenom agencijom BHV Education, a nisam ni slutila koliko će mi to promijeniti život. Otišla sam misleći da idem samo na jednu školsku godinu, a ta mi je jedna godina promijenila sve.</p>
+   <p class="sl sl-u">Tamo sam upoznala i svog dečka. Danas nekoliko mjeseci godišnje provodim kod njega u SAD-u, a on ljeti dolazi k meni u Hrvatsku, pa je moj život danas negdje između Hrvatske i SAD-a.</p>
+   <p class="sl sl-u">Sada dijelim iskustva, savjete i sve ono što bih voljela da mi je netko rekao prije odlaska. Ovdje ćeš naći savjete, priče i inspiraciju za razmjenu, a učim te svemu, od toga <span class="hl">kako se prijaviti na godinu razmjene</span> do toga kako da ti to bude <span class="hl">najbolja godina života</span>! Dijelim i kako život u inozemstvu stvarno izgleda, uz savjete o tome kako izaći iz zone komfora, steći samopouzdanje, stvoriti život kakav želiš i postati bolja verzija sebe. A ono što me najviše veseli: pomoći nekome s Balkana da i sam ode u Ameriku. Na godinu razmjene u srednjoj, studij ili program od par tjedana.</p>
+  </div>
+ </div>
+</section>
+
+<section class="end">
+ <div class="wrap">
+  <h2>Javi mi se</h2>
+  <p>Trideset minuta, bez naplate i bez obveze. Prođemo tvoju situaciju, koji su programi realni za tebe i koliko to stvarno košta.</p>
+  <a class="btn" href="https://cal.com/abroadclub/konzultacije" target="_blank" rel="noopener">Besplatne konzultacije</a>
+ </div>
+</section>
+
+<script>
+(function(){
+ var els=document.querySelectorAll('.sl');
+ if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+ var io=new IntersectionObserver(function(en){
+  en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})
+ },{threshold:.15,rootMargin:'0px 0px -8% 0px'});
+ els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
