@@ -1028,10 +1028,10 @@ nav.nv{position:relative!important;top:auto!important;backdrop-filter:none!impor
 <body class="subpage en">
 <div class="bgx"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 <style>
-.shop-hd{position:relative;overflow:hidden;background:#231B1C;height:clamp(440px,74vh,640px);margin-bottom:8px}
+.shop-hd{position:relative;overflow:hidden;background:#231B1C;height:100vh;min-height:520px;margin-bottom:0}
 .shop-hd img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%}
 .shop-hd::after{content:'';position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(35,27,28,.46),rgba(35,27,28,.05) 26%,rgba(35,27,28,.04) 48%,rgba(35,27,28,.5) 80%,rgba(35,27,28,.8))}
+  background:linear-gradient(180deg,rgba(35,27,28,.42),rgba(35,27,28,.04) 24%,rgba(35,27,28,0) 55%)}
 .shop-top{position:absolute;z-index:3;left:0;right:0;top:0;display:grid;grid-template-columns:1fr auto 1fr;
   align-items:center;padding:30px 54px;gap:20px}
 .shop-lg{font-family:'Playfair Display',serif;font-size:clamp(19px,2.1vw,24px);color:#FFF6EE;
@@ -1044,6 +1044,16 @@ nav.nv{position:relative!important;top:auto!important;backdrop-filter:none!impor
   font-size:clamp(38px,6vw,74px);line-height:.98;letter-spacing:-1.2px;margin:0 0 12px;color:#FFF6EE}
 .shop-hd-in p{font-family:'Instrument Sans',sans-serif;font-size:clamp(14px,1.5vw,16.5px);
   line-height:1.6;color:rgba(255,246,238,.9);margin:0;max-width:520px}
+.shop-cue{position:absolute;z-index:3;left:50%;bottom:38px;transform:translateX(-50%);
+  width:26px;height:44px;border:1px solid rgba(255,246,238,.55);border-radius:50px;display:flex;
+  justify-content:center;padding-top:9px}
+.shop-cue span{display:block;width:3px;height:8px;border-radius:3px;background:rgba(255,246,238,.9);
+  animation:cue 1.9s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(12px);opacity:.3}}
+@media(prefers-reduced-motion:reduce){.shop-cue span{animation:none}}
+#vodici .shop-h1{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;
+  font-size:clamp(40px,6.2vw,76px);line-height:.98;letter-spacing:-1.4px;color:#231B1C;margin:0 0 12px}
+#vodici .shop-sub{font-size:clamp(14px,1.5vw,16.5px);color:#6E6466;margin:0 auto 22px!important;max-width:520px}
 .shop-nav{position:static;display:flex;gap:34px;justify-self:center;background:transparent!important;
   border:0!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;
   padding:0;top:auto}
@@ -1056,7 +1066,7 @@ html{scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 #vodici,#proizvodi{scroll-margin-top:18px}
 @media(max-width:760px){
-  .shop-hd{height:clamp(400px,66vh,520px)}
+  .shop-hd{height:100svh;min-height:460px}
   .shop-top{grid-template-columns:1fr;justify-items:center;gap:14px;padding:22px 20px}
   .shop-lg{justify-self:center;font-size:19px}
   .shop-nav{justify-self:center;gap:24px}
@@ -1076,10 +1086,8 @@ html{scroll-behavior:smooth}
     </nav>
     <span></span>
   </div>
-  <div class="shop-hd-in">
-    <h1>The Exchange Shop</h1>
-    <p>My guides, clothing &amp; accessories</p>
-  </div>
+  <a class="shop-cue" href="#vodici" aria-label="Scroll down"><span></span></a>
+
 </header>
 
 
@@ -1087,7 +1095,7 @@ html{scroll-behavior:smooth}
 <style>
 /* ===== vodici, editorial ===== */
 #vodici{position:relative;padding:0 0 10px!important}
-#vodici .vg-top{max-width:760px;margin:0 auto;padding:30px 24px 24px;text-align:center;position:relative;z-index:2}
+#vodici .vg-top{max-width:760px;margin:0 auto;padding:76px 24px 26px;text-align:center;position:relative;z-index:2}
 #vodici .vg-top .vgk{font-family:'Instrument Sans',sans-serif;font-size:10px;letter-spacing:4.5px;
   text-transform:uppercase;color:#9E1B1E}
 #vodici .vg-top h2{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;
@@ -1153,7 +1161,7 @@ html{scroll-behavior:smooth}
 }
 </style>
 <section class="prods" id="vodici">
-  <div class="vg-top"><p><span lang-en>Everything I learned before, during and after my exchange year in Michigan, written down so you feel ready.</span></p></div>
+  <div class="vg-top"><h2 class="shop-h1">The Exchange Shop</h2><p class="shop-sub">My guides, clothing &amp; accessories</p><p><span lang-en>Everything I learned before, during and after my exchange year in Michigan, written down so you feel ready.</span></p></div>
   <div class="w">
   <article class="vg">
   <a class="vg-img" href="https://anja-health-exchange.kit.com/starterguide" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="../img/neighbourhood.jpg" alt="" loading="lazy"><span class="vg-no">01</span></a>
