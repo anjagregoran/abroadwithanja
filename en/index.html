@@ -1044,33 +1044,7 @@ nav.nv{position:relative!important;top:auto!important;backdrop-filter:none!impor
   }
 })();
 </script>
-<style>
-/* ===== signature products: one colour heading, deeper palette ===== */
-#proizvodi .sh h2{font-family:'Bodoni Moda',serif!important;font-style:italic!important;
-  font-weight:400!important;text-transform:none!important;
-  font-size:clamp(36px,5.4vw,64px)!important;line-height:1.04!important;letter-spacing:-.6px!important;
-  color:#231B1C!important;-webkit-text-fill-color:#231B1C;margin:0 0 20px!important}
-#proizvodi .sh h2 .sgn,#proizvodi .sh h2 em,#proizvodi .sh h2 i,#proizvodi .sh h2 b,
-#proizvodi .sh h2 strong{color:#231B1C!important;-webkit-text-fill-color:#231B1C;
-  font-style:italic!important;font-weight:400!important}
-#proizvodi .sh p{color:#4A4042!important}
 
-#proizvodi .cx-img,
-#proizvodi .cx:nth-child(2) .cx-img,
-#proizvodi .cx:nth-child(3) .cx-img{
-  background:linear-gradient(158deg,#31545F 0%,#254551 58%,#1C353F 100%)!important;
-  color:#FFE6D6!important;aspect-ratio:5/4!important;border-radius:0}
-#proizvodi .cx-img::before{background:radial-gradient(62% 62% at 50% 38%,rgba(255,230,214,.13),transparent 72%)}
-#proizvodi .cx-img svg{opacity:.62}
-#proizvodi .cx:hover .cx-img svg{opacity:.85}
-#proizvodi .cx-tag{background:#FAF6EF!important;color:#231B1C!important;border:0;
-  -webkit-backdrop-filter:none;backdrop-filter:none}
-#proizvodi .cx-m{color:#9E1B1E!important;margin:0!important;padding:22px 24px 0}
-#proizvodi .cx h3{color:#231B1C!important}
-#proizvodi .cx p{font-family:'Instrument Sans',sans-serif!important;font-style:normal!important;
-  font-size:13.5px!important;line-height:1.62!important;color:#6E6466!important;margin:0!important;
-  max-width:none!important;padding:9px 24px 24px}
-</style>
 <style>
 /* ===== sticky bar: appears once you pass the photo ===== */
 .sb{position:fixed;z-index:60;left:0;right:0;top:0;display:grid;grid-template-columns:1fr auto 1fr;
@@ -1079,8 +1053,9 @@ nav.nv{position:relative!important;top:auto!important;backdrop-filter:none!impor
   border-bottom:1px solid rgba(35,27,28,.09);
   transform:translateY(-100%);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
 .sb.on{transform:none}
-.sb-lg{font-family:'Playfair Display',serif;font-size:18px;color:#231B1C;text-decoration:none;justify-self:start}
-.sb-lg em{font-style:italic}
+.sb-lg{font-family:'Gloock',serif!important;font-size:19px;color:#254551!important;text-decoration:none;
+  letter-spacing:.015em;text-transform:uppercase;white-space:nowrap;font-style:normal;justify-self:start}
+.sb-lg em{font-style:normal}
 .sb-nav{display:flex;gap:30px;justify-self:center}
 .sb-nav a{position:relative;text-decoration:none;font-family:'Instrument Sans',sans-serif;font-size:10.5px;
   letter-spacing:2.8px;text-transform:uppercase;font-weight:600;color:#6E6466;padding:4px 0;
@@ -1098,6 +1073,64 @@ nav.nv{position:relative!important;top:auto!important;backdrop-filter:none!impor
   .sb-nav a{font-size:9px;letter-spacing:2px}
 }
 </style>
+<style>
+/* ===== clothing & accessories, same voice as the guides ===== */
+#proizvodi{padding:clamp(60px,7vw,96px) 0 clamp(70px,8vw,110px)}
+#proizvodi .w{max-width:1088px;margin:0 auto;padding:0 24px}
+#proizvodi .sh{max-width:none;margin:0 0 clamp(34px,4vw,52px);text-align:left}
+#proizvodi .sh h2{font-family:'Instrument Sans',sans-serif!important;font-weight:500!important;
+  font-style:normal!important;font-size:clamp(36px,7vw,92px)!important;line-height:.98!important;
+  letter-spacing:-2.6px!important;color:#231B1C!important;-webkit-text-fill-color:#231B1C;
+  margin:0 0 22px!important;max-width:16ch;text-transform:none!important}
+#proizvodi .sh p{max-width:42ch;margin:0!important;font-size:15px!important;line-height:1.72!important;
+  color:#5B5351!important}
+#proizvodi .sh::after{display:none}
+
+#proizvodi .cxg{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid rgba(26,23,24,.12)}
+#proizvodi .cx{position:relative;display:flex;flex-direction:column;align-items:flex-start;background:none!important;border:0!important;
+  border-radius:0!important;box-shadow:none!important;padding:clamp(30px,3.6vw,54px) 0;
+  border-bottom:1px solid rgba(26,23,24,.12)}
+#proizvodi .cx:nth-child(odd){padding-right:clamp(22px,3vw,52px);border-right:1px solid rgba(26,23,24,.12)}
+#proizvodi .cx:nth-child(even){padding-left:clamp(22px,3vw,52px)}
+#proizvodi .cx:hover{transform:none!important;box-shadow:none!important}
+#proizvodi .cx-img{order:1;align-self:stretch;position:static;display:flex;align-items:center;justify-content:center;
+  height:clamp(150px,16vw,215px);aspect-ratio:auto!important;background:none!important;color:#9E1B1E!important;
+  border-radius:0;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+#proizvodi .cx:hover .cx-img{transform:translateY(-6px)}
+#proizvodi .cx-img::before{display:none}
+#proizvodi .cx-img svg{position:static;width:clamp(50px,5.2vw,70px);height:clamp(50px,5.2vw,70px);
+  stroke-width:1;opacity:1}
+#proizvodi .cx-tag{position:static;display:inline-block;margin-top:18px;background:none!important;
+  color:#9E1B1E!important;padding:0!important;border-radius:0!important;border:0!important;
+  -webkit-backdrop-filter:none!important;backdrop-filter:none!important;
+  font-size:9.5px;letter-spacing:2.6px;text-transform:uppercase;font-weight:600;
+  border-bottom:1px solid rgba(158,27,30,.3)!important;padding-bottom:3px!important;order:5}
+#proizvodi .cx-m{order:2;padding:0!important;margin:0 0 9px!important;font-size:9.5px;letter-spacing:3px;
+  text-transform:uppercase;color:#8C8481!important;font-weight:500}
+#proizvodi .cx h3{order:3;font-family:'Instrument Sans',sans-serif!important;font-weight:500!important;
+  font-style:normal!important;font-size:clamp(19px,2vw,25px)!important;line-height:1.2!important;
+  letter-spacing:-.5px!important;color:#231B1C!important;padding:0!important;margin:0 0 8px!important}
+#proizvodi .cx p{order:4;font-family:'Instrument Sans',sans-serif!important;font-style:normal!important;
+  font-size:13.5px!important;line-height:1.65!important;color:#6E6664!important;padding:0!important;
+  margin:0!important;max-width:34ch}
+@media(max-width:760px){
+  #proizvodi .cxg{grid-template-columns:1fr}
+  #proizvodi .cx:nth-child(odd){padding-right:0;border-right:0}
+  #proizvodi .cx:nth-child(even){padding-left:0}
+  #proizvodi .cx-img{height:140px}
+}
+</style>
+<style>
+/* ===== slow slide in ===== */
+.sl{opacity:0;transform:translateY(34px);
+  transition:opacity 1.15s cubic-bezier(.22,.61,.36,1),transform 1.15s cubic-bezier(.22,.61,.36,1)}
+.sl-l{transform:translateX(-46px)}
+.sl-r{transform:translateX(46px)}
+.sl.in{opacity:1;transform:none}
+.sl-d1{transition-delay:.1s}
+.sl-d2{transition-delay:.2s}
+@media(prefers-reduced-motion:reduce){.sl{opacity:1!important;transform:none!important;transition:none!important}}
+</style>
 </head>
 <body class="subpage en">
 <div class="bgx"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
@@ -1108,8 +1141,10 @@ nav.nv{position:relative!important;top:auto!important;backdrop-filter:none!impor
   background:linear-gradient(180deg,rgba(35,27,28,.42),rgba(35,27,28,.04) 22%,rgba(35,27,28,.02) 45%,rgba(35,27,28,.45) 78%,rgba(35,27,28,.78))}
 .shop-top{position:absolute;z-index:3;left:0;right:0;top:0;display:grid;grid-template-columns:1fr auto 1fr;
   align-items:center;padding:30px 54px;gap:20px}
-.shop-lg{font-family:'Playfair Display',serif;font-size:clamp(19px,2.1vw,24px);color:#FFF6EE;
-  text-decoration:none;letter-spacing:.01em;justify-self:start}
+.shop-lg{font-family:'Gloock',serif!important;font-size:clamp(19px,2.1vw,25px);color:#FFD5B8!important;
+  text-decoration:none;letter-spacing:.015em;text-transform:uppercase;white-space:nowrap;
+  font-style:normal;justify-self:start;text-shadow:0 1px 14px rgba(35,27,28,.5)}
+.shop-lg em{font-style:normal}
 .shop-lg em{font-style:italic}
 .shop-hd-in{position:absolute;z-index:2;left:54px;right:54px;bottom:132px;color:#FFF6EE}
 .shop-hd-in span{display:block;font-family:'Instrument Sans',sans-serif;font-size:10px;letter-spacing:4px;
@@ -1154,7 +1189,7 @@ html{scroll-behavior:smooth}
   <a class="sb-lg" href="#top">Abroad <em>Club</em> USA</a>
   <nav class="sb-nav">
     <a href="#vodici" data-s="vodici">Guides</a>
-    <a href="clothing.html">Clothing &amp; accessories</a>
+    <a href="#proizvodi">Clothing &amp; accessories</a>
   </nav>
   <span></span>
 </div>
@@ -1164,7 +1199,7 @@ html{scroll-behavior:smooth}
     <span class="shop-lg">Abroad <em>Club</em> USA</span>
     <nav class="shop-nav">
       <a href="#vodici">Guides</a>
-      <a href="clothing.html">Clothing &amp; accessories</a>
+      <a href="#proizvodi">Clothing &amp; accessories</a>
     </nav>
     <span></span>
   </div>
@@ -1181,7 +1216,7 @@ html{scroll-behavior:smooth}
 <style>
 /* ===== vodici, editorial ===== */
 #vodici{position:relative;padding:0 0 10px!important}
-#vodici .vg-top{max-width:1088px;margin:0 auto;padding:clamp(72px,8vw,112px) 24px clamp(40px,4.5vw,60px);
+#vodici .vg-top{max-width:1088px;margin:0 auto;padding:clamp(48px,5vw,72px) 24px clamp(36px,4vw,54px);
   text-align:left;position:relative;z-index:2}
 #vodici .vg-top h2{font-family:'Instrument Sans',sans-serif!important;font-weight:500!important;
   font-style:normal!important;font-size:clamp(36px,7vw,92px)!important;line-height:.98!important;
@@ -1332,6 +1367,11 @@ html{scroll-behavior:smooth}
 </div>
 </section>
 
+<section class="prods" id="proizvodi"><div class="w">
+  <div class="sh"><h2>Clothing &amp; accessories</h2><p><span lang-en>Organic cotton and small everyday things, made for exchange students and everyone living between two homes. None of it is on sale yet.</span></p></div>
+  <div class="cxg"><article class="cx"><div class="cx-img"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 24c0-12 18-12 18 0"/><path d="M12 24h40l-3 30H15z"/></svg></span></div><div class="cx-m"><span lang-en>Organic cotton</span></div><h3>Organic Tote Bag</h3><p><span lang-en>An organic cotton tote for every day.</span></p><span class="cx-tag"><span lang-en>Coming soon</span></article><article class="cx"><div class="cx-img"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 13c3 3 13 3 16 0l11 4 7 23-6 2-5-12v22H17V30l-5 12-6-2 7-23z"/><path d="M24 13c2 6 14 6 16 0"/></svg></span></div><div class="cx-m"><span lang-en>Organic cotton</span></div><h3>Abroad Life Sweatshirt</h3><p><span lang-en>A soft organic cotton sweatshirt.</span></p><span class="cx-tag"><span lang-en>Coming soon</span></article><article class="cx"><div class="cx-img"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="19" y="6" width="26" height="52" rx="7"/><rect x="23" y="10" width="10" height="10" rx="3"/><circle cx="28" cy="15" r="1.6"/></svg></span></div><div class="cx-m"><span lang-en>Accessory</span></div><h3>Phone Case</h3><p><span lang-en>A phone case in my colours.</span></p><span class="cx-tag"><span lang-en>Coming soon</span></article><article class="cx"><div class="cx-img"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 10h36a4 4 0 0 1 4 4v24L38 54H14a4 4 0 0 1-4-4V14a4 4 0 0 1 4-4z"/><path d="M54 38H42a4 4 0 0 0-4 4v12"/><path d="M27 22l2.300 5 5.400.600-4 3.700 1.100 5.400L27 34l-4.800 2.700 1.100-5.400-4-3.700 5.400-.600z"/></svg></span></div><div class="cx-m"><span lang-en>Accessory</span></div><h3>Stickers</h3><p><span lang-en>Stickers for your laptop, water bottle and journal.</span></p><span class="cx-tag"><span lang-en>Coming soon</span></article><article class="cx"><div class="cx-img"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="28" width="36" height="24" rx="2"/><rect x="11" y="20" width="42" height="8" rx="2"/><path d="M32 20v32"/><path d="M32 20c-3-8-12-9-12-4 0 3.500 6.500 4 12 4zM32 20c3-8 12-9 12-4 0 3.500-6.500 4-12 4z"/></svg></span></div><div class="cx-m"><span lang-en>For host families</span></div><h3>From Home to Home</h3><p><span lang-en>A gift for your host family.</span></p><span class="cx-tag"><span lang-en>Coming soon</span></article><article class="cx"><div class="cx-img"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="17" y="9" width="30" height="44" rx="3"/><path d="M23 9v44"/><path d="M29 20h11M29 26h7"/><path d="M38 53v6l2.500-1.800L43 59v-6"/></svg></span></div><div class="cx-m"><span lang-en>Journal</span></div><h3>The Year Abroad Journal</h3><p><span lang-en>A journal for your exchange year.</span></p><span class="cx-tag"><span lang-en>Coming soon</span></article></div>
+  
+</div></section>
 <div class="v3b">
 <footer>
   <p><span lang-en>I hope my guides will truly help and if you have any more questions you can contact me through my socials or email :)</span></p>
@@ -1376,6 +1416,48 @@ document.querySelectorAll('[data-go]').forEach(function(a){a.addEventListener('c
  var g=bar.querySelector('[data-s="vodici"]'), sec=document.getElementById('vodici');
  if(g&&sec){new IntersectionObserver(function(es){
    g.classList.toggle('here',es[0].isIntersecting);},{rootMargin:'-20% 0px -60% 0px'}).observe(sec);}
+})();
+</script>
+<script>
+(function(){
+ var items=[];
+ function mark(el,extra){ if(!el)return; el.classList.add('sl'); if(extra)el.classList.add(extra); items.push(el); }
+
+ document.querySelectorAll('#vodici .vg').forEach(function(row){
+   var img=row.querySelector('.vg-img');
+   var tx=null, kids=row.children;
+   for(var i=0;i<kids.length;i++){ if(kids[i]!==img){tx=kids[i];break;} }
+   var alt=row.classList.contains('vg-alt');
+   mark(img, alt?'sl-r':'sl-l');
+   mark(tx, alt?'sl-l':'sl-r');
+   if(tx)tx.classList.add('sl-d1');
+ });
+ mark(document.querySelector('#vodici .vg-top'));
+ mark(document.querySelector('#proizvodi .sh'));
+ document.querySelectorAll('#proizvodi .cx').forEach(function(c,i){
+   mark(c); if(i%2===1)c.classList.add('sl-d1');
+ });
+
+ var ticking=false;
+ function check(){
+   ticking=false;
+   var h=window.innerHeight||document.documentElement.clientHeight, left=[];
+   for(var i=0;i<items.length;i++){
+     var el=items[i], t=el.getBoundingClientRect().top;
+     if(t < h*0.9){ el.classList.add('in'); } else { left.push(el); }
+   }
+   items=left;
+   if(!items.length){
+     window.removeEventListener('scroll',onScroll);
+     window.removeEventListener('resize',onScroll);
+   }
+ }
+ function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(check); } }
+ window.addEventListener('scroll',onScroll,{passive:true});
+ window.addEventListener('resize',onScroll);
+ window.addEventListener('load',check);
+ check();
+ setTimeout(check,250);
 })();
 </script>
 </body>
