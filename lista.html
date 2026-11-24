@@ -39,6 +39,9 @@ h1{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(28px,3.2
 .card p{font-size:14.5px;line-height:1.64;color:#4A4042;margin-bottom:10px}
 form{margin-top:20px;display:grid;gap:11px}
 label{display:block;font-size:10px;letter-spacing:2.4px;text-transform:uppercase;color:#8A7C76;margin-bottom:5px}
+label i{font-style:normal;text-transform:none;letter-spacing:0;font-size:11.5px;color:#A89B96;margin-left:7px}
+.err{display:none;margin:2px 0 0;font-size:12.5px;line-height:1.5;color:#9E1B1E}
+.err.on{display:block}
 input,select{width:100%;padding:11px 14px;border:1px solid rgba(35,27,28,.18);border-radius:10px;background:#fff;font-family:inherit;font-size:14.5px;color:#231B1C}
 input:focus,select:focus{outline:none;border-color:#9E1B1E}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
@@ -90,13 +93,9 @@ html[lang="hr"] .en,html[lang="en"] .hr{display:none}
       </div>
       <form id="f" novalidate>
         <div><label for="ime"><span class="hr">Ime i prezime učenika</span><span class="en">Student full name</span></label><input id="ime" name="ime" type="text" required></div>
-        <div><label for="mail"><span class="hr">Email</span><span class="en">Email</span></label><input id="mail" name="email" type="email" required></div>
-        <div class="row">
-          <div><label for="rod"><span class="hr">Godina rođenja</span><span class="en">Year of birth</span></label><input id="rod" name="rodjenje" type="text" inputmode="numeric" data-ph-hr="npr. 2010" data-ph-en="e.g. 2010" required></div>
-          <div><label for="raz"><span class="hr">Razred</span><span class="en">Year of school</span></label><input id="raz" name="razred" type="text" data-ph-hr="npr. 1. srednje" data-ph-en="e.g. 9th grade" required></div>
-        </div>
-        <div><label for="skola"><span class="hr">Ime škole</span><span class="en">School name</span></label><input id="skola" name="skola" type="text" required></div>
-        <div><label for="grad"><span class="hr">Grad i država</span><span class="en">City and country</span></label><input id="grad" name="grad" type="text" required></div>
+        <div><label for="mail"><span class="hr">Tvoj email</span><span class="en">Your email</span></label><input id="mail" name="email" type="email"></div>
+        <div><label for="pmail"><span class="hr">Email roditelja <i>nije obavezno</i></span><span class="en">Parent's email <i>optional</i></span></label><input id="pmail" name="email_roditelja" type="email"></div>
+        <p class="err" id="errmail"><span class="hr">Upiši barem jedan email, svoj ili roditelja.</span><span class="en">Please enter at least one email, yours or a parent's.</span></p>
         <div><label for="prog"><span class="hr">Program za koji si zainteresiran/a</span><span class="en">Program you are interested in</span></label>
           <select id="prog" name="program" required>
             <option value="" data-hr="Odaberi" data-en="Choose"></option>
@@ -146,33 +145,54 @@ html[lang="hr"] .en,html[lang="en"] .hr{display:none}
    var b=e.target.closest('button[data-l]');if(b)set(b.dataset.l,true);});
 
  var form=document.getElementById('f'), card=document.getElementById('card');
+ var errMail=document.getElementById('errmail');
+ var GFORM='https://docs.google.com/forms/d/e/1FAIpQLSeWWMV1vpKyHwdaES-P_zikcJPgdWkKGGvuCdkIkgmQUVO69g/formResponse';
+ function kit(email,name,program,parent){
+   if(!email)return;
+   var p=new URLSearchParams();
+   p.append('email_address',email);
+   p.append('first_name',name);
+   p.append('fields[program]',program);
+   if(parent)p.append('fields[email_roditelja]',parent);
+   fetch('https://app.kit.com/forms/10210293/subscriptions',{method:'POST',mode:'no-cors',
+     headers:{'Content-Type':'application/x-www-form-urlencoded'},body:p.toString()}).catch(function(){});
+ }
  form.addEventListener('submit',function(e){
    e.preventDefault();
    var d=new FormData(form), get=function(k){return (d.get(k)||'').toString().trim();};
-   if(!get('ime')||!get('email')||!get('rodjenje')||!get('razred')||!get('skola')||!get('grad')||!get('program')){
-     form.querySelectorAll('[required]').forEach(function(i){if(!i.value)i.style.borderColor='#9E1B1E';});
-     return;
+   var name=get('ime'), mail=get('email'), pmail=get('email_roditelja'), prog=get('program');
+   var bad=false;
+   [['ime',name],['prog',prog]].forEach(function(f){
+     var el=document.getElementById(f[0]);
+     if(!f[1]){el.style.borderColor='#9E1B1E';bad=true;}else{el.style.borderColor='';}
+   });
+   if(!mail&&!pmail){
+     document.getElementById('mail').style.borderColor='#9E1B1E';
+     document.getElementById('pmail').style.borderColor='#9E1B1E';
+     errMail.classList.add('on'); bad=true;
+   }else{
+     document.getElementById('mail').style.borderColor='';
+     document.getElementById('pmail').style.borderColor='';
+     errMail.classList.remove('on');
    }
-   var p=new URLSearchParams();
-   p.append('email_address',get('email'));
-   p.append('first_name',get('ime'));
-   p.append('fields[godina_rodjenja]',get('rodjenje'));
-   p.append('fields[razred]',get('razred'));
-   p.append('fields[skola]',get('skola'));
-   p.append('fields[grad]',get('grad'));
-   p.append('fields[program]',get('program'));
-   fetch('https://app.kit.com/forms/10210293/subscriptions',{method:'POST',mode:'no-cors',
-     headers:{'Content-Type':'application/x-www-form-urlencoded'},body:p.toString()}).catch(function(){});
+   if(bad)return;
+
+   // Kit: the student if given, and the parent too so neither is lost
+   kit(mail||pmail,name,prog,pmail);
+   if(mail&&pmail)kit(pmail,name,prog,pmail);
+
+   // Google Form: every question on it is required, so unused ones get a dash
    var g=new URLSearchParams();
-   g.append('entry.1813174887',get('ime'));
-   g.append('entry.1387684478',get('email'));
-   g.append('entry.552781885',get('rodjenje'));
-   g.append('entry.1418928529',get('razred'));
-   g.append('entry.1280180290',get('skola'));
-   g.append('entry.1910487689',get('grad'));
-   g.append('entry.1448049894',get('program'));
-   fetch('https://docs.google.com/forms/d/e/1FAIpQLSeWWMV1vpKyHwdaES-P_zikcJPgdWkKGGvuCdkIkgmQUVO69g/formResponse',
-     {method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:g.toString()}).catch(function(){});
+   g.append('entry.1813174887',name);
+   g.append('entry.1387684478',mail||pmail);
+   g.append('entry.552781885','-');
+   g.append('entry.1418928529','-');
+   g.append('entry.1280180290',pmail?('roditelj: '+pmail):'-');
+   g.append('entry.1910487689','-');
+   g.append('entry.1448049894',prog);
+   fetch(GFORM,{method:'POST',mode:'no-cors',
+     headers:{'Content-Type':'application/x-www-form-urlencoded'},body:g.toString()}).catch(function(){});
+
    card.classList.add('done');
    window.scrollTo({top:0,behavior:'smooth'});
  });
