@@ -1398,32 +1398,29 @@ body.en .prg{display:none}
 
 .ftco{max-width:640px;margin:16px auto 6px;font-size:12.5px;line-height:1.7;color:rgba(250,246,239,.5);text-align:center;padding:0 24px}
 </style><style>
-/* preview: shop-style hero on the Croatian homepage */
 body{background:#FAF6EF}
-.pv-hd{position:relative;overflow:hidden;background:#231B1C;height:100vh;min-height:520px}
-.pv-hd>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 52%}
+.pv-hd{position:relative;overflow:hidden;background:#231B1C;height:92vh;min-height:520px}
+.pv-hd>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%}
 .pv-hd::after{content:'';position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(35,27,28,.44),rgba(35,27,28,.05) 22%,rgba(35,27,28,.03) 45%,rgba(35,27,28,.46) 78%,rgba(35,27,28,.8))}
+  background:linear-gradient(180deg,rgba(35,27,28,.5),rgba(35,27,28,.08) 24%,rgba(35,27,28,.05) 46%,rgba(35,27,28,.5) 78%,rgba(35,27,28,.82))}
 .pv-top{position:absolute;z-index:3;left:0;right:0;top:0;display:grid;grid-template-columns:1fr auto 1fr;
   align-items:center;padding:30px 54px;gap:20px}
 .pv-lg{font-family:'Playfair Display',serif;font-size:clamp(19px,2.1vw,24px);color:#FFF6EE;
   text-decoration:none;justify-self:start;letter-spacing:.01em}
 .pv-lg em{font-style:italic}
 .pv-nav{position:static;display:flex;gap:34px;justify-self:center;background:transparent!important;
-  border:0!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;
-  padding:0;top:auto}
+  border:0!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;padding:0;top:auto}
 .pv-nav a{text-decoration:none;font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:3px;
   text-transform:uppercase;font-weight:600;color:#FFF6EE;padding-bottom:4px;border-bottom:1px solid transparent;
   opacity:.92;text-shadow:0 1px 10px rgba(35,27,28,.5);transition:border-color .3s,opacity .3s}
 .pv-nav a:hover{opacity:1;border-bottom-color:rgba(255,246,238,.75)}
-.pv-in{position:absolute;z-index:2;left:54px;right:54px;bottom:96px;color:#FFF6EE}
-.pv-in h1{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;
-  font-size:clamp(40px,6.2vw,78px);line-height:.98;letter-spacing:-1.4px;margin:0 0 14px;color:#FFF6EE}
-.pv-in p{font-family:'Instrument Sans',sans-serif;font-size:clamp(14px,1.5vw,17px);line-height:1.6;
-  color:rgba(255,246,238,.9);margin:0 0 24px;max-width:540px}
+.pv-in{position:absolute;z-index:2;left:54px;right:54px;bottom:124px;color:#FFF6EE}
+.pv-in h1{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(34px,4.6vw,62px);
+  line-height:1.06;letter-spacing:-1px;margin:0 0 24px;color:#FFF6EE;max-width:17ch}
+.pv-in h1 em{font-style:italic;color:#F3C9B0}
 .pv-cta{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-family:'Instrument Sans',sans-serif;
   font-size:10.5px;letter-spacing:3px;text-transform:uppercase;font-weight:600;color:#231B1C;background:#FFF6EE;
-  border-radius:50px;padding:15px 28px;transition:background .3s,color .3s}
+  border-radius:50px;padding:15px 28px;transition:background .3s,color .3s;border:0;cursor:pointer}
 .pv-cta:hover{background:#9E1B1E;color:#FFF6EE}
 .pv-cue{position:absolute;z-index:3;left:50%;bottom:38px;transform:translateX(-50%);width:26px;height:44px;
   border:1px solid rgba(255,246,238,.55);border-radius:50px;display:flex;justify-content:center;padding-top:9px}
@@ -1431,36 +1428,34 @@ body{background:#FAF6EF}
   animation:pvcue 1.9s ease-in-out infinite}
 @keyframes pvcue{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(12px);opacity:.3}}
 .pv-note{position:fixed;z-index:60;left:14px;bottom:14px;background:rgba(35,27,28,.86);color:#FFF6EE;
-  font-family:'Instrument Sans',sans-serif;font-size:11.5px;letter-spacing:.3px;padding:9px 14px;border-radius:50px}
+  font-family:'Instrument Sans',sans-serif;font-size:11.5px;padding:9px 14px;border-radius:50px}
 @media(max-width:760px){
-  .pv-hd{height:100svh;min-height:460px}
+  .pv-hd{height:88svh;min-height:460px}
   .pv-top{grid-template-columns:1fr;justify-items:center;gap:14px;padding:22px 20px}
   .pv-lg{justify-self:center;font-size:19px}
   .pv-nav{justify-self:center;gap:22px}
   .pv-nav a{font-size:9.5px;letter-spacing:2px}
-  .pv-in{left:24px;right:24px;bottom:78px}
-  .pv-in h1{font-size:clamp(34px,11vw,52px)}
+  .pv-in{left:24px;right:24px;bottom:96px}
+  .pv-in h1{font-size:clamp(28px,8vw,44px)}
 }
 </style>
 <script>if("scrollRestoration" in history){history.scrollRestoration="manual";}window.addEventListener("pageshow",function(){if(!location.hash){window.scrollTo(0,0);}});</script>
 </head>
 <body>
 <div class="pv-hd">
-  <img src="img/anja-hero.jpg" alt="">
+  <img src="img/bg3.jpg" alt="">
   <div class="pv-top">
     <a class="pv-lg" href="./">Abroad <em>Club</em> USA</a>
     <nav class="pv-nav">
       <a href="#programi">Programi</a>
       <a href="#zasto">Zašto mi</a>
       <a href="moja-prica.html">Naša priča</a>
-      <a href="store.html">Trgovina</a>
     </nav>
     <span></span>
   </div>
   <div class="pv-in">
-    <h1>Godina koja mijenja sve</h1>
-    <p>Srednjoškolska razmjena, semestar i kraći ljetni programi u Sjedinjenim Američkim Državama.</p>
-    <a class="pv-cta" href="lista.html">Besplatne konzultacije</a>
+    <h1>Apply, <em>live it fully</em>, and grow from it for the rest of your life.</h1>
+    <button class="pv-cta" type="button" data-lc-open>Besplatne konzultacije</button>
   </div>
   <a class="pv-cue" href="#programi" aria-label="Niže"><span></span></a>
 </div>
@@ -1472,7 +1467,7 @@ body{background:#FAF6EF}
   </div>
  </div>
  <div class="prg-rows"><article class="prg-r rv">
-  <div class="prg-ph"><img class="ph-bus" src="img/school-bus.jpg" alt="Žuti školski autobus na seoskoj cesti" loading="lazy"><span class="prg-no">01</span></div>
+  <div class="prg-ph"><img src="img/football-zalazak.jpg" alt="Utakmica američkog nogometa u zalazak" loading="lazy"><span class="prg-no">01</span></div>
   <div class="prg-tx">
    <div class="prg-e">Akademska godina &middot; 10 mjeseci</div>
    <h3>Godina u američkoj srednjoj školi</h3>
@@ -1481,7 +1476,7 @@ body{background:#FAF6EF}
   </div>
  </article>
  <article class="prg-r rv">
-  <div class="prg-ph"><img src="img/campus-palms.jpg" alt="Kampus s palmama" loading="lazy"><span class="prg-no">02</span></div>
+  <div class="prg-ph"><img class="ph-bus" src="img/school-bus.jpg" alt="Žuti školski autobus na seoskoj cesti" loading="lazy"><span class="prg-no">02</span></div>
   <div class="prg-tx">
    <div class="prg-e">Semestar &middot; 5 mjeseci</div>
    <h3>Semestar u američkoj srednjoj školi</h3>
@@ -1507,7 +1502,16 @@ body{background:#FAF6EF}
    <button class="prg-cta" type="button" data-lc-open>Lista čekanja <span aria-hidden="true">&#8594;</span></button>
   </div>
  </article>
- <div class="w"></div>
+ <div class="w"><article class="prg-r rv">
+  <div class="prg-ph"><img src="img/campus-palms.jpg" alt="Palme uz američki sveučilišni kampus" loading="lazy"><span class="prg-no">05</span></div>
+  <div class="prg-tx">
+   <div class="prg-e">Ljeto &middot; Sveučilišni kampus</div>
+   <h3>Ljetni program na američkom sveučilištu</h3>
+   <p>Nekoliko tjedana na kampusu američkog sveučilišta, uz nastavu engleskog i život u studentskom domu. Najkraći način da vidiš kako izgleda studiranje u SAD-u.</p>
+   <button class="prg-cta" type="button" data-lc-open>Lista čekanja <span aria-hidden="true">&#8594;</span></button>
+  </div>
+ </article>
+</div>
 <p class="prg-note">Cijene i datumi za sljedeću sezonu objavljuju se čim potpišemo partnerstva. Javljamo se prvo onima na listi čekanja.</p></div>
 </section>
 
@@ -1578,6 +1582,6 @@ body{background:#FAF6EF}
 
 
 <section class="gl" id="galerija"><div class="gl-strip"><figure class="gl-i"><img src="img/gallery/g1.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g2.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g3.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g4.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g5.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g6.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g7.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g8.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g9.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g10.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g11.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g12.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g13.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g14.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g15.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g16.jpg" alt="" loading="lazy"></figure><figure class="gl-i"><img src="img/gallery/g17.jpg" alt="" loading="lazy"></figure></div></section>
-<div class="pv-note">Pregled, nije objavljeno. Naslovnica sa zaglavljem kao u shopu.</div>
+<div class="pv-note">Pregled, nije objavljeno.</div>
 <script>document.querySelectorAll(".rv").forEach(function(e){e.classList.add("in")});</script>
 </body></html>
