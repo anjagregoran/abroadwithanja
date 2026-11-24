@@ -1024,7 +1024,12 @@ nav.nv{position:relative!important;top:auto!important;backdrop-filter:none!impor
   padding:7px 11px;border:1px solid currentColor;border-radius:3px;font-family:'Instrument Sans',sans-serif;
   font-size:10.5px;letter-spacing:2px;font-weight:600;text-decoration:none;opacity:.85}
 .nv-lang-link:hover{opacity:1}
-</style></head>
+</style><script>
+/* start at the top on reload, unless a #section was asked for */
+if('scrollRestoration' in history){history.scrollRestoration='manual';}
+window.addEventListener('pageshow',function(){if(!location.hash){window.scrollTo(0,0);}});
+</script>
+</head>
 <body class="subpage en">
 <div class="bgx"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 <style>
@@ -1129,12 +1134,12 @@ html{scroll-behavior:smooth}
 .vg-cta:hover i,.vgb:hover .vg-cta i{transform:translateX(6px)}
 
 /* rows */
-.vg{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:54px;align-items:center;
-  max-width:1180px;margin:0 auto;padding:54px 0;border-top:1px solid rgba(35,27,28,.12)}
+.vg{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:center;
+  max-width:1040px;margin:0 auto;padding:44px 0;border-top:1px solid rgba(35,27,28,.12)}
 .vg:first-of-type{border-top:0;padding-top:0}
 .vg-alt{direction:rtl}
 .vg-alt>*{direction:ltr}
-.vg-img{position:relative;display:block;aspect-ratio:4/3.1;overflow:hidden;border-radius:4px;background:#EFE6DA}
+.vg-img{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;border-radius:4px;background:#EFE6DA}
 .vg-img img{width:100%;height:100%;object-fit:cover;display:block;
   filter:saturate(.92) contrast(1.02);transition:transform 1.1s cubic-bezier(.2,.8,.2,1)}
 .vg-img::after{content:'';position:absolute;inset:0;pointer-events:none;
@@ -1153,8 +1158,8 @@ html{scroll-behavior:smooth}
 .vg h3 u{text-decoration:none;font-style:italic;color:#9E1B1E}
 .vg p{margin:0 0 20px;font-size:14.5px;line-height:1.75;color:#4A4042}
 @media(max-width:860px){
-  .vg{grid-template-columns:1fr;gap:24px;padding:40px 0;direction:ltr}
-  .vg-img{aspect-ratio:4/3.2}
+  .vg{grid-template-columns:1fr;gap:22px;padding:34px 0;direction:ltr}
+  .vg-img{aspect-ratio:4/3}
   .vgb{grid-template-columns:1fr;margin:-32px 20px 56px}
   .vgb-t{padding:30px 26px}
   #vodici .vg-hero{padding:62px 0 70px}
