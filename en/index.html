@@ -1042,8 +1042,20 @@ nav.nv{position:relative!important;top:auto!important;backdrop-filter:none!impor
   font-size:clamp(38px,6vw,74px);line-height:.98;letter-spacing:-1.2px;margin:0 0 12px;color:#FFF6EE}
 .shop-hd-in p{font-family:'Instrument Sans',sans-serif;font-size:clamp(14px,1.5vw,16.5px);
   line-height:1.6;color:rgba(255,246,238,.9);margin:0;max-width:520px}
+.shop-nav{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.shop-nav a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+  font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:2.6px;text-transform:uppercase;
+  font-weight:600;color:#FFF6EE;border:1px solid rgba(255,246,238,.55);border-radius:50px;padding:11px 20px;
+  background:rgba(35,27,28,.3);-webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px);
+  transition:background .3s,color .3s,border-color .3s}
+.shop-nav a:hover{background:#FFF6EE;color:#231B1C;border-color:#FFF6EE}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+#vodici,#proizvodi{scroll-margin-top:18px}
 @media(max-width:700px){
-  .shop-hd{height:290px}
+  .shop-nav{gap:8px;margin-top:18px}
+  .shop-nav a{padding:10px 15px;font-size:9.5px;letter-spacing:2px}
+  .shop-hd{height:330px}
   .shop-lg{left:24px;top:24px;font-size:18px}
   .shop-hd-in{left:24px;right:24px;bottom:26px}
   .shop-hd-in h1{font-size:40px}
@@ -1056,6 +1068,10 @@ nav.nv{position:relative!important;top:auto!important;backdrop-filter:none!impor
   <div class="shop-hd-in">
     <h1>The Exchange Shop</h1>
     <p>My guides, clothing &amp; accessories</p>
+    <nav class="shop-nav">
+      <a href="#vodici">Guides</a>
+      <a href="#proizvodi">Clothing &amp; accessories</a>
+    </nav>
   </div>
 </header>
 
