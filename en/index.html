@@ -1025,18 +1025,34 @@ nav.nv{position:relative!important;top:auto!important;backdrop-filter:none!impor
   font-size:10.5px;letter-spacing:2px;font-weight:600;text-decoration:none;opacity:.85}
 .nv-lang-link:hover{opacity:1}
 </style><script>
-/* start at the top on reload, unless a #section was asked for */
-if('scrollRestoration' in history){history.scrollRestoration='manual';}
-window.addEventListener('pageshow',function(){if(!location.hash){window.scrollTo(0,0);}});
+/* a reload always starts at the top; a link with #section still works */
+(function(){
+  if('scrollRestoration' in history){history.scrollRestoration='manual';}
+  var n=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];
+  var reload=n?n.type==='reload':(performance.navigation&&performance.navigation.type===1);
+  if(reload&&location.hash){history.replaceState(null,'',location.pathname+location.search);}
+  function top(){if(!location.hash){window.scrollTo(0,0);}}
+  if(reload){document.addEventListener('DOMContentLoaded',top);
+    window.addEventListener('load',function(){requestAnimationFrame(top);});}
+  window.addEventListener('pageshow',top);
+  /* arriving on a link with #section: land on it once images have settled */
+  if(!reload&&location.hash){
+    window.addEventListener('load',function(){
+      var el=document.querySelector(location.hash);
+      if(el){requestAnimationFrame(function(){el.scrollIntoView();});}
+    });
+  }
+})();
 </script>
 <style>
 /* ===== signature products: one colour heading, deeper palette ===== */
-#proizvodi .sh h2{font-family:'Playfair Display',serif!important;font-style:italic!important;
+#proizvodi .sh h2{font-family:'Bodoni Moda',serif!important;font-style:italic!important;
   font-weight:400!important;text-transform:none!important;
-  font-size:clamp(38px,5.8vw,70px)!important;line-height:1!important;letter-spacing:-1.4px!important;
+  font-size:clamp(36px,5.4vw,64px)!important;line-height:1.04!important;letter-spacing:-.6px!important;
   color:#231B1C!important;-webkit-text-fill-color:#231B1C;margin:0 0 20px!important}
-#proizvodi .sh h2 .sgn,#proizvodi .sh h2 em{color:#231B1C!important;-webkit-text-fill-color:#231B1C;
-  font-style:italic!important}
+#proizvodi .sh h2 .sgn,#proizvodi .sh h2 em,#proizvodi .sh h2 i,#proizvodi .sh h2 b,
+#proizvodi .sh h2 strong{color:#231B1C!important;-webkit-text-fill-color:#231B1C;
+  font-style:italic!important;font-weight:400!important}
 #proizvodi .sh p{color:#4A4042!important}
 
 #proizvodi .cx-img,
@@ -1059,7 +1075,7 @@ window.addEventListener('pageshow',function(){if(!location.hash){window.scrollTo
 <body class="subpage en">
 <div class="bgx"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 <style>
-.shop-hd{position:relative;overflow:hidden;background:#231B1C;height:92vh;min-height:500px;margin-bottom:0}
+.shop-hd{position:relative;overflow:hidden;background:#231B1C;height:84vh;min-height:470px;margin-bottom:0}
 .shop-hd img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%}
 .shop-hd::after{content:'';position:absolute;inset:0;
   background:linear-gradient(180deg,rgba(35,27,28,.42),rgba(35,27,28,.04) 22%,rgba(35,27,28,.02) 45%,rgba(35,27,28,.45) 78%,rgba(35,27,28,.78))}
@@ -1097,7 +1113,7 @@ html{scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 #vodici,#proizvodi{scroll-margin-top:18px}
 @media(max-width:760px){
-  .shop-hd{height:90svh;min-height:440px}
+  .shop-hd{height:82svh;min-height:420px}
   .shop-top{grid-template-columns:1fr;justify-items:center;gap:14px;padding:22px 20px}
   .shop-lg{justify-self:center;font-size:19px}
   .shop-nav{justify-self:center;gap:24px}
