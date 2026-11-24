@@ -1403,6 +1403,13 @@ body.en .prg{display:none}
 .why2-ph{aspect-ratio:9/14.2!important}
 .why2-ph video{object-position:center 42%}
 @media(max-width:900px){.why2-ph{aspect-ratio:9/13.4!important}}
+/* On a wide screen the pair drifted left with a wide empty gap on the right.
+   Desktop only, so the mobile two-column layout stays exactly as it is. */
+@media(min-width:901px){
+  .why2{grid-template-columns:auto auto!important;justify-content:center;column-gap:clamp(40px,5vw,96px)}
+  .why2-ph{margin-left:0!important}
+  .why2-tx{padding:84px 0!important}
+}
 </style>
 </head>
 <body>
