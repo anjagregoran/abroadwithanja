@@ -1517,10 +1517,20 @@ document.querySelectorAll('[data-go]').forEach(function(a){a.addEventListener('c
     }
     var p=new URLSearchParams(); p.append('email_address',v);
     btn.disabled=true; btn.textContent='Sending\u2026';
-    fetch('https://app.kit.com/forms/'+id+'/subscriptions',{method:'POST',mode:'no-cors',
-      headers:{'Content-Type':'application/x-www-form-urlencoded'},body:p.toString()})
-     .catch(function(){})
-     .then(function(){box.classList.add('done');});
+    fetch('https://app.kit.com/forms/'+id+'/subscriptions',{method:'POST',
+      headers:{'Content-Type':'application/x-www-form-urlencoded','Accept':'application/json'},
+      body:p.toString()})
+     .then(function(r){return r.json();})
+     .then(function(j){
+       /* Kit's bot guard holds the address until the visitor passes a check.
+          Send them there, or they get a thank-you and never get the guide. */
+       if(j&&j.status==='quarantined'&&j.url){location.href=j.url;return;}
+       box.classList.add('done');
+     })
+     .catch(function(){
+       btn.disabled=false; btn.textContent='Get the guide';
+       err.textContent='Something went wrong. Please try again.'; err.classList.add('on');
+     });
   });
  });
 })();
