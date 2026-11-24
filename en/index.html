@@ -1071,6 +1071,33 @@ nav.nv{position:relative!important;top:auto!important;backdrop-filter:none!impor
   font-size:13.5px!important;line-height:1.62!important;color:#6E6466!important;margin:0!important;
   max-width:none!important;padding:9px 24px 24px}
 </style>
+<style>
+/* ===== sticky bar: appears once you pass the photo ===== */
+.sb{position:fixed;z-index:60;left:0;right:0;top:0;display:grid;grid-template-columns:1fr auto 1fr;
+  align-items:center;gap:20px;padding:14px 54px;background:rgba(250,246,239,.94);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(35,27,28,.09);
+  transform:translateY(-100%);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.sb.on{transform:none}
+.sb-lg{font-family:'Playfair Display',serif;font-size:18px;color:#231B1C;text-decoration:none;justify-self:start}
+.sb-lg em{font-style:italic}
+.sb-nav{display:flex;gap:30px;justify-self:center}
+.sb-nav a{position:relative;text-decoration:none;font-family:'Instrument Sans',sans-serif;font-size:10.5px;
+  letter-spacing:2.8px;text-transform:uppercase;font-weight:600;color:#6E6466;padding:4px 0;
+  transition:color .3s}
+.sb-nav a::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:#9E1B1E;
+  transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.sb-nav a:hover{color:#231B1C}
+.sb-nav a.here{color:#9E1B1E}
+.sb-nav a.here::after{transform:scaleX(1)}
+#vodici,#proizvodi{scroll-margin-top:72px}
+@media(max-width:760px){
+  .sb{grid-template-columns:1fr;justify-items:center;gap:8px;padding:10px 16px}
+  .sb-lg{justify-self:center;font-size:16px}
+  .sb-nav{gap:20px}
+  .sb-nav a{font-size:9px;letter-spacing:2px}
+}
+</style>
 </head>
 <body class="subpage en">
 <div class="bgx"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
@@ -1123,7 +1150,15 @@ html{scroll-behavior:smooth}
   .shop-hd-in p{font-size:14px}
 }
 </style>
-<header class="shop-hd">
+<div class="sb" id="sb">
+  <a class="sb-lg" href="#top">Abroad <em>Club</em> USA</a>
+  <nav class="sb-nav">
+    <a href="#vodici" data-s="vodici">Guides</a>
+    <a href="#proizvodi" data-s="proizvodi">Clothing &amp; accessories</a>
+  </nav>
+  <span></span>
+</div>
+<header class="shop-hd" id="top">
   <img src="../img/hero-la.jpg" alt="">
   <div class="shop-top">
     <span class="shop-lg">Abroad <em>Club</em> USA</span>
@@ -1370,6 +1405,30 @@ document.querySelectorAll('[data-go]').forEach(function(a){a.addEventListener('c
    var o=m.closest('.g').classList.toggle('open');
    m.innerHTML=o?'<span lang-en>See less</span>':'<span lang-en>Read more</span>';});
  window.addEventListener('load',chk);setTimeout(chk,300);window.addEventListener('resize',chk);
+})();
+</script>
+<script>
+(function(){
+ var bar=document.getElementById('sb'), hero=document.querySelector('.shop-hd');
+ if(!bar||!hero)return;
+ new IntersectionObserver(function(e){bar.classList.toggle('on',!e[0].isIntersecting);},
+   {rootMargin:'-70px 0px 0px 0px'}).observe(hero);
+ var links=[].slice.call(bar.querySelectorAll('[data-s]'));
+ var secs=links.map(function(a){return document.getElementById(a.dataset.s);});
+ new IntersectionObserver(function(es){
+   es.forEach(function(en){
+     var a=links[secs.indexOf(en.target)];
+     if(a&&en.isIntersecting){links.forEach(function(x){x.classList.remove('here');});a.classList.add('here');}
+   });
+ },{rootMargin:'-45% 0px -50% 0px'}).observe(secs[0]);
+ secs.slice(1).forEach(function(sec){
+   new IntersectionObserver(function(es){
+     es.forEach(function(en){
+       var a=links[secs.indexOf(en.target)];
+       if(a&&en.isIntersecting){links.forEach(function(x){x.classList.remove('here');});a.classList.add('here');}
+     });
+   },{rootMargin:'-45% 0px -50% 0px'}).observe(sec);
+ });
 })();
 </script>
 </body>
