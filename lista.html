@@ -4,11 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lista čekanja · Abroad Club USA</title>
-<meta name="description" content="Prijavi se na listu čekanja za srednjoškolsku razmjenu i ljetne programe u SAD-u.">
+<meta name="description" content="Prijavi se na listu čekanja za srednjoškolsku razmjenu i ljetne programe u SAD-u. Join the waiting list for high school exchange in the USA.">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://abroadclubusa.com/lista.html">
-<link rel="alternate" hreflang="hr" href="https://abroadclubusa.com/lista.html">
-<link rel="alternate" hreflang="en" href="https://abroadclubusa.com/en/lista.html">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <link rel="icon" href="favicon.ico?v=9" sizes="any">
 <link rel="icon" href="favicon.svg?v=9" type="image/svg+xml">
@@ -24,6 +22,13 @@ body{font-family:'Instrument Sans',sans-serif;background:#F0E5E1;color:#231B1C;-
 .ph-c{position:absolute;z-index:2;left:40px;right:40px;bottom:36px;color:#FFF6EE}
 .ph-c span{display:block;font-size:10px;letter-spacing:3.6px;text-transform:uppercase;opacity:.8;margin-bottom:10px}
 .ph-c p{font-family:'Playfair Display',serif;font-size:clamp(22px,2.2vw,30px);line-height:1.22;max-width:360px}
+.lang{position:absolute;z-index:3;right:34px;top:32px;display:flex;gap:6px}
+.lang button{min-width:40px;padding:6px 10px;border:1px solid rgba(255,246,238,.5);border-radius:4px;
+  font-family:inherit;font-size:10px;letter-spacing:2px;font-weight:600;cursor:pointer;color:#FFF6EE;
+  background:rgba(35,27,28,.34);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  transition:background .25s,border-color .25s,color .25s}
+.lang button:hover{background:rgba(35,27,28,.6)}
+.lang button.on{background:#FFF6EE;border-color:#FFF6EE;color:#231B1C}
 .pane{display:flex;align-items:center;justify-content:center;padding:70px 6vw;background:#FFFCF7}
 .card{width:100%;max-width:470px}
 .k{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#9E1B1E}
@@ -43,13 +48,7 @@ input:focus,select:focus{outline:none;border-color:#9E1B1E}
 .done form,.done .intro{display:none}
 .done .ok{display:block}
 .back{display:inline-block;margin-top:26px;font-size:10.5px;letter-spacing:2.6px;text-transform:uppercase;color:#9E1B1E;text-decoration:none;border-bottom:1px solid rgba(158,27,30,.3);padding-bottom:3px}
-.lang{position:absolute;z-index:3;right:34px;top:32px;display:flex;gap:6px}
-.lang a{display:inline-flex;align-items:center;justify-content:center;min-width:40px;padding:6px 10px;
-  border:1px solid rgba(255,246,238,.5);border-radius:4px;font-size:10px;letter-spacing:2px;font-weight:600;
-  text-decoration:none;color:#FFF6EE;background:rgba(35,27,28,.34);
-  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:background .25s,border-color .25s}
-.lang a:hover{background:rgba(35,27,28,.6)}
-.lang a.on{background:#FFF6EE;border-color:#FFF6EE;color:#231B1C}
+html[lang="hr"] .en,html[lang="en"] .hr{display:none}
 @media(max-width:880px){
  .wrap{grid-template-columns:1fr;min-height:0}
  .ph{height:300px}
@@ -63,55 +62,82 @@ input:focus,select:focus{outline:none;border-color:#9E1B1E}
 <body>
 <div class="wrap">
   <div class="ph">
-    <img src="img/campus-palms.jpg" alt="Palme uz američki kampus">
-    <div class="lang"><a href="lista.html" class="on">HR</a><a href="en/lista.html">EN</a></div>
+    <img src="img/campus-palms.jpg" alt="">
     <a class="ph-l" href="./">Abroad <em>Club</em> USA</a>
+    <div class="lang"><button type="button" data-l="hr">HR</button><button type="button" data-l="en">EN</button></div>
     <div class="ph-c">
-      <span>Uskoro</span>
-      <p>Godina, semestar ili ljeto u Sjedinjenim Američkim Državama.</p>
+      <span class="hr">Uskoro</span><span class="en">Coming soon</span>
+      <p class="hr">Godina, semestar ili ljeto u Sjedinjenim Američkim Državama.</p>
+      <p class="en">A year, a semester or a summer in the United States.</p>
     </div>
   </div>
   <div class="pane">
     <div class="card" id="card">
       <div class="intro">
-        <div class="k">Lista čekanja</div>
-        <h1>Upiši svoje podatke</h1>
-        <p>Abroad Club USA uskoro počinje s radom. Trenutno dovršavamo partnerstva s američkim organizacijama ovlaštenima za srednjoškolsku razmjenu u SAD-u.</p>
-        <p>U ponudi će biti godina ili semestar u američkoj srednjoj školi, te kraći ljetni i jezični programi. Javit ćemo ti se čim program bude otvoren, s terminima, rokovima i cijenama.</p>
+        <div class="k"><span class="hr">Lista čekanja</span><span class="en">Waiting list</span></div>
+        <h1><span class="hr">Upiši svoje podatke</span><span class="en">Join the waiting list</span></h1>
+        <p class="hr">Abroad Club USA uskoro počinje s radom. Trenutno dovršavamo partnerstva s američkim organizacijama ovlaštenima za srednjoškolsku razmjenu u SAD-u.</p>
+        <p class="en">Abroad Club USA is opening soon. We are currently finalising partnerships with American organisations authorised for high school exchange in the USA.</p>
+        <p class="hr">U ponudi će biti godina ili semestar u američkoj srednjoj školi, te kraći ljetni i jezični programi. Javit ćemo ti se čim program bude otvoren, s terminima, rokovima i cijenama.</p>
+        <p class="en">We will offer a year or a semester in an American high school, plus shorter summer and language programs. We will get in touch as soon as a program opens, with dates, deadlines and prices.</p>
       </div>
       <form id="f" novalidate>
-        <div><label for="ime">Ime i prezime učenika</label><input id="ime" name="ime" type="text" required></div>
-        <div><label for="mail">Email</label><input id="mail" name="email" type="email" required></div>
+        <div><label for="ime"><span class="hr">Ime i prezime učenika</span><span class="en">Student full name</span></label><input id="ime" name="ime" type="text" required></div>
+        <div><label for="mail"><span class="hr">Email</span><span class="en">Email</span></label><input id="mail" name="email" type="email" required></div>
         <div class="row">
-          <div><label for="rod">Godina rođenja</label><input id="rod" name="rodjenje" type="text" inputmode="numeric" placeholder="npr. 2010" required></div>
-          <div><label for="raz">Razred</label><input id="raz" name="razred" type="text" placeholder="npr. 1. srednje" required></div>
+          <div><label for="rod"><span class="hr">Godina rođenja</span><span class="en">Year of birth</span></label><input id="rod" name="rodjenje" type="text" inputmode="numeric" data-ph-hr="npr. 2010" data-ph-en="e.g. 2010" required></div>
+          <div><label for="raz"><span class="hr">Razred</span><span class="en">Year of school</span></label><input id="raz" name="razred" type="text" data-ph-hr="npr. 1. srednje" data-ph-en="e.g. 9th grade" required></div>
         </div>
-        <div><label for="skola">Ime škole</label><input id="skola" name="skola" type="text" required></div>
-        <div><label for="grad">Grad i država</label><input id="grad" name="grad" type="text" required></div>
-        <div><label for="prog">Program za koji si zainteresiran/a</label>
+        <div><label for="skola"><span class="hr">Ime škole</span><span class="en">School name</span></label><input id="skola" name="skola" type="text" required></div>
+        <div><label for="grad"><span class="hr">Grad i država</span><span class="en">City and country</span></label><input id="grad" name="grad" type="text" required></div>
+        <div><label for="prog"><span class="hr">Program za koji si zainteresiran/a</span><span class="en">Program you are interested in</span></label>
           <select id="prog" name="program" required>
-            <option value="">Odaberi</option>
-            <option>Srednjoškolska razmjena u SAD-u, godina (J-1)</option>
-            <option>Srednjoškolska razmjena u SAD-u, semestar (J-1)</option>
-            <option>Privatna srednja škola u SAD-u (F-1)</option>
-            <option>Kratki ili ljetni program (2 do 6 tjedana)</option>
-            <option>Privatna škola s internatom u SAD-u (živiš u školi)</option>
-            <option>Gap year ili upis na američki fakultet</option>
-            <option>Još ne znam, treba mi savjet</option>
+            <option value="" data-hr="Odaberi" data-en="Choose"></option>
+            <option data-hr="Srednjoškolska razmjena u SAD-u, godina (J-1)" data-en="High school exchange in the USA, academic year (J-1)"></option>
+            <option data-hr="Srednjoškolska razmjena u SAD-u, semestar (J-1)" data-en="High school exchange in the USA, semester (J-1)"></option>
+            <option data-hr="Privatna srednja škola u SAD-u (F-1)" data-en="Private high school in the USA (F-1)"></option>
+            <option data-hr="Kratki ili ljetni program (2 do 6 tjedana)" data-en="Short or summer program (2 to 6 weeks)"></option>
+            <option data-hr="Privatna škola s internatom u SAD-u (živiš u školi)" data-en="Boarding school in the USA (you live at school)"></option>
+            <option data-hr="Gap year ili upis na američki fakultet" data-en="Gap year or applying to an American university"></option>
+            <option data-hr="Još ne znam, treba mi savjet" data-en="Not sure yet, I need advice"></option>
           </select></div>
-        <button class="send" type="submit">Prijavi se na listu</button>
-        <p class="note">Podatke koristimo samo da ti se javimo o programu. Više u <a href="zastita-privatnosti.html">Zaštiti privatnosti</a>.</p>
+        <button class="send" type="submit"><span class="hr">Prijavi se na listu</span><span class="en">Join the waiting list</span></button>
+        <p class="note hr">Podatke koristimo samo da ti se javimo o programu. Više u <a href="zastita-privatnosti.html">Zaštiti privatnosti</a>.</p>
+        <p class="note en">We only use your details to contact you about the program. More in our <a href="en/zastita-privatnosti.html">Privacy Policy</a>.</p>
       </form>
       <div class="ok">
-        <h2>Hvala ti!</h2>
-        <p>Na listi si. Javljamo ti se čim program bude otvoren.</p>
-        <a class="back" href="./">Pogledaj programe</a>
+        <h2><span class="hr">Hvala ti!</span><span class="en">Thank you!</span></h2>
+        <p class="hr">Na listi si. Javljamo ti se čim program bude otvoren.</p>
+        <p class="en">You are on the list. We will be in touch as soon as a program opens.</p>
+        <a class="back hr" href="./">Pogledaj programe</a>
+        <a class="back en" href="en/">See the programs</a>
       </div>
     </div>
   </div>
 </div>
 <script>
 (function(){
+ var SOUTH=['hr','bs','sr','sh','me'];
+ function pick(){
+   var q=new URLSearchParams(location.search).get('lang');
+   if(q==='hr'||q==='en')return q;
+   try{var sv=localStorage.getItem('acu-lang');if(sv==='hr'||sv==='en')return sv;}catch(e){}
+   var n=(navigator.languages&&navigator.languages[0]||navigator.language||'hr').toLowerCase().split('-')[0];
+   return SOUTH.indexOf(n)>-1?'hr':'en';
+ }
+ function set(l,save){
+   document.documentElement.lang=l;
+   document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+   document.querySelectorAll('[data-ph-hr]').forEach(function(i){i.placeholder=i.dataset['ph'+(l==='hr'?'Hr':'En')];});
+   document.querySelectorAll('#prog option').forEach(function(o){
+     var t=o.dataset[l];o.textContent=t;if(o.value!=='')o.value=t;});
+   document.title=(l==='hr'?'Lista čekanja':'Waiting list')+' · Abroad Club USA';
+   if(save){try{localStorage.setItem('acu-lang',l);}catch(e){}}
+ }
+ set(pick(),false);
+ document.querySelector('.lang').addEventListener('click',function(e){
+   var b=e.target.closest('button[data-l]');if(b)set(b.dataset.l,true);});
+
  var form=document.getElementById('f'), card=document.getElementById('card');
  form.addEventListener('submit',function(e){
    e.preventDefault();
