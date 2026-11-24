@@ -98,13 +98,13 @@ html[lang="hr"] .en,html[lang="en"] .hr{display:none}
         <p class="err" id="errmail"><span class="hr">Upiši barem jedan email, svoj ili roditelja.</span><span class="en">Please enter at least one email, yours or a parent's.</span></p>
         <div><label for="prog"><span class="hr">Program za koji si zainteresiran/a</span><span class="en">Program you are interested in</span></label>
           <select id="prog" name="program" required>
-            <option value="" data-hr="Odaberi" data-en="Choose"></option>
-            <option data-hr="Srednjoškolska razmjena u SAD-u, godina (J-1)" data-en="High school exchange in the USA, academic year (J-1)"></option>
-            <option data-hr="Srednjoškolska razmjena u SAD-u, semestar (J-1)" data-en="High school exchange in the USA, semester (J-1)"></option>
-            <option data-hr="Kratki ili ljetni program (2 do 6 tjedana)" data-en="Short or summer program (2 to 6 weeks)"></option>
-            
-            
-            <option data-hr="Još ne znam, treba mi savjet" data-en="Not sure yet, I need advice"></option>
+                        <option value="" data-hr="Odaberi" data-en="Choose"></option>
+            <option value="Srednjoškolska razmjena u SAD-u, godina (J-1)" data-hr="Srednjoškolska razmjena u SAD-u, godina (J-1)" data-en="High school exchange in the USA, academic year (J-1)"></option>
+            <option value="Srednjoškolska razmjena u SAD-u, semestar (J-1)" data-hr="Srednjoškolska razmjena u SAD-u, semestar (J-1)" data-en="High school exchange in the USA, semester (J-1)"></option>
+            <option value="Ljetni program na američkom sveučilištu" data-hr="Ljetni program na američkom sveučilištu" data-en="Summer program at a US university"></option>
+            <option value="Ljetni program kod obitelji domaćina" data-hr="Ljetni program kod obitelji domaćina" data-en="Summer program with a host family"></option>
+            <option value="Tečaj engleskog u SAD-u (jezična škola)" data-hr="Tečaj engleskog u SAD-u (jezična škola)" data-en="English course in the USA (language school)"></option>
+            <option value="Još ne znam, treba mi savjet" data-hr="Još ne znam, treba mi savjet" data-en="Not sure yet, I need advice"></option>
           </select></div>
         <button class="send" type="submit"><span class="hr">Prijavi se na listu</span><span class="en">Join the waiting list</span></button>
         <p class="note hr">Podatke koristimo samo da ti se javimo o programu. Više u <a href="zastita-privatnosti.html">Zaštiti privatnosti</a>.</p>
@@ -135,7 +135,7 @@ html[lang="hr"] .en,html[lang="en"] .hr{display:none}
    document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
    document.querySelectorAll('[data-ph-hr]').forEach(function(i){i.placeholder=i.dataset['ph'+(l==='hr'?'Hr':'En')];});
    document.querySelectorAll('#prog option').forEach(function(o){
-     var t=o.dataset[l];o.textContent=t;if(o.value!=='')o.value=t;});
+     o.textContent=o.dataset[l];});
    document.title=(l==='hr'?'Lista čekanja':'Waiting list')+' · Abroad Club USA';
    if(save){try{localStorage.setItem('acu-lang',l);}catch(e){}}
  }
@@ -145,7 +145,7 @@ html[lang="hr"] .en,html[lang="en"] .hr{display:none}
 
  var form=document.getElementById('f'), card=document.getElementById('card');
  var errMail=document.getElementById('errmail');
- var GFORM='https://docs.google.com/forms/d/e/1FAIpQLSeWWMV1vpKyHwdaES-P_zikcJPgdWkKGGvuCdkIkgmQUVO69g/formResponse';
+ var GFORM='https://docs.google.com/forms/d/1MJAFJ6o0Cly5-pBEvSoTVQuPgo4jc68CtrQ9ng6_oSs/formResponse';
  function kit(email,name,program,parent){
    if(!email)return;
    var p=new URLSearchParams();
@@ -158,10 +158,15 @@ html[lang="hr"] .en,html[lang="en"] .hr{display:none}
  }
  form.addEventListener('submit',function(e){
    e.preventDefault();
-   var d=new FormData(form), get=function(k){return (d.get(k)||'').toString().trim();};
-   var name=get('ime'), mail=get('email'), pmail=get('email_roditelja'), prog=get('program');
+   var sel=document.getElementById('prog');
+   var opt=sel.options[sel.selectedIndex];
+   var name=document.getElementById('ime').value.trim();
+   var mail=document.getElementById('mail').value.trim();
+   var pmail=document.getElementById('pmail').value.trim();
+   var progHr=sel.value;                                  // always Croatian, must match the form
+   var progShown=opt?opt.textContent:'';                  // whatever language they read
    var bad=false;
-   [['ime',name],['prog',prog]].forEach(function(f){
+   [['ime',name],['prog',progHr]].forEach(function(f){
      var el=document.getElementById(f[0]);
      if(!f[1]){el.style.borderColor='#9E1B1E';bad=true;}else{el.style.borderColor='';}
    });
@@ -176,19 +181,14 @@ html[lang="hr"] .en,html[lang="en"] .hr{display:none}
    }
    if(bad)return;
 
-   // Kit: the student if given, and the parent too so neither is lost
-   kit(mail||pmail,name,prog,pmail);
-   if(mail&&pmail)kit(pmail,name,prog,pmail);
+   kit(mail||pmail,name,progShown,pmail);
+   if(mail&&pmail)kit(pmail,name,progShown,pmail);
 
-   // Google Form: every question on it is required, so unused ones get a dash
    var g=new URLSearchParams();
-   g.append('entry.1813174887',name);
-   g.append('entry.1387684478',mail||pmail);
-   g.append('entry.552781885','-');
-   g.append('entry.1418928529','-');
-   g.append('entry.1280180290',pmail?('roditelj: '+pmail):'-');
-   g.append('entry.1910487689','-');
-   g.append('entry.1448049894',prog);
+   g.append('entry.572474709',name);
+   g.append('entry.146748661',mail||pmail);   // Email is required on the form, so never send it empty
+   g.append('entry.1119258849',pmail);
+   g.append('entry.1445377510',progHr);
    fetch(GFORM,{method:'POST',mode:'no-cors',
      headers:{'Content-Type':'application/x-www-form-urlencoded'},body:g.toString()}).catch(function(){});
 
