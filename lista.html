@@ -51,8 +51,10 @@ input:focus,select:focus{outline:none;border-color:#9E1B1E}
 html[lang="hr"] .en,html[lang="en"] .hr{display:none}
 @media(max-width:880px){
  .wrap{grid-template-columns:1fr;min-height:0}
- .ph{height:300px}
- .ph-l{left:24px;top:24px}
+ .ph{height:340px}
+ .ph::after{background:linear-gradient(180deg,rgba(35,27,28,.42),rgba(35,27,28,.08) 38%,rgba(35,27,28,.72))}
+ .ph-c p{font-size:19px;max-width:none}
+ .ph-l{left:24px;top:24px;font-size:18px}
  .lang{right:20px;top:22px}
  .ph-c{left:24px;right:24px;bottom:24px}
  .pane{padding:48px 24px 60px}
