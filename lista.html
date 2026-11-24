@@ -7,6 +7,8 @@
 <meta name="description" content="Prijavi se na listu čekanja za srednjoškolsku razmjenu i ljetne programe u SAD-u.">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://abroadclubusa.com/lista.html">
+<link rel="alternate" hreflang="hr" href="https://abroadclubusa.com/lista.html">
+<link rel="alternate" hreflang="en" href="https://abroadclubusa.com/en/lista.html">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <link rel="icon" href="favicon.ico?v=9" sizes="any">
 <link rel="icon" href="favicon.svg?v=9" type="image/svg+xml">
@@ -41,10 +43,18 @@ input:focus,select:focus{outline:none;border-color:#9E1B1E}
 .done form,.done .intro{display:none}
 .done .ok{display:block}
 .back{display:inline-block;margin-top:26px;font-size:10.5px;letter-spacing:2.6px;text-transform:uppercase;color:#9E1B1E;text-decoration:none;border-bottom:1px solid rgba(158,27,30,.3);padding-bottom:3px}
+.lang{position:absolute;z-index:3;right:34px;top:32px;display:flex;gap:6px}
+.lang a{display:inline-flex;align-items:center;justify-content:center;min-width:40px;padding:6px 10px;
+  border:1px solid rgba(255,246,238,.5);border-radius:4px;font-size:10px;letter-spacing:2px;font-weight:600;
+  text-decoration:none;color:#FFF6EE;background:rgba(35,27,28,.34);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:background .25s,border-color .25s}
+.lang a:hover{background:rgba(35,27,28,.6)}
+.lang a.on{background:#FFF6EE;border-color:#FFF6EE;color:#231B1C}
 @media(max-width:880px){
  .wrap{grid-template-columns:1fr;min-height:0}
  .ph{height:300px}
  .ph-l{left:24px;top:24px}
+ .lang{right:20px;top:22px}
  .ph-c{left:24px;right:24px;bottom:24px}
  .pane{padding:48px 24px 60px}
 }
@@ -54,6 +64,7 @@ input:focus,select:focus{outline:none;border-color:#9E1B1E}
 <div class="wrap">
   <div class="ph">
     <img src="img/campus-palms.jpg" alt="Palme uz američki kampus">
+    <div class="lang"><a href="lista.html" class="on">HR</a><a href="en/lista.html">EN</a></div>
     <a class="ph-l" href="./">Abroad <em>Club</em> USA</a>
     <div class="ph-c">
       <span>Uskoro</span>
