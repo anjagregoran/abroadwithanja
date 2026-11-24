@@ -54,6 +54,29 @@ body{font-family:'Instrument Sans',sans-serif;background:var(--paper);color:var(
   font-weight:600;color:var(--paper);background:var(--ink);border-radius:50px;padding:16px 30px;transition:background .3s}
 .end a:hover{background:var(--red)}
 
+
+.nf{max-width:560px;margin:0 auto}
+.nf form{display:flex;gap:10px;margin-top:24px}
+.nf input{flex:1;min-width:0;padding:15px 18px;border:1px solid var(--line);border-radius:0;
+  background:#fff;font-family:inherit;font-size:15px;color:var(--ink)}
+.nf input:focus{outline:none;border-color:var(--red)}
+.nf button{border:0;background:var(--ink);color:var(--paper);font-family:inherit;font-size:10px;
+  letter-spacing:2.6px;text-transform:uppercase;font-weight:600;padding:15px 24px;cursor:pointer;
+  white-space:nowrap;transition:background .3s}
+.nf button:hover{background:var(--red)}
+.nf button[disabled]{opacity:.6;cursor:default}
+.nf-e{display:none;margin-top:10px!important;font-size:12.5px;color:var(--red)}
+.nf-e.on{display:block}
+.nf-note{margin-top:16px!important;font-size:11.5px!important;color:var(--mute)!important}
+.nf-note a{display:inline!important;background:none!important;color:var(--mute)!important;
+  border-radius:0!important;padding:0!important;font-size:inherit!important;letter-spacing:0!important;
+  text-transform:none!important;font-weight:400!important;text-decoration:underline;
+  text-underline-offset:2px;text-decoration-color:rgba(140,132,129,.5)}
+.nf-note a:hover{color:var(--ink)!important}
+.nf-ok{display:none}
+.nf.done .nf-in{display:none}
+.nf.done .nf-ok{display:block}
+@media(max-width:560px){.nf form{flex-direction:column}.nf button{padding:15px}}
 .ft{border-top:1px solid var(--line);padding:30px 40px 40px;text-align:center}
 .ft p{font-size:12px;color:var(--mute)}
 .ft a{color:var(--red);text-decoration:none}
@@ -138,15 +161,51 @@ body{font-family:'Instrument Sans',sans-serif;background:var(--paper);color:var(
   </article>
 </div>
 
-<section class="end">
-  <h3>Want to know when these are ready?</h3>
-  <p>I will send one email when the first pieces go on sale. Nothing else.</p>
-  <a href="../lista.html?lang=en">Keep me updated</a>
+<section class="end" id="notify">
+  <div class="nf" id="nf">
+    <div class="nf-in">
+      <h3>Want to know when these are ready?</h3>
+      <p>Leave your email and I will let you know when the first pieces go on sale. Nothing else, and you can unsubscribe at any time.</p>
+      <form id="nform" novalidate>
+        <input id="nmail" type="email" name="email" placeholder="your@email.com" autocomplete="email" aria-label="Email">
+        <button type="submit">Keep me updated</button>
+      </form>
+      <p class="nf-e" id="nerr"></p>
+      <p class="nf-note">Your email is used only to tell you when these go on sale. <a href="zastita-privatnosti.html">Privacy</a></p>
+    </div>
+    <div class="nf-ok">
+      <h3>You are on the list.</h3>
+      <p>I will email you when the first pieces are ready.</p>
+    </div>
+  </div>
 </section>
 
 <div class="ft">
   <p>&copy; Abroad Club USA · <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=abroadclubusa@gmail.com&amp;su=Question%20about%20your%20shop" target="_blank" rel="noopener">abroadclubusa@gmail.com</a></p>
 </div>
 
+<script>
+(function(){
+ var f=document.getElementById('nform'), box=document.getElementById('nf'),
+     err=document.getElementById('nerr'), btn=f.querySelector('button'), inp=document.getElementById('nmail');
+ f.addEventListener('submit',function(e){
+   e.preventDefault();
+   var v=inp.value.trim();
+   err.classList.remove('on'); inp.style.borderColor='';
+   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){
+     inp.style.borderColor='#9E1B1E'; err.textContent='That email address does not look right.';
+     err.classList.add('on'); return;
+   }
+   var p=new URLSearchParams();
+   p.append('email_address',v);
+   p.append('fields[program]','Odjeća i dodaci, lista obavijesti');
+   btn.disabled=true; btn.textContent='Sending\u2026';
+   fetch('https://app.kit.com/forms/10210293/subscriptions',{method:'POST',mode:'no-cors',
+     headers:{'Content-Type':'application/x-www-form-urlencoded'},body:p.toString()})
+    .catch(function(){})
+    .then(function(){box.classList.add('done');});
+ });
+})();
+</script>
 </body>
 </html>
