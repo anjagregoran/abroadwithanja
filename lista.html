@@ -116,9 +116,6 @@ html[lang="hr"] .en,html[lang="en"] .hr{display:none}
         <h2><span class="hr">Hvala ti!</span><span class="en">Thank you!</span></h2>
         <p class="hr">Na listi si. Obavijestit ćemo te čim programi budu otvoreni.</p>
         <p class="en">You are on the list. We will let you know as soon as the programs open.</p>
-        <p class="note" id="guard" style="display:none"><span class="hr">Još jedan korak: <a href="#" target="_blank" rel="noopener">potvrdi prijavu ovdje</a>.</span><span class="en">One more step: <a href="#" target="_blank" rel="noopener">confirm your sign up here</a>.</span></p>
-        <a class="back hr" href="./">Pogledaj programe</a>
-        <a class="back en" href="en/">See the programs</a>
       </div>
     </div>
   </div>
@@ -156,20 +153,12 @@ html[lang="hr"] .en,html[lang="en"] .hr{display:none}
    p.append('first_name',name);
    p.append('fields[program]',program);
    if(parent)p.append('fields[email_roditelja]',parent);
-   /* Read the answer. Kit can hold an address behind a bot check instead of
-      adding it, and with no-cors that failure was invisible. */
+   /* Kit is the second copy here: the Google Form already has the person,
+      so nothing is asked of them even when Kit holds the address back. */
    fetch('https://app.kit.com/forms/10210293/subscriptions',{method:'POST',
      headers:{'Content-Type':'application/x-www-form-urlencoded','Accept':'application/json'},
      body:p.toString()})
-    .then(function(r){return r.json();})
-    .then(function(j){if(j&&j.status==='quarantined'&&j.url)showGuard(j.url);})
     .catch(function(){});
- }
- function showGuard(u){
-   var g=document.getElementById('guard'); if(!g)return;
-   var a=g.getElementsByTagName('a');
-   for(var i=0;i<a.length;i++)a[i].href=u;
-   g.style.display='block';
  }
  form.addEventListener('submit',function(e){
    e.preventDefault();
