@@ -48,6 +48,9 @@ input:focus,select:focus{outline:none;border-color:#9E1B1E}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
 .send{margin-top:6px;width:100%;border:0;border-radius:50px;padding:15px 20px;cursor:pointer;background:#254551;color:#FFE6D6;font-family:inherit;font-size:10.5px;letter-spacing:3px;text-transform:uppercase;font-weight:600;transition:background .3s}
 .send:hover{background:#9E1B1E}
+.chk{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;margin-top:4px}
+.chk input{width:17px;height:17px;margin:1px 0 0;accent-color:#254551}
+.chk label{margin:0;font-size:12.5px;line-height:1.55;letter-spacing:0;text-transform:none;color:#4A4042}
 .note{margin-top:14px;font-size:12px;color:#8A7C76;line-height:1.6}
 .note a{color:#8A7C76}
 .ok{display:none;padding:6px 0}
@@ -108,9 +111,11 @@ html[lang="hr"] .en,html[lang="en"] .hr{display:none}
             <option value="Tečaj engleskog u SAD-u (jezična škola)" data-hr="Tečaj engleskog u SAD-u (jezična škola)" data-en="English course in the USA (language school)"></option>
             <option value="Još ne znam, treba mi savjet" data-hr="Još ne znam, treba mi savjet" data-en="Not sure yet, I need advice"></option>
           </select></div>
+        <div class="chk"><input id="cns" type="checkbox"><label for="cns"><span class="hr">Slažem se da Abroad Club USA koristi moje podatke kako bi mi se javio o programima.</span><span class="en">I agree that Abroad Club USA may use my details to contact me about the programs.</span></label></div>
+        <p class="err" id="errcns"><span class="hr">Označi kvačicu da ti se smijemo javiti.</span><span class="en">Please tick the box so we are allowed to contact you.</span></p>
         <button class="send" type="submit"><span class="hr">Obavijesti me</span><span class="en">Keep me updated</span></button>
-        <p class="note hr">Podatke koristimo samo da ti se javimo o programu. Više u <a href="zastita-privatnosti.html">Zaštiti privatnosti</a>.</p>
-        <p class="note en">We only use your details to contact you about the program. More in our <a href="en/zastita-privatnosti.html">Privacy Policy</a>.</p>
+        <p class="note hr">Podatke koristimo samo da ti se javimo o programu. Kad god želiš, javi nam na <a href="mailto:abroadclubusa@gmail.com">abroadclubusa@gmail.com</a> i brišemo ih. Više u <a href="zastita-privatnosti.html">Zaštiti privatnosti</a>.</p>
+        <p class="note en">We only use your details to contact you about the program. Write to <a href="mailto:abroadclubusa@gmail.com">abroadclubusa@gmail.com</a> any time and we will delete them. More in our <a href="en/zastita-privatnosti.html">Privacy Policy</a>.</p>
       </form>
       <div class="ok">
         <h2><span class="hr">Hvala ti!</span><span class="en">Thank you!</span></h2>
@@ -183,6 +188,9 @@ html[lang="hr"] .en,html[lang="en"] .hr{display:none}
      document.getElementById('pmail').style.borderColor='';
      errMail.classList.remove('on');
    }
+   var cns=document.getElementById('cns');
+   if(!cns.checked){document.getElementById('errcns').classList.add('on');bad=true;}
+   else{document.getElementById('errcns').classList.remove('on');}
    if(bad)return;
 
    kit(mail||pmail,name,progShown,pmail);
