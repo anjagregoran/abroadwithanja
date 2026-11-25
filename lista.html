@@ -99,7 +99,7 @@ html[lang="hr"] .en,html[lang="en"] .hr{display:none}
       <form id="f" novalidate>
         <div><label for="ime"><span class="hr">Ime i prezime učenika</span><span class="en">Student full name</span></label><input id="ime" name="ime" type="text" required></div>
         <div><label for="mail"><span class="hr">Email</span><span class="en">Email</span></label><input id="mail" name="email" type="email"></div>
-        <div><label for="pmail"><span class="hr">Email roditelja <i>nije obavezno, ali preporučujemo</i></span><span class="en">Parent's email <i>optional, but recommended</i></span></label><input id="pmail" name="email_roditelja" type="email"></div>
+        <div><label for="pmail"><span class="hr">Email roditelja <i>Nije obavezno, ali se preporučuje.</i></span><span class="en">Parent's email <i>optional, but recommended</i></span></label><input id="pmail" name="email_roditelja" type="email"></div>
         <p class="err" id="errmail"><span class="hr">Upiši barem jedan email, svoj ili roditelja.</span><span class="en">Please enter at least one email, yours or a parent's.</span></p>
         <div><label for="prog"><span class="hr">Program za koji si zainteresiran/a</span><span class="en">Program you are interested in</span></label>
           <select id="prog" name="program" required>
@@ -110,7 +110,10 @@ html[lang="hr"] .en,html[lang="en"] .hr{display:none}
             <option value="Ljetni program kod obitelji domaćina" data-hr="Ljetni program kod obitelji domaćina" data-en="Summer program with a host family"></option>
             <option value="Tečaj engleskog u SAD-u (jezična škola)" data-hr="Tečaj engleskog u SAD-u (jezična škola)" data-en="English course in the USA (language school)"></option>
             <option value="Još ne znam, treba mi savjet" data-hr="Još ne znam, treba mi savjet" data-en="Not sure yet, I need advice"></option>
+            <option value="__other__" data-hr="Nešto drugo" data-en="Something else"></option>
           </select></div>
+        <div id="othwrap" hidden><label for="oth"><span class="hr">Napiši što te zanima</span><span class="en">Tell us what you are looking for</span></label><input id="oth" type="text" maxlength="180" data-ph-hr="npr. praksa, studij, kamp…" data-ph-en="e.g. internship, university, camp…"></div>
+        <p class="err" id="erroth"><span class="hr">Napiši ukratko što te zanima.</span><span class="en">Please write briefly what you are looking for.</span></p>
         <div class="chk"><input id="cns" type="checkbox"><label for="cns"><span class="hr">Slažem se da Abroad Club USA koristi moje podatke kako bi mi se javio o programima.</span><span class="en">I agree that Abroad Club USA may use my details to contact me about the programs.</span></label></div>
         <p class="err" id="errcns"><span class="hr">Označi kvačicu da ti se smijemo javiti.</span><span class="en">Please tick the box so we are allowed to contact you.</span></p>
         <button class="send" type="submit"><span class="hr">Obavijesti me</span><span class="en">Keep me updated</span></button>
@@ -149,6 +152,13 @@ html[lang="hr"] .en,html[lang="en"] .hr{display:none}
    var b=e.target.closest('button[data-l]');if(b)set(b.dataset.l,true);});
 
  var form=document.getElementById('f'), card=document.getElementById('card');
+ var othWrap=document.getElementById('othwrap'), othIn=document.getElementById('oth'), errOth=document.getElementById('erroth');
+ document.getElementById('prog').addEventListener('change',function(){
+   var on=this.value==='__other__';
+   othWrap.hidden=!on;
+   if(!on){othIn.value='';errOth.classList.remove('on');othIn.style.borderColor='';}
+   else othIn.focus();
+ });
  var errMail=document.getElementById('errmail');
  var GFORM='https://docs.google.com/forms/d/1MJAFJ6o0Cly5-pBEvSoTVQuPgo4jc68CtrQ9ng6_oSs/formResponse';
  function kit(email,name,program,parent){
@@ -188,19 +198,31 @@ html[lang="hr"] .en,html[lang="en"] .hr{display:none}
      document.getElementById('pmail').style.borderColor='';
      errMail.classList.remove('on');
    }
+   var othTxt=othIn.value.trim();
+   if(progHr==='__other__'&&!othTxt){
+     othIn.style.borderColor='#9E1B1E'; errOth.classList.add('on'); bad=true;
+   }else{ othIn.style.borderColor=''; errOth.classList.remove('on'); }
    var cns=document.getElementById('cns');
    if(!cns.checked){document.getElementById('errcns').classList.add('on');bad=true;}
    else{document.getElementById('errcns').classList.remove('on');}
    if(bad)return;
 
-   kit(mail||pmail,name,progShown,pmail);
-   if(mail&&pmail)kit(pmail,name,progShown,pmail);
+   /* Their own words go to Kit and to the form, so we learn what people actually ask for. */
+   var progOut=(progHr==='__other__')?othTxt:progShown;
+   kit(mail||pmail,name,progOut,pmail);
+   if(mail&&pmail)kit(pmail,name,progOut,pmail);
 
    var g=new URLSearchParams();
    g.append('entry.572474709',name);
    g.append('entry.146748661',mail||pmail);   // Email is required on the form, so never send it empty
    g.append('entry.1119258849',pmail);
-   g.append('entry.1445377510',progHr);
+   if(progHr==='__other__'){
+     /* Google's own "Other" slot on that question: the typed text lands in the same column. */
+     g.append('entry.1445377510','__other_option__');
+     g.append('entry.1445377510.other_option_response',othTxt);
+   }else{
+     g.append('entry.1445377510',progHr);
+   }
    fetch(GFORM,{method:'POST',mode:'no-cors',
      headers:{'Content-Type':'application/x-www-form-urlencoded'},body:g.toString()}).catch(function(){});
 
