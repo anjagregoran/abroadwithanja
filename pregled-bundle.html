@@ -1,0 +1,160 @@
+<!DOCTYPE html><html lang="hr"><head><meta charset="utf-8">
+<meta name="robots" content="noindex"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Naslovnica za paket</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Gloock&family=Instrument+Sans:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Instrument Sans',sans-serif;background:#EDE6E2;color:#231B1C;padding:46px 20px 110px}
+h1.pg{font-family:'Playfair Display',serif;font-size:32px;font-weight:500;text-align:center;margin-bottom:9px}
+.sub{text-align:center;color:#6E6466;font-size:13.5px;margin-bottom:46px;line-height:1.65}
+.row{max-width:1120px;margin:0 auto 62px;display:grid;grid-template-columns:430px 1fr;gap:46px;align-items:center}
+.cap b{font-family:'Playfair Display',serif;font-size:30px;font-weight:500;color:#9E1B1E;display:block;margin-bottom:7px}
+.cap h2{font-size:17px;font-weight:600;margin-bottom:9px;letter-spacing:-.1px}
+.cap p{font-size:14px;line-height:1.7;color:#5C5355;max-width:46ch}
+.stage{width:430px}
+
+/* shared cover look */
+.sh{box-shadow:0 34px 64px -42px rgba(35,27,28,.6)}
+.cream{background:#FAF6EF}
+
+/* 1 fan */
+.fan{position:relative;height:470px}
+.fan img{position:absolute;width:218px;border-radius:5px;box-shadow:0 26px 48px -28px rgba(35,27,28,.55);top:50%;left:50%}
+.fan img:nth-child(1){transform:translate(-50%,-50%) rotate(-13deg) translateX(-104px)}
+.fan img:nth-child(2){transform:translate(-50%,-50%) rotate(-4.5deg) translateX(-35px)}
+.fan img:nth-child(3){transform:translate(-50%,-50%) rotate(4.5deg) translateX(35px)}
+.fan img:nth-child(4){transform:translate(-50%,-50%) rotate(13deg) translateX(104px)}
+
+/* 2 grid */
+.grid4{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:9px;background:#FAF6EF;border-radius:6px}
+.grid4 img{display:block;width:100%;border-radius:3px}
+
+/* 3 stack */
+.stack{position:relative;height:470px}
+.stack img{position:absolute;width:268px;border-radius:5px;left:50%;top:50%}
+.stack img:nth-child(1){transform:translate(-50%,-50%) translate(-54px,-26px);filter:brightness(.9)}
+.stack img:nth-child(2){transform:translate(-50%,-50%) translate(-28px,-13px);filter:brightness(.95)}
+.stack img:nth-child(3){transform:translate(-50%,-50%) translate(-4px,0)}
+.stack img:nth-child(4){transform:translate(-50%,-50%) translate(22px,14px);box-shadow:-18px 20px 44px -26px rgba(35,27,28,.6)}
+
+/* 4 editorial photo */
+.ed{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:3/4}
+.ed img{width:100%;height:100%;object-fit:cover;display:block}
+.ed::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(35,27,28,.12),rgba(35,27,28,.06) 42%,rgba(35,27,28,.62))}
+.ed .lab{position:absolute;z-index:2;left:30px;right:30px;bottom:30px;color:#FFF6EE}
+.ed .lab span{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;opacity:.9}
+.ed .lab h3{font-family:'Playfair Display',serif;font-weight:400;font-size:34px;line-height:1.06;margin-top:9px}
+
+/* 5 typographic */
+.ty{aspect-ratio:3/4;border-radius:6px;background:#FAF6EF;border:1px solid rgba(35,27,28,.1);
+ display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:44px 38px}
+.ty .k{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#9E1B1E}
+.ty h3{font-family:'Playfair Display',serif;font-weight:400;font-size:46px;line-height:1.02;margin:20px 0 4px}
+.ty em{font-family:'Playfair Display',serif;font-style:italic;font-size:26px;color:#5C5355}
+.ty .rule{width:52px;height:1px;background:rgba(35,27,28,.28);margin:26px 0}
+.ty ol{list-style:none;font-size:12.5px;line-height:2.15;color:#5C5355;letter-spacing:.02em}
+.ty .flag{margin-top:24px;font-size:17px}
+
+/* 6 fan on photo */
+.onph{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:3/4;background:#231B1C}
+.onph>img.bgp{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.62) saturate(.85)}
+.onph .fan2{position:absolute;inset:0;z-index:2}
+.onph .fan2 img{position:absolute;width:150px;border-radius:4px;box-shadow:0 22px 40px -20px rgba(0,0,0,.7);top:46%;left:50%}
+.onph .fan2 img:nth-child(1){transform:translate(-50%,-50%) rotate(-10deg) translateX(-78px)}
+.onph .fan2 img:nth-child(2){transform:translate(-50%,-50%) rotate(-3.5deg) translateX(-26px)}
+.onph .fan2 img:nth-child(3){transform:translate(-50%,-50%) rotate(3.5deg) translateX(26px)}
+.onph .fan2 img:nth-child(4){transform:translate(-50%,-50%) rotate(10deg) translateX(78px)}
+.onph .cp{position:absolute;z-index:3;left:0;right:0;bottom:30px;text-align:center;color:#FFF6EE;
+ font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase}
+
+/* 7 contents card */
+.cont{border-radius:6px;overflow:hidden;background:#FAF6EF;border:1px solid rgba(35,27,28,.1)}
+.cont .ph{aspect-ratio:16/10;overflow:hidden}
+.cont .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.cont .bd{padding:26px 28px 30px}
+.cont .k{font-family:'Courier Prime',monospace;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:#9E1B1E}
+.cont h3{font-family:'Playfair Display',serif;font-weight:400;font-size:28px;line-height:1.1;margin:10px 0 18px}
+.cont li{list-style:none;display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:13px;line-height:1.5;
+ padding:9px 0;border-top:1px solid rgba(35,27,28,.1);color:#4A4042}
+.cont li i{font-style:normal;font-family:'Courier Prime',monospace;color:#9E1B1E;font-size:11px;padding-top:2px}
+
+@media(max-width:980px){.row{grid-template-columns:1fr;gap:22px}.stage{width:100%;max-width:430px}}
+</style></head><body>
+
+<h1 class="pg">Sedam naslovnica za paket</h1>
+<p class="sub">Sve koriste prave omote tvoja četiri vodiča, ništa izmišljeno.<br>Pogledaj i reci mi samo broj.</p>
+
+<div class="row">
+  <div class="stage"><div class="fan">
+    <img src="img/covers/c-packing.jpg" alt=""><img src="img/covers/c-year.jpg" alt="">
+    <img src="img/covers/c-100.jpg" alt=""><img src="img/covers/c-lessons.jpg" alt="">
+  </div></div>
+  <div class="cap"><b>1</b><h2>Lepeza</h2><p>Četiri omota razvučena kao karte u ruci. Odmah se vidi da dobivaš četiri stvari, a ne jednu. Najjasnije govori riječ "paket".</p></div>
+</div>
+
+<div class="row">
+  <div class="stage"><div class="grid4 sh">
+    <img src="img/covers/c-packing.jpg" alt=""><img src="img/covers/c-100.jpg" alt="">
+    <img src="img/covers/c-year.jpg" alt=""><img src="img/covers/c-lessons.jpg" alt="">
+  </div></div>
+  <div class="cap"><b>2</b><h2>Mreža, dva po dva</h2><p>Mirno i uredno, svaki omot se vidi cijeli i čitljiv je. Najmanje drame, najviše informacije.</p></div>
+</div>
+
+<div class="row">
+  <div class="stage"><div class="stack">
+    <img src="img/covers/c-year.jpg" alt=""><img src="img/covers/c-100.jpg" alt="">
+    <img src="img/covers/c-packing.jpg" alt=""><img src="img/covers/c-lessons.jpg" alt="">
+  </div></div>
+  <div class="cap"><b>3</b><h2>Hrpa</h2><p>Složeni jedan na drugi, prednji cijeli, ostali vire. Djeluje kao da u ruci držiš hrpu knjiga. Toplije i manje reklamno od lepeze.</p></div>
+</div>
+
+<div class="row">
+  <div class="stage"><div class="ed sh">
+    <img src="img/gallery/g11.jpg" alt="">
+    <div class="lab"><span>Exchange bundle</span><h3>The Exchange Year<br>Master Guide</h3></div>
+  </div></div>
+  <div class="cap"><b>4</b><h2>Samo fotografija</h2><p>Bez ikakvog mockupa. Jaka fotka i naslov preko nje. Izgleda kao brend, ne kao prodaja. Ime paketa onda nosi naslov, ne slika.</p></div>
+</div>
+
+<div class="row">
+  <div class="stage"><div class="ty sh">
+    <div class="k">Four guides, one bundle</div>
+    <h3>The Exchange<br>Year</h3>
+    <em>Master Guide</em>
+    <div class="rule"></div>
+    <ol><li>The Packing List</li><li>The USA Bucket List</li><li>American High School</li><li>Lessons &amp; Skills</li></ol>
+    <div class="flag">🇺🇸</div>
+  </div></div>
+  <div class="cap"><b>5</b><h2>Samo slova</h2><p>Nijedna fotografija. Krem papir, veliki serif, tvoja crvena. Djeluje skuplje i ozbiljnije od svega ostalog. Rizik je što ne pokazuje što dobivaš.</p></div>
+</div>
+
+<div class="row">
+  <div class="stage"><div class="onph sh">
+    <img class="bgp" src="img/football-zalazak.jpg" alt="">
+    <div class="fan2">
+      <img src="img/covers/c-packing.jpg" alt=""><img src="img/covers/c-year.jpg" alt="">
+      <img src="img/covers/c-100.jpg" alt=""><img src="img/covers/c-lessons.jpg" alt="">
+    </div>
+    <div class="cp">Four guides, one bundle</div>
+  </div></div>
+  <div class="cap"><b>6</b><h2>Lepeza na fotografiji</h2><p>Spoj prvog i četvrtog. Omoti plutaju iznad prigušene fotke s utakmice. Vidi se i što dobivaš i kamo ideš.</p></div>
+</div>
+
+<div class="row">
+  <div class="stage"><div class="cont sh">
+    <div class="ph"><img src="img/gallery/g13.jpg" alt=""></div>
+    <div class="bd">
+      <div class="k">Exchange bundle</div>
+      <h3>The Exchange Year Master Guide</h3>
+      <ul>
+        <li><i>01</i><span>The Ultimate Exchange Packing List</span></li>
+        <li><i>02</i><span>100 Things: The USA Bucket List</span></li>
+        <li><i>03</i><span>Your Year Abroad: American High School</span></li>
+        <li><i>04</i><span>Lifetime Lessons &amp; Skills</span></li>
+      </ul>
+    </div>
+  </div></div>
+  <div class="cap"><b>7</b><h2>Sadržaj</h2><p>Fotka gore, popis četiri vodiča dolje, kao sadržaj knjige. Jedina opcija u kojoj čovjek pročita imena vodiča prije nego skrola.</p></div>
+</div>
+
+</body></html>
