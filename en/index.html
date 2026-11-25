@@ -1216,7 +1216,9 @@ nav.nv{position:relative!important;top:auto!important;backdrop-filter:none!impor
 .shop-nav a:hover{opacity:1;border-bottom-color:rgba(255,246,238,.75)}
 html{scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-#vodici,#proizvodi{scroll-margin-top:18px}
+/* The top bar is fixed and 61px tall, so a jump needs to clear it or the heading hides behind it. */
+#vodici,#proizvodi{scroll-margin-top:84px}
+@media(max-width:760px){#vodici,#proizvodi{scroll-margin-top:118px}}
 @media(max-width:760px){
   .shop-hd{height:58svh;min-height:360px}
   .shop-top{grid-template-columns:1fr;justify-items:center;gap:14px;padding:22px 20px}
