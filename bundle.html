@@ -698,8 +698,19 @@ a.host-btn{cursor:pointer!important;opacity:1}
 
 .subpage .bd{padding:64px 0 90px!important}
 .bd-g{display:grid;grid-template-columns:.82fr 1.18fr;gap:70px;align-items:center;max-width:1120px!important}
-.bd-cover{margin:0}
-.bd-cover img{display:block;width:100%;border-radius:6px;box-shadow:0 44px 80px -50px rgba(35,27,28,.55)}
+.bd-cover{margin:0;width:100%}
+/* Four real guide covers fanned out like cards, so the page shows at a glance
+   that the bundle is four things and not one. Sizes are percentages of the
+   column so the fan holds its shape at every width. */
+.bd-fan{position:relative;width:100%;aspect-ratio:1/1.09}
+.bd-fan img{position:absolute;top:50%;left:50%;width:50.5%;border-radius:5px;
+  box-shadow:0 26px 48px -28px rgba(35,27,28,.55)}
+/* Stacking runs right to left so the packing list, first in the bundle,
+   sits leftmost and is the one card nothing covers. */
+.bd-fan img:nth-child(1){transform:translate(-50%,-50%) rotate(-13deg) translateX(-24.2%);z-index:4}
+.bd-fan img:nth-child(2){transform:translate(-50%,-50%) rotate(-4.5deg) translateX(-8.1%);z-index:3}
+.bd-fan img:nth-child(3){transform:translate(-50%,-50%) rotate(4.5deg) translateX(8.1%);z-index:2}
+.bd-fan img:nth-child(4){transform:translate(-50%,-50%) rotate(13deg) translateX(24.2%);z-index:1}
 .bd-k{font-size:10.5px;letter-spacing:3.4px;text-transform:uppercase;font-weight:600;color:#9E1B1E;margin-bottom:16px}
 .bd-h{font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(34px,4.2vw,58px);line-height:1.06;color:#231B1C;letter-spacing:.005em;margin:0 0 22px}
 .bd-lead{font-size:18px;line-height:1.65;color:#3A3031;margin:0 0 12px}
@@ -743,7 +754,7 @@ nav.nv{position:relative!important;top:auto!important;backdrop-filter:none!impor
 </nav>
 <section class="bundle bd" id="bundle">
   <div class="w bd-g">
-    <figure class="bd-cover"><img src="img/bundle.jpg" alt="The Exchange Year Bundle"></figure>
+    <figure class="bd-cover"><div class="bd-fan"><img src="img/covers/c-packing.jpg" alt="The Ultimate Exchange Packing List"><img src="img/covers/c-year.jpg" alt="Your Year Abroad"><img src="img/covers/c-100.jpg" alt="100 Things To Do On Your Exchange"><img src="img/covers/c-lessons.jpg" alt="Lifetime Lessons and Skills"></div></figure>
     <div class="bd-t">
       <div class="bd-k">Exchange bundle</div>
       <h1 class="bd-h">The Exchange Year Master Guide</h1>
