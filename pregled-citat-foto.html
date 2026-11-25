@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="hr"><head><meta charset="utf-8">
+<meta name="robots" content="noindex"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Obrade fotografije s citatom</title>
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500&family=Playfair+Display:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Instrument Sans',sans-serif;background:#DCD5D0;color:#231B1C}
+.pg{padding:44px 20px 6px;text-align:center}
+.pg h1{font-family:'Playfair Display',serif;font-size:30px;font-weight:500;margin-bottom:8px}
+.pg p{color:#5C5355;font-size:13.5px;line-height:1.65}
+.num{max-width:1240px;margin:44px auto 10px;padding:0 22px;display:flex;align-items:baseline;gap:13px;flex-wrap:wrap}
+.num b{font-family:'Playfair Display',serif;font-size:27px;font-weight:500;color:#9E1B1E}
+.num span{font-size:14px;font-weight:600}
+.num i{font-style:normal;font-size:12.5px;color:#6E6466}
+
+.quote{position:relative;padding:120px 0;color:#fff;text-align:center;overflow:hidden}
+.quote .bg{position:absolute;inset:0;background-size:cover}
+.quote .w{position:relative;z-index:2;max-width:820px;margin:0 auto;padding:0 24px}
+.quote q{font-family:'Domine',serif;font-style:italic;font-size:clamp(23px,3.2vw,34px);line-height:1.35;quotes:"\201C" "\201D"}
+.quote span{display:block;margin-top:18px;font-size:11.5px;letter-spacing:3px}
+
+/* 0 current */
+.q0 .bg{background:url(img/anja-usa-vintage.jpg) center 30%/cover}
+.q0::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(90deg,rgba(60,48,40,.72) 0%,rgba(60,48,40,.42) 32%,rgba(60,48,40,.06) 56%,rgba(60,48,40,0) 100%)}
+.q0 .w{text-align:left;margin-left:0;max-width:600px;padding-left:6vw}
+
+/* 1 clean teal */
+.q1 .bg{background:url(img/anja-usa.jpg) center 30%/cover}
+.q1::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(90deg,rgba(37,69,81,.8) 0%,rgba(37,69,81,.5) 38%,rgba(37,69,81,.1) 62%,rgba(37,69,81,0) 100%)}
+.q1 .w{text-align:left;max-width:600px;padding-left:6vw}
+.q1 span{color:#FFD5B8}
+
+/* 2 black and white */
+.q2 .bg{background:url(img/anja-usa.jpg) center 30%/cover;filter:grayscale(1) contrast(1.08)}
+.q2::after{content:"";position:absolute;inset:0;z-index:1;background:rgba(20,18,19,.42)}
+.q2 q{font-family:'Playfair Display',serif;font-weight:400;font-style:italic}
+.q2 span{color:rgba(255,246,238,.72)}
+
+/* 3 deep film, centred, vignette */
+.q3 .bg{background:url(img/anja-usa-vintage.jpg) center 30%/cover;filter:saturate(1.15) contrast(1.05)}
+.q3::after{content:"";position:absolute;inset:0;z-index:1;
+  background:radial-gradient(ellipse at 58% 45%,rgba(40,28,20,.14) 0%,rgba(40,28,20,.58) 58%,rgba(32,22,16,.86) 100%)}
+.q3 span{color:#E8C9A8}
+
+/* 4 bright, dark text */
+.q4{color:#231B1C}
+.q4 .bg{background:url(img/anja-usa.jpg) center 30%/cover;filter:brightness(1.1) saturate(.9)}
+.q4::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(90deg,rgba(250,246,239,.92) 0%,rgba(250,246,239,.74) 40%,rgba(250,246,239,.18) 70%,rgba(250,246,239,0) 100%)}
+.q4 .w{text-align:left;max-width:580px;padding-left:6vw}
+.q4 span{color:#9E1B1E}
+
+/* 5 full photo, no wash, text on a card */
+.q5{padding:150px 0}
+.q5 .bg{background:url(img/anja-usa.jpg) center 30%/cover}
+.q5::after{content:"";position:absolute;inset:0;z-index:1;background:rgba(24,20,23,.14)}
+.q5 .w{max-width:620px;background:rgba(35,27,28,.62);backdrop-filter:blur(9px);
+  padding:46px 44px;border-radius:3px}
+.q5 q{font-size:clamp(21px,2.6vw,29px)}
+.q5 span{color:#FFD5B8}
+
+@media(max-width:860px){
+ .quote{padding:84px 0}
+ .q0 .w,.q1 .w,.q4 .w{padding-left:22px;padding-right:22px;max-width:none}
+ .q5 .w{margin:0 18px;padding:34px 26px}
+}
+</style></head><body>
+
+<div class="pg">
+  <h1>Pet obrada fotografije s citatom</h1>
+  <p>Ista fotografija, isti citat, samo druga obrada.<br>Prva je ono što sad imaš, da imaš s čime usporediti. Reci mi broj.</p>
+</div>
+
+<div class="num"><b>0</b><span>Sada na stranici</span><i>zrnata vintage, topli smeđi preljev slijeva</i></div>
+<section class="quote q0"><div class="bg"></div><div class="w"><q>The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.</q><span>MARCEL PROUST</span></div></section>
+
+<div class="num"><b>1</b><span>Čista teal</span><i>bez zrna, tvoja tamna plavozelena, boje su svježije</i></div>
+<section class="quote q1"><div class="bg"></div><div class="w"><q>The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.</q><span>MARCEL PROUST</span></div></section>
+
+<div class="num"><b>2</b><span>Crno bijela</span><i>citat na sredini, najmirnija i najozbiljnija</i></div>
+<section class="quote q2"><div class="bg"></div><div class="w"><q>The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.</q><span>MARCEL PROUST</span></div></section>
+
+<div class="num"><b>3</b><span>Duboki film</span><i>zrno ostaje, jače boje i zatamnjeni rubovi</i></div>
+<section class="quote q3"><div class="bg"></div><div class="w"><q>The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.</q><span>MARCEL PROUST</span></div></section>
+
+<div class="num"><b>4</b><span>Svijetla, tamna slova</span><i>obrnuto od svega, krem preljev i crni tekst</i></div>
+<section class="quote q4"><div class="bg"></div><div class="w"><q>The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.</q><span>MARCEL PROUST</span></div></section>
+
+<div class="num"><b>5</b><span>Fotografija bez preljeva</span><i>slika se vidi cijela, citat na staklenoj pločici</i></div>
+<section class="quote q5"><div class="bg"></div><div class="w"><q>The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.</q><span>MARCEL PROUST</span></div></section>
+
+<div style="height:70px"></div>
+</body></html>
