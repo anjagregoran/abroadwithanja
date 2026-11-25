@@ -1413,6 +1413,13 @@ body.en .prg{display:none}
 .why2-ph{aspect-ratio:4/5!important}
 .why2-ph video{object-position:center center}
 @media(max-width:900px){.why2-ph{aspect-ratio:4/5!important}}
+/* On a phone the two columns squeezed the clip down to a thumbnail stuck to
+   the text. It now sits on its own line above the words, full width. */
+@media(max-width:900px){
+  .why2{grid-template-columns:1fr!important;padding:0 0 48px!important}
+  .why2-ph{width:auto!important;margin:34px 22px 30px!important;align-self:stretch!important}
+  .why2-tx{padding:0 22px!important}
+}
 /* On a wide screen the pair drifted left with a wide empty gap on the right.
    Desktop only, so the mobile two-column layout stays exactly as it is. */
 @media(min-width:901px){
